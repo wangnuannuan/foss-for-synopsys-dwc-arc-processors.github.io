@@ -1,0 +1,20 @@
+Building Baremetal Applications
+===============================
+
+.. toctree::
+
+   hostlink.rst
+   gcc-mcpu.rst
+   linker.rst
+   tcf.rst
+
+
+Debugging Baremetal Applications
+================================
+
+.. toctree::
+
+   em-starter-kit.rst
+   openocd-axs.rst
+   ashling-axs.rst
+

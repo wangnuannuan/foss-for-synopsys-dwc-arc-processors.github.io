@@ -1,0 +1,289 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Building Baremetal Applications &mdash; GNU Toolchain for ARC User Manual 2016.09 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="GNU Toolchain for ARC User Manual 2016.09 documentation" href="../index.html"/>
+        <link rel="next" title="Hostlink and libgloss" href="hostlink.html"/>
+        <link rel="prev" title="Welcome to GNU Toolchain for ARC documentation!" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> GNU Toolchain for ARC User Manual
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2016.09
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Building Baremetal Applications</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hostlink.html">Hostlink and libgloss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gcc-mcpu.html">Understanding GCC -mcpu option</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linker.html">Linker scripts and memory.x files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tcf.html">Using TCF</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#debugging-baremetal-applications">Debugging Baremetal Applications</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="em-starter-kit.html">Using GNU Toolchain to Debug Applications on EM Starter Kit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openocd-axs.html">Using OpenOCD with AXS SDP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ashling-axs.html">Using Ashling Opella-XD GDB server with AXS SDP</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Creating Toolchain Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintainer/manual-build.html">How to Build GNU Toolchain for ARC Manually</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">GNU Toolchain for ARC User Manual</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Building Baremetal Applications</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/baremetal/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="building-baremetal-applications">
+<h1>Building Baremetal Applications<a class="headerlink" href="#building-baremetal-applications" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hostlink.html">Hostlink and libgloss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gcc-mcpu.html">Understanding GCC -mcpu option</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gcc-mcpu.html#arc-em">ARC EM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gcc-mcpu.html#arc-hs">ARC HS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gcc-mcpu.html#arc-600-and-arc-700">ARC 600 and ARC 700</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="linker.html">Linker scripts and memory.x files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="linker.html#introduction-to-linker-and-linker-scripts">Introduction to Linker And Linker Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linker.html#linux-user-space-applications">Linux User-Space Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linker.html#baremetal-applications">Baremetal Applications</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="linker.html#default-linker-emulation">Default Linker Emulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="linker.html#arcv2elfx-linker-emulation">arcv2elfx Linker Emulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="linker.html#custom-linker-scripts">Custom linker scripts</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tcf.html">Using TCF</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tcf.html#general-description">General Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tcf.html#compiler-options">Compiler Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tcf.html#memory-map">Memory Map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tcf.html#c-preprocessor-defines">C Preprocessor Defines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tcf.html#arc-elf32-tcf-gcc-options">arc-elf32-tcf-gcc Options</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="debugging-baremetal-applications">
+<h1>Debugging Baremetal Applications<a class="headerlink" href="#debugging-baremetal-applications" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="em-starter-kit.html">Using GNU Toolchain to Debug Applications on EM Starter Kit</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="em-starter-kit.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="em-starter-kit.html#building-an-application">Building an Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="em-starter-kit.html#running-an-application-with-openocd">Running an application with OpenOCD</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="em-starter-kit.html#starting-openocd">Starting OpenOCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="em-starter-kit.html#connecting-gdb-to-openocd">Connecting GDB to OpenOCD</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="em-starter-kit.html#known-issues-and-limitations">Known Issues and Limitations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="openocd-axs.html">Using OpenOCD with AXS SDP</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="openocd-axs.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openocd-axs.html#building-an-application">Building an Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openocd-axs.html#board-configuration">Board Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openocd-axs.html#running-openocd">Running OpenOCD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openocd-axs.html#running-gdb">Running GDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openocd-axs.html#advanced-topics">Advanced Topics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="openocd-axs.html#using-standalone-digilent-hs-debug-cable">Using standalone Digilent HS debug cable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openocd-axs.html#using-openocd-with-only-one-core-in-the-jtag-chain">Using OpenOCD with only one core in the JTAG chain</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="openocd-axs.html#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ashling-axs.html">Using Ashling Opella-XD GDB server with AXS SDP</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ashling-axs.html#building-an-application">Building an Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ashling-axs.html#board-configuration">Board Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ashling-axs.html#running-ashling-gdb-server">Running Ashling GDB Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ashling-axs.html#running-gdb">Running GDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ashling-axs.html#known-issues">Known issues</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ashling-axs.html#known-issues-of-previous-versions-of-ashling-software">Known Issues of previous versions of Ashling software</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="hostlink.html" class="btn btn-neutral float-right" title="Hostlink and libgloss" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral" title="Welcome to GNU Toolchain for ARC documentation!" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Synopsys.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2016.09',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

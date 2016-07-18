@@ -1,0 +1,504 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to build Linux with GNU tools and run on simulator &mdash; GNU Toolchain for ARC User Manual 2016.09 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="GNU Toolchain for ARC User Manual 2016.09 documentation" href="../index.html"/>
+        <link rel="up" title="Linux applications" href="index.html"/>
+        <link rel="next" title="Using KGDB to debug Linux" href="kgdb.html"/>
+        <link rel="prev" title="Debugging Linux Applications" href="debugging.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> GNU Toolchain for ARC User Manual
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2016.09
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../baremetal/index.html">Building baremetal applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../baremetal/index.html#debugging-baremetal-applications">Debugging baremetal applications</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Linux applications</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="debugging.html">Debugging Linux Applications</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">How to build Linux with GNU tools and run on simulator</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuring">Configuring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#building">Building</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-on-nsim">Running on nSIM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-different-linux-configuration">Using different Linux configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#linux-for-arc-770-processors">Linux for ARC 770 processors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#linux-for-arc-hs-vdk">Linux for ARC HS VDK</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kgdb.html">Using KGDB to debug Linux</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../other/index.html">Other</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintainer/index.html">Information for Toolchain maintainers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently asked questions</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">GNU Toolchain for ARC User Manual</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Linux applications</a> &raquo;</li>
+      
+    <li>How to build Linux with GNU tools and run on simulator</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/linux/kernel-build.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="how-to-build-linux-with-gnu-tools-and-run-on-simulator">
+<h1>How to build Linux with GNU tools and run on simulator<a class="headerlink" href="#how-to-build-linux-with-gnu-tools-and-run-on-simulator" title="Permalink to this headline">¶</a></h1>
+<p>This document describes how to build Linux kernel image from the perspective
+of toolchain developer. This document doesn&#8217;t aim to replace more complete and
+thorough Linux-focused user guides and how to so. This document answers the
+single question &#8220;How to confirm, that I can build Linux kernel with <em>that</em>
+toolchain?&#8221;</p>
+<p>To learn how to configure Linux, debug kernel itself and build extra software
+please see <cite>&lt;https://github.com/foss-for-synopsys-dwc-arc-processors/linux/wiki&gt;</cite>.</p>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Host OS:
+* RHEL 6 or later
+* Ubuntu 14.04 LTS or later</li>
+<li>GNU tool chain for ARC:
+* 2014.12 or later for Linux for ARC HS
+* 4.8 or later for Linux for ARC 700</li>
+<li>make version at least 3.81</li>
+<li>rsync version at least 3.0</li>
+<li>git</li>
+</ul>
+<p>Prerequisite packages can be installed on Ubuntu 14.04 with the following command:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span># apt-get install texinfo byacc flex build-essential git
+</pre></div>
+</div>
+<p>On RHEL 6/7 those can be installed with following command:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span># yum groupinstall &quot;Development Tools&quot;
+# yum install texinfo-tex byacc flex git
+</pre></div>
+</div>
+</div>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>There are two essential components to get a working Linux kernel image: root
+file system and Linux image itself. For the sake of simplicity this guide
+assumes that root file system is embedded into the Linux image.</p>
+<p>To generate root file system this guide will use <a class="reference external" href="http://buildroot.org">Buildroot</a> project, that automates this sort of things. Buildroot
+is capable to build Linux image itself, feature that is also used in this
+guide. Buildroot is also capable of building toolchain from the source, however
+this feature is not used in this guide, instead binary toolchain distributed by
+Synopsys will be used.</p>
+</div>
+<div class="section" id="configuring">
+<h2>Configuring<a class="headerlink" href="#configuring" title="Permalink to this headline">¶</a></h2>
+<p>Check <cite>Buildroot downloads page &lt;http://buildroot.org/download.html&gt;</cite> for
+latest release. This guide further assumes latest snapshot. Get Buildroot
+sources:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>$ mkdir arc-2016.03-linux-guide
+$ cd arc-2016.03-linux-guide
+$ wget https://buildroot.org/downloads/buildroot-snapshot.tar.bz2
+$ tar xaf buildroot-snapshot.tar.bz2
+</pre></div>
+</div>
+<p>To build Linux and rootfs Buildroot should be configured. For the purpose of
+this guide, a custom &#8220;defconfig&#8221; file will be created and then will be used to
+configure Buildroot. Custom &#8220;defconfig&#8221; file can be located anywhere and have
+any name. For example it can be <code class="docutils literal"><span class="pre">arc-2016.03-linux-guide/hs_defconfig</span></code>.
+Contents of this file should be following:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>BR2_arcle=y
+BR2_archs38=y
+BR2_TOOLCHAIN_EXTERNAL=y
+BR2_TOOLCHAIN_EXTERNAL_DOWNLOAD=y
+BR2_TOOLCHAIN_EXTERNAL_URL=&quot;http://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2016.03/arc_gnu_2016.03_prebuilt_uclibc_le_archs_linux_install.tar.gz&quot;
+BR2_TOOLCHAIN_EXTERNAL_GCC_4_8=y
+BR2_TOOLCHAIN_EXTERNAL_HEADERS_4_6=y
+BR2_TOOLCHAIN_EXTERNAL_LOCALE=y
+BR2_TOOLCHAIN_EXTERNAL_INET_RPC=y
+BR2_TOOLCHAIN_EXTERNAL_CXX=y
+BR2_LINUX_KERNEL=y
+BR2_LINUX_KERNEL_DEFCONFIG=&quot;nsim_hs&quot;
+BR2_LINUX_KERNEL_VMLINUX=y
+BR2_PACKAGE_GDB=y
+BR2_PACKAGE_GDB_SERVER=y
+BR2_PACKAGE_GDB_DEBUGGER=y
+BR2_TARGET_ROOTFS_INITRAMFS=y
+# BR2_TARGET_ROOTFS_TAR is not set
+</pre></div>
+</div>
+<p>Important notes about modifying Buildroot defconfig:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">BR2_TOOLCHAIN_EXTERNAL_URL</span></code> should point to a valid URL of GNU Toolchain
+for ARC distributable.</li>
+<li><code class="docutils literal"><span class="pre">BR2_TOOLCHAIN_EXTERNAL_HEADERS_X_XX</span></code> should be aligned to Linux headers
+version used for the toolchain build. It is 4.6 for toolchain release
+2016.03, it is 3.18 for toolchain releases 2015.06 and 2015.12, it is 3.13
+for earlier toolchain versions. This parameter identifies version of Linux
+that was used to build toolchain and is not related to version of Linux that
+will be <em>built by</em> toolchain or where applications compiled by this toolchain
+will run.</li>
+<li>Other Linux kernel defconfigs can be used.</li>
+<li>Building GDB or GDBserver is not necessary.</li>
+</ul>
+</div>
+<div class="section" id="building">
+<span id="linux-building-label"></span><h2>Building<a class="headerlink" href="#building" title="Permalink to this headline">¶</a></h2>
+<p>To build Linux kernel image using that defconfig:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>$ cd buildroot
+$ make O=../output_hs defconfig DEFCONFIG=../hs_defconfig
+$ cd ../output_hs
+$ make
+</pre></div>
+</div>
+<p>After that there will be Linux kernel image file
+<code class="docutils literal"><span class="pre">arc-2016.03-linux-guide/output/images/vmlinux</span></code>.</p>
+</div>
+<div class="section" id="running-on-nsim">
+<h2>Running on nSIM<a class="headerlink" href="#running-on-nsim" title="Permalink to this headline">¶</a></h2>
+<p>Linux configuration in the provided Buildroot defconfig is for the standalone
+nSIM. This kernel image can be run directly on nSIM, without any other
+additional software. Assuming current directory is
+<code class="docutils literal"><span class="pre">arc-2016.03-linux-guide</span></code>:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>$ $NSIM_HOME/bin/nsimdrv -propsfile archs38.props output_hs/images/vmlinux
+</pre></div>
+</div>
+<p>Username is <code class="docutils literal"><span class="pre">root</span></code> without a password. To halt target system issue <code class="docutils literal"><span class="pre">halt</span></code>
+command.</p>
+<p>Contents of archs38.props file is following:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>nsim_isa_family=av2hs
+nsim_isa_core=1
+chipid=0xffff
+nsim_isa_atomic_option=1
+nsim_isa_ll64_option=1
+nsim_isa_mpy_option=9
+nsim_isa_div_rem_option=2
+nsim_isa_sat=1
+nsim_isa_code_density_option=2
+nsim_isa_enable_timer_0=1
+nsim_isa_enable_timer_1=1
+nsim_isa_rtc_option=1
+icache=65536,64,4,0
+dcache=65536,64,2,0
+nsim_mmu=4
+nsim_mem-dev=uart0,base=0xc0fc1000,irq=24
+nsim_isa_number_of_interrupts=32
+nsim_isa_number_of_external_interrupts=32
+</pre></div>
+</div>
+<p>Add <code class="docutils literal"><span class="pre">nsim_fast=1</span></code> to props file if you have nSIM Pro license.</p>
+</div>
+<div class="section" id="using-different-linux-configuration">
+<h2>Using different Linux configuration<a class="headerlink" href="#using-different-linux-configuration" title="Permalink to this headline">¶</a></h2>
+<p>It is possible to change Linux configuration used via altering
+<code class="docutils literal"><span class="pre">BR2_LINUX_KERNEL_DEFCONFIG</span></code> property of Buildroot defconfig. For example to
+build kernel image for AXS103 SDP change its value to <code class="docutils literal"><span class="pre">axs103</span></code>. After that
+repeat steps from <a class="reference internal" href="#linux-building-label"><span>Building</span></a> section of this document.  Refer
+to <a class="reference external" href="https://github.com/foss-for-synopsys-dwc-arc-processors/linux/wiki">ARC Linux documentation</a> for more
+details about how to enable networking, HDMI and other hardware features of
+AXS10x SDP.</p>
+<p>Notable defconfigs available for ARC: <code class="docutils literal"><span class="pre">axs101</span></code>, <code class="docutils literal"><span class="pre">axs103</span></code>, <code class="docutils literal"><span class="pre">axs103_smp</span></code>,
+<code class="docutils literal"><span class="pre">vsk_hs38_smp_defconfig</span></code>.</p>
+</div>
+<div class="section" id="linux-for-arc-770-processors">
+<h2>Linux for ARC 770 processors<a class="headerlink" href="#linux-for-arc-770-processors" title="Permalink to this headline">¶</a></h2>
+<p>Process of building kernel for ARC 770 is similar to what is for ARC HS. It is
+required only to change several option in Buildroot defconfig:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">BR2_archs38=y</span></code> with <code class="docutils literal"><span class="pre">BR2_arc770d=y</span></code></li>
+<li><code class="docutils literal"><span class="pre">BR2_TOOLCHAIN_EXTERNAL_URL=&quot;http://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2016.03/arc_gnu_2016.03_prebuilt_uclibc_le_archs_linux_install.tar.gz&quot;</span></code>
+with
+<code class="docutils literal"><span class="pre">BR2_TOOLCHAIN_EXTERNAL_URL=&quot;http://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2016.03/arc_gnu_2016.03_prebuilt_uclibc_le_arc700_linux_install.tar.gz&quot;</span></code></li>
+<li><code class="docutils literal"><span class="pre">BR2_LINUX_KERNEL_DEFCONFIG=&quot;nsim_hs&quot;</span></code> with
+<code class="docutils literal"><span class="pre">BR2_LINUX_KERNEL_DEFCONFIG=&quot;nsim_700&quot;</span></code></li>
+</ul>
+</div></blockquote>
+<p>Then repeat steps from :ref`linux-building-label` section of this document to build
+Linux kernel image. To run this image following <code class="docutils literal"><span class="pre">arc770d.props</span></code> nSIM properties
+file may be used:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>nsim_isa_family=a700
+nsim_isa_atomic_option=1
+nsim_mmu=3
+icache=32768,64,2,0
+dcache=32768,64,4,0
+nsim_isa_spfp=fast
+nsim_isa_shift_option=2
+nsim_isa_swap_option=1
+nsim_isa_bitscan_option=1
+nsim_isa_sat=1
+nsim_isa_mpy32=1
+nsim_isa_enable_timer_0=1
+nsim_isa_enable_timer_1=1
+nsim_mem-dev=uart0,base=0xc0fc1000,irq=5
+nsim_isa_number_of_interrupts=32
+nsim_isa_number_of_external_interrupts=32
+</pre></div>
+</div>
+</div>
+<div class="section" id="linux-for-arc-hs-vdk">
+<h2>Linux for ARC HS VDK<a class="headerlink" href="#linux-for-arc-hs-vdk" title="Permalink to this headline">¶</a></h2>
+<p>This section is specific to ARC HS VDK which is distributed along with nSIM
+(nSIM Pro license is required).</p>
+<p>Buildroot defconfig for VDK differs from the one for a simple nSIM:</p>
+<ul class="simple">
+<li>Linux defconfig is <code class="docutils literal"><span class="pre">vdk_hs38_smp</span></code> for multicore simulation, <code class="docutils literal"><span class="pre">vdk_hs38</span></code>
+for single core simulation.</li>
+<li>Ext2 file of root file system should be created, instead of being linked into
+the kernel</li>
+</ul>
+<p>With those changes Buildroot defconfig for ARC HS VDK is:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>BR2_arcle=y
+BR2_archs38=y
+BR2_TOOLCHAIN_EXTERNAL=y
+BR2_TOOLCHAIN_EXTERNAL_DOWNLOAD=y
+BR2_TOOLCHAIN_EXTERNAL_URL=&quot;http://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2016.03/arc_gnu_2016.03_prebuilt_uclibc_le_archs_linux_install.tar.gz&quot;
+BR2_TOOLCHAIN_EXTERNAL_GCC_4_8=y
+BR2_TOOLCHAIN_EXTERNAL_HEADERS_4_6=y
+BR2_TOOLCHAIN_EXTERNAL_LOCALE=y
+BR2_TOOLCHAIN_EXTERNAL_INET_RPC=y
+BR2_TOOLCHAIN_EXTERNAL_CXX=y
+BR2_LINUX_KERNEL=y
+BR2_LINUX_KERNEL_DEFCONFIG=&quot;vdk_hs38_smp&quot;
+BR2_LINUX_KERNEL_VMLINUX=y
+BR2_PACKAGE_GDB=y
+BR2_PACKAGE_GDB_SERVER=y
+BR2_PACKAGE_GDB_DEBUGGER=y
+BR2_TARGET_ROOTFS_EXT2=y
+# BR2_TARGET_ROOTFS_TAR is not set
+</pre></div>
+</div>
+<p>Save this defconfig to some file (for example <code class="docutils literal"><span class="pre">vdk_defconfig</span></code>). Then use same
+process as in <a class="reference internal" href="#linux-building-label"><span>Building</span></a> section.:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>$ cd buildroot
+$ make O=../output_vdk defconfig DEFCONFIG=&lt;path-to-VDK-defconfig-file&gt;
+$ cd ../output_vdk
+$ make
+</pre></div>
+</div>
+<p>ARC HS VDK already includes Linux kernel image and root file system image. To
+replace them with your newly generated files:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>$ cd &lt;VDK-directory&gt;/skins/ARC-Linux
+$ mv rootfs.ARCv2.ext2{,.orig}
+$ ln -s &lt;path-to-Buildroot-output/images/rootfs.ext2 rootfs.ARCv2.ext2
+$ mv ARCv2/vmlinux_smp{,.orig}
+$ ln -s &lt;path-to-Buildroot-output/images/vmlinux ARCv2/vmlinux_smp
+</pre></div>
+</div>
+<p>Before running VDK if you wish to have a working networking connection on Linux
+for ARC system it is required to configure VDK VHub application. By default
+this application will pass all Ethernet packets to the VDK Ethernet model,
+however on busy networks that can be too much to handle in a model, therefore
+it is highly recommended to configure destination address filtering. Modify
+<code class="docutils literal"><span class="pre">VirtualAndRealWorldIO/VHub/vhub.conf</span></code>: : set <code class="docutils literal"><span class="pre">DestMACFilterEnable</span></code> to
+<code class="docutils literal"><span class="pre">true</span></code>, and append some random valid MAC address to the list of
+<code class="docutils literal"><span class="pre">DestMACFilter</span></code>, or use one of the MAC address examples in the list. This
+guide will use D8:D3:85:CF:D5:CE - this address is already in the list. Note
+that is has been observed that it is not possible to assign some addresses to
+Ethernet device model in VDK, instead of success there is an error &#8220;Cannot
+assign requested address&#8221;.</p>
+<p>Note, that due to the way how VHub application works, it is impossible to
+connect to the Ethernet model from the host on which it runs on and vice versa.
+Therefore to use networking in target it is required to either have another
+host and communicate with it.</p>
+<p>Run VHub application as root:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span># VirtualAndRealWorldIO/VHub/vhub -f VirtualAndRealWorldIO/VHub/vhub.conf
+</pre></div>
+</div>
+<p>In another console launch VDK:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>$ . setup.sh
+$ ./skins/ARC-Linux/start_interactive.tcl
+</pre></div>
+</div>
+<p>After VDK will load, start simulation. After Linux kernel will boot, login into
+system via UART console: login <code class="docutils literal"><span class="pre">root</span></code>, no password. By default networking is
+switched off. Enable <code class="docutils literal"><span class="pre">eth0</span></code> device, configure it is use MAC from address
+configured in VHub:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>[arclinux] # ifconfig eth0 hw ether d8:d3:85:cf:d5:ce
+[arclinux] # ifconfig eth0 up
+</pre></div>
+</div>
+<p>Linux kernel will emit errors about failed PTP initialization - those are
+expected. Assign IP address to the target system. This example uses DHCP:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>[arclinux] # udhcpc eth0
+</pre></div>
+</div>
+<p>Now it is possible to mount some NFS share and run applications from it:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>[arclinux] # mount -t nfs public-nfs:/home/arc_user/pub /mnt
+[arclinux] # /mnt/hello_world
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="kgdb.html" class="btn btn-neutral float-right" title="Using KGDB to debug Linux" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="debugging.html" class="btn btn-neutral" title="Debugging Linux Applications" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Synopsys.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2016.09',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

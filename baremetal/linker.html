@@ -31,7 +31,7 @@
 
   
     <link rel="top" title="GNU Toolchain for ARC User Manual 2016.09 documentation" href="../index.html"/>
-        <link rel="up" title="Building Baremetal Applications" href="index.html"/>
+        <link rel="up" title="Building baremetal applications" href="index.html"/>
         <link rel="next" title="Using TCF" href="tcf.html"/>
         <link rel="prev" title="Understanding GCC -mcpu option" href="gcc-mcpu.html"/> 
 
@@ -83,15 +83,15 @@
             
             
                 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Building Baremetal Applications</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Building baremetal applications</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="hostlink.html">Hostlink and libgloss</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gcc-mcpu.html">Understanding GCC -mcpu option</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Linker scripts and memory.x files</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#introduction-to-linker-and-linker-scripts">Introduction to Linker And Linker Scripts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#linux-user-space-applications">Linux User-Space Applications</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#baremetal-applications">Baremetal Applications</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#default-linker-emulation">Default Linker Emulation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#arcv2elfx-linker-emulation">arcv2elfx Linker Emulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#introduction-to-linker-and-linker-scripts">Introduction to linker and linker scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#linux-user-space-applications">Linux user-space applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#baremetal-applications">Baremetal applications</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#default-linker-emulation">Default linker emulation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arcv2elfx-linker-emulation">arcv2elfx linker emulation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#custom-linker-scripts">Custom linker scripts</a></li>
 </ul>
 </li>
@@ -100,9 +100,11 @@
 <li class="toctree-l2"><a class="reference internal" href="tcf.html">Using TCF</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="index.html#debugging-baremetal-applications">Debugging Baremetal Applications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../release.html">Creating Toolchain Release</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../maintainer/manual-build.html">How to Build GNU Toolchain for ARC Manually</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#debugging-baremetal-applications">Debugging baremetal applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other/index.html">Other</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintainer/index.html">Information for Toolchain maintainers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently asked questions</a></li>
 </ul>
 
             
@@ -133,7 +135,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-          <li><a href="index.html">Building Baremetal Applications</a> &raquo;</li>
+          <li><a href="index.html">Building baremetal applications</a> &raquo;</li>
       
     <li>Linker scripts and memory.x files</li>
       <li class="wy-breadcrumbs-aside">
@@ -152,7 +154,7 @@
   <div class="section" id="linker-scripts-and-memory-x-files">
 <span id="index-0"></span><h1>Linker scripts and memory.x files<a class="headerlink" href="#linker-scripts-and-memory-x-files" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction-to-linker-and-linker-scripts">
-<h2>Introduction to Linker And Linker Scripts<a class="headerlink" href="#introduction-to-linker-and-linker-scripts" title="Permalink to this headline">¶</a></h2>
+<h2>Introduction to linker and linker scripts<a class="headerlink" href="#introduction-to-linker-and-linker-scripts" title="Permalink to this headline">¶</a></h2>
 <p>The way how code and data sections will be organized in the memory by linker
 strongly depends on the linker script or linker emulation chosen. Linker script
 (also known as linker command file) is a special file which specifies where to
@@ -161,7 +163,7 @@ used referenced by an application. Linker emulation is basically way to select
 one of the predetermined linker scripts of the GNU linker.</p>
 </div>
 <div class="section" id="linux-user-space-applications">
-<h2>Linux User-Space Applications<a class="headerlink" href="#linux-user-space-applications" title="Permalink to this headline">¶</a></h2>
+<h2>Linux user-space applications<a class="headerlink" href="#linux-user-space-applications" title="Permalink to this headline">¶</a></h2>
 <p>Linux user-space applications are loaded by the dynamically linker in their own
 virtual memory address space, where they do not collide with other applications
 and it is a duty of dynamic linker to make sure that application doesn&#8217;t collide
@@ -169,7 +171,7 @@ with libraries it uses (if any). In most cases there is no need to use custom
 linker scripts.</p>
 </div>
 <div class="section" id="baremetal-applications">
-<h2>Baremetal Applications<a class="headerlink" href="#baremetal-applications" title="Permalink to this headline">¶</a></h2>
+<h2>Baremetal applications<a class="headerlink" href="#baremetal-applications" title="Permalink to this headline">¶</a></h2>
 <p>Baremetal applications are loaded into target memory by debugger or by
 application bootloader or are already in the ROM mapped to specific location. If
 memory map used by linker is invalid that would mean that application will be
@@ -179,7 +181,7 @@ invalid write to non-existing memory, delayed failure when application will try
 to execute code from non-existing memory, or an unpredictable behaviour if
 application has overwritten something else.</p>
 <div class="section" id="default-linker-emulation">
-<h3>Default Linker Emulation<a class="headerlink" href="#default-linker-emulation" title="Permalink to this headline">¶</a></h3>
+<h3>Default linker emulation<a class="headerlink" href="#default-linker-emulation" title="Permalink to this headline">¶</a></h3>
 <p>Default linker emulation for ARC baremetal toolchain would put all loadable ELF
 sections as a consecutive region, starting with address 0x0. This is usually
 enough for an application prototyping, however real systems often has a more
@@ -200,7 +202,7 @@ em6_dmips, em6_gp, em6_mini, em7d_nrg, em7d_voice_audio, em11d_nrg,
 em11d_voice_audio, hs36_base, hs36, hs38_base, hs38, hs38_full, hs38_slc_full.</p>
 </div>
 <div class="section" id="arcv2elfx-linker-emulation">
-<h3>arcv2elfx Linker Emulation<a class="headerlink" href="#arcv2elfx-linker-emulation" title="Permalink to this headline">¶</a></h3>
+<h3>arcv2elfx linker emulation<a class="headerlink" href="#arcv2elfx-linker-emulation" title="Permalink to this headline">¶</a></h3>
 <p>For cases where default linker emulation is not enough there is an <code class="docutils literal"><span class="pre">arcv2elfx</span></code>
 linker emulation, which provides an ability to specify custom memory map to
 linker without the need to write a complete linker scripts. To use it pass

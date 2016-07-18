@@ -3,7 +3,7 @@
 Linker scripts and memory.x files
 =================================
 
-Introduction to Linker And Linker Scripts
+Introduction to linker and linker scripts
 -----------------------------------------
 
 The way how code and data sections will be organized in the memory by linker
@@ -14,7 +14,7 @@ used referenced by an application. Linker emulation is basically way to select
 one of the predetermined linker scripts of the GNU linker.
 
 
-Linux User-Space Applications
+Linux user-space applications
 -----------------------------
 
 Linux user-space applications are loaded by the dynamically linker in their own
@@ -24,7 +24,7 @@ with libraries it uses (if any). In most cases there is no need to use custom
 linker scripts.
 
 
-Baremetal Applications
+Baremetal applications
 ----------------------
 
 Baremetal applications are loaded into target memory by debugger or by
@@ -37,7 +37,7 @@ to execute code from non-existing memory, or an unpredictable behaviour if
 application has overwritten something else.
 
 
-Default Linker Emulation
+Default linker emulation
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Default linker emulation for ARC baremetal toolchain would put all loadable ELF
@@ -60,7 +60,7 @@ em6_dmips, em6_gp, em6_mini, em7d_nrg, em7d_voice_audio, em11d_nrg,
 em11d_voice_audio, hs36_base, hs36, hs38_base, hs38, hs38_full, hs38_slc_full.
 
 
-arcv2elfx Linker Emulation
+arcv2elfx linker emulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 For cases where default linker emulation is not enough there is an ``arcv2elfx``

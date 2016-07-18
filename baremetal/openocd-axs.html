@@ -31,7 +31,7 @@
 
   
     <link rel="top" title="GNU Toolchain for ARC User Manual 2016.09 documentation" href="../index.html"/>
-        <link rel="up" title="Building Baremetal Applications" href="index.html"/>
+        <link rel="up" title="Building baremetal applications" href="index.html"/>
         <link rel="next" title="Using Ashling Opella-XD GDB server with AXS SDP" href="ashling-axs.html"/>
         <link rel="prev" title="Using GNU Toolchain to Debug Applications on EM Starter Kit" href="em-starter-kit.html"/> 
 
@@ -83,16 +83,16 @@
             
             
                 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="index.html">Building Baremetal Applications</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html#debugging-baremetal-applications">Debugging Baremetal Applications</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Building baremetal applications</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html#debugging-baremetal-applications">Debugging baremetal applications</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="em-starter-kit.html">Using GNU Toolchain to Debug Applications on EM Starter Kit</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Using OpenOCD with AXS SDP</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#building-an-application">Building an Application</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#board-configuration">Board Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#building-an-application">Building an application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#board-configuration">Board configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#running-openocd">Running OpenOCD</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#running-gdb">Running GDB</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#advanced-topics">Advanced Topics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#advanced-topics">Advanced topics</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#using-standalone-digilent-hs-debug-cable">Using standalone Digilent HS debug cable</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#using-openocd-with-only-one-core-in-the-jtag-chain">Using OpenOCD with only one core in the JTAG chain</a></li>
 </ul>
@@ -103,8 +103,10 @@
 <li class="toctree-l2"><a class="reference internal" href="ashling-axs.html">Using Ashling Opella-XD GDB server with AXS SDP</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../release.html">Creating Toolchain Release</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../maintainer/manual-build.html">How to Build GNU Toolchain for ARC Manually</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other/index.html">Other</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintainer/index.html">Information for Toolchain maintainers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently asked questions</a></li>
 </ul>
 
             
@@ -135,7 +137,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-          <li><a href="index.html">Building Baremetal Applications</a> &raquo;</li>
+          <li><a href="index.html">Building baremetal applications</a> &raquo;</li>
       
     <li>Using OpenOCD with AXS SDP</li>
       <li class="wy-breadcrumbs-aside">
@@ -186,7 +188,7 @@ for details.</p>
 </div>
 </div>
 <div class="section" id="building-an-application">
-<span id="label-building-an-application-axs"></span><h2>Building an Application<a class="headerlink" href="#building-an-application" title="Permalink to this headline">¶</a></h2>
+<span id="label-building-an-application-axs"></span><h2>Building an application<a class="headerlink" href="#building-an-application" title="Permalink to this headline">¶</a></h2>
 <p>To learn how to build and debug application with Eclipse IDE, please use <a class="reference external" href="https://github.com/foss-for-synopsys-dwc-arc-processors/arc_gnu_eclipse/wiki">IDE
 User Guide</a>.</p>
 <p>A memory map appropriate to the selected board should be used to link
@@ -244,7 +246,7 @@ $ arc-elf32-gcc -Wl,-marcv2elfx --specs<span class="o">=</span>nosys.specs -O2 -
 </table>
 </div>
 <div class="section" id="board-configuration">
-<h2>Board Configuration<a class="headerlink" href="#board-configuration" title="Permalink to this headline">¶</a></h2>
+<h2>Board configuration<a class="headerlink" href="#board-configuration" title="Permalink to this headline">¶</a></h2>
 <p>First it is required to set jumpers and switches on the mainboard:</p>
 <ul class="simple">
 <li>PROG_M0 (JP1508), PROG_M1 (JP1401) and BS_EN (JP1507) jumpers should be
@@ -369,7 +371,7 @@ additional GDBs and connect to the required TCP ports. Cores are controlled
 independently from each other.</p>
 </div>
 <div class="section" id="advanced-topics">
-<h2>Advanced Topics<a class="headerlink" href="#advanced-topics" title="Permalink to this headline">¶</a></h2>
+<h2>Advanced topics<a class="headerlink" href="#advanced-topics" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="using-standalone-digilent-hs-debug-cable">
 <h3>Using standalone Digilent HS debug cable<a class="headerlink" href="#using-standalone-digilent-hs-debug-cable" title="Permalink to this headline">¶</a></h3>
 <p>It is possible to use standalone Digilent HS1 or HS2 debug cable instead of the

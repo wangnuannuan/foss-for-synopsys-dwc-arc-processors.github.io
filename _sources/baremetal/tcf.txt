@@ -4,7 +4,7 @@
 Using TCF
 =========
 
-General Description
+General sescription
 -------------------
 
 Currently GNU toolchain has a partial support for :abbr:`TCF (target
@@ -51,7 +51,7 @@ options, but that will not change standard library to a matching build - it
 still will use standard library build selected by ``-mcpu=`` value.
 
 
-Compiler Options
+Compiler options
 ----------------
 
 GCC options are stored in the ``gcc_compiler`` section of TCF. These options
@@ -78,7 +78,7 @@ has a higher precedence then options in TCF, so it is possible to use TCF as a
 "baseline" and then modify if needed.
 
 
-Memory Map
+Memory map
 ----------
 
 Please refer to main page about GNU linker for ARC :doc:`linker` for more
@@ -130,7 +130,7 @@ closely-coupled memories then it is highly advised to use memory map (embedded
 into TCF or manually written).
 
 
-C Preprocessor Defines
+C preprocessor defines
 ----------------------
 
 TCF section ``C_defines`` contains preprocessor defines that specify presence of
@@ -139,7 +139,7 @@ Registers. :program:`arc-elf32-tcf-gcc` wrapper extracts content of this section
 temporary file and includes into compiled files via ``-include`` option of GCC.
 
 
-arc-elf32-tcf-gcc Options
+arc-elf32-tcf-gcc options
 -------------------------
 
 .. program:: arc-elf32-tcf-gcc

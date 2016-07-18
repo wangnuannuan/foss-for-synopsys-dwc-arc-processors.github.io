@@ -1,4 +1,4 @@
-Building Baremetal Applications
+Building baremetal applications
 ===============================
 
 .. toctree::
@@ -9,7 +9,7 @@ Building Baremetal Applications
    tcf.rst
 
 
-Debugging Baremetal Applications
+Debugging baremetal applications
 ================================
 
 .. toctree::

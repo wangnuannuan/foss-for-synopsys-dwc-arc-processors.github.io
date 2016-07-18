@@ -31,7 +31,7 @@
 
   
     <link rel="top" title="GNU Toolchain for ARC User Manual 2016.09 documentation" href="../index.html"/>
-        <link rel="up" title="Building Baremetal Applications" href="index.html"/>
+        <link rel="up" title="Building baremetal applications" href="index.html"/>
         <link rel="next" title="Using GNU Toolchain to Debug Applications on EM Starter Kit" href="em-starter-kit.html"/>
         <link rel="prev" title="Linker scripts and memory.x files" href="linker.html"/> 
 
@@ -83,23 +83,25 @@
             
             
                 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Building Baremetal Applications</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Building baremetal applications</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="hostlink.html">Hostlink and libgloss</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gcc-mcpu.html">Understanding GCC -mcpu option</a></li>
 <li class="toctree-l2"><a class="reference internal" href="linker.html">Linker scripts and memory.x files</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Using TCF</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#general-description">General Description</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#compiler-options">Compiler Options</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#memory-map">Memory Map</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#c-preprocessor-defines">C Preprocessor Defines</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#arc-elf32-tcf-gcc-options">arc-elf32-tcf-gcc Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#general-sescription">General sescription</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compiler-options">Compiler options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#memory-map">Memory map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#c-preprocessor-defines">C preprocessor defines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#arc-elf32-tcf-gcc-options">arc-elf32-tcf-gcc options</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="index.html#debugging-baremetal-applications">Debugging Baremetal Applications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../release.html">Creating Toolchain Release</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../maintainer/manual-build.html">How to Build GNU Toolchain for ARC Manually</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#debugging-baremetal-applications">Debugging baremetal applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other/index.html">Other</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintainer/index.html">Information for Toolchain maintainers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently asked questions</a></li>
 </ul>
 
             
@@ -130,7 +132,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-          <li><a href="index.html">Building Baremetal Applications</a> &raquo;</li>
+          <li><a href="index.html">Building baremetal applications</a> &raquo;</li>
       
     <li>Using TCF</li>
       <li class="wy-breadcrumbs-aside">
@@ -148,8 +150,8 @@
             
   <div class="section" id="using-tcf">
 <span id="index-0"></span><h1>Using TCF<a class="headerlink" href="#using-tcf" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="general-description">
-<h2>General Description<a class="headerlink" href="#general-description" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="general-sescription">
+<h2>General sescription<a class="headerlink" href="#general-sescription" title="Permalink to this headline">¶</a></h2>
 <p>Currently GNU toolchain has a partial support for <abbr title="target configuration files">TCF</abbr>, however it is not complete and in particular scenarios
 TCFs cannot be used as-is.</p>
 <p>If you are using Eclipse IDE for ARC, please refer to a <a class="reference external" href="https://github.com/foss-for-synopsys-dwc-arc-processors/arc_gnu_eclipse/wiki/Building-User-Guide">respective page on its
@@ -189,7 +191,7 @@ options, but that will not change standard library to a matching build - it
 still will use standard library build selected by <code class="docutils literal"><span class="pre">-mcpu=</span></code> value.</p>
 </div>
 <div class="section" id="compiler-options">
-<h2>Compiler Options<a class="headerlink" href="#compiler-options" title="Permalink to this headline">¶</a></h2>
+<h2>Compiler options<a class="headerlink" href="#compiler-options" title="Permalink to this headline">¶</a></h2>
 <p>GCC options are stored in the <code class="docutils literal"><span class="pre">gcc_compiler</span></code> section of TCF. These options
 are passed to GCC as-is. These are &#8220;machine-specific&#8221; options applicable only
 to ARC, and which define configuration of target architecture - which of the
@@ -212,7 +214,7 @@ has a higher precedence then options in TCF, so it is possible to use TCF as a
 &#8220;baseline&#8221; and then modify if needed.</p>
 </div>
 <div class="section" id="memory-map">
-<h2>Memory Map<a class="headerlink" href="#memory-map" title="Permalink to this headline">¶</a></h2>
+<h2>Memory map<a class="headerlink" href="#memory-map" title="Permalink to this headline">¶</a></h2>
 <p>Please refer to main page about GNU linker for ARC <a class="reference internal" href="linker.html"><em>Linker scripts and memory.x files</em></a> for more
 details.</p>
 <p>TCF doesn&#8217;t contain a linker script for GNU linker in the strict meaning of
@@ -258,14 +260,14 @@ closely-coupled memories then it is highly advised to use memory map (embedded
 into TCF or manually written).</p>
 </div>
 <div class="section" id="c-preprocessor-defines">
-<h2>C Preprocessor Defines<a class="headerlink" href="#c-preprocessor-defines" title="Permalink to this headline">¶</a></h2>
+<h2>C preprocessor defines<a class="headerlink" href="#c-preprocessor-defines" title="Permalink to this headline">¶</a></h2>
 <p>TCF section <code class="docutils literal"><span class="pre">C_defines</span></code> contains preprocessor defines that specify presence of
 various hardware optional extensions and values of Build Configuration
 Registers. <strong class="program">arc-elf32-tcf-gcc</strong> wrapper extracts content of this section into
 temporary file and includes into compiled files via <code class="docutils literal"><span class="pre">-include</span></code> option of GCC.</p>
 </div>
 <div class="section" id="arc-elf32-tcf-gcc-options">
-<h2>arc-elf32-tcf-gcc Options<a class="headerlink" href="#arc-elf32-tcf-gcc-options" title="Permalink to this headline">¶</a></h2>
+<h2>arc-elf32-tcf-gcc options<a class="headerlink" href="#arc-elf32-tcf-gcc-options" title="Permalink to this headline">¶</a></h2>
 <dl class="option">
 <dt id="cmdoption-arc-elf32-tcf-gcc--compiler">
 <code class="descname">--compiler</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-arc-elf32-tcf-gcc--compiler" title="Permalink to this definition">¶</a></dt>

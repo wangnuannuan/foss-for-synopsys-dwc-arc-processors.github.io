@@ -45,7 +45,7 @@ Toolchain components and allows to select which ones to install.
 
 .. _label_building-an-application-axs:
 
-Building an Application
+Building an application
 -----------------------
 
 To learn how to build and debug application with Eclipse IDE, please use `IDE
@@ -88,7 +88,7 @@ For example to build an application for AXS103/HS36::
    +-----+--------+---------------------------------------------------------+
 
 
-Board Configuration
+Board configuration
 -------------------
 
 First it is required to set jumpers and switches on the mainboard:
@@ -220,7 +220,7 @@ additional GDBs and connect to the required TCP ports. Cores are controlled
 independently from each other.
 
 
-Advanced Topics
+Advanced topics
 ---------------
 
 Using standalone Digilent HS debug cable

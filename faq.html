@@ -1,0 +1,332 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Frequently asked questions &mdash; GNU Toolchain for ARC User Manual 2016.09 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="GNU Toolchain for ARC User Manual 2016.09 documentation" href="index.html"/>
+        <link rel="prev" title="How to Build GNU Toolchain for ARC Manually" href="maintainer/manual-build.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> GNU Toolchain for ARC User Manual
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2016.09
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="baremetal/index.html">Building baremetal applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="baremetal/index.html#debugging-baremetal-applications">Debugging baremetal applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux/index.html">Linux applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other/index.html">Other</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maintainer/index.html">Information for Toolchain maintainers</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Frequently asked questions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#compiling">Compiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#debugging">Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#arc-development-systems">ARC Development Systems</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">GNU Toolchain for ARC User Manual</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Frequently asked questions</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/faq.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="frequently-asked-questions">
+<h1>Frequently asked questions<a class="headerlink" href="#frequently-asked-questions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="compiling">
+<h2>Compiling<a class="headerlink" href="#compiling" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first"><strong>Q: How to change heap and stack size in baremetal applications?</strong></p>
+<p>A: To change size of heap in baremetal applications the following option
+should be specified to the linker: <code class="docutils literal"><span class="pre">--defsym=__DEFAULT_HEAP_SIZE=${SIZE}</span></code>,
+where <code class="docutils literal"><span class="pre">${SIZE}</span></code> is desired heap size, in bytes. It also possible to use
+size suffixes, like <code class="docutils literal"><span class="pre">k</span></code> and <code class="docutils literal"><span class="pre">m</span></code> to specify size in kilobytes and
+megabytes respectively. For stack size respective option is
+<code class="docutils literal"><span class="pre">--defsym=__DEFAULT_STACK_SIZE=${STACK_SIZE}</span></code>. Note that those are linker
+commands - they are valid only when passed to &#8220;ld&#8221; application, if gcc driver
+is used for linking, then those options should be prefixed with <code class="docutils literal"><span class="pre">-Wl</span></code>. For
+example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>$ arc-elf32-gcc -Wl,--defsym=__DEFAULT_HEAP_SIZE=256m \
+  -Wl,--defsym=__DEFAULT_STACK_SIZE=1024m --specs=nosys.specs \
+  hello.o -o hello.bin
+</pre></div>
+</div>
+<p>Those options are valid only when default linker script is used. If custom
+linker script is used, then effective way to change stack/heap size depends
+on properties of that linker script - it might be the same, or it might be
+different.</p>
+</li>
+<li><p class="first"><strong>Q: Linker fails with error: ``undefined reference to `_exit&#8217;``. Among other
+possible functions are also _sbrk, _write, _close, _lseek, _read, _fstat,
+_isatty.</strong></p>
+<p>A: Function <code class="docutils literal"><span class="pre">_exit</span></code> is not provided by the libc itself, but must be
+provided by the libgloss, which is basically a BSP (board support package).
+Currently two libgloss implementations are provided for ARC: generic libnosys
+and libnsim which implements nSIM IO hostlink. In general libnosys is more
+suitable for hardware targets that doesn&#8217;t have hostlink support, however
+libnsim has a distinct advantage that on exit from application and in case of
+many errors it will halt the core, while libnosys will cause it to infinitely
+loop on one place. To use libnsim, pass option <code class="docutils literal"><span class="pre">--specs=nsim.specs</span></code> to gcc
+at link stage. If you are a chip or board developer, then it is likely that
+you would want to implement libgloss specific to your hardware.</p>
+</li>
+<li><p class="first"><strong>Q: I&#8217;ve opened hs38.tcf and gcc options include ``-mcpu=hs34``. Why hs34
+instead of hs38?</strong></p>
+<p>A: Possible values of <code class="docutils literal"><span class="pre">-mcpu=</span></code> options are orthogonal to names of IPlib
+templates and respective TCF. GCC option <code class="docutils literal"><span class="pre">-mcpu=</span></code> supports both <code class="docutils literal"><span class="pre">hs34</span></code>
+and <code class="docutils literal"><span class="pre">hs38</span></code> values, but they are different - <code class="docutils literal"><span class="pre">hs38</span></code> enables more features,
+like <code class="docutils literal"><span class="pre">-mll64</span></code> which are not present in <code class="docutils literal"><span class="pre">hs34</span></code>. ARC HS IPlib template hs38
+doesn&#8217;t contain double-word load/store, therefore <code class="docutils literal"><span class="pre">-mcpu=hs38</span></code> is not
+compatible with this template. <code class="docutils literal"><span class="pre">-mcpu=hs34</span></code>, however, is compatible and
+that is why TCF generator uses this value. See <a class="reference internal" href="baremetal/gcc-mcpu.html"><em>Understanding GCC -mcpu option</em></a> for
+a full list of possible <code class="docutils literal"><span class="pre">-mcpu</span></code> values and what IPlibrary templates they
+correspond to.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="debugging">
+<h2>Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first"><strong>Q: There are ``can&#8217;t resolve symbol`` error messages when using gdbserver
+on Linux for ARC target</strong></p>
+<p>A: This error message might appear when gdbserver is a statically linked
+application. Even though it is linked statically, gdbserver still opens
+<code class="docutils literal"><span class="pre">libthread_db.so</span></code> library using <code class="docutils literal"><span class="pre">dlopen()</span></code> function. There is a circular
+dependency here, as <code class="docutils literal"><span class="pre">libthread_db.so</span></code> expects several dynamic symbols to be
+already defined in the loading application (gdbserver in this case). However
+statically linked gdbserver doesn&#8217;t export those dynamic symbols, therefore
+<code class="docutils literal"><span class="pre">dlopen()</span></code> invocation causes those error messages. In practice there
+haven&#8217;t been noticed any downside of this, even when debugging applications
+with threads, however that was tried only with simple test cases. To fix this
+issue, either rebuild gdbserver as a dynamically linked application, or pass
+option <code class="docutils literal"><span class="pre">--with-libthread-db=-lthread_db</span></code> to <code class="docutils literal"><span class="pre">configure</span></code> script of script.
+In this case gdbserver will link with <code class="docutils literal"><span class="pre">libthread_db</span></code> statically, instead of
+opening it with <code class="docutils literal"><span class="pre">dlopen()</span></code> and dependency on symbols will be resolved at
+link time.</p>
+</li>
+<li><p class="first"><strong>Q: GDB prints an error message that ``XML support has been disabled at
+compile time``.</strong></p>
+<p>A: GDB uses Expat library to parse XML files. Support of XML files is
+optional for GDB, therefore it can be built without Expat available, however
+for ARC it usually required to have support of XML to read target description
+files. Mentioned error message might happen if GDB has been built without
+available development files for the Expat. On Linux systems those should be
+available as package in package manager. If Expat development files are not
+available for some reason, then pass option <code class="docutils literal"><span class="pre">--no-system-expat</span></code> to
+<code class="docutils literal"><span class="pre">build-all.sh</span></code> - with this option script will download and build Expat on
+it&#8217;s own. That is especially useful when cross compiling for Windows hosts
+using Mingw, if development files of Expat are not available in the used
+Mingw installation.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="arc-development-systems">
+<h2>ARC Development Systems<a class="headerlink" href="#arc-development-systems" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first"><strong>Q: How to reset ARC SDP board programmatically (without pressing &#8220;Reset&#8221;
+button)?</strong></p>
+<p>A: It is possible to reset ARC SDP board without touching the physical button
+on the board. This can be done using the special OpenOCD openocd:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>$ openocd -f test/arc/reset_sdp.tcl
+</pre></div>
+</div>
+<p>Note that OpenOCD will crash with a segmentation fault after executing this
+script - this is expected and happens only after board has been reset, but
+that means that other OpenOCD scripts cannot be used in chain with
+<code class="docutils literal"><span class="pre">reset_sdp.tcl</span></code>, first OpenOCD should be invoked to reset the board, second
+it should be invoked to run as an actual debugger.</p>
+</li>
+<li><p class="first"><strong>Q: Can I program FPGA&#8217;s in ARC EM Starter Kit or in ARC SDP?</strong></p>
+<p>OpenOCD has some support for programming of FPGA&#8217;s over JTAG, however it is
+not officially supported for ARC development systems.</p>
+</li>
+<li><p class="first"><strong>Q: When debugging ARC EM core in AXS101 with Ashling Opella-XD and
+GDBserver I get an error messages and GDB shows that all memory and registers
+are zeroes</strong></p>
+<p>A: Decrease a JTAG frequency to no more than 5MHz using an Ashling GDBserver
+option <code class="docutils literal"><span class="pre">--jtag-frequency</span></code>. This particular problem can be noted if
+GDBserver prints:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>Error: Core is running (unexpected), attempting to halt...
+Error: Core is running (unexpected), attempting to halt...
+Error: Unable to halt core
+</pre></div>
+</div>
+<p>While GDB shows that whole memory is just zeroes and all register values are
+also zeroes.</p>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="maintainer/manual-build.html" class="btn btn-neutral" title="How to Build GNU Toolchain for ARC Manually" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Synopsys.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2016.09',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

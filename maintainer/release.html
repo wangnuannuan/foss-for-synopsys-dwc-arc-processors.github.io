@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Creating Toolchain eelease &mdash; GNU Toolchain for ARC User Manual 2016.09 documentation</title>
+  <title>Creating toolchain release &mdash; GNU Toolchain for ARC User Manual 2016.09 documentation</title>
   
 
   
@@ -88,7 +88,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../other/index.html">Other</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Information for Toolchain maintainers</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="">Creating Toolchain eelease</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Creating toolchain release</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#building-prerequisites">Building prerequisites</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#eclipse-plugin-for-arc">Eclipse plugin for ARC</a></li>
@@ -135,7 +135,7 @@
       
           <li><a href="index.html">Information for Toolchain maintainers</a> &raquo;</li>
       
-    <li>Creating Toolchain eelease</li>
+    <li>Creating toolchain release</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -149,8 +149,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="creating-toolchain-eelease">
-<h1>Creating Toolchain eelease<a class="headerlink" href="#creating-toolchain-eelease" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="creating-toolchain-release">
+<h1>Creating toolchain release<a class="headerlink" href="#creating-toolchain-release" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal"><span class="pre">release.mk</span></code> is a makefile to create prebuilt packages of GNU Toolchain for
@@ -310,6 +310,20 @@ be <code class="docutils literal"><span class="pre">n</span></code>.</p>
 depends on <span class="target" id="index-3"></span><a class="reference internal" href="#envvar-ENABLE_OPENOCD"><code class="xref std std-envvar docutils literal"><span class="pre">ENABLE_OPENOCD</span></code></a>, which causes source code to be cloned
 for OpenOCD. OpenOCD for Windows build will download and build libusb library
 and is a prerequisite for IDE for Windows build.</p>
+<dl class="docutils">
+<dt>Possible values</dt>
+<dd><code class="docutils literal"><span class="pre">y</span></code> and <code class="docutils literal"><span class="pre">n</span></code></dd>
+<dt>Default value</dt>
+<dd><code class="docutils literal"><span class="pre">y</span></code></dd>
+</dl>
+</dd></dl>
+
+<dl class="envvar">
+<dt id="envvar-ENABLE_PDF_DOCS">
+<code class="descname">ENABLE_PDF_DOCS</code><a class="headerlink" href="#envvar-ENABLE_PDF_DOCS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether to build Toolchain PDF documentation. This affects only the
+&#8220;toolchain&#8221; repository - PDF documents from gcc, binutils, etc are always
+created, regardless of this option.</p>
 <dl class="docutils">
 <dt>Possible values</dt>
 <dd><code class="docutils literal"><span class="pre">y</span></code> and <code class="docutils literal"><span class="pre">n</span></code></dd>

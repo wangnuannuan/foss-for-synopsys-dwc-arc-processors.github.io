@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>How to run DejaGNU tests for ARC toolchain &mdash; GNU Toolchain for ARC User Manual 2016.09 documentation</title>
+  <title>How to run DejaGNU tests for ARC toolchain &mdash; GNU Toolchain for ARC User Manual 2017.03 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="GNU Toolchain for ARC User Manual 2016.09 documentation" href="../index.html"/>
+    <link rel="top" title="GNU Toolchain for ARC User Manual 2017.03 documentation" href="../index.html"/>
         <link rel="up" title="Other" href="index.html"/>
         <link rel="next" title="Information for Toolchain maintainers" href="../maintainer/index.html"/>
         <link rel="prev" title="Other" href="index.html"/> 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2016.09
+                2017.03
               </div>
             
           
@@ -92,6 +92,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#preparing">Preparing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#running">Running</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#compatibility-tests">Compatibility tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#arc-specific-board-options">ARC-specific board options</a></li>
 </ul>
 </li>
 </ul>
@@ -252,7 +253,7 @@ properly, then running is as simple as invoking it.</p>
 <h2>Compatibility tests<a class="headerlink" href="#compatibility-tests" title="Permalink to this headline">¶</a></h2>
 <p>GCC contains a set of compatibility tests named <code class="docutils literal"><span class="pre">compat.exp</span></code>. It allows to test compatibility of ARC GNU gcc compiler and proprietary Synopsys MetaWare ccac compiler for ARC EM and ARC HS targets. If you want to run these tests it is necessary to configure additional variables in <code class="docutils literal"><span class="pre">site.exp</span></code> file:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">set</span> <span class="pre">is_gcc_compat_suite</span> <span class="pre">&quot;0&quot;</span></code> - enable support of compatibility tests from
+<li><code class="docutils literal"><span class="pre">set</span> <span class="pre">is_gcc_compat_suite</span> <span class="pre">&quot;1&quot;</span></code> - enable support of compatibility tests from
 gcc.</li>
 <li><code class="docutils literal"><span class="pre">set</span> <span class="pre">ALT_CC_UNDER_TEST</span> <span class="pre">&quot;path/to/ccac&quot;</span></code></li>
 <li><code class="docutils literal"><span class="pre">set</span> <span class="pre">ALT_CXX_UNDER_TEST</span> <span class="pre">&quot;path/to/ccac&quot;</span></code></li>
@@ -275,6 +276,29 @@ configuration and set these environment variables in <code class="docutils liter
 <li><code class="docutils literal"><span class="pre">GCC_COMPAT_CCAC_OPTIONS</span></code> - options for ccac.</li>
 </ul>
 </div>
+<div class="section" id="arc-specific-board-options">
+<h2>ARC-specific board options<a class="headerlink" href="#arc-specific-board-options" title="Permalink to this headline">¶</a></h2>
+<p>Following options are supported by ARC DejaGNU scripts and are usually set in
+board files, for example in <code class="docutils literal"><span class="pre">dejagnu/baseboard/arc-sim-nsimdrv.exp</span></code>.</p>
+<dl class="docutils">
+<dt><code class="docutils literal"><span class="pre">arc,gdbserver_prog</span></code></dt>
+<dd>Path to GDB server to use with <code class="docutils literal"><span class="pre">arc-nsim.exp</span></code>.</dd>
+<dt><code class="docutils literal"><span class="pre">arc,gdbserver_args</span></code></dt>
+<dd>Argument to pass to GDB server used in <code class="docutils literal"><span class="pre">arc-nsim.exp</span></code>.</dd>
+<dt><code class="docutils literal"><span class="pre">arc,hostlink</span></code></dt>
+<dd>Hostlink type to use. Can be <code class="docutils literal"><span class="pre">nsim</span></code> or empty/not set.</dd>
+<dt><code class="docutils literal"><span class="pre">arc,is_gcc_compat_suite</span></code></dt>
+<dd>Whether this is a GCC <em>compat</em> testsuite or not. Boolean value.</dd>
+<dt><code class="docutils literal"><span class="pre">arc,openocd_prog</span></code></dt>
+<dd>Path to OpenOCD application binary.</dd>
+<dt><code class="docutils literal"><span class="pre">arc,openocf_cfg</span></code></dt>
+<dd>OpenOCD configuration file. Passed to <code class="docutils literal"><span class="pre">openocd</span></code> via option <code class="docutils literal"><span class="pre">-s</span></code> as-is.</dd>
+<dt><code class="docutils literal"><span class="pre">arc,openocd_log</span></code></dt>
+<dd>Path to logfile for OpenoCD.</dd>
+<dt><code class="docutils literal"><span class="pre">arc,openocd_log_level</span></code></dt>
+<dd>Level of OpenOCD verbosity. Integer from 0 to 3 inclusive.</dd>
+</dl>
+</div>
 </div>
 
 
@@ -296,7 +320,7 @@ configuration and set these environment variables in <code class="docutils liter
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Synopsys.
+        &copy; Copyright 2016-2017, Synopsys.
 
     </p>
   </div>
@@ -318,7 +342,7 @@ configuration and set these environment variables in <code class="docutils liter
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2016.09',
+            VERSION:'2017.03',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

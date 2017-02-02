@@ -1,0 +1,448 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Building User Guide &mdash; GNU Toolchain for ARC User Manual 2017.03 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="GNU Toolchain for ARC User Manual 2017.03 documentation" href="../index.html"/>
+        <link rel="up" title="ARC GNU IDE" href="index.html"/>
+        <link rel="next" title="Building Linux uClibc applications" href="building-linux-uclibc-applications.html"/>
+        <link rel="prev" title="ARC Project Templates" href="arc-project-templates.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> GNU Toolchain for ARC User Manual
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2017.03
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../baremetal/index.html">Building baremetal applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../baremetal/index.html#debugging-baremetal-applications">Debugging baremetal applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other/index.html">Other</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ARC GNU IDE</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#creating-and-building-an-application">Creating and building an application</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="arc-project-templates.html">ARC Project Templates</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Building User Guide</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#project-build-settings">Project Build Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#target-processor-page">Target Processor Page</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cpu-option">CPU option</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#other-options-and-tcf">Other options and TCF</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="building-linux-uclibc-applications.html">Building Linux uClibc applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="how-to-use-custom-toolchain.html">How to Use Custom Toolchain</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#debugging">Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#miscellaneous">Miscellaneous</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../maintainer/index.html">Information for Toolchain maintainers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently asked questions</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">GNU Toolchain for ARC User Manual</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">ARC GNU IDE</a> &raquo;</li>
+      
+    <li>Building User Guide</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/ide/building-user-guide.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="building-user-guide">
+<span id="id1"></span><h1>Building User Guide<a class="headerlink" href="#building-user-guide" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="project-build-settings">
+<h2>Project Build Settings<a class="headerlink" href="#project-build-settings" title="Permalink to this headline">¶</a></h2>
+<p>To see your project build settings, right click on your project and select
+<strong>Properties</strong> from the pop-up menu. In the appeared dialog choose
+<strong>C/C++ Build &gt; Settings</strong>, then select <strong>Tool Settings</strong> tab.</p>
+<div class="figure" id="id2">
+<img alt="../_images/properties.png" src="../_images/properties.png" />
+<p class="caption"><span class="caption-text">Project Build Settings page</span></p>
+</div>
+<p>At the left of the tab there is a list of tools which are used to build your
+project and <strong>Target Processor</strong>, <strong>Debugging</strong> and <strong>Additional Tools</strong> pages.
+For each of the listed tools there are some pages where you can set properties
+for these tools.</p>
+</div>
+<div class="section" id="target-processor-page">
+<h2>Target Processor Page<a class="headerlink" href="#target-processor-page" title="Permalink to this headline">¶</a></h2>
+<p>On this page there are properties that describe your target. These properties
+are different for different processors.</p>
+<div class="figure" id="id3">
+<img alt="../_images/hs_target_options.png" src="../_images/hs_target_options.png" />
+<p class="caption"><span class="caption-text">Target Processor Page for ARC HS</span></p>
+</div>
+</div>
+<div class="section" id="cpu-option">
+<h2>CPU option<a class="headerlink" href="#cpu-option" title="Permalink to this headline">¶</a></h2>
+<p>CPU option for ARC 600 and ARC 700 has only one value, but for ARC EM there
+are several possible values: <code class="docutils literal"><span class="pre">arcem</span></code>, <code class="docutils literal"><span class="pre">em</span></code>, <code class="docutils literal"><span class="pre">em4</span></code>, <code class="docutils literal"><span class="pre">em4_dmips</span></code>, <code class="docutils literal"><span class="pre">em4_fpus</span></code>
+and <code class="docutils literal"><span class="pre">em4_fpuda</span></code>. Possible values for ARC HS CPU are <code class="docutils literal"><span class="pre">archs</span></code>, <code class="docutils literal"><span class="pre">hs</span></code>, <code class="docutils literal"><span class="pre">hs34</span></code>,
+<code class="docutils literal"><span class="pre">hs38</span></code> and <code class="docutils literal"><span class="pre">hs38_linux</span></code>. For each of these values there are precompiled standard
+libraries that use some other target options. For example, if you choose <code class="docutils literal"><span class="pre">hs34</span></code>
+as you CPU, standard library that uses atomic functions and multiply
+option &#8220;mpy&#8221; will be used. Values of these options are set in IDE when CPU is
+selected and can not be changed to weaker values without changing CPU. For
+example, if DP FPU is selected as a result of selecting CPU, you can not change
+it to any of SP FPU values or &#8220;None&#8221;, but you can change it to DP FPU with extensions.</p>
+<div class="figure" id="id4">
+<img alt="../_images/hs34_selected.png" src="../_images/hs34_selected.png" />
+<p class="caption"><span class="caption-text">ARC HS Target Processor Page with <code class="docutils literal"><span class="pre">hs34</span></code> selected as CPU value</span></p>
+</div>
+<p>Here are the options that are required for each of CPU values:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="10%" />
+<col width="9%" />
+<col width="24%" />
+<col width="16%" />
+<col width="13%" />
+<col width="16%" />
+<col width="8%" />
+<col width="4%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">CPU</th>
+<th class="head">Multiply</th>
+<th class="head">FPU</th>
+<th class="head">Barrel shifter</th>
+<th class="head">Code density</th>
+<th class="head">Integer divide</th>
+<th class="head">Bitscan</th>
+<th class="head">Swap</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>arcem</td>
+<td>wlh1</td>
+<td>none</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="row-odd"><td>em</td>
+<td>none</td>
+<td>none</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="row-even"><td>em4</td>
+<td>none</td>
+<td>none</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="row-odd"><td>em4_dmips</td>
+<td>wlh1</td>
+<td>none</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+</tr>
+<tr class="row-even"><td>em4_fpus</td>
+<td>wlh1</td>
+<td>SP FPU</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+</tr>
+<tr class="row-odd"><td>em4_fpuda</td>
+<td>wlh1</td>
+<td>FPU with double assist</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="12%" />
+<col width="31%" />
+<col width="17%" />
+<col width="20%" />
+<col width="7%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">CPU</th>
+<th class="head">Multiply</th>
+<th class="head">FPU</th>
+<th class="head">Integer divide</th>
+<th class="head">64-bit load/store</th>
+<th class="head">Atomic</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>archs</td>
+<td>mpy</td>
+<td>none</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+</tr>
+<tr class="row-odd"><td>hs</td>
+<td>none</td>
+<td>none</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="row-even"><td>hs34</td>
+<td>mpy</td>
+<td>none</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+</tr>
+<tr class="row-odd"><td>hs38</td>
+<td>plus_qmacw</td>
+<td>none</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+</tr>
+<tr class="row-even"><td>hs38_linux</td>
+<td>plus_qmacw</td>
+<td>DP FPU with all extensions</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Note that if you use TCF to provide target options, there are no checks that
+option values are consistent with CPU and you can specify there values that
+are weaker than CPU value requires. So please be careful when editing TCFs.</p>
+</div>
+</div>
+<div class="section" id="other-options-and-tcf">
+<h2>Other options and TCF<a class="headerlink" href="#other-options-and-tcf" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Endianness is set when you choose a toolchain for your project and can not be
+changed.</li>
+<li>Other architecture options you can either set manually or choose a TCF file
+for used CPU core (available only for ARC EM and HS), which will set these options
+automatically. The only option that is not set automatically by selecting
+a TCF file is <strong>ABI selection</strong> option, which is available only for ARC HS processors.</li>
+</ul>
+<div class="figure" id="id5">
+<img alt="../_images/target_tcf_selected.png" src="../_images/target_tcf_selected.png" />
+<p class="caption"><span class="caption-text">Target Processor Page for ARC HS with TCF checkbox selected</span></p>
+</div>
+<p>It is recommended to use TCF files, because they are generated from the Build
+Configuration Registers and thus most reliably describe target core.
+TCF files are provided by your chip designer.</p>
+<p>To see which options are set automatically if TCF is chosen, you can select a
+tool from the list on the left of the dialog and see the list of options to be
+passed to this tool in the <strong>All options</strong> field.</p>
+<div class="figure" id="id6">
+<img alt="../_images/compiler_options_list.png" src="../_images/compiler_options_list.png" />
+<p class="caption"><span class="caption-text">List of all the options to be passed to compilerx</span></p>
+</div>
+<p>If <strong>TCF</strong> is selected, <strong>Use memory map from TCF</strong> checkbox becomes enabled.
+If you check <strong>Use memory map from TCF</strong> box, memory map from TCF file will be
+passed to the linker.</p>
+<p>Note that templates from <strong>AXS10x Projects</strong> and <strong>EM Starter Kit Projects</strong>
+already contain memory maps that are used if no other is provided. However,
+this is true only for <strong>Hello World for EM SK</strong> and <strong>Empty Project For</strong>
+templates, but not <strong>Empty Project</strong> ones. <strong>Empty Project</strong> templates are
+generated automatically by Eclipse and do not contain any specific information.</p>
+<div class="figure" id="id7">
+<img alt="../_images/memory_map.png" src="../_images/memory_map.png" />
+<p class="caption"><span class="caption-text">Memory map for <strong>Hello World for EM SK 2.1 Project</strong></span></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="building-linux-uclibc-applications.html" class="btn btn-neutral float-right" title="Building Linux uClibc applications" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="arc-project-templates.html" class="btn btn-neutral" title="ARC Project Templates" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2017, Synopsys.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2017.03',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

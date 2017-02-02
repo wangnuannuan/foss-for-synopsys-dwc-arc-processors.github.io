@@ -1,0 +1,349 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting Started with nSIM &mdash; GNU Toolchain for ARC User Manual 2017.03 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="GNU Toolchain for ARC User Manual 2017.03 documentation" href="../index.html"/>
+        <link rel="up" title="ARC GNU IDE" href="index.html"/>
+        <link rel="next" title="ARC Project Templates" href="arc-project-templates.html"/>
+        <link rel="prev" title="Getting Started with EM Starter Kit" href="getting-started-with-em-starter-kit.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> GNU Toolchain for ARC User Manual
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2017.03
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../baremetal/index.html">Building baremetal applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../baremetal/index.html#debugging-baremetal-applications">Debugging baremetal applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other/index.html">Other</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ARC GNU IDE</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#getting-started">Getting Started</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="getting-started-with-em-starter-kit.html">Getting Started with EM Starter Kit</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Getting Started with nSIM</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#creating-a-c-project">Creating a C project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#building-the-project">Building the project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#debugging-the-project">Debugging the project</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#creating-and-building-an-application">Creating and building an application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#debugging">Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#miscellaneous">Miscellaneous</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../maintainer/index.html">Information for Toolchain maintainers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently asked questions</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">GNU Toolchain for ARC User Manual</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">ARC GNU IDE</a> &raquo;</li>
+      
+    <li>Getting Started with nSIM</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/ide/getting-started-with-nsim.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-started-with-nsim">
+<h1>Getting Started with nSIM<a class="headerlink" href="#getting-started-with-nsim" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="creating-a-c-project">
+<h2>Creating a C project<a class="headerlink" href="#creating-a-c-project" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Select <strong>File &gt;New &gt;C Project</strong></li>
+</ol>
+<div class="figure" id="id1">
+<img alt="../_images/creating_new_c_project.png" src="../_images/creating_new_c_project.png" />
+<p class="caption"><span class="caption-text">Creating a new C project</span></p>
+</div>
+<p>In <strong>C Project</strong> window select <strong>Hello World C Project</strong> under <strong>ARC Cross ELF32 Target Application</strong> project type.
+On the right side of the window there is a list of available toolchains, select <strong>GNU Toolchain for ARC EM</strong>.
+If you do not see this toolchain in the list or this project type in the list of project types, make sure that ARC EM
+toolchain compiler is in the <code class="docutils literal"><span class="pre">PATH</span></code> environment variable or at <code class="docutils literal"><span class="pre">../bin/</span></code> directory relative to Eclipse executable.</p>
+<ol class="arabic simple" start="2">
+<li>Enter a project name</li>
+</ol>
+<div class="figure" id="id2">
+<img alt="../_images/c_project_creation_dialog.png" src="../_images/c_project_creation_dialog.png" />
+<p class="caption"><span class="caption-text">C Project Creation Dialog</span></p>
+</div>
+<p>After that you can click <strong>Finish</strong> or you can click <strong>Next</strong> and fill in additional information about your project.</p>
+<div class="figure" id="id3">
+<img alt="../_images/c_project_creation_additional_info.png" src="../_images/c_project_creation_additional_info.png" />
+<p class="caption"><span class="caption-text">C project creation: Additional information Dialog</span></p>
+</div>
+<p>Select the desired configuration and click <strong>Finish</strong>.</p>
+<div class="figure" id="id4">
+<img alt="../_images/c_project_creation_configurations.png" src="../_images/c_project_creation_configurations.png" />
+<p class="caption"><span class="caption-text">C Project creation: Configurations Dialog</span></p>
+</div>
+<p>The resulting Hello World project created in Eclipse is:</p>
+<div class="figure" id="id5">
+<img alt="../_images/c_project_for_nsim.png" src="../_images/c_project_for_nsim.png" />
+<p class="caption"><span class="caption-text">C Project for nSIM debugging</span></p>
+</div>
+</div>
+<div class="section" id="building-the-project">
+<h2>Building the project<a class="headerlink" href="#building-the-project" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Simple &#8220;Hello world&#8221; application may be too big to fit into ICCM of a typical
+ARC core, because <code class="docutils literal"><span class="pre">printf()</span></code> function pulls in a lot of infrastructure which
+is usually not present in embedded applications. For demonstration purposes it
+is recommended to use TCF templates with an external memory instead of CCM.
+Otherwise there would be a warning from the linker during application build
+and application may not run correctly on nSIM. So, to run &#8220;Hello world&#8221;
+example it is not recommended to use any of <code class="docutils literal"><span class="pre">em4*</span></code>, <code class="docutils literal"><span class="pre">em5*</span></code>, <code class="docutils literal"><span class="pre">em9*</span></code>, or <code class="docutils literal"><span class="pre">hs34*</span></code>
+templates.</p>
+</div>
+<ol class="arabic simple">
+<li>Right click on the <cite>Hello World project</cite> and select <strong>Build Project</strong> from the pop-up menu</li>
+</ol>
+<div class="figure" id="id6">
+<img alt="../_images/building_a_project.png" src="../_images/building_a_project.png" />
+<p class="caption"><span class="caption-text">Building a Project</span></p>
+</div>
+<ol class="arabic simple" start="2">
+<li>Review the build output log in the Eclipse console tab to confirm success:</li>
+</ol>
+<div class="figure" id="id7">
+<img alt="../_images/build_output.png" src="../_images/build_output.png" />
+<p class="caption"><span class="caption-text">Build Output</span></p>
+</div>
+</div>
+<div class="section" id="debugging-the-project">
+<h2>Debugging the project<a class="headerlink" href="#debugging-the-project" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Select <strong>Debug Configurations</strong>  from the  <strong>Run</strong>  menu or by clicking on
+the down arrow next to the bug icon:</li>
+</ol>
+<div class="figure" id="id8">
+<img alt="../_images/debug_configurations.png" src="../_images/debug_configurations.png" />
+<p class="caption"><span class="caption-text">Debug Configurations</span></p>
+</div>
+<ol class="arabic simple" start="2">
+<li>Double click on the <strong>ARC C/C++ Application</strong>  or click on the top left icon
+to create a new debug configuration for the project:</li>
+</ol>
+<div class="figure" id="id9">
+<img alt="../_images/arc_debug_configurations.png" src="../_images/arc_debug_configurations.png" />
+<p class="caption"><span class="caption-text">ARC Embedded Debug Configurations</span></p>
+</div>
+<ol class="arabic simple" start="3">
+<li>Select a name for the new debug configuration (by default, it equals the
+project name followed by &#8220;Debug&#8221;).</li>
+</ol>
+<div class="figure" id="id10">
+<img alt="../_images/debug_configuration.png" src="../_images/debug_configuration.png" />
+<p class="caption"><span class="caption-text">New debug Configuration</span></p>
+</div>
+<ol class="arabic simple" start="4">
+<li>Click the <strong>Debugger</strong> tab and select <strong>Gdbserver Settings</strong> page.</li>
+</ol>
+<div class="figure" id="id11">
+<img alt="../_images/debugger_tab_default.jpg" src="../_images/debugger_tab_default.jpg" />
+<p class="caption"><span class="caption-text">Default values in the Debugger tab</span></p>
+</div>
+<p>Select <strong>nSIM</strong> in the <strong>ARC GDB Server</strong> droplist.</p>
+<div class="figure" id="id12">
+<img alt="../_images/nsim_tab.png" src="../_images/nsim_tab.png" />
+<p class="caption"><span class="caption-text">Choosing nSIM on debug tab</span></p>
+</div>
+<p>In this tab you should specify paths to nSIM executable and to a TCF file.
+nSIM has several TCF file templates in the folder <code class="docutils literal"><span class="pre">../etc/tcf/templates</span></code> relative
+to nSIM executable file. Choose <cite>em6_dmips.tcf</cite> file from templates. Then uncheck
+<strong>Use nSIM properties file?</strong> checkbox and click <strong>Apply</strong> button.</p>
+<ol class="arabic simple" start="5">
+<li>To debug application using nSIM, press &#8220;Debug&#8221; button of IDE.</li>
+</ol>
+<div class="figure" id="id13">
+<img alt="../_images/nsim_debug.png" src="../_images/nsim_debug.png" />
+<p class="caption"><span class="caption-text">Debugging with nSIM gdbserver</span></p>
+</div>
+<div class="figure" id="id14">
+<img alt="../_images/nsim_debug_window.png" src="../_images/nsim_debug_window.png" />
+<p class="caption"><span class="caption-text">Debug Window</span></p>
+</div>
+<div class="figure" id="id15">
+<img alt="../_images/nsim_output.png" src="../_images/nsim_output.png" />
+<p class="caption"><span class="caption-text">nSIM gdbserver output in console</span></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="arc-project-templates.html" class="btn btn-neutral float-right" title="ARC Project Templates" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="getting-started-with-em-starter-kit.html" class="btn btn-neutral" title="Getting Started with EM Starter Kit" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2017, Synopsys.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2017.03',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

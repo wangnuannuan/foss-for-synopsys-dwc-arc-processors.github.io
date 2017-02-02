@@ -1,0 +1,285 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Debugging with OpellaXD &mdash; GNU Toolchain for ARC User Manual 2017.03 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="GNU Toolchain for ARC User Manual 2017.03 documentation" href="../index.html"/>
+        <link rel="up" title="ARC GNU IDE" href="index.html"/>
+        <link rel="next" title="Debugging with nSIM" href="debugging-with-nsim.html"/>
+        <link rel="prev" title="How to Use OpenOCD on Windows" href="how-to-use-openocd-on-windows.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> GNU Toolchain for ARC User Manual
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2017.03
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../baremetal/index.html">Building baremetal applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../baremetal/index.html#debugging-baremetal-applications">Debugging baremetal applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other/index.html">Other</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ARC GNU IDE</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#creating-and-building-an-application">Creating and building an application</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#debugging">Debugging</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="using-debug-perspective.html">Using Debug Perspective</a></li>
+<li class="toctree-l3"><a class="reference internal" href="creating-a-debug-configuration.html">Creating a Debug Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="debugging-with-openocd.html">Debugging with OpenOCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="how-to-use-openocd-on-windows.html">How to Use OpenOCD on Windows</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Debugging with OpellaXD</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#board-configuration">Board Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#specifying-properties-for-opella-xd">Specifying properties for Opella-XD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#starting-a-debug-session">Starting a debug session</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="debugging-with-nsim.html">Debugging with nSIM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="debugging-with-custom-gdb-server.html">Debugging with Custom GDB Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="debugging-with-running-gdb-server.html">Debugging with Running GDB Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="debugging-a-big-endian-application-on-em-sk.html">Debugging a big endian Application on EM Starter Kit</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#miscellaneous">Miscellaneous</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../maintainer/index.html">Information for Toolchain maintainers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently asked questions</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">GNU Toolchain for ARC User Manual</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">ARC GNU IDE</a> &raquo;</li>
+      
+    <li>Debugging with OpellaXD</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/ide/debugging-with-opellaxd.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="debugging-with-opellaxd">
+<h1>Debugging with OpellaXD<a class="headerlink" href="#debugging-with-opellaxd" title="Permalink to this headline">¶</a></h1>
+<p>It is expected here that you have already built your application and created a
+debug configuration for it. About how to do it you can read on the following
+pages:</p>
+<ul class="simple">
+<li><a class="reference internal" href="building-user-guide.html#building-user-guide"><span>Building an Application</span></a></li>
+<li><a class="reference internal" href="creating-a-debug-configuration.html#creating-a-debug-configuration"><span>Creating a Debug Configuration</span></a></li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Opella-XD has some problems, see section <a class="reference internal" href="../baremetal/ashling-axs.html#known-issues"><span>Known issues</span></a>.</p>
+</div>
+<div class="section" id="board-configuration">
+<h2>Board Configuration<a class="headerlink" href="#board-configuration" title="Permalink to this headline">¶</a></h2>
+<p>Board should be configured mostly the same way as for OpenOCD, see <a class="reference internal" href="debugging-with-openocd.html#debugging-with-openocd-board-configuration"><span>Board Configuration</span></a>.</p>
+<p>However, it might be needed to change some jumper settings comparing to
+OpenOCD. For example, to use Opella-XD with EM Starter Kit 1.1 you should set J8 jumper.
+Refer to the User Guide of EM Starter Kit or AXC00x CPU Card you are using.</p>
+</div>
+<div class="section" id="specifying-properties-for-opella-xd">
+<h2>Specifying properties for Opella-XD<a class="headerlink" href="#specifying-properties-for-opella-xd" title="Permalink to this headline">¶</a></h2>
+<div class="figure" id="id1">
+<img alt="../_images/ashling_tab.png" src="../_images/ashling_tab.png" />
+<p class="caption"><span class="caption-text">Opella-XD on debugger tab</span></p>
+</div>
+<p>In this tab you should specify paths to your ashling executable file and two XML
+files. Both these files you can find <a class="reference external" href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/tree/arc-staging/extras/opella-xd">here</a>.
+In the <strong>Ashling XML File</strong> field you should choose one of <code class="docutils literal"><span class="pre">arc600-cpu.xml</span></code>,
+<code class="docutils literal"><span class="pre">arc700-cpu.xml</span></code>, <code class="docutils literal"><span class="pre">arc-em-cpu.xml</span></code> and <code class="docutils literal"><span class="pre">arc-hs-cpu.xml</span></code>. In the
+<strong>Target description XML file</strong> should be path to <code class="docutils literal"><span class="pre">opella-YOUR_CPU-tdesc.xml</span></code>.</p>
+<p><strong>JTAG frequency</strong> should be set to <strong>7 MHz</strong> for EM Starter Kit 2.0 and 2.1.
+For EM Starter Kit 2.2 select <strong>5 MHZ</strong>. For other hardware development systems
+leave <strong>10 MHz</strong>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Note that if you are using Opella-XD, you can not specify the core to debug,
+so you will be able to debug your application only if you have just one core
+in your JTAG chain.</p>
+</div>
+</div>
+<div class="section" id="starting-a-debug-session">
+<h2>Starting a debug session<a class="headerlink" href="#starting-a-debug-session" title="Permalink to this headline">¶</a></h2>
+<p>To debug an application using OpenOCD, press <strong>Debug</strong> button of IDE and confirm
+switching to Debug Perspective.</p>
+<div class="figure" id="id2">
+<img alt="../_images/ashling_properties.png" src="../_images/ashling_properties.png" />
+<p class="caption"><span class="caption-text">Opella-XD properties</span></p>
+</div>
+<div class="figure" id="id3">
+<img alt="../_images/ashling_debugging_process.png" src="../_images/ashling_debugging_process.png" />
+<p class="caption"><span class="caption-text">Debugging process with Opella-XD</span></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="debugging-with-nsim.html" class="btn btn-neutral float-right" title="Debugging with nSIM" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="how-to-use-openocd-on-windows.html" class="btn btn-neutral" title="How to Use OpenOCD on Windows" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2017, Synopsys.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2017.03',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

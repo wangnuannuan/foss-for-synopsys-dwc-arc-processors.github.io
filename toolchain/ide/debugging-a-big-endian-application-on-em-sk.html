@@ -1,0 +1,281 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Debugging a big endian Application on EM Starter Kit &mdash; GNU Toolchain for ARC User Manual 2017.03 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="GNU Toolchain for ARC User Manual 2017.03 documentation" href="../index.html"/>
+        <link rel="up" title="ARC GNU IDE" href="index.html"/>
+        <link rel="next" title="Creating Eclipse plugins release zip file" href="creating-eclipse-plugins-release-zip-file.html"/>
+        <link rel="prev" title="Debugging with Running GDB Server" href="debugging-with-running-gdb-server.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> GNU Toolchain for ARC User Manual
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2017.03
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../baremetal/index.html">Building baremetal applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../baremetal/index.html#debugging-baremetal-applications">Debugging baremetal applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other/index.html">Other</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ARC GNU IDE</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#creating-and-building-an-application">Creating and building an application</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#debugging">Debugging</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="using-debug-perspective.html">Using Debug Perspective</a></li>
+<li class="toctree-l3"><a class="reference internal" href="creating-a-debug-configuration.html">Creating a Debug Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="debugging-with-openocd.html">Debugging with OpenOCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="how-to-use-openocd-on-windows.html">How to Use OpenOCD on Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="debugging-with-opellaxd.html">Debugging with OpellaXD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="debugging-with-nsim.html">Debugging with nSIM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="debugging-with-custom-gdb-server.html">Debugging with Custom GDB Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="debugging-with-running-gdb-server.html">Debugging with Running GDB Server</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Debugging a big endian Application on EM Starter Kit</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#miscellaneous">Miscellaneous</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../maintainer/index.html">Information for Toolchain maintainers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently asked questions</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">GNU Toolchain for ARC User Manual</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">ARC GNU IDE</a> &raquo;</li>
+      
+    <li>Debugging a big endian Application on EM Starter Kit</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/ide/debugging-a-big-endian-application-on-em-sk.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="debugging-a-big-endian-application-on-em-starter-kit">
+<h1>Debugging a big endian Application on EM Starter Kit<a class="headerlink" href="#debugging-a-big-endian-application-on-em-starter-kit" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This page was written for ARC EM Starter Kit 1.0. It is mostly applicable
+to later versions of ARC EM Starter Kit, but there are some minor differences.</p>
+</div>
+<p>The EM Starter Kit comes with 4 pre-installed little endian configurations.
+User wishing to work with big endian configuration can use the procedure below
+to program a big endian .bit file, using the Digilent Adept Software. Big
+endian .bit file is not a part of the EM Starter Kit Software package, Synopsys
+will provide it on request.</p>
+<ol class="arabic simple">
+<li>Ensure that EM Starter Kit is powered ON and connected to the host PC</li>
+<li>On the EM Starter Kit, close jumper J8 as shown in images below:</li>
+</ol>
+<div class="figure" id="id1">
+<img alt="../_images/j8_jumper_default.jpg" src="../_images/j8_jumper_default.jpg" />
+<p class="caption"><span class="caption-text">J8 Jumper in factory default position</span></p>
+</div>
+<p>After closing the jumper:</p>
+<div class="figure" id="id2">
+<img alt="../_images/j8_jumper_closed.jpg" src="../_images/j8_jumper_closed.jpg" />
+<p class="caption"><span class="caption-text">J8 Jumper in closed position</span></p>
+</div>
+<ol class="arabic simple" start="3">
+<li>Download the Digilent Adept 2.13.1 System Software for Windows from
+<a class="reference external" href="http://www.digilentinc.com/Products/Detail.cfm?Prod=ADEPT2">http://www.digilentinc.com/Products/Detail.cfm?Prod=ADEPT2</a></li>
+<li>Open the &#8220;Adept&#8221; utility</li>
+</ol>
+<div class="figure" id="id3">
+<img alt="../_images/adept_before_init_chain.png" src="../_images/adept_before_init_chain.png" />
+<p class="caption"><span class="caption-text">Adept Utility before Initializing Chain</span></p>
+</div>
+<ol class="arabic simple" start="5">
+<li>Press &#8220;Initialize chain&#8221;. There should be only one device in a chain: XC6SLX45.</li>
+</ol>
+<div class="figure" id="id4">
+<img alt="../_images/adept_shows_device.png" src="../_images/adept_shows_device.png" />
+<p class="caption"><span class="caption-text">XC6SLX45 Device shown after Initialization</span></p>
+</div>
+<ol class="arabic simple" start="6">
+<li>Press &#8220;Browse&#8221; button and navigate to location of your big endian .bit file</li>
+<li>Press &#8220;Program&#8221; button.</li>
+<li>Return  Jumper J8 to its initial position.</li>
+<li>There are no big endian configuration files for OpenOCD, so to debug your
+application you should use the same configuration file as for little endian
+one: <code class="docutils literal"><span class="pre">$INSTALL_DIR/share/openocd/scripts/board/snps_em_sk.cfg</span></code>, but in the file
+<code class="docutils literal"><span class="pre">$INSTALL_DIR\share\openocd\scripts\target\snps_em_sk_fpga.cfg</span></code> replace
+<code class="docutils literal"><span class="pre">-endian</span> <span class="pre">little</span></code> with <code class="docutils literal"><span class="pre">-endian</span> <span class="pre">big</span></code>.</li>
+</ol>
+<p>The EM Starter Kit will now use the selected big-endian FPGA image until the
+board is powered off or until reconfiguration by pressing the FPGA
+configuration button located above the “C” in the “ARC” log on the board. Refer
+to EM Starter Kit documentation for more details.</p>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="creating-eclipse-plugins-release-zip-file.html" class="btn btn-neutral float-right" title="Creating Eclipse plugins release zip file" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="debugging-with-running-gdb-server.html" class="btn btn-neutral" title="Debugging with Running GDB Server" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2017, Synopsys.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2017.03',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

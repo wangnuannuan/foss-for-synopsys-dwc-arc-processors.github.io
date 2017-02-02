@@ -1,0 +1,255 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Creating Eclipse plugins release zip file &mdash; GNU Toolchain for ARC User Manual 2017.03 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="GNU Toolchain for ARC User Manual 2017.03 documentation" href="../index.html"/>
+        <link rel="up" title="ARC GNU IDE" href="index.html"/>
+        <link rel="next" title="How to Run embARC Projects" href="how-to-run-embarc-project.html"/>
+        <link rel="prev" title="Debugging a big endian Application on EM Starter Kit" href="debugging-a-big-endian-application-on-em-sk.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> GNU Toolchain for ARC User Manual
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2017.03
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../baremetal/index.html">Building baremetal applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../baremetal/index.html#debugging-baremetal-applications">Debugging baremetal applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other/index.html">Other</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ARC GNU IDE</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#creating-and-building-an-application">Creating and building an application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#debugging">Debugging</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#miscellaneous">Miscellaneous</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="">Creating Eclipse plugins release zip file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="how-to-run-embarc-project.html">How to Run embARC Projects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="qftest-test-suite-user-manual.html">QfTest Test Suite User Manual</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../maintainer/index.html">Information for Toolchain maintainers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently asked questions</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">GNU Toolchain for ARC User Manual</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">ARC GNU IDE</a> &raquo;</li>
+      
+    <li>Creating Eclipse plugins release zip file</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/ide/creating-eclipse-plugins-release-zip-file.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="creating-eclipse-plugins-release-zip-file">
+<h1>Creating Eclipse plugins release zip file<a class="headerlink" href="#creating-eclipse-plugins-release-zip-file" title="Permalink to this headline">¶</a></h1>
+<p>Following is an guide how to create distributable release file for
+Eclipse for GNU Toolchain for ARC.</p>
+<ol class="arabic">
+<li><p class="first">Create tag for release: <code class="docutils literal"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">tag</span> <span class="pre">arc-2014.12</span></code></p>
+</li>
+<li><p class="first">Clean all past artifacts: <code class="docutils literal"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">clean</span> <span class="pre">-dfx</span></code></p>
+</li>
+<li><p class="first">Ensure that no files are modified: <code class="docutils literal"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span> <span class="pre">HEAD</span></code></p>
+</li>
+<li><p class="first">Start Eclipse</p>
+</li>
+<li><p class="first">Build plugins. That is important, because even when it is not done,
+&#8220;publishing step&#8221; will somehow succeed, but will produce plugins that
+are only partially functional.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Make sure that &#8220;Project / Build Automatically&#8221; is checked</li>
+<li>Go to &#8220;Project / Clean&#8221;</li>
+<li>Check &#8220;Clean all projects&#8221;</li>
+<li>Press OK button</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p class="first">Open <code class="docutils literal"><span class="pre">site.xml</span></code> file of &#8220;ARC GNU Eclipse Update Site&#8221;</p>
+</li>
+<li><p class="first">Press &#8220;Build All&#8221;</p>
+</li>
+<li><p class="first">Zip contents of &#8220;updatesite&#8221; folder. Note that contents of this folder
+should be zipped, not the folder itself. Files <code class="docutils literal"><span class="pre">.gitignore</span></code> and <code class="docutils literal"><span class="pre">.project</span></code>
+should be excluded from zip:
+<code class="docutils literal"><span class="pre">zip</span> <span class="pre">-r</span> <span class="pre">arc_gnu_2015.12_ide_plugins.zip</span> <span class="pre">artifacts.jar</span> <span class="pre">content.jar</span> <span class="pre">features/</span> <span class="pre">plugins/</span> <span class="pre">site.xml</span></code></p>
+</li>
+</ol>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="how-to-run-embarc-project.html" class="btn btn-neutral float-right" title="How to Run embARC Projects" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="debugging-a-big-endian-application-on-em-sk.html" class="btn btn-neutral" title="Debugging a big endian Application on EM Starter Kit" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2017, Synopsys.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2017.03',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

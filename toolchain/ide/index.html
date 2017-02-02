@@ -1,0 +1,418 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ARC GNU IDE &mdash; GNU Toolchain for ARC User Manual 2017.03 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="GNU Toolchain for ARC User Manual 2017.03 documentation" href="../index.html"/>
+        <link rel="next" title="Installation" href="installation.html"/>
+        <link rel="prev" title="How to run DejaGNU tests for ARC toolchain" href="../other/dejagnu.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> GNU Toolchain for ARC User Manual
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2017.03
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../baremetal/index.html">Building baremetal applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../baremetal/index.html#debugging-baremetal-applications">Debugging baremetal applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other/index.html">Other</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">ARC GNU IDE</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting Started</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="getting-started-with-em-starter-kit.html">Getting Started with EM Starter Kit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="getting-started-with-nsim.html">Getting Started with nSIM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-and-building-an-application">Creating and building an application</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arc-project-templates.html">ARC Project Templates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="building-user-guide.html">Building User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="building-linux-uclibc-applications.html">Building Linux uClibc applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="how-to-use-custom-toolchain.html">How to Use Custom Toolchain</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#debugging">Debugging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="using-debug-perspective.html">Using Debug Perspective</a></li>
+<li class="toctree-l3"><a class="reference internal" href="creating-a-debug-configuration.html">Creating a Debug Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="debugging-with-openocd.html">Debugging with OpenOCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="how-to-use-openocd-on-windows.html">How to Use OpenOCD on Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="debugging-with-opellaxd.html">Debugging with OpellaXD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="debugging-with-nsim.html">Debugging with nSIM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="debugging-with-custom-gdb-server.html">Debugging with Custom GDB Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="debugging-with-running-gdb-server.html">Debugging with Running GDB Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="debugging-a-big-endian-application-on-em-sk.html">Debugging a big endian Application on EM Starter Kit</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#miscellaneous">Miscellaneous</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="creating-eclipse-plugins-release-zip-file.html">Creating Eclipse plugins release zip file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="how-to-run-embarc-project.html">How to Run embARC Projects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="qftest-test-suite-user-manual.html">QfTest Test Suite User Manual</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../maintainer/index.html">Information for Toolchain maintainers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently asked questions</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">GNU Toolchain for ARC User Manual</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>ARC GNU IDE</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/ide/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="arc-gnu-ide">
+<h1>ARC GNU IDE<a class="headerlink" href="#arc-gnu-ide" title="Permalink to this headline">¶</a></h1>
+<p>The ARC GNU Eclipse IDE consists of the Eclipse IDE combined with an Eclipse
+CDT Managed Build Extension plug-in for the ARC GNU Toolchain and GDB embedded
+debugger plug-in for ARC, based on the Zylin Embedded CDT plug-in.  The ARC GNU
+IDE supports the development of managed C/C++ applications for ARC processors
+using the ARC GNU toolchain for bare metal applications (elf32).</p>
+<p>The ARC GNU IDE provides support for the following functionality:</p>
+<ul class="simple">
+<li>Support for the ARC EM, ARC HS, ARC 600 and ARC 700 Processors</li>
+<li>Support for little and big endian configurations</li>
+<li>Ability to create C/C++ projects using the ARC elf32 cross-compilation
+toolchain</li>
+<li>Configuration of toolchain parameters per project</li>
+<li>Configuration of individual options (such as preprocessor, optimization,
+warnings, libraries, and debugging levels) for each toolchain component:<ul>
+<li>GCC Compiler</li>
+<li>GDB Debugger</li>
+<li>GAS assembler</li>
+<li>Size binutils utility, etc.</li>
+</ul>
+</li>
+<li>Support for Synopsys EM Starter Kit and AXS10x.</li>
+<li>Configuration of debug and run configurations for supported FPGA Development
+Systems and debug probes (Digilent HS1/HS2 or Ashling Opella-XD).</li>
+<li>GDB-based debugging using <strong>Debug</strong> perspective providing detailed debug
+information (including breakpoints, variables, registers, and disassembly)</li>
+</ul>
+<p>ARC GNU plugins for Eclipse have following requirements to the system:</p>
+<ul class="simple">
+<li>OS: Windows 7, Windows 10, Ubuntu Linux 14.04 LTS and RedHat Enterprise Linux 6
+Development Host Systems</li>
+<li>Eclipse Oxygen (4.7) (part of Windows installer)</li>
+<li>CDT version 9.3.0 (part of Windows installer)</li>
+<li>Java VM version &gt;= 1.7 is required (part of Windows installer)</li>
+<li>On Linux both 32bit and 64-bit versions of Eclipse are supported, on Windows only
+32-bit Eclipse installations are supported. Eclipse 64-bit installation is not supported,
+so it is required to run 32-bit version of Eclipse on 64-bit Windows versions, to overcome
+this limitation.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Before you begin, refer to the EM Starter Kit
+guide and follow the instructions on how to connect EM Starter Kit to
+your PC. This is required for the Eclipse IDE GDB debugger to successfully
+download and debug programs on the target.</p>
+</div>
+<div class="section" id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#using-installer-for-windows">Using installer for Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#manual-installation-on-linux-and-windows">Manual installation on Linux and Windows</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#downloading-eclipse">Downloading Eclipse</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#downloading-latest-plugins">Downloading latest plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#installing-into-eclipse">Installing into Eclipse</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#updating-existing-plugin">Updating existing plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#installing-plugin-on-linux-host">Installing plugin on Linux host</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started-with-em-starter-kit.html">Getting Started with EM Starter Kit</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting-started-with-em-starter-kit.html#creating-hello-world-project-for-arc-em-starter-kit">Creating Hello World project for ARC EM Starter Kit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started-with-em-starter-kit.html#building-the-project">Building the project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started-with-em-starter-kit.html#debugging-the-project">Debugging the project</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started-with-nsim.html">Getting Started with nSIM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting-started-with-nsim.html#creating-a-c-project">Creating a C project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started-with-nsim.html#building-the-project">Building the project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started-with-nsim.html#debugging-the-project">Debugging the project</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="creating-and-building-an-application">
+<h2>Creating and building an application<a class="headerlink" href="#creating-and-building-an-application" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="arc-project-templates.html">ARC Project Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building-user-guide.html">Building User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="building-user-guide.html#project-build-settings">Project Build Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building-user-guide.html#target-processor-page">Target Processor Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building-user-guide.html#cpu-option">CPU option</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building-user-guide.html#other-options-and-tcf">Other options and TCF</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="building-linux-uclibc-applications.html">Building Linux uClibc applications</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="building-linux-uclibc-applications.html#creating-a-new-c-project">Creating a New C Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building-linux-uclibc-applications.html#choosing-toolchain">Choosing toolchain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building-linux-uclibc-applications.html#setting-compile-options-based-on-cpu-core">Setting compile options based on CPU core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building-linux-uclibc-applications.html#compiling-a-uclibc-application">Compiling a uClibc application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building-linux-uclibc-applications.html#compiling-a-uclibc-static-library">Compiling a uClibc Static Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building-linux-uclibc-applications.html#compiling-a-uclibc-shared-library">Compiling a uClibc Shared Library</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="how-to-use-custom-toolchain.html">How to Use Custom Toolchain</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="debugging">
+<h2>Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="using-debug-perspective.html">Using Debug Perspective</a></li>
+<li class="toctree-l1"><a class="reference internal" href="creating-a-debug-configuration.html">Creating a Debug Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="creating-a-debug-configuration.html#creating-a-new-debug-configuration">Creating a new debug configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating-a-debug-configuration.html#setting-a-com-port">Setting a COM port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating-a-debug-configuration.html#starting-a-debug-session">Starting a debug session</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="debugging-with-openocd.html">Debugging with OpenOCD</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="debugging-with-openocd.html#board-configuration">Board Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debugging-with-openocd.html#configuring-drivers-on-windows">Configuring drivers on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debugging-with-openocd.html#specifying-openocd-properties">Specifying OpenOCD properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debugging-with-openocd.html#choosing-com-port">Choosing COM Port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debugging-with-openocd.html#starting-a-debug-session">Starting a debug session</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="how-to-use-openocd-on-windows.html">How to Use OpenOCD on Windows</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="how-to-use-openocd-on-windows.html#replacing-a-driver">Replacing a driver</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="debugging-with-opellaxd.html">Debugging with OpellaXD</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="debugging-with-opellaxd.html#board-configuration">Board Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debugging-with-opellaxd.html#specifying-properties-for-opella-xd">Specifying properties for Opella-XD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debugging-with-opellaxd.html#starting-a-debug-session">Starting a debug session</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="debugging-with-nsim.html">Debugging with nSIM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="debugging-with-nsim.html#specifying-nsim-properties">Specifying nSIM properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debugging-with-nsim.html#debugging-an-application">Debugging an application</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="debugging-with-custom-gdb-server.html">Debugging with Custom GDB Server</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="debugging-with-custom-gdb-server.html#specifying-custom-gdb-server-properties">Specifying custom GDB server properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debugging-with-custom-gdb-server.html#openocd-as-a-custom-gdb-server">OpenOCD as a custom GDB server</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="debugging-with-running-gdb-server.html">Debugging with Running GDB Server</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="debugging-with-running-gdb-server.html#running-gdb-server-properties">Running GDB server properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debugging-with-running-gdb-server.html#openocd-as-running-gdb-server">OpenOCD as running GDB server</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="debugging-a-big-endian-application-on-em-sk.html">Debugging a big endian Application on EM Starter Kit</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="miscellaneous">
+<h2>Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="creating-eclipse-plugins-release-zip-file.html">Creating Eclipse plugins release zip file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-to-run-embarc-project.html">How to Run embARC Projects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="how-to-run-embarc-project.html#generating-ide-projects-and-documentation">Generating IDE projects and documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how-to-run-embarc-project.html#running-ide-projects">Running IDE projects</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="qftest-test-suite-user-manual.html">QfTest Test Suite User Manual</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="qftest-test-suite-user-manual.html#qf-test-installation">Qf-Test Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qftest-test-suite-user-manual.html#workflow">Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qftest-test-suite-user-manual.html#setting-test-suite-parameters">Setting test-suite parameters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="qftest-test-suite-user-manual.html#optional-fields-for-all-tests">Optional fields for all tests:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="qftest-test-suite-user-manual.html#nsim-parameters">nSIM parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="qftest-test-suite-user-manual.html#emsk-and-axs10x-parameters-optional">EMSK and AXS10x parameters (optional)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="qftest-test-suite-user-manual.html#openocd-and-ashling-parameters">OpenOCD and Ashling parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="qftest-test-suite-user-manual.html#other-parameters">Other parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="qftest-test-suite-user-manual.html#launching-test-suite-from-command-line">Launching test-suite from command line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qftest-test-suite-user-manual.html#known-problems-and-how-to-fix-them">Known problems and how to fix them</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="installation.html" class="btn btn-neutral float-right" title="Installation" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../other/dejagnu.html" class="btn btn-neutral" title="How to run DejaGNU tests for ARC toolchain" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2017, Synopsys.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2017.03',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

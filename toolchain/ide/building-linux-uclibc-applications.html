@@ -1,0 +1,310 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Building Linux uClibc applications &mdash; GNU Toolchain for ARC User Manual 2017.03 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="GNU Toolchain for ARC User Manual 2017.03 documentation" href="../index.html"/>
+        <link rel="up" title="ARC GNU IDE" href="index.html"/>
+        <link rel="next" title="How to Use Custom Toolchain" href="how-to-use-custom-toolchain.html"/>
+        <link rel="prev" title="Building User Guide" href="building-user-guide.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> GNU Toolchain for ARC User Manual
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2017.03
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../baremetal/index.html">Building baremetal applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../baremetal/index.html#debugging-baremetal-applications">Debugging baremetal applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other/index.html">Other</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ARC GNU IDE</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#creating-and-building-an-application">Creating and building an application</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="arc-project-templates.html">ARC Project Templates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="building-user-guide.html">Building User Guide</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Building Linux uClibc applications</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#creating-a-new-c-project">Creating a New C Project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#choosing-toolchain">Choosing toolchain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setting-compile-options-based-on-cpu-core">Setting compile options based on CPU core</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#compiling-a-uclibc-application">Compiling a uClibc application</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#compiling-a-uclibc-static-library">Compiling a uClibc Static Library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#compiling-a-uclibc-shared-library">Compiling a uClibc Shared Library</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="how-to-use-custom-toolchain.html">How to Use Custom Toolchain</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#debugging">Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#miscellaneous">Miscellaneous</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../maintainer/index.html">Information for Toolchain maintainers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently asked questions</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">GNU Toolchain for ARC User Manual</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">ARC GNU IDE</a> &raquo;</li>
+      
+    <li>Building Linux uClibc applications</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/ide/building-linux-uclibc-applications.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="building-linux-uclibc-applications">
+<h1>Building Linux uClibc applications<a class="headerlink" href="#building-linux-uclibc-applications" title="Permalink to this headline">¶</a></h1>
+<p>The C Project dialog has five ARC project types on Linux:  ARC Cross ELF32
+Target Application, ARC Cross ELF32 Target Static Library,   ARC Cross uClibc
+Target Application, ARC Cross uClibc Target Shared Library and ARC Cross uClibc
+Target Static Library.</p>
+<div class="section" id="creating-a-new-c-project">
+<h2>Creating a New C Project<a class="headerlink" href="#creating-a-new-c-project" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Select File &gt;New &gt;C Project</li>
+</ol>
+<div class="figure" id="id1">
+<img alt="../_images/c_project_types_linux.png" src="../_images/c_project_types_linux.png" />
+<p class="caption"><span class="caption-text">C Project Types on Linux</span></p>
+</div>
+</div>
+<div class="section" id="choosing-toolchain">
+<h2>Choosing toolchain<a class="headerlink" href="#choosing-toolchain" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Choose proper toolchain for uClibc project type.</li>
+</ol>
+<div class="figure" id="id2">
+<img alt="../_images/uclibc_toolchain.png" src="../_images/uclibc_toolchain.png" />
+<p class="caption"><span class="caption-text">uClibc supported toolchain</span></p>
+</div>
+</div>
+<div class="section" id="setting-compile-options-based-on-cpu-core">
+<h2>Setting compile options based on CPU core<a class="headerlink" href="#setting-compile-options-based-on-cpu-core" title="Permalink to this headline">¶</a></h2>
+<p>User should choose a proper toolchain for a core, for different core supports different compile options.</p>
+</div>
+<div class="section" id="compiling-a-uclibc-application">
+<h2>Compiling a uClibc application<a class="headerlink" href="#compiling-a-uclibc-application" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Select File &gt;New &gt;C Project</li>
+</ol>
+<div class="figure" id="id3">
+<img alt="../_images/hello_uclibc_application.png" src="../_images/hello_uclibc_application.png" />
+<p class="caption"><span class="caption-text">Hello_uClibc_Application</span></p>
+</div>
+<ol class="arabic simple" start="2">
+<li>Getting compiling output in console</li>
+</ol>
+<div class="figure" id="id4">
+<img alt="../_images/hello_uclibc_application_700_output.png" src="../_images/hello_uclibc_application_700_output.png" />
+<p class="caption"><span class="caption-text">Hello_uClibc_Application_700_output</span></p>
+</div>
+</div>
+<div class="section" id="compiling-a-uclibc-static-library">
+<h2>Compiling a uClibc Static Library<a class="headerlink" href="#compiling-a-uclibc-static-library" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Select File &gt;New &gt;C Project</li>
+</ol>
+<div class="figure" id="id5">
+<img alt="../_images/hello_uclibc_staticlib.png" src="../_images/hello_uclibc_staticlib.png" />
+<p class="caption"><span class="caption-text">Hello_uClibc_Staticlib</span></p>
+</div>
+<ol class="arabic simple" start="2">
+<li>Getting compiling output in console</li>
+</ol>
+<div class="figure" id="id6">
+<img alt="../_images/hello_uclibc_staticlib_700_output.png" src="../_images/hello_uclibc_staticlib_700_output.png" />
+<p class="caption"><span class="caption-text">Hello_uClibc_Staticlib_700_output</span></p>
+</div>
+</div>
+<div class="section" id="compiling-a-uclibc-shared-library">
+<h2>Compiling a uClibc Shared Library<a class="headerlink" href="#compiling-a-uclibc-shared-library" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Select File &gt;New &gt;C Project</li>
+</ol>
+<div class="figure" id="id7">
+<img alt="../_images/hello_uclibc_sharedlib.png" src="../_images/hello_uclibc_sharedlib.png" />
+<p class="caption"><span class="caption-text">Hello_uClibc_Sharedlib</span></p>
+</div>
+<ol class="arabic simple" start="2">
+<li>Getting compiling output in console</li>
+</ol>
+<div class="figure" id="id8">
+<img alt="../_images/hello_uclibc_sharedlib_700_output.png" src="../_images/hello_uclibc_sharedlib_700_output.png" />
+<p class="caption"><span class="caption-text">Hello_uClibc_Sharedlib_700_output</span></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="how-to-use-custom-toolchain.html" class="btn btn-neutral float-right" title="How to Use Custom Toolchain" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="building-user-guide.html" class="btn btn-neutral" title="Building User Guide" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2017, Synopsys.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2017.03',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

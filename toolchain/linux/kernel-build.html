@@ -160,7 +160,7 @@ thorough Linux-focused user guides and how to so. This document answers the
 single question &#8220;How to confirm, that I can build Linux kernel with <em>that</em>
 toolchain?&#8221;</p>
 <p>To learn how to configure Linux, debug kernel itself and build extra software
-please see <cite>&lt;https://github.com/foss-for-synopsys-dwc-arc-processors/linux/wiki&gt;</cite>.</p>
+please see <cite>https://github.com/foss-for-synopsys-dwc-arc-processors/linux/wiki</cite>.</p>
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -201,7 +201,7 @@ Synopsys will be used.</p>
 </div>
 <div class="section" id="configuring">
 <h2>Configuring<a class="headerlink" href="#configuring" title="Permalink to this headline">¶</a></h2>
-<p>Check <cite>Buildroot downloads page &lt;http://buildroot.org/download.html&gt;</cite> for
+<p>Check <a class="reference external" href="http://buildroot.org/download.html">Buildroot downloads page</a> for
 latest release. This guide further assumes latest snapshot. Get Buildroot
 sources:</p>
 <div class="highlight-none"><div class="highlight"><pre><span></span>$ mkdir arc-2017.03-linux-guide
@@ -223,6 +223,7 @@ BR2_TOOLCHAIN_EXTERNAL_URL=&quot;http://github.com/foss-for-synopsys-dwc-arc-pro
 BR2_TOOLCHAIN_EXTERNAL_GCC_6=y
 BR2_TOOLCHAIN_EXTERNAL_HEADERS_4_8=y
 BR2_TOOLCHAIN_EXTERNAL_LOCALE=y
+BR2_TOOLCHAIN_EXTERNAL_HAS_SSP=y
 BR2_TOOLCHAIN_EXTERNAL_INET_RPC=y
 BR2_TOOLCHAIN_EXTERNAL_CXX=y
 BR2_LINUX_KERNEL=y
@@ -254,11 +255,13 @@ applications compiled by this toolchain will run.</li>
 <span id="linux-building-label"></span><h2>Building<a class="headerlink" href="#building" title="Permalink to this headline">¶</a></h2>
 <p>To build Linux kernel image using that defconfig:</p>
 <div class="highlight-none"><div class="highlight"><pre><span></span>$ cd buildroot
-$ make O=../output_hs defconfig DEFCONFIG=../hs_defconfig
+$ make O=`readlink -e ../output_hs` defconfig DEFCONFIG=`readlink -e ../hs_defconfig`
 $ cd ../output_hs
 $ make
 </pre></div>
 </div>
+<p>It&#8217;s necessary to pass an absolute path to Buildroot, because there is the issue
+with a relative path.</p>
 <p>After that there will be Linux kernel image file
 <code class="docutils literal"><span class="pre">arc-2017.03-linux-guide/output/images/vmlinux</span></code>.</p>
 </div>
@@ -364,6 +367,7 @@ BR2_TOOLCHAIN_EXTERNAL_URL=&quot;http://github.com/foss-for-synopsys-dwc-arc-pro
 BR2_TOOLCHAIN_EXTERNAL_GCC_6=y
 BR2_TOOLCHAIN_EXTERNAL_HEADERS_4_8=y
 BR2_TOOLCHAIN_EXTERNAL_LOCALE=y
+BR2_TOOLCHAIN_EXTERNAL_HAS_SSP=y
 BR2_TOOLCHAIN_EXTERNAL_INET_RPC=y
 BR2_TOOLCHAIN_EXTERNAL_CXX=y
 BR2_LINUX_KERNEL=y
@@ -379,7 +383,7 @@ BR2_TARGET_ROOTFS_EXT2=y
 <p>Save this defconfig to some file (for example <code class="docutils literal"><span class="pre">vdk_defconfig</span></code>). Then use same
 process as in <a class="reference internal" href="#linux-building-label"><span>Building</span></a> section.:</p>
 <div class="highlight-none"><div class="highlight"><pre><span></span>$ cd buildroot
-$ make O=../output_vdk defconfig DEFCONFIG=&lt;path-to-VDK-defconfig-file&gt;
+$ make O=`readlink -e ../output_vdk` defconfig DEFCONFIG=&lt;path-to-VDK-defconfig-file&gt;
 $ cd ../output_vdk
 $ make
 </pre></div>
@@ -462,8 +466,7 @@ BR2_TARGET_ROOTFS_INITRAMFS=y
 </pre></div>
 </div>
 <p>This defconfig will create a uImage file instead of vmlinux. Please refer to
-<cite>ARC Linux wiki
-&lt;https://github.com/foss-for-synopsys-dwc-arc-processors/linux/wiki/Getting-Started-with-Linux-on-ARC-AXS103-Software-Development-Platform-(SDP)&gt;</cite>
+<a class="reference external" href="https://github.com/foss-for-synopsys-dwc-arc-processors/linux/wiki/Getting-Started-with-Linux-on-ARC-AXS103-Software-Development-Platform-(SDP)">ARC Linux wiki</a>
 for more details on using u-boot with AXS103.</p>
 </div>
 </div>

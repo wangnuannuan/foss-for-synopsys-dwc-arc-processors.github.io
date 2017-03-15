@@ -290,6 +290,18 @@ targets uses Buildroot to build rootfs and uImage for AXS103.</p>
 </dd></dl>
 
 <dl class="envvar">
+<dt id="envvar-ENABLE_LINUX_TOOLS">
+<code class="descname">ENABLE_LINUX_TOOLS</code><a class="headerlink" href="#envvar-ENABLE_LINUX_TOOLS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether to build and deploy GNU Toolchain for Linux targets.</p>
+<dl class="docutils">
+<dt>Possible values</dt>
+<dd><code class="docutils literal"><span class="pre">y</span></code> and <code class="docutils literal"><span class="pre">n</span></code></dd>
+<dt>Default value</dt>
+<dd><code class="docutils literal"><span class="pre">y</span></code></dd>
+</dl>
+</dd></dl>
+
+<dl class="envvar">
 <dt id="envvar-ENABLE_NATIVE_TOOLS">
 <code class="descname">ENABLE_NATIVE_TOOLS</code><a class="headerlink" href="#envvar-ENABLE_NATIVE_TOOLS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Whether to build and upload native toolchain. Currently toolchain is built
@@ -338,6 +350,21 @@ and is a prerequisite for IDE for Windows build.</p>
 <dd><p>Whether to build Toolchain PDF documentation. This affects only the
 &#8220;toolchain&#8221; repository - PDF documents from gcc, binutils, etc are always
 created, regardless of this option.</p>
+<dl class="docutils">
+<dt>Possible values</dt>
+<dd><code class="docutils literal"><span class="pre">y</span></code> and <code class="docutils literal"><span class="pre">n</span></code></dd>
+<dt>Default value</dt>
+<dd><code class="docutils literal"><span class="pre">y</span></code></dd>
+</dl>
+</dd></dl>
+
+<dl class="envvar">
+<dt id="envvar-ENABLE_SOURCE_TARBALL">
+<code class="descname">ENABLE_SOURCE_TARBALL</code><a class="headerlink" href="#envvar-ENABLE_SOURCE_TARBALL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether to create a source tarball. Usually that should be true, so that
+release would include source tarball, however if release makefile is run
+multiple times on various machines to create packages for various target
+systems, then it makes sense to have this true only on one system.</p>
 <dl class="docutils">
 <dt>Possible values</dt>
 <dd><code class="docutils literal"><span class="pre">y</span></code> and <code class="docutils literal"><span class="pre">n</span></code></dd>

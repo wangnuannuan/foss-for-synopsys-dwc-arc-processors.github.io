@@ -1,0 +1,166 @@
+
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Frequently Asked Questions | embARC Open Software Platform</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="/css/ie/html5shiv.js"></script><![endif]-->
+		<script src="/js/jquery.min.js"></script>
+		<script src="/js/jquery.dropotron.min.js"></script>
+		<script src="/js/jquery.scrollgress.min.js"></script>
+		<script src="/js/skel.min.js"></script>
+		<script src="/js/skel-layers.min.js"></script>
+		<script src="/js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="/css/skel.css" />
+			<link rel="stylesheet" href="/css/style.css" />
+			<link rel="stylesheet" href="/css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+
+		<!-- DTM -->
+		<script src="//assets.adobedtm.com/f196d5862527e1d28356274d6cedeb860c1f4496/satelliteLib-9f9e0bc953a8d58867278965271e09b7dc58bcce.js"></script>
+
+		<!-- DTM Data layer object declarations -->
+		<script>
+		var digitalData = {};
+		digitalData.page = {
+			pageInfo: {
+				pageName: document.title,
+				pageURL: document.URL.toLowerCase()
+			},
+			category: {
+				pageType: 'Microsite:Page',
+				primaryCategory: 'embARC',
+				subCategory2: 'n/a',
+				subCategory3: 'n/a',
+				subCategory4: 'n/a',
+				subCategory5: 'n/a'
+			}
+		}
+		</script>
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header" class="skel-layers-fixed">
+				<div style="padding-left:10px; padding-top:8px;"><a href="index.html" style="border-style: none;"><img src="images/embarc_logo-bright-bar.png"></a></div>
+				<nav id="nav">
+    <ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="linux.html">Embedded Linux</a></li>
+			<li><a href="iot.html">IoT</a></li>
+			<li><a href="baremetal.html">Bare Metal</a></li>
+			<li><a href="news.html">News</a></li>
+			<li><a href="resources.html">Resources</a></li>
+    </ul>
+  </nav>
+			</header>
+
+		<!-- Main -->
+			<section id="main" class="container">
+				<header>
+					<h2>Frequently Asked Questions</h2>
+				</header>
+				<div class="box">
+
+
+<h1 class="strong">What is embARC?</h1>
+  <p>
+
+  embARC is an open software platform that provides a comprehensive software stack for embedded applications, based on industry-leading open source solutions.
+        </p>
+        <p>embARC leverages the versatility of the DesignWare&#174; ARC&#174; EM Starter Kit to enable rapid software development, code porting, software debugging, and profiling of applications on an FPGA prototype. The platform is extensible using a wide range of Digilent Pmod&#153;  modules (sensor, WiFi, RF, more) to create a broad range of IoT applications.
+      </p>
+
+
+<h1 class="strong">What software is included in embARC?</h1>
+      <p>The embARC Open Software Platform offers a complete, IoT-ready software stack for embedded applications, consisting of the following:
+      </p>
+      <ul>
+        <li>Support for multiple RTOSes choices, based on embedded application requirements</li>
+        <li>Networking stack with support for IPv4, IPv6, 6lowPAN and RPL </li>
+        <li>IoT communication protocol support including CoAP, MQTT and HTTP/REST </li>
+        <li>Shell and file system utilities
+        <li>Device drivers for supported platforms</li>
+        <li>Utility libraries</li>
+        <li>Comprehensive suite of examples to help you get started</li>
+      </ul>
+
+
+<h1 class="strong">What development tools should I use with embARC? </h1>
+	<p>
+	Synopsys&#39;s premium toolchain for use with the ARC EM family of processors is the ARC MetaWare Development Toolkit.  Licensing information is available at <a href="https://www.synopsys.com/dw/ipdir.php?ds=sw_metaware">https://www.synopsys.com/dw/ipdir.php?ds=sw_metaware</a>.
+	</p>
+	<p>Synopsys&#39;s free GNU toolchain may also be used for embARC development, but some options and extensions of the configurable ARC EM family of processors may only be supported by the MetaWare Development Toolkit.
+	</p>
+
+<h1 class="strong">What are the differences between the MetaWare tools and the GNU tools for ARC?</h1>
+  <p>
+  The MetaWare Development Toolkit is a complete, highly optimized toolchain (cross-compiler, assembler, linker, and utilities) targeting the ARC CPU portfolio, intended for users looking for a high-quality commercial toolset backed by an industry-leading support team. The tools are available for use from an Eclipse-based IDE or directly from the command line. The MetaWare toolchain also includes a source-level debugger that can be invoked in the IDE or in standalone GUI or command-line modes. The debugger is fully ARC-aware and provides rich profiling capabilities to investigate application hot spots and to assist with size vs speed optimizations. The same debugger interface is used for connecting to the various supported simulators (ranging from RTL simulation through instruction-set simulators) as well as ASIC and FPGA targets. The debugger supports various third-party JTAG probes for connections to hardware targets. </p>
+
+  <p>
+  The GNU tools for ARC are an open-source toolset based on GCC and GDB. They are intended for developers targeting the ARC Linux operating system as well as those working on bare-metal systems. Because of the importance of open-source tools in embedded software, Synopsys invests in open source projects, such as GNU and the Linux kernel for ARC processor cores. Synopsys ensures there is up-to-date open source GNU tools support for its processors and is continuously updating and optimizing the ARC GNU toolchain. The ARC GNU toolchain offers all of the benefits of open-source tools, including complete source code and a large install base. The tools include the GCC compiler and GDB debugger as well a number of utilities and libraries that make up a complete software toolchain. The tools are available in source-code format, and also as pre-built executables for both Windows and Linux. The pre-built Windows version includes an Eclipse-based IDE.
+  </p>
+
+<h1 class="strong">What development platforms are available for embARC? </h1>
+<p>
+	embARC has been ported for use with the DesignWare ARC EM Starter Kit. More information is available from Synopsys at <a href="https://www.synopsys.com/dw/ipdir.php?ds=arc_em_starter_kit">https://www.synopsys.com/dw/ipdir.php?ds=arc_em_starter_kit</a>.
+	</p>
+	<p>We are also working with community partners to bring silicon-based platforms to embARC.
+</p>
+
+<h1 class="strong">Do I need a license to use the embARC software?</h1>
+	<p>embARC includes FOSS software from Synopsys as well as several existing FOSS packages. Each package is distributed under its own open-source license. See the  <a href="foss.html">Synopsys_FOSS_Notice_embARC</a> for complete license information.</p>
+
+<h1 class="strong">Can I use embARC software in my products?</h1>
+	<p>Use of embARC software in end-customer products is governed by the respective license under which each FOSS package is distributed.  See the  <a href="foss.html">Synopsys_FOSS_Notice_embARC</a> for complete license information. </p>
+
+<h1 class="strong">What are the plans for future embARC releases?</h1>
+	<p>The embARC software will be updated regularly, with new releases to the community planned at regular intervals. Each release will add additional FOSS titles, target platforms, and bug fixes, based on community feedback.</p>
+
+<h1 class="strong">How do I get support with embARC</h1>
+  <p>Users can ask for help or submit bug reports through the Support discussion on the User Forums.</p>
+
+<h1 class="strong">How can I contribute to embARC?</h1>
+  <p>If you have an enhancement suggestion, you can submit this through the Enhancements discussion on the User Forums. In the future, we may provide a method to submit code contributions to the embARC software.</p>
+
+
+
+			  </div>
+			</section>
+
+<footer id="footer">
+  <ul class="icons" style="display:none;">
+    <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+    <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+    <li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+    <li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+  </ul>
+  <ul class="copyright">
+    <li>&copy; 2017 Synopsys, Inc. All Rights Reserved.</li>
+    <li><a href="/about.html">About</a> | <a href="mailto:info@embarc.org">Contact Us</a> | <a href="/terms.html">Terms of Service</a> | <a href="/privacy.html">Privacy</a></li>
+  </ul>
+</footer>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-60168823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- DTM -->
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+</body>
+</html>

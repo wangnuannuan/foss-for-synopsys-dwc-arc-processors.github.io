@@ -94,6 +94,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#building">Building</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#running-on-nsim">Running on nSIM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#using-different-linux-configuration">Using different Linux configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-glibc-toolchain">Using glibc toolchain</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#linux-for-arc-770-processors">Linux for ARC 770 processors</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#linux-for-arc-hs-vdk">Linux for ARC HS VDK</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#linux-for-axs103-sdp">Linux for AXS103 SDP</a></li>
@@ -206,8 +207,8 @@ latest release. This guide further assumes latest snapshot. Get Buildroot
 sources:</p>
 <div class="highlight-none"><div class="highlight"><pre><span></span>$ mkdir arc-2017.09-linux-guide
 $ cd arc-2017.09-linux-guide
-$ wget https://buildroot.org/downloads/buildroot-snapshot.tar.bz2
-$ tar xaf buildroot-snapshot.tar.bz2
+$ wget https://buildroot.org/downloads/buildroot-2017.08.tar.bz2
+$ tar xf buildroot-2017.08.tar.bz2
 </pre></div>
 </div>
 <p>To build Linux and rootfs Buildroot should be configured. For the purpose of
@@ -254,7 +255,8 @@ applications compiled by this toolchain will run.</li>
 <div class="section" id="building">
 <span id="linux-building-label"></span><h2>Building<a class="headerlink" href="#building" title="Permalink to this headline">¶</a></h2>
 <p>To build Linux kernel image using that defconfig:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>$ cd buildroot
+<div class="highlight-none"><div class="highlight"><pre><span></span>$ mkdir output_hs
+$ cd buildroot
 $ make O=`readlink -e ../output_hs` defconfig DEFCONFIG=`readlink -e ../hs_defconfig`
 $ cd ../output_hs
 $ make
@@ -310,6 +312,31 @@ details about how to enable networking, HDMI and other hardware features of
 AXS10x SDP.</p>
 <p>Notable defconfigs available for ARC: <code class="docutils literal"><span class="pre">axs101</span></code>, <code class="docutils literal"><span class="pre">axs103</span></code>, <code class="docutils literal"><span class="pre">axs103_smp</span></code>,
 <code class="docutils literal"><span class="pre">vsk_hs38_smp_defconfig</span></code>.</p>
+</div>
+<div class="section" id="using-glibc-toolchain">
+<h2>Using glibc toolchain<a class="headerlink" href="#using-glibc-toolchain" title="Permalink to this headline">¶</a></h2>
+<p>Configuration for glibc toolchain is fairly similar for uClibc, with only minor
+differences.:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>BR2_arcle=y
+BR2_archs38=y
+BR2_TOOLCHAIN_EXTERNAL=y
+BR2_TOOLCHAIN_EXTERNAL_CUSTOM=y
+BR2_TOOLCHAIN_EXTERNAL_DOWNLOAD=y
+BR2_TOOLCHAIN_EXTERNAL_URL=&quot;http://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2017.09-rc1/arc_gnu_2017.09-rc1_prebuilt_glibc_le_archs_linux_install.tar.gz&quot;
+BR2_TOOLCHAIN_EXTERNAL_GCC_7=y
+BR2_TOOLCHAIN_EXTERNAL_HEADERS_4_12=y
+BR2_TOOLCHAIN_EXTERNAL_CUSTOM_GLIBC=y
+BR2_TOOLCHAIN_EXTERNAL_CXX=y
+BR2_LINUX_KERNEL=y
+BR2_LINUX_KERNEL_DEFCONFIG=&quot;nsim_hs&quot;
+BR2_LINUX_KERNEL_VMLINUX=y
+BR2_PACKAGE_GDB=y
+BR2_PACKAGE_GDB_SERVER=y
+BR2_PACKAGE_GDB_DEBUGGER=y
+BR2_TARGET_ROOTFS_INITRAMFS=y
+# BR2_TARGET_ROOTFS_TAR is not set
+</pre></div>
+</div>
 </div>
 <div class="section" id="linux-for-arc-770-processors">
 <h2>Linux for ARC 770 processors<a class="headerlink" href="#linux-for-arc-770-processors" title="Permalink to this headline">¶</a></h2>
@@ -382,7 +409,8 @@ BR2_TARGET_ROOTFS_EXT2=y
 </div>
 <p>Save this defconfig to some file (for example <code class="docutils literal"><span class="pre">vdk_defconfig</span></code>). Then use same
 process as in <a class="reference internal" href="#linux-building-label"><span>Building</span></a> section.:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>$ cd buildroot
+<div class="highlight-none"><div class="highlight"><pre><span></span>$ mkdir output_vdk
+$ cd buildroot
 $ make O=`readlink -e ../output_vdk` defconfig DEFCONFIG=&lt;path-to-VDK-defconfig-file&gt;
 $ cd ../output_vdk
 $ make

@@ -155,20 +155,18 @@
 <span id="index-0"></span><h1>Using GNU Toolchain to Debug Applications on EM Starter Kit<a class="headerlink" href="#using-gnu-toolchain-to-debug-applications-on-em-starter-kit" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
-<p>Software installer for Windows can be downloaded <a class="reference external" href="https://github.com/foss-for-synopsys-dwc-arc-processors/arc_gnu_eclipse/releases">here</a>.
-In order to use OpenOCD it is required to install appropriate WinUSB drivers,
-see <a class="reference external" href="https://github.com/foss-for-synopsys-dwc-arc-processors/arc_gnu_eclipse/wiki/How-to-Use-OpenOCD-on-Windows">this page</a>
-for details.</p>
-<p>Toolchain for Linux hosts can be downloaded from the <a class="reference external" href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases">GNU Toolchain Releases
-page</a>.
+<p>Toolchain for Linux and Windows hosts can be downloaded from the <a class="reference external" href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases">GNU Toolchain
+Releases page</a>.
 For Linux hosts there is a choice between complete tarballs that include
 toolchain, IDE and OpenOCD (like installer for Windows), and tarballs that
 include toolchain only.</p>
+<p>In order to use OpenOCD on Windows it is required to install appropriate WinUSB drivers,
+see <a class="reference internal" href="../ide/how-to-use-openocd-on-windows.html"><em>How to Use OpenOCD on Windows</em></a> for details.</p>
 </div>
 <div class="section" id="building-an-application">
 <h2>Building an application<a class="headerlink" href="#building-an-application" title="Permalink to this headline">¶</a></h2>
-<p>To learn how to build and debug application with Eclipse IDE, please use <a class="reference external" href="https://github.com/foss-for-synopsys-dwc-arc-processors/arc_gnu_eclipse/wiki">IDE
-User Guide</a>.</p>
+<p>To learn how to build and debug application with Eclipse IDE, please use
+<a class="reference internal" href="../ide/index.html"><em>ARC GNU IDE</em></a> manual.</p>
 <p>Different core templates in EM Starter Kit use different memory maps, so
 different memory map files are required to compile applications that work
 properly on those configurations. This &#8220;toolchain&#8221; repository includes memory

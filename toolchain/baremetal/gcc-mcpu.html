@@ -399,21 +399,21 @@ values for ARC HS.</p>
 <td>mpy</td>
 <td>&nbsp;</td>
 </tr>
-<tr class="row-odd"><td>hs4x</td>
-<td>Y</td>
-<td>Y</td>
-<td>Y</td>
-<td>mpy</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>hs4xd</td>
-<td>Y</td>
-<td>Y</td>
-<td>Y</td>
-<td>mpy</td>
-<td>&nbsp;</td>
-</tr>
 <tr class="row-odd"><td>hs38</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>plus_qmacw</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>hs4x</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>plus_qmacw</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>hs4xd</td>
 <td>Y</td>
 <td>Y</td>
 <td>Y</td>
@@ -445,10 +445,10 @@ hardware multiplier.  It corresponds to the following ARC HS templates in
 ARChitect: hs34, hs36 and hs38.</li>
 <li><code class="docutils literal"><span class="pre">-mcpu=archs</span></code> is a generic CPU, which corresponds to the default
 configuration in older GNU toolchain versions.</li>
-<li><code class="docutils literal"><span class="pre">-mcpu=hs4x</span></code> and <code class="docutils literal"><span class="pre">-mcpu=hs4xd</span></code> have same option set as <code class="docutils literal"><span class="pre">-mcpu=archs</span></code> but compiler will
-optimize instruction scheduling for specified processors.</li>
 <li><code class="docutils literal"><span class="pre">-mcpu=hs38</span></code> is a fully featured ARC HS.  It corresponds to the following
 ARC HS templates in ARChitect: hs38_full</li>
+<li><code class="docutils literal"><span class="pre">-mcpu=hs4x</span></code> and <code class="docutils literal"><span class="pre">-mcpu=hs4xd</span></code> have same option set as <code class="docutils literal"><span class="pre">-mcpu=hs38</span></code> but compiler will
+optimize instruction scheduling for specified processors.</li>
 <li><code class="docutils literal"><span class="pre">-mcpu=hs38_linux</span></code> is a fully featured ARC HS with additional support for
 double-precision FPU. It corresponds to the following ARC HS templates in
 ARChitect: hs38_slc_full.</li>

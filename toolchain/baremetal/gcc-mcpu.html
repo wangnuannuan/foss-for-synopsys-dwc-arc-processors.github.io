@@ -175,14 +175,15 @@ configuration.</p>
 <table border="1" class="docutils" id="id1">
 <caption><span class="caption-text">-mcpu values for ARC EM</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col width="14%" />
-<col width="12%" />
-<col width="12%" />
-<col width="12%" />
-<col width="14%" />
+<col width="13%" />
 <col width="11%" />
-<col width="14%" />
 <col width="11%" />
+<col width="11%" />
+<col width="13%" />
+<col width="10%" />
+<col width="13%" />
+<col width="10%" />
+<col width="8%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">-mcpu=</th>
@@ -193,6 +194,7 @@ configuration.</p>
 <th class="head">-mdiv-rem</th>
 <th class="head">-mmpy-option</th>
 <th class="head">-mfpu</th>
+<th class="head">-mrf16</th>
 </tr>
 </thead>
 <tbody valign="top">
@@ -204,8 +206,19 @@ configuration.</p>
 <td>&nbsp;</td>
 <td>none</td>
 <td>&nbsp;</td>
+<td>&nbsp;</td>
 </tr>
-<tr class="row-odd"><td>em4</td>
+<tr class="row-odd"><td>em_mini</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>none</td>
+<td>&nbsp;</td>
+<td>Y</td>
+</tr>
+<tr class="row-even"><td>em4</td>
 <td>Y</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -213,8 +226,9 @@ configuration.</p>
 <td>&nbsp;</td>
 <td>none</td>
 <td>&nbsp;</td>
+<td>&nbsp;</td>
 </tr>
-<tr class="row-even"><td>arcem</td>
+<tr class="row-odd"><td>arcem</td>
 <td>Y</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -222,8 +236,9 @@ configuration.</p>
 <td>&nbsp;</td>
 <td>wlh1</td>
 <td>&nbsp;</td>
+<td>&nbsp;</td>
 </tr>
-<tr class="row-odd"><td>em4_dmips</td>
+<tr class="row-even"><td>em4_dmips</td>
 <td>Y</td>
 <td>Y</td>
 <td>Y</td>
@@ -231,8 +246,9 @@ configuration.</p>
 <td>Y</td>
 <td>wlh1</td>
 <td>&nbsp;</td>
+<td>&nbsp;</td>
 </tr>
-<tr class="row-even"><td>em4_fpus</td>
+<tr class="row-odd"><td>em4_fpus</td>
 <td>Y</td>
 <td>Y</td>
 <td>Y</td>
@@ -240,8 +256,9 @@ configuration.</p>
 <td>Y</td>
 <td>wlh1</td>
 <td>fpus</td>
+<td>&nbsp;</td>
 </tr>
-<tr class="row-odd"><td>em4_fpuda</td>
+<tr class="row-even"><td>em4_fpuda</td>
 <td>Y</td>
 <td>Y</td>
 <td>Y</td>
@@ -249,6 +266,7 @@ configuration.</p>
 <td>Y</td>
 <td>wlh1</td>
 <td>fpuda</td>
+<td>&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -259,33 +277,81 @@ instruction support, reduced register size and reduced register sets.
 Relationship between <code class="docutils literal"><span class="pre">-mcpu</span></code> values above and ARC EM Processor templates in
 ARChitect tool are limited to options listed in the table.  Tables will be
 updated as support for more options get added to the GNU toolchain.</p>
-<ul class="simple">
-<li><code class="docutils literal"><span class="pre">-mcpu=em</span></code> doesn&#8217;t correspond to any specific template, it simply defines
-the base ARC EM configuration without any optional instructions.</li>
-<li><code class="docutils literal"><span class="pre">-mcpu=em4</span></code> is a base ARC EM core configuration with <code class="docutils literal"><span class="pre">-mcode-density</span></code>
+<ul>
+<li><p class="first"><code class="docutils literal"><span class="pre">-mcpu=em</span></code> doesn&#8217;t correspond to any specific template, it simply defines
+the base ARC EM configuration without any optional instructions.</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">-mcpu=em_mini</span></code> is same as <code class="docutils literal"><span class="pre">em</span></code>, but uses reduced register file with
+only 16 core registers.</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">-mcpu=em4</span></code> is a base ARC EM core configuration with <code class="docutils literal"><span class="pre">-mcode-density</span></code>
 option.  It corresponds to the following ARC EM templates in ARChitect:
 em4_mini, em4_sensor, em4_ecc, em6_mini, em5d_mini, em5d_mini_v3, em5d_nrg,
 em7d_nrg, em9d_mini. Note, however, that those <code class="docutils literal"><span class="pre">mini</span></code> templates has a
 reduced core register file, which is not supported by the GNU toolchain, so
 application compiled with such TCF or <code class="docutils literal"><span class="pre">-mcpu=em4</span></code> will not run on an nSIM
 using this TCF - it is requried to add <code class="docutils literal"><span class="pre">nsim_isa_rgf_num_regs=32</span></code> to nSIM
-options.</li>
-<li><code class="docutils literal"><span class="pre">-mcpu=arcem</span></code> doesn&#8217;t correspond to any specific template, it is legacy
+options.</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">-mcpu=arcem</span></code> doesn&#8217;t correspond to any specific template, it is legacy
 flag preserved for compatibility with older GNU toolchain versions, where
 <code class="docutils literal"><span class="pre">-mcpu</span></code> used to select only a CPU family, while optional features were
-enabled or disable by individual <code class="docutils literal"><span class="pre">-m&lt;something&gt;</span></code> options.</li>
-<li><code class="docutils literal"><span class="pre">-mcpu=em4_dmips</span></code> is a full-featured ARC EM configuration for integer
+enabled or disable by individual <code class="docutils literal"><span class="pre">-m&lt;something&gt;</span></code> options.</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">-mcpu=em4_dmips</span></code> is a full-featured ARC EM configuration for integer
 operations. It corresponds to the following ARC EM templates in ARChitect:
 em4_dmips, em4_rtos, em6_dmips, em4_dmips_v3, em4_parity, em6_dmips_v3,
 em6_gp, em5d_voice_audio, em5d_nrg_v3, em7d_nrg_v3, em7d_voice_audio,
-em9d_nrg, em9d_voice_audio, em11d_nrg and em11d_voice_audio.</li>
-<li><code class="docutils literal"><span class="pre">-mcpu=em4_fpus</span></code> is like <code class="docutils literal"><span class="pre">em4_dmips</span></code> but with additional support for
+em9d_nrg, em9d_voice_audio, em11d_nrg and em11d_voice_audio.</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">-mcpu=em4_fpus</span></code> is like <code class="docutils literal"><span class="pre">em4_dmips</span></code> but with additional support for
 single-precision floating point unit. It corresponds to the following ARC EM
 templates in ARChitect: em4_dmips_fpusp, em4_dmips_fpusp_v3, em5d_nrg_fpusp
-and em9d_nrg_fpusp.</li>
-<li><code class="docutils literal"><span class="pre">-mcpu=em4_fpuda</span></code> is like <code class="docutils literal"><span class="pre">em4_fpus</span></code> but with additional support for
+and em9d_nrg_fpusp.</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">-mcpu=em4_fpuda</span></code> is like <code class="docutils literal"><span class="pre">em4_fpus</span></code> but with additional support for
 double-precision assist instructions. It corresponds to the following ARC EM
-templates in ARChitect: em4_dmips_fpuspdp and em4_dmips_fpuspdp_v3.</li>
+templates in ARChitect: em4_dmips_fpuspdp and em4_dmips_fpuspdp_v3.</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">-mcpu=quarkse_em</span></code> is a configuration for ARC processor in Intel Quark SE chip.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="60%" />
+<col width="40%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Option</th>
+<th class="head">quarkse_em</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>-mcode-density</td>
+<td>Y</td>
+</tr>
+<tr class="row-odd"><td>-mnorm</td>
+<td>Y</td>
+</tr>
+<tr class="row-even"><td>-mswap</td>
+<td>Y</td>
+</tr>
+<tr class="row-odd"><td>-mbarrel-shifter</td>
+<td>Y</td>
+</tr>
+<tr class="row-even"><td>-mdiv-rem</td>
+<td>Y</td>
+</tr>
+<tr class="row-odd"><td>-mmpy-option</td>
+<td>wlh2</td>
+</tr>
+<tr class="row-even"><td>-mfpu</td>
+<td>quark</td>
+</tr>
+<tr class="row-odd"><td>-mrf16</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</li>
 </ul>
 </div>
 <div class="section" id="arc-hs">
@@ -333,6 +399,20 @@ values for ARC HS.</p>
 <td>mpy</td>
 <td>&nbsp;</td>
 </tr>
+<tr class="row-odd"><td>hs4x</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>mpy</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>hs4xd</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>mpy</td>
+<td>&nbsp;</td>
+</tr>
 <tr class="row-odd"><td>hs38</td>
 <td>Y</td>
 <td>Y</td>
@@ -365,6 +445,8 @@ hardware multiplier.  It corresponds to the following ARC HS templates in
 ARChitect: hs34, hs36 and hs38.</li>
 <li><code class="docutils literal"><span class="pre">-mcpu=archs</span></code> is a generic CPU, which corresponds to the default
 configuration in older GNU toolchain versions.</li>
+<li><code class="docutils literal"><span class="pre">-mcpu=hs4x</span></code> and <code class="docutils literal"><span class="pre">-mcpu=hs4xd</span></code> have same option set as <code class="docutils literal"><span class="pre">-mcpu=archs</span></code> but compiler will
+optimize instruction scheduling for specified processors.</li>
 <li><code class="docutils literal"><span class="pre">-mcpu=hs38</span></code> is a fully featured ARC HS.  It corresponds to the following
 ARC HS templates in ARChitect: hs38_full</li>
 <li><code class="docutils literal"><span class="pre">-mcpu=hs38_linux</span></code> is a fully featured ARC HS with additional support for

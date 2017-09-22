@@ -235,6 +235,16 @@ $ arc-elf32-gcc -Wl,-marcv2elfx --specs<span class="o">=</span>nosys.specs -mcpu
 <tr class="row-even"><td>EM11D</td>
 <td>-mcpu=em4_fpuda -mfpu=fpuda_all</td>
 </tr>
+<tr class="row-odd"><td rowspan="3">v2.03a</td>
+<td>EM7D</td>
+<td>-mcpu=em4_dmips</td>
+</tr>
+<tr class="row-even"><td>EM9D</td>
+<td>-mcpu=em4_fpus -mfpu=fpus_all</td>
+</tr>
+<tr class="row-odd"><td>EM11D</td>
+<td>-mcpu=em4_fpuda -mfpu=fpuda_all</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -251,12 +261,12 @@ different ARC EM Starter Kit versions:</p>
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">snps_em_sk_v1.cfg</span></code> - for ARC EM Starter Kit v1.x.</li>
 <li><code class="docutils literal"><span class="pre">snps_em_sk_v2.1.cfg</span></code> - for ARC EM Starter Kit versions 2.0 and 2.1.</li>
-<li><code class="docutils literal"><span class="pre">snps_em_sk_v2.2.cfg</span></code> - for ARC EM Starter Kit version 2.2.</li>
+<li><code class="docutils literal"><span class="pre">snps_em_sk_v2.2.cfg</span></code> - for ARC EM Starter Kit version 2.2 and 2.03a.</li>
 <li><code class="docutils literal"><span class="pre">snps_em_sk.cfg</span></code> - this is a configuration for ARC EM Starter Kit 2.0 and
 2.1, preserved for compatibility.</li>
 </ul>
 <p>Following documentation would assume the usage of the latest ARC EM Starter Kit
-version 2.2.</p>
+version 2.03a which is similar to 2.2.</p>
 <p>Start OpenOCD:</p>
 <div class="highlight-shell"><div class="highlight"><pre><span></span><span class="c1"># On Linux (for manually built OpenOCD):</span>
 $ openocd  -c <span class="s1">&#39;gdb_port 49101&#39;</span> -f board/snps_em_sk_v2.2.cfg

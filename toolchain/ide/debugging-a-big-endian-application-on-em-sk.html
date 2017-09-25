@@ -99,7 +99,11 @@
 <li class="toctree-l3"><a class="reference internal" href="debugging-with-nsim.html">Debugging with nSIM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="debugging-with-custom-gdb-server.html">Debugging with Custom GDB Server</a></li>
 <li class="toctree-l3"><a class="reference internal" href="debugging-with-running-gdb-server.html">Debugging with Running GDB Server</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="">Debugging a big endian Application on EM Starter Kit</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Debugging a big endian Application on EM Starter Kit</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#instruction-for-windows">Instruction for Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#instructions-for-linux">Instructions for Linux</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#miscellaneous">Miscellaneous</a></li>
@@ -155,16 +159,12 @@
             
   <div class="section" id="debugging-a-big-endian-application-on-em-starter-kit">
 <h1>Debugging a big endian Application on EM Starter Kit<a class="headerlink" href="#debugging-a-big-endian-application-on-em-starter-kit" title="Permalink to this headline">¶</a></h1>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This page was written for ARC EM Starter Kit 1.0. It is mostly applicable
-to later versions of ARC EM Starter Kit, but there are some minor differences.</p>
-</div>
 <p>The EM Starter Kit comes with 4 pre-installed little endian configurations.
 User wishing to work with big endian configuration can use the procedure below
 to program a big endian .bit file, using the Digilent Adept Software. Big
-endian .bit file is not a part of the EM Starter Kit Software package, Synopsys
-will provide it on request.</p>
+endian .bit file is not a part of the EM Starter Kit Software package.</p>
+<div class="section" id="instruction-for-windows">
+<h2>Instruction for Windows<a class="headerlink" href="#instruction-for-windows" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>Ensure that EM Starter Kit is powered ON and connected to the host PC</li>
 <li>On the EM Starter Kit, close jumper J8 as shown in images below:</li>
@@ -179,8 +179,8 @@ will provide it on request.</p>
 <p class="caption"><span class="caption-text">J8 Jumper in closed position</span></p>
 </div>
 <ol class="arabic simple" start="3">
-<li>Download the Digilent Adept 2.13.1 System Software for Windows from
-<a class="reference external" href="http://www.digilentinc.com/Products/Detail.cfm?Prod=ADEPT2">http://www.digilentinc.com/Products/Detail.cfm?Prod=ADEPT2</a></li>
+<li>Download the Digilent Adept 2 System Software for Windows from
+<a class="reference external" href="http://store.digilentinc.com/digilent-adept-2-download-only/">http://store.digilentinc.com/digilent-adept-2-download-only/</a></li>
 <li>Open the &#8220;Adept&#8221; utility</li>
 </ol>
 <div class="figure" id="id3">
@@ -188,11 +188,12 @@ will provide it on request.</p>
 <p class="caption"><span class="caption-text">Adept Utility before Initializing Chain</span></p>
 </div>
 <ol class="arabic simple" start="5">
-<li>Press &#8220;Initialize chain&#8221;. There should be only one device in a chain: XC6SLX45.</li>
+<li>Press &#8220;Initialize chain&#8221;. There should be only one device in a chain:
+XC6SLX150 (XC6SLX45 for ARC EM Starter Kit 1.x)</li>
 </ol>
 <div class="figure" id="id4">
 <img alt="../_images/adept_shows_device.png" src="../_images/adept_shows_device.png" />
-<p class="caption"><span class="caption-text">XC6SLX45 Device shown after Initialization</span></p>
+<p class="caption"><span class="caption-text">XC6SLX{150,45} Device shown after Initialization</span></p>
 </div>
 <ol class="arabic simple" start="6">
 <li>Press &#8220;Browse&#8221; button and navigate to location of your big endian .bit file</li>
@@ -208,6 +209,34 @@ one: <code class="docutils literal"><span class="pre">$INSTALL_DIR/share/openocd
 board is powered off or until reconfiguration by pressing the FPGA
 configuration button located above the “C” in the “ARC” log on the board. Refer
 to EM Starter Kit documentation for more details.</p>
+</div>
+<div class="section" id="instructions-for-linux">
+<h2>Instructions for Linux<a class="headerlink" href="#instructions-for-linux" title="Permalink to this headline">¶</a></h2>
+<p>Follow step 1 through 3 from Windows section to properly configure board and
+download Adept software. To program FPGA it is required to install both
+&#8220;runtime&#8221; and &#8220;utilities&#8221; packages. After installing utilities and setting
+jumpers appropriately, use Digilent command-line utilities:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>$ djtgcfg enum
+Found 1 device(s)
+
+Device: TE0604-03
+    Product Name:   JTAG-ONB4
+    User Name:      TE0604-03
+    Serial Number:  25163300005A
+
+$ djtgcfg init -d TE0604-03
+Initializing scan chain...
+Found Device ID: 4401d093
+
+Found 1 device(s):
+    Device 0: XC6SLX150
+
+$ djtgcfg prog -d TE0604-03 -i 0 -f &lt;bit_file&gt;
+Programming device. Do not touch your board. This may take a few minutes...
+Programming succeeded.
+</pre></div>
+</div>
+</div>
 </div>
 
 

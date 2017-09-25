@@ -177,8 +177,8 @@ Memory map files in that directory have <code class="docutils literal"><span cla
 should be renamed to <code class="docutils literal"><span class="pre">memory.x</span></code>, because <code class="docutils literal"><span class="pre">arcv2elfx</span></code> linker emulation
 doesn&#8217;t support ability to override that file name. Please refer to
 <a class="reference internal" href="linker.html"><em>Linker scripts and memory.x files</em></a> for more details about <code class="docutils literal"><span class="pre">memory.x</span></code> files.</p>
-<p>For example for EM Starter Kit v2.2 EM7D to build an application:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>$ cp -a toolchain/extras/dev_systems/sk2.2_em7d.x memory.x
+<p>For example for EM Starter Kit v2.03a EM7D to build an application:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>$ cp -a toolchain/extras/dev_systems/sk2.03a_em7d.x memory.x
 $ arc-elf32-gcc -Wl,-marcv2elfx --specs<span class="o">=</span>nosys.specs -mcpu<span class="o">=</span>em4_dmips -O2 -g <span class="se">\</span>
      test.c -o test.elf
 </pre></div>
@@ -247,6 +247,25 @@ $ arc-elf32-gcc -Wl,-marcv2elfx --specs<span class="o">=</span>nosys.specs -mcpu
 </tr>
 </tbody>
 </table>
+<p>C library for GNU Toolchain for ARC provides basic support for UART module of EM
+Starter Kit, which allows to use standard C function for input and output:
+<code class="docutils literal"><span class="pre">printf()</span></code>, <code class="docutils literal"><span class="pre">scanf()</span></code>, etc. Memory map files are also provided for processor
+configurations of EM Starter Kit. Both of those features are available via
+special &#8220;specs&#8221; files: <code class="docutils literal"><span class="pre">emsk_em9d.specs</span></code> and <code class="docutils literal"><span class="pre">emsk_em11d.specs</span></code> (there is no
+separate file for EM7D of EM Starter Kit, it is identical to EM9D). Usage
+example is following:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>$ cat hello_world.c
+<span class="c1">#include &lt;stdio.h&gt;</span>
+int main<span class="o">()</span> <span class="o">{</span>
+    printf<span class="o">(</span><span class="s2">&quot;hello world\n&quot;</span><span class="o">)</span><span class="p">;</span>
+    <span class="k">return</span> 0<span class="p">;</span>
+<span class="o">}</span>
+
+$ arc-elf32-gcc --specs<span class="o">=</span>emsk_em9d.specs -mcpu<span class="o">=</span>em4_dmips hello_world.c
+</pre></div>
+</div>
+<p>Note that it is still required to specify valid <code class="docutils literal"><span class="pre">-mcpu</span></code> option value - it is
+not set by the specs file.</p>
 </div>
 <div class="section" id="running-an-application-with-openocd">
 <h2>Running an application with OpenOCD<a class="headerlink" href="#running-an-application-with-openocd" title="Permalink to this headline">¶</a></h2>

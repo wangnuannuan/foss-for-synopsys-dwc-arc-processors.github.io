@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../_static/style_overrides.css" type="text/css" />
+  
 
   
     <link rel="top" title="GNU Toolchain for ARC User Manual 2017.09 documentation" href="../index.html"/>
@@ -91,6 +93,21 @@
 <li class="toctree-l2"><a class="reference internal" href="#arc-specific-tech-discussion">ARC specific tech discussion</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="custom-instructions.html">Custom instructions: what and how</a></li>
 <li class="toctree-l3"><a class="reference internal" href="extensions-support.html">GCC&#8217;s support for ARC custom extensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="64bit.html">Impact of 64-bit integral operation on GCC toolchain</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jli.html">Using JLI Instructions with GNU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="secure-shield.html">SecureShield Programming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sanitizers.html">Sanitizers support for ARC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="small-data.html">Working with small data section</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#from-mwdt-to-gcc">From MWDT to GCC</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="option-matrix.html">MWDT vs. GCC option matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="apex.html">Migrating ARChitect APEX generated header to GNU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="builtins.html">ARC GNU builtins vs MWDT builtins</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#improving-gcc-output">Improving GCC output</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="optimizations.html">Understanding compiler options</a></li>
 </ul>
 </li>
 </ul>
@@ -163,6 +180,92 @@ information for how to use efficiently GCC compiler for ARC processors.</p>
 <li class="toctree-l2"><a class="reference internal" href="extensions-support.html#using-a-global-asm-helper-file-containing-the-definition-of-the-custom-instructions">Using a global asm helper file containing the definition of the custom instructions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="extensions-support.html#using-only-defines-at-the-c-source-level">Using only defines at the C source level</a></li>
 <li class="toctree-l2"><a class="reference internal" href="extensions-support.html#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="64bit.html">Impact of 64-bit integral operation on GCC toolchain</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="64bit.html#intro">Intro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="64bit.html#bit-move-operations">64-bit move operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="64bit.html#multiplication-instructions">Multiplication Instructions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="64bit.html#multiply-and-accumulate-instructions">Multiply and Accumulate instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="64bit.html#caveats">Caveats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="64bit.html#case-study">Case study</a></li>
+<li class="toctree-l3"><a class="reference internal" href="64bit.html#implementation-matrix-used-by-gcc">Implementation matrix used by GCC</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="jli.html">Using JLI Instructions with GNU</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="jli.html#optimizing-code-using-jli-calls-on-functions">Optimizing Code using JLI Calls on Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jli.html#discussion-about-mwdt-gnu-compatibility">Discussion about MWDT/GNU Compatibility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="secure-shield.html">SecureShield Programming</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="secure-shield.html#secureshield-api">SecureShield API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secure-shield.html#identifying-the-secure-callable-apis">Identifying the Secure-Callable APIs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secure-shield.html#programming-cautions">Programming Cautions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secure-shield.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sanitizers.html">Sanitizers support for ARC</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sanitizers.html#address-sanitizer-examples">Address Sanitizer Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sanitizers.html#heap-use-after-free">Heap-use-after-free</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sanitizers.html#heap-buffer-overflow">Heap-buffer-overflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sanitizers.html#stack-buffer-overflow">Stack-buffer-overflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sanitizers.html#global-buffer-overflow">Global-buffer-overflow</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sanitizers.html#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="small-data.html">Working with small data section</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="small-data.html#small-data-available-access-range">Small data available access range</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="small-data.html#sdata-and-address-scaling-mode-discussion">Sdata and address scaling mode discussion</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="small-data.html#controlling-what-goes-into-sdata-segment">Controlling what goes into SDATA segment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="small-data.html#automatic-for-global-data">Automatic for global data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="small-data.html#using-named-sections">Using named sections</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="from-mwdt-to-gcc">
+<h2>From MWDT to GCC<a class="headerlink" href="#from-mwdt-to-gcc" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="option-matrix.html">MWDT vs. GCC option matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apex.html">Migrating ARChitect APEX generated header to GNU</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="apex.html#the-auxiliary-registers">The Auxiliary registers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apex.html#the-extension-core-registers">The extension core registers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apex.html#user-extension-instructions">User extension instructions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="apex.html#gnu-header">GNU header</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="builtins.html">ARC GNU builtins vs MWDT builtins</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="improving-gcc-output">
+<h2>Improving GCC output<a class="headerlink" href="#improving-gcc-output" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="optimizations.html">Understanding compiler options</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="optimizations.html#architecture-independent-optimizations">Architecture-Independent Optimizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optimizations.html#processor-specific-optimizations">Processor-Specific Optimizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optimizations.html#gcc-optimizations-for-code-size">GCC optimizations for Code Size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optimizations.html#gcc-optimization-for-speed">GCC optimization for speed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optimizations.html#using-optimize-attribute">Using _optimize_ attribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optimizations.html#default-gcc-driver-options-and-parameters-arc-specific">Default GCC driver options and parameters; ARC specific</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="optimizations.html#optimizations">Optimizations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="optimizations.html#parameters">Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="optimizations.html#arc-hardware-variation">ARC hardware variation</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

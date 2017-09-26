@@ -12,4 +12,25 @@ ARC specific tech discussion
 
    custom-instructions.rst
    extensions-support.rst
+   64bit.rst
+   jli.rst
+   secure-shield.rst
+   sanitizers.rst
+   small-data.rst
+
+From MWDT to GCC
+----------------
+
+.. toctree::
+
+   option-matrix.rst
+   apex.rst
+   builtins.rst
+
+Improving GCC output
+--------------------
+
+.. toctree::
+
+   optimizations.rst
 

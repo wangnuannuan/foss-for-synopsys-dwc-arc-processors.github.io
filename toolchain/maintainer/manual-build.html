@@ -95,7 +95,11 @@
 <li class="toctree-l2"><a class="reference internal" href="release.html">Creating toolchain release</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">How to Build GNU Toolchain for ARC Manually</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#baremetal-elf32-toolchain">Baremetal (elf32) toolchain</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#linux-toolchain">Linux toolchain</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#linux-toolchain">Linux toolchain</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#uclibc-toolchain">uClibc toolchain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#glibc-toolchain">Glibc toolchain</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -265,6 +269,8 @@ $ <span class="nb">cd</span> -
 </div>
 <div class="section" id="linux-toolchain">
 <h2>Linux toolchain<a class="headerlink" href="#linux-toolchain" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="uclibc-toolchain">
+<h3>uClibc toolchain<a class="headerlink" href="#uclibc-toolchain" title="Permalink to this headline">¶</a></h3>
 <p>Define location of sysroot directory:</p>
 <div class="highlight-shell"><div class="highlight"><pre><span></span>$ <span class="nb">export</span> <span class="nv">SYSROOTDIR</span><span class="o">=</span><span class="nv">$INSTALLDIR</span>/arc-snps-linux-uclibc/sysroot
 </pre></div>
@@ -387,6 +393,36 @@ $ make all-gdb
 $ make install-gdb
 $ <span class="nb">cd</span> -
 </pre></div>
+</div>
+</div>
+<div class="section" id="glibc-toolchain">
+<h3>Glibc toolchain<a class="headerlink" href="#glibc-toolchain" title="Permalink to this headline">¶</a></h3>
+<p>Glibc toolchain is built like the uClibc toolchain, but there are few differences.
+First, it is needed to change <code class="docutils literal"><span class="pre">--target=arc-snps-linux-uclibc</span></code> to <code class="docutils literal"><span class="pre">--target=arc-snps-linux-gnu</span></code>.
+Second, uClibc-specific stages should be replaced with following glibc-specific stages.</p>
+<p>Install glibc headers:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>$ mkdir -p build/glibc
+$ <span class="nb">cd</span> build/glibc
+$ ../../glibc/configure <span class="se">\</span>
+    --target<span class="o">=</span>arc-snps-linux-gnu <span class="se">\</span>
+    --build<span class="o">=</span>x86_64-pc-linux-gnu <span class="se">\</span>
+    --host<span class="o">=</span>arc-snps-linux-gnu <span class="se">\</span>
+    --with-headers<span class="o">=</span><span class="nv">$SYSROOTDIR</span>/usr/include <span class="se">\</span>
+    --prefix<span class="o">=</span>/usr <span class="se">\</span>
+    --disable-werror <span class="se">\</span>
+    --enable-obsolete-rpc
+$ make install-bootstrap-headers<span class="o">=</span>yes install-headers <span class="nv">DESTDIR</span><span class="o">=</span><span class="nv">$SYSROOTDIR</span>
+$ touch <span class="nv">$SYSROOTDIR</span>/usr/include/gnu/stubs.h
+$ <span class="nb">cd</span> -
+</pre></div>
+</div>
+<p>Build glibc:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> build/glibc
+$ make
+$ make install <span class="nv">DESTDIR</span><span class="o">=</span><span class="nv">$SYSROOTDIR</span>
+$ <span class="nb">cd</span> -
+</pre></div>
+</div>
 </div>
 </div>
 </div>

@@ -174,7 +174,7 @@ please refer to <cite>windows-installer/README.md</cite> section &#8220;Prerequi
 like Windows installer or OpenOCD, however those are not specifically tested, so
 may not really work. By default <code class="docutils literal"><span class="pre">release.mk</span></code> will build all of the possible
 components.  It is also possible to invoke particular Make targets directly to
-get only a limited set of distributales, however it is not possible to make
+get only a limited set of distributables, however it is not possible to make
 further targets like <a class="reference internal" href="#cmdoption-arg-deploy"><code class="xref std std-option docutils literal"><span class="pre">deploy</span></code></a> or <a class="reference internal" href="#cmdoption-arg-upload"><code class="xref std std-option docutils literal"><span class="pre">upload</span></code></a> to use only this
 limited set of files (there is always an option to modify <code class="docutils literal"><span class="pre">release.mk</span></code> to get
 desired results).</p>
@@ -467,7 +467,7 @@ separated by semicolon, as in <code class="docutils literal"><span class="pre">h
 <dl class="envvar">
 <dt id="envvar-RELEASE_TAG">
 <code class="descname">RELEASE_TAG</code><a class="headerlink" href="#envvar-RELEASE_TAG" title="Permalink to this definition">¶</a></dt>
-<dd><p>Git tag for this release. Tag is used literaly and can be for example,
+<dd><p>Git tag for this release. Tag is used literally and can be for example,
 arc-2016.03-alpha1.</p>
 </dd></dl>
 
@@ -607,7 +607,7 @@ branch is the base for the release.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Currently <code class="docutils literal"><span class="pre">tag-release.sh</span></code> script used in the release process has a check
-that ensures that current branch is a developemnt branch by checking that
+that ensures that current branch is a development branch by checking that
 branch name ends in <code class="docutils literal"><span class="pre">-dev</span></code>.</p>
 </div>
 <p>First setup required make variables in the <code class="docutils literal"><span class="pre">release.config</span></code> file that will be

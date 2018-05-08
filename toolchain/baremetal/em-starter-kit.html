@@ -180,8 +180,8 @@ Memory map files in that directory have <code class="docutils literal"><span cla
 should be renamed to <code class="docutils literal"><span class="pre">memory.x</span></code>, because <code class="docutils literal"><span class="pre">arcv2elfx</span></code> linker emulation
 doesn&#8217;t support ability to override that file name. Please refer to
 <a class="reference internal" href="linker.html"><em>Linker scripts and memory.x files</em></a> for more details about <code class="docutils literal"><span class="pre">memory.x</span></code> files.</p>
-<p>For example for EM Starter Kit v2.03a EM7D to build an application:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>$ cp -a toolchain/extras/dev_systems/sk2.03a_em7d.x memory.x
+<p>For example for EM Starter Kit v2.3 EM7D to build an application:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>$ cp -a toolchain/extras/dev_systems/sk2.3_em7d.x memory.x
 $ arc-elf32-gcc -Wl,-marcv2elfx --specs<span class="o">=</span>nosys.specs -mcpu<span class="o">=</span>em4_dmips -O2 -g <span class="se">\</span>
      test.c -o test.elf
 </pre></div>
@@ -238,7 +238,7 @@ $ arc-elf32-gcc -Wl,-marcv2elfx --specs<span class="o">=</span>nosys.specs -mcpu
 <tr class="row-even"><td>EM11D</td>
 <td>-mcpu=em4_fpuda -mfpu=fpuda_all</td>
 </tr>
-<tr class="row-odd"><td rowspan="3">v2.03a</td>
+<tr class="row-odd"><td rowspan="3">v2.3</td>
 <td>EM7D</td>
 <td>-mcpu=em4_dmips</td>
 </tr>
@@ -283,23 +283,24 @@ different ARC EM Starter Kit versions:</p>
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">snps_em_sk_v1.cfg</span></code> - for ARC EM Starter Kit v1.x.</li>
 <li><code class="docutils literal"><span class="pre">snps_em_sk_v2.1.cfg</span></code> - for ARC EM Starter Kit versions 2.0 and 2.1.</li>
-<li><code class="docutils literal"><span class="pre">snps_em_sk_v2.2.cfg</span></code> - for ARC EM Starter Kit version 2.2 and 2.03a.</li>
+<li><code class="docutils literal"><span class="pre">snps_em_sk_v2.2.cfg</span></code> - for ARC EM Starter Kit version 2.2.</li>
+<li><code class="docutils literal"><span class="pre">snps_em_sk_v2.3.cfg</span></code> - for ARC EM Starter Kit version 2.3.</li>
 <li><code class="docutils literal"><span class="pre">snps_em_sk.cfg</span></code> - this is a configuration for ARC EM Starter Kit 2.0 and
 2.1, preserved for compatibility.</li>
 </ul>
 <p>Following documentation would assume the usage of the latest ARC EM Starter Kit
-version 2.03a which is similar to 2.2.</p>
+version 2.3 which is similar to 2.2.</p>
 <p>Start OpenOCD:</p>
 <div class="highlight-shell"><div class="highlight"><pre><span></span><span class="c1"># On Linux (for manually built OpenOCD):</span>
-$ openocd  -c <span class="s1">&#39;gdb_port 49101&#39;</span> -f board/snps_em_sk_v2.2.cfg
+$ openocd  -c <span class="s1">&#39;gdb_port 49101&#39;</span> -f board/snps_em_sk_v2.3.cfg
 
 <span class="c1"># On Linux (for prebuilt OpenOCD from IDE package):</span>
 $ <span class="nv">$ide_dir</span>/bin/openocd -s <span class="nv">$ide_dir</span>/share/openocd/scripts <span class="se">\</span>
-    -c <span class="s1">&#39;gdb_port 49101&#39;</span> -f board/snps_em_sk_v2.2.cfg
+    -c <span class="s1">&#39;gdb_port 49101&#39;</span> -f board/snps_em_sk_v2.3.cfg
 
 @rem on Windows:
 &gt; openocd -s C:<span class="se">\a</span>rc_gnu<span class="se">\s</span>hare<span class="se">\o</span>penocd<span class="se">\s</span>cripts -c <span class="s2">&quot;gdb_port 49101&quot;</span> ^
-  -f board<span class="se">\s</span>nps_em_sk_v2.2.cfg
+  -f board<span class="se">\s</span>nps_em_sk_v2.3.cfg
 </pre></div>
 </div>
 <p>OpenOCD will be waiting for GDB connections on TCP port specified as an
@@ -341,7 +342,7 @@ as an external application.</p>
 <p>Compile it - refer to &#8220;Building application&#8221; section for details, creation of
 <code class="docutils literal"><span class="pre">memory.x</span></code> is not shown in this example:</p>
 <div class="highlight-shell"><div class="highlight"><pre><span></span>$ arc-elf32-gcc -Wl,-marcv2elfx --specs<span class="o">=</span>nosys.specs -mcpu<span class="o">=</span>em4_dmips -O2 -g <span class="se">\</span>
-    simple.c -o simple_sk2.2_em7d.elf
+    simple.c -o simple_sk2.3_em7d.elf
 </pre></div>
 </div>
 <p>Start GDB, connect to target and run it:</p>

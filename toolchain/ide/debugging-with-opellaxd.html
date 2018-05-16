@@ -192,7 +192,11 @@ configuration</span></a>.</p>
 files. Both these files you can find <a class="reference external" href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/tree/arc-staging/extras/opella-xd">here</a>.
 In the <strong>Ashling XML File</strong> field you should choose one of <code class="docutils literal"><span class="pre">arc600-cpu.xml</span></code>,
 <code class="docutils literal"><span class="pre">arc700-cpu.xml</span></code>, <code class="docutils literal"><span class="pre">arc-em-cpu.xml</span></code> and <code class="docutils literal"><span class="pre">arc-hs-cpu.xml</span></code>. In the
-<strong>Target description XML file</strong> should be path to <code class="docutils literal"><span class="pre">opella-YOUR_CPU-tdesc.xml</span></code>.</p>
+<strong>Target description XML file</strong> should be path to <code class="docutils literal"><span class="pre">opella-YOUR_CPU-tdesc.xml</span></code>.
+Note that file <code class="docutils literal"><span class="pre">aux-minimal.xml</span></code> should be also downloaded from that folder
+and put into the same folder as <code class="docutils literal"><span class="pre">opella-YOUR_CPU-tdesc.xml</span></code>. This file
+contains description common to all architectures and is included by all
+&#8220;tdesc&#8221; files.</p>
 <p><strong>JTAG frequency</strong> should be set to <strong>7 MHz</strong> for EM Starter Kit 2.0 and 2.1.
 For EM Starter Kit 2.2 select <strong>5 MHZ</strong>. For other hardware development systems
 leave <strong>10 MHz</strong>.</p>
@@ -202,6 +206,12 @@ leave <strong>10 MHz</strong>.</p>
 so you will be able to debug your application only if you have just one core
 in your JTAG chain.</p>
 </div>
+<p>Currently IDE always passes option <code class="docutils literal"><span class="pre">--device</span> <span class="pre">arc</span></code> to Opella-XD GDB-server
+which means that server would be configured to work with TPAOP-ARC20-R0 cable. Server
+configured in such way doesn&#8217;t work with TPAOP-ARC20-R1 - this cable requires
+<code class="docutils literal"><span class="pre">--device</span> <span class="pre">arc-jtag-tpa-r1</span></code> or <code class="docutils literal"><span class="pre">--device</span> <span class="pre">arc-cjtag-tpa-r1</span></code> option to be
+passed to Opella-XD GDB-server. As a consequence currently GNU IDE supports only
+TPAOP-ARC20-R0 cable.</p>
 </div>
 <div class="section" id="starting-a-debug-session">
 <h2>Starting a debug session<a class="headerlink" href="#starting-a-debug-session" title="Permalink to this headline">¶</a></h2>

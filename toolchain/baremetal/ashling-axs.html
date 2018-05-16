@@ -231,11 +231,14 @@ for <code class="docutils literal"><span class="pre">arc600-cpu.xml</span></code
 <code class="docutils literal"><span class="pre">arc-hs-cpu.xml</span></code> can be found in this <code class="docutils literal"><span class="pre">toolchain</span></code> repository in
 <code class="docutils literal"><span class="pre">extras/opella-xd</span></code>, <a class="reference external" href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/tree/arc-staging/extras/opella-xd">direct link</a>.
 Provided files are: <code class="docutils literal"><span class="pre">opella-arc600-tdesc.xml</span></code>, <code class="docutils literal"><span class="pre">opella-arc700-tdesc.xml</span></code>,
-<code class="docutils literal"><span class="pre">opella-arcem-tdesc.xml</span></code> and <code class="docutils literal"><span class="pre">opella-archs-tdesc.xml</span></code>. It is important that
-<code class="docutils literal"><span class="pre">ARC_REG_FILE</span></code> for Ashling GDB server and target description file for GDB
-match to each other, so if Opella&#8217;s file has been modified, so should be the
-target description. Also due to incompatible changes in GDB, it is required to
-disable GDB p/P remote packet.:</p>
+<code class="docutils literal"><span class="pre">opella-arcem-tdesc.xml</span></code> and <code class="docutils literal"><span class="pre">opella-archs-tdesc.xml</span></code>.
+File <code class="docutils literal"><span class="pre">aux-minimal.xml</span></code> should be also downloaded from that folder
+and put into the same folder as <code class="docutils literal"><span class="pre">opella-*-tdesc.xml</span></code>. This file
+contains description common to all architectures and is included by all
+&#8220;tdesc&#8221; files.
+It is important that <code class="docutils literal"><span class="pre">ARC_REG_FILE</span></code> for Ashling GDB server and target
+description file for GDB match each other, so if Opella&#8217;s file has been
+modified, so should be the target description.:</p>
 <div class="highlight-shell"><div class="highlight"><pre><span></span><span class="o">(</span>gdb<span class="o">)</span> <span class="nb">set</span> tdesc filename &lt;path/to/opella-CPU-tdesc.xml&gt;
 </pre></div>
 </div>

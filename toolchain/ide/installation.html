@@ -161,19 +161,19 @@
 <div class="contents local topic" id="table-of-contents">
 <p class="topic-title first">Table of Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#using-installer-for-windows" id="id35">Using installer for Windows</a></li>
-<li><a class="reference internal" href="#manual-installation-on-linux-and-windows" id="id36">Manual installation on Linux and Windows</a><ul>
-<li><a class="reference internal" href="#downloading-eclipse" id="id37">Downloading Eclipse</a></li>
-<li><a class="reference internal" href="#downloading-latest-plugins" id="id38">Downloading latest plugins</a></li>
-<li><a class="reference internal" href="#installing-into-eclipse" id="id39">Installing into Eclipse</a></li>
+<li><a class="reference internal" href="#using-installer-for-windows" id="id33">Using installer for Windows</a></li>
+<li><a class="reference internal" href="#manual-installation-on-linux-and-windows" id="id34">Manual installation on Linux and Windows</a><ul>
+<li><a class="reference internal" href="#downloading-eclipse" id="id35">Downloading Eclipse</a></li>
+<li><a class="reference internal" href="#downloading-latest-plugins" id="id36">Downloading latest plugins</a></li>
+<li><a class="reference internal" href="#installing-into-eclipse" id="id37">Installing into Eclipse</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#updating-existing-plugin" id="id40">Updating existing plugin</a></li>
-<li><a class="reference internal" href="#installing-plugin-on-linux-host" id="id41">Installing plugin on Linux host</a></li>
+<li><a class="reference internal" href="#updating-existing-plugin" id="id38">Updating existing plugin</a></li>
+<li><a class="reference internal" href="#installing-plugin-on-linux-host" id="id39">Installing plugin on Linux host</a></li>
 </ul>
 </div>
 <div class="section" id="using-installer-for-windows">
-<h2><a class="toc-backref" href="#id35">Using installer for Windows</a><a class="headerlink" href="#using-installer-for-windows" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id33">Using installer for Windows</a><a class="headerlink" href="#using-installer-for-windows" title="Permalink to this headline">¶</a></h2>
 <p>Windows users are advised to use our Windows installer for Eclipse for GNU
 Toolchain for IDE, that can be downloaded from this <a class="reference external" href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases">releases
 page</a>.
@@ -202,13 +202,13 @@ cannot contain white spaces.</p>
 </div>
 </div>
 <div class="section" id="manual-installation-on-linux-and-windows">
-<h2><a class="toc-backref" href="#id36">Manual installation on Linux and Windows</a><a class="headerlink" href="#manual-installation-on-linux-and-windows" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id34">Manual installation on Linux and Windows</a><a class="headerlink" href="#manual-installation-on-linux-and-windows" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="downloading-eclipse">
-<h3><a class="toc-backref" href="#id37">Downloading Eclipse</a><a class="headerlink" href="#downloading-eclipse" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id35">Downloading Eclipse</a><a class="headerlink" href="#downloading-eclipse" title="Permalink to this headline">¶</a></h3>
 <p>Download Eclipse IDE for C/C++ Developers, that already contains CDT from <a class="reference external" href="https://www.eclipse.org/downloads/">this page</a></p>
 </div>
 <div class="section" id="downloading-latest-plugins">
-<h3><a class="toc-backref" href="#id38">Downloading latest plugins</a><a class="headerlink" href="#downloading-latest-plugins" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id36">Downloading latest plugins</a><a class="headerlink" href="#downloading-latest-plugins" title="Permalink to this headline">¶</a></h3>
 <p>User can get this plug-in from website URL
 <a class="reference external" href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/">https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/</a>,
 this is an archived version of the GNU ARC Eclipse plug-in update site, the
@@ -227,26 +227,11 @@ file name is arc_gnu_&lt;version&gt;_ide_plugins.zip</p>
 </div>
 </div>
 <div class="section" id="installing-into-eclipse">
-<h3><a class="toc-backref" href="#id39">Installing into Eclipse</a><a class="headerlink" href="#installing-into-eclipse" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id37">Installing into Eclipse</a><a class="headerlink" href="#installing-into-eclipse" title="Permalink to this headline">¶</a></h3>
 <p>To run ARC plugins for Eclipse, it is required to have Target Terminal plugin
 installed in Eclipse.</p>
-<p><strong>For ARC GNU 2016.03 and earlier:</strong></p>
-<p>In Eclipse go to &#8220;Help&#8221;, then &#8220;Install new Software&#8221;,
-press &#8220;Add&#8221; button to the right of &#8220;Work with&#8221; combo box and add new software
-repository <a class="reference external" href="http://download.eclipse.org/tm/updates/3.7">http://download.eclipse.org/tm/updates/3.7</a>:</p>
+<p>Install &#8220;TM Terminal&#8221; plugin from Oxygen repository.</p>
 <div class="figure" id="id9">
-<img alt="../_images/adding_new_repository.png" src="../_images/adding_new_repository.png" />
-<p class="caption"><span class="caption-text">Adding new repository</span></p>
-</div>
-<p>Select this repository under &#8220;Work with&#8221; and install &#8220;Target Management
-Terminal (Deprecated)&#8221; plugin from &#8220;TM Terminal and RSE 3.7 Main Features&#8221; group.</p>
-<div class="figure" id="id10">
-<img alt="../_images/installation_of_eclipse_terminal_plugin.png" src="../_images/installation_of_eclipse_terminal_plugin.png" />
-<p class="caption"><span class="caption-text">Installation of Eclipse terminal plugin</span></p>
-</div>
-<p><strong>For more recent versions:</strong></p>
-<p>Install &#8220;TM Terminal&#8221; plugin from Neon repository.</p>
-<div class="figure" id="id11">
 <img alt="../_images/installation_of_tm_terminal.png" src="../_images/installation_of_tm_terminal.png" />
 <p class="caption"><span class="caption-text">Installation of TM Terminal in Eclipse</span></p>
 </div>
@@ -254,113 +239,113 @@ Terminal (Deprecated)&#8221; plugin from &#8220;TM Terminal and RSE 3.7 Main Fea
 from local by pointing Eclipse to it: <code class="docutils literal"><span class="pre">Eclipse</span> <span class="pre">-&gt;</span> <span class="pre">Install</span> <span class="pre">New</span> <span class="pre">Software</span> <span class="pre">-&gt;</span> <span class="pre">Add</span> <span class="pre">-&gt;</span>
 <span class="pre">Archive</span> <span class="pre">-&gt;</span></code> select arc_gnu_ide_plugins.zip file. Unzip this archived folder, there
 will be six components in it.</p>
-<div class="figure" id="id12">
+<div class="figure" id="id10">
 <img alt="../_images/install_from_local_pc.png" src="../_images/install_from_local_pc.png" />
 <p class="caption"><span class="caption-text">Install from local PC</span></p>
 </div>
-<div class="figure" id="id13">
+<div class="figure" id="id11">
 <img alt="../_images/check_gnu_arc_c++_development_support.png" src="../_images/check_gnu_arc_c++_development_support.png" />
 <p class="caption"><span class="caption-text">Check GNU ARC C++ Development Support</span></p>
 </div>
-<div class="figure" id="id14">
+<div class="figure" id="id12">
 <img alt="../_images/get_copyright_by_clicking_more.png" src="../_images/get_copyright_by_clicking_more.png" />
 <p class="caption"><span class="caption-text">Get copyright by clicking &#8220;more&#8221;</span></p>
 </div>
-<div class="figure" id="id15">
+<div class="figure" id="id13">
 <img alt="../_images/get_general_information_by_clicking_more.png" src="../_images/get_general_information_by_clicking_more.png" />
 <p class="caption"><span class="caption-text">Get General Information by clicking &#8220;more&#8221;</span></p>
 </div>
-<div class="figure" id="id16">
+<div class="figure" id="id14">
 <img alt="../_images/get_license_agreement_by_clicking_more.png" src="../_images/get_license_agreement_by_clicking_more.png" />
 <p class="caption"><span class="caption-text">Get License Agreement by clicking &#8220;more&#8221;</span></p>
 </div>
-<div class="figure" id="id17">
+<div class="figure" id="id15">
 <img alt="../_images/install_details.png" src="../_images/install_details.png" />
 <p class="caption"><span class="caption-text">10 Install Details</span></p>
 </div>
-<div class="figure" id="id18">
+<div class="figure" id="id16">
 <img alt="../_images/accept_the_terms_of_license_agreement.png" src="../_images/accept_the_terms_of_license_agreement.png" />
 <p class="caption"><span class="caption-text">Accept the terms of license agreement</span></p>
 </div>
-<div class="figure" id="id19">
+<div class="figure" id="id17">
 <img alt="../_images/install_arc_gnu_ide_plugin.png" src="../_images/install_arc_gnu_ide_plugin.png" />
 <p class="caption"><span class="caption-text">Install ARC GNU IDE Plugin</span></p>
 </div>
-<div class="figure" id="id20">
+<div class="figure" id="id18">
 <img alt="../_images/warning_about_this_plugin_installation.png" src="../_images/warning_about_this_plugin_installation.png" />
 <p class="caption"><span class="caption-text">Warning about this plugins installation</span></p>
 </div>
-<div class="figure" id="id21">
+<div class="figure" id="id19">
 <img alt="../_images/restarting_eclipse.png" src="../_images/restarting_eclipse.png" />
 <p class="caption"><span class="caption-text">Restarting Eclipse</span></p>
 </div>
 <p>Ignore the Security Warning, and click &#8220;Ok&#8221;, after restarting Eclipse IDE, the
 installation is finished. If user install plug-in successfully, the &#8220;ARC&#8221; icon
 will show up in &#8220;About Eclipse&#8221;.</p>
-<div class="figure" id="id22">
+<div class="figure" id="id20">
 <img alt="../_images/plug-in_in_eclipse_ide.png" src="../_images/plug-in_in_eclipse_ide.png" />
 <p class="caption"><span class="caption-text">Plug-in in Eclipse IDE</span></p>
 </div>
 <p>Click the &#8220;ARC&#8221; icon; user will get detailed plug-in features information.</p>
-<div class="figure" id="id23">
+<div class="figure" id="id21">
 <img alt="../_images/about_eclipse_elf32_plug-in_features.png" src="../_images/about_eclipse_elf32_plug-in_features.png" />
 <p class="caption"><span class="caption-text">About Eclipse ELF32 Plug-in Features</span></p>
 </div>
 <p>Click the &#8220;Installation Details&#8221; button, the Features and Plug-ins will also show up.</p>
-<div class="figure" id="id24">
+<div class="figure" id="id22">
 <img alt="../_images/arc_gnu_plugin_plug-ins.png" src="../_images/arc_gnu_plugin_plug-ins.png" />
 <p class="caption"><span class="caption-text">ARC GNU plugin Plug-ins</span></p>
 </div>
-<div class="figure" id="id25">
+<div class="figure" id="id23">
 <img alt="../_images/arc_gnu_plugin_features.png" src="../_images/arc_gnu_plugin_features.png" />
 <p class="caption"><span class="caption-text">ARC GNU plugin Features</span></p>
 </div>
 </div>
 </div>
 <div class="section" id="updating-existing-plugin">
-<h2><a class="toc-backref" href="#id40">Updating existing plugin</a><a class="headerlink" href="#updating-existing-plugin" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id38">Updating existing plugin</a><a class="headerlink" href="#updating-existing-plugin" title="Permalink to this headline">¶</a></h2>
 <p>To update the existing plugin, as shown in the figure below, and
 the version of this current plugin is for example &#8220;1.1.0.201402280630&#8221;,
 follow same instructions as plugin installation.</p>
-<div class="figure" id="id26">
+<div class="figure" id="id24">
 <img alt="../_images/arc_gnu_plugin_features.png" src="../_images/arc_gnu_plugin_features.png" />
 <p class="caption"><span class="caption-text">ARC GNU plugin Features</span></p>
 </div>
-<div class="figure" id="id27">
+<div class="figure" id="id25">
 <img alt="../_images/current_arc_gnu_ide_plugin.png" src="../_images/current_arc_gnu_ide_plugin.png" />
 <p class="caption"><span class="caption-text">Current ARC GNU IDE plugin</span></p>
 </div>
-<div class="figure" id="id28">
+<div class="figure" id="id26">
 <img alt="../_images/installation_of_latest_plugin.png" src="../_images/installation_of_latest_plugin.png" />
 <p class="caption"><span class="caption-text">Installation of latest plugin</span></p>
 </div>
-<div class="figure" id="id29">
+<div class="figure" id="id27">
 <img alt="../_images/updated_arc_gnu_ide_plugin.png" src="../_images/updated_arc_gnu_ide_plugin.png" />
 <p class="caption"><span class="caption-text">Updated ARC GNU IDE plugin</span></p>
 </div>
-<div class="figure" id="id30">
+<div class="figure" id="id28">
 <img alt="../_images/general_information_of_the_latest_plugin.png" src="../_images/general_information_of_the_latest_plugin.png" />
 <p class="caption"><span class="caption-text">General Information of the latest plugin</span></p>
 </div>
-<div class="figure" id="id31">
+<div class="figure" id="id29">
 <img alt="../_images/installed_details_of_the_latest_plugin.png" src="../_images/installed_details_of_the_latest_plugin.png" />
 <p class="caption"><span class="caption-text">Installed details of the latest plugin</span></p>
 </div>
-<div class="figure" id="id32">
+<div class="figure" id="id30">
 <img alt="../_images/update_existing_plugins_sucessfully.png" src="../_images/update_existing_plugins_sucessfully.png" />
 <p class="caption"><span class="caption-text">Update exiting plugins successfully</span></p>
 </div>
-<div class="figure" id="id33">
+<div class="figure" id="id31">
 <img alt="../_images/updated_arc_gnu_plugin_features.png" src="../_images/updated_arc_gnu_plugin_features.png" />
 <p class="caption"><span class="caption-text">Updated ARC GNU plugin Features</span></p>
 </div>
-<div class="figure" id="id34">
+<div class="figure" id="id32">
 <img alt="../_images/updated_arc_gnu_plugin_plug-ins.png" src="../_images/updated_arc_gnu_plugin_plug-ins.png" />
 <p class="caption"><span class="caption-text">Updated ARC GNU plugin Plug-ins</span></p>
 </div>
 </div>
 <div class="section" id="installing-plugin-on-linux-host">
-<h2><a class="toc-backref" href="#id41">Installing plugin on Linux host</a><a class="headerlink" href="#installing-plugin-on-linux-host" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id39">Installing plugin on Linux host</a><a class="headerlink" href="#installing-plugin-on-linux-host" title="Permalink to this headline">¶</a></h2>
 <p>If you plan to connect to UART port on target board with RxTx plugin controlled
 by IDE you need to change permissions of directory /var/lock in your system.
 Usually by default only users with root access are allowed to write into this

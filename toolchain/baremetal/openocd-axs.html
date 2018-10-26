@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Using OpenOCD with AXS SDP &mdash; GNU Toolchain for ARC User Manual 2018.03 documentation</title>
+  <title>Using OpenOCD with AXS SDP &mdash; GNU Toolchain for ARC User Manual 2018.09 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="GNU Toolchain for ARC User Manual 2018.03 documentation" href="../index.html"/>
+    <link rel="top" title="GNU Toolchain for ARC User Manual 2018.09 documentation" href="../index.html"/>
         <link rel="up" title="Building baremetal applications" href="index.html"/>
         <link rel="next" title="Using Ashling Opella-XD GDB server with AXS SDP" href="ashling-axs.html"/>
         <link rel="prev" title="Using GNU Toolchain to Debug Applications on EM Starter Kit" href="em-starter-kit.html"/> 
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                2018.03
+                2018.09
               </div>
             
           
@@ -172,11 +172,6 @@ for instructions to download, build and install it.</p>
 <li>AXS102 uses AXC002 CPU card;</li>
 <li>AXS103 uses AXC003 CPU card.</li>
 </ul>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">AXS103 with HS38x2 is not supported by OpenOCD - this system configuration
-includes SLC, which is not supported by OpenOCD. SLC cannot be disabled.</p>
-</div>
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <p>Binary toolchain releases can be downloaded from the <a class="reference external" href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases">GNU Toolchain Releases
@@ -328,8 +323,6 @@ to implement HS36 or to implement HS38.</p>
 <div class="highlight-shell"><div class="highlight"><pre><span></span>$ openocd -f board/snps_axs103_hs38.cfg
 </pre></div>
 </div>
-<p>Note, however, that as of version 2016.03 OpenOCD doesn&#8217;t support SLC in
-HS38x2, rendering it mostly useless for HS38x2 debugging.</p>
 <p>OpenOCD will open a GDBserver connection for each CPU core on target (4 for
 AXS101, 2 for AXS102, 1 or 2 for AXS103). GDBserver for the first core listens
 on the TCP port 3333, second on port 3334 and so on. Note that OpenOCD
@@ -506,7 +499,7 @@ AXS101.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2018.03',
+            VERSION:'2018.09',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

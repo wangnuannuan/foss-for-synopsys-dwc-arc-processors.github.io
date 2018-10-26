@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Building User Guide &mdash; GNU Toolchain for ARC User Manual 2018.03 documentation</title>
+  <title>Building User Guide &mdash; GNU Toolchain for ARC User Manual 2018.09 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="GNU Toolchain for ARC User Manual 2018.03 documentation" href="../index.html"/>
+    <link rel="top" title="GNU Toolchain for ARC User Manual 2018.09 documentation" href="../index.html"/>
         <link rel="up" title="ARC GNU IDE" href="index.html"/>
         <link rel="next" title="Building Linux uClibc applications" href="building-linux-uclibc-applications.html"/>
         <link rel="prev" title="ARC Project Templates" href="arc-project-templates.html"/> 
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                2018.03
+                2018.09
               </div>
             
           
@@ -97,6 +97,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#project-build-settings">Project Build Settings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#target-processor-page">Target Processor Page</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#cpu-option">CPU option</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#linker-options">Linker options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#other-options-and-tcf">Other options and TCF</a></li>
 </ul>
 </li>
@@ -342,6 +343,22 @@ option values are consistent with CPU and you can specify there values that
 are weaker than CPU value requires. So please be careful when editing TCFs.</p>
 </div>
 </div>
+<div class="section" id="linker-options">
+<h2>Linker options<a class="headerlink" href="#linker-options" title="Permalink to this headline">¶</a></h2>
+<p>Dropdown box in <strong>ARC ELF32 GCC C/C++ Linker</strong> &gt; <strong>General</strong> allows to select
+which spec-file to use.</p>
+<ul class="simple">
+<li><strong>nsim</strong> (<code class="docutils literal"><span class="pre">--specs=nsim.specs</span></code>)</li>
+<li><strong>nosys</strong> (<code class="docutils literal"><span class="pre">--specs=nosys.specs</span></code>)</li>
+<li><strong>emsk_em9d</strong> (<code class="docutils literal"><span class="pre">--specs=emsk_em9d.specs</span></code>)</li>
+<li><strong>emsk_em11d</strong> (<code class="docutils literal"><span class="pre">--specs=emsk_em11d.specs</span></code>)</li>
+<li><strong>None</strong> (don&#8217;t pass any option).</li>
+</ul>
+<div class="figure" id="id5">
+<img alt="../_images/using_gcc_specs_file.png" src="../_images/using_gcc_specs_file.png" />
+<p class="caption"><span class="caption-text">Dropdown list to select GCC specs file</span></p>
+</div>
+</div>
 <div class="section" id="other-options-and-tcf">
 <h2>Other options and TCF<a class="headerlink" href="#other-options-and-tcf" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -352,7 +369,7 @@ for used CPU core (available only for ARC EM and HS), which will set these optio
 automatically. The only option that is not set automatically by selecting
 a TCF file is <strong>ABI selection</strong> option, which is available only for ARC HS processors.</li>
 </ul>
-<div class="figure" id="id5">
+<div class="figure" id="id6">
 <img alt="../_images/target_tcf_selected.png" src="../_images/target_tcf_selected.png" />
 <p class="caption"><span class="caption-text">Target Processor Page for ARC HS with TCF checkbox selected</span></p>
 </div>
@@ -362,7 +379,7 @@ TCF files are provided by your chip designer.</p>
 <p>To see which options are set automatically if TCF is chosen, you can select a
 tool from the list on the left of the dialog and see the list of options to be
 passed to this tool in the <strong>All options</strong> field.</p>
-<div class="figure" id="id6">
+<div class="figure" id="id7">
 <img alt="../_images/compiler_options_list.png" src="../_images/compiler_options_list.png" />
 <p class="caption"><span class="caption-text">List of all the options to be passed to compilerx</span></p>
 </div>
@@ -374,7 +391,7 @@ already contain memory maps that are used if no other is provided. However,
 this is true only for <strong>Hello World for EM SK</strong> and <strong>Empty Project For</strong>
 templates, but not <strong>Empty Project</strong> ones. <strong>Empty Project</strong> templates are
 generated automatically by Eclipse and do not contain any specific information.</p>
-<div class="figure" id="id7">
+<div class="figure" id="id8">
 <img alt="../_images/memory_map.png" src="../_images/memory_map.png" />
 <p class="caption"><span class="caption-text">Memory map for <strong>Hello World for EM SK 2.1 Project</strong></span></p>
 </div>
@@ -422,7 +439,7 @@ generated automatically by Eclipse and do not contain any specific information.<
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2018.03',
+            VERSION:'2018.09',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

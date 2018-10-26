@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Debugging with OpellaXD &mdash; GNU Toolchain for ARC User Manual 2018.03 documentation</title>
+  <title>Debugging with OpellaXD &mdash; GNU Toolchain for ARC User Manual 2018.09 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="GNU Toolchain for ARC User Manual 2018.03 documentation" href="../index.html"/>
+    <link rel="top" title="GNU Toolchain for ARC User Manual 2018.09 documentation" href="../index.html"/>
         <link rel="up" title="ARC GNU IDE" href="index.html"/>
         <link rel="next" title="Debugging with nSIM" href="debugging-with-nsim.html"/>
         <link rel="prev" title="How to Use OpenOCD on Windows" href="how-to-use-openocd-on-windows.html"/> 
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                2018.03
+                2018.09
               </div>
             
           
@@ -213,6 +213,11 @@ configured in such way doesn&#8217;t work with TPAOP-ARC20-R1 - this cable requi
 <code class="docutils literal"><span class="pre">--device</span> <span class="pre">arc-jtag-tpa-r1</span></code> or <code class="docutils literal"><span class="pre">--device</span> <span class="pre">arc-cjtag-tpa-r1</span></code> option to be
 passed to Opella-XD GDB-server. As a consequence currently GNU IDE supports only
 TPAOP-ARC20-R0 cable.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">GDB on Windows can&#8217;t read XML files with Windows line endings (CR/LF) - tdesc
+XML file must be converted to UNIX line endings (LF).</p>
+</div>
 </div>
 <div class="section" id="starting-a-debug-session">
 <h2>Starting a debug session<a class="headerlink" href="#starting-a-debug-session" title="Permalink to this headline">¶</a></h2>
@@ -281,7 +286,7 @@ Choose the &#8220;Connect to running GDB server&#8221; value of ARC GDB Server f
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2018.03',
+            VERSION:'2018.09',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

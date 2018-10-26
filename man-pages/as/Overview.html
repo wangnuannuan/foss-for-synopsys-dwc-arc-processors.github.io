@@ -229,6 +229,9 @@ see <a href="Invoking.html#Invoking">Command-Line Options</a>.
         [<b>-mcrc</b>] [<b>-mno-crc</b>]
         [<b>-mginv</b>] [<b>-mno-ginv</b>]
         [<b>-mloongson-mmi</b>] [<b>-mno-loongson-mmi</b>]
+        [<b>-mloongson-cam</b>] [<b>-mno-loongson-cam</b>]
+        [<b>-mloongson-ext</b>] [<b>-mno-loongson-ext</b>]
+        [<b>-mloongson-ext2</b>] [<b>-mno-loongson-ext2</b>]
         [<b>-minsn32</b>] [<b>-mno-insn32</b>]
         [<b>-mfix7000</b>] [<b>-mno-fix7000</b>]
         [<b>-mfix-rm7000</b>] [<b>-mno-fix-rm7000</b>]
@@ -925,6 +928,19 @@ Extension.  This tells the assembler to accept GINV instructions.
 Application Specific Extension.  This tells the assembler to accept MMI
 instructions. 
 &lsquo;<samp><span class="samp">-mno-loongson-mmi</span></samp>&rsquo; turns off this option.
+
+     <br><dt><code>-mloongson-cam</code><dt><code>-mno-loongson-cam</code><dd>Generate code for the Loongson Content Address Memory (CAM) instructions. 
+This tells the assembler to accept Loongson CAM instructions. 
+&lsquo;<samp><span class="samp">-mno-loongson-cam</span></samp>&rsquo; turns off this option.
+
+     <br><dt><code>-mloongson-ext</code><dt><code>-mno-loongson-ext</code><dd>Generate code for the Loongson EXTensions (EXT) instructions. 
+This tells the assembler to accept Loongson EXT instructions. 
+&lsquo;<samp><span class="samp">-mno-loongson-ext</span></samp>&rsquo; turns off this option.
+
+     <br><dt><code>-mloongson-ext2</code><dt><code>-mno-loongson-ext2</code><dd>Generate code for the Loongson EXTensions R2 (EXT2) instructions. 
+This option implies &lsquo;<samp><span class="samp">-mloongson-ext</span></samp>&rsquo;. 
+This tells the assembler to accept Loongson EXT2 instructions. 
+&lsquo;<samp><span class="samp">-mno-loongson-ext2</span></samp>&rsquo; turns off this option.
 
      <br><dt><code>-minsn32</code><dt><code>-mno-insn32</code><dd>Only use 32-bit instruction encodings when generating code for the
 microMIPS processor.  This option inhibits the use of any 16-bit

@@ -230,15 +230,18 @@ would otherwise remove it.  For example:
      <p>will remove all sections matching the pattern '.text.*', but will not
 remove the section '.text.foo'.
 
-     <br><dt><samp><span class="env">--remove-relocations=</span><var>sectionpattern</var></samp><dd>Remove relocations from the output file for any section matching
-<var>sectionpattern</var>.  This option may be given more than once.  Note
-that using this option inappropriately may make the output file
-unusable.  Wildcard characters are accepted in <var>sectionpattern</var>. 
+     <br><dt><samp><span class="env">--remove-relocations=</span><var>sectionpattern</var></samp><dd>Remove non-dynamic relocations from the output file for any section
+matching <var>sectionpattern</var>.  This option may be given more than
+once.  Note that using this option inappropriately may make the output
+file unusable, and attempting to remove a dynamic relocation section
+such as &lsquo;<samp><span class="samp">.rela.plt</span></samp>&rsquo; from an executable or shared library with
+<samp><span class="option">--remove-relocations=.plt</span></samp> will not work.  Wildcard characters
+are accepted in <var>sectionpattern</var>. 
 For example:
 
      <pre class="smallexample">            --remove-relocations=.text.*
 </pre>
-     <p>will remove the relocations for all sections matching the patter
+     <p>will remove the relocations for all sections matching the pattern
 '.text.*'.
 
      <p>If the first character of <var>sectionpattern</var> is the exclamation

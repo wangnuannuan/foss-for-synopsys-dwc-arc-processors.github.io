@@ -45,12 +45,12 @@ Up:&nbsp;<a rel="up" accesskey="u" href="S_002f390_002dDependent.html#S_002f390_
 
 <h4 class="subsection">9.39.1 Options</h4>
 
-<p><a name="index-options-for-s390-1987"></a><a name="index-s390-options-1988"></a>
+<p><a name="index-options-for-s390-2000"></a><a name="index-s390-options-2001"></a>
 The following table lists all available s390 specific options:
 
      
-<a name="index-g_t_0040samp_007b_002dm31_007d-option_002c-s390-1989"></a>
-<a name="index-g_t_0040samp_007b_002dm64_007d-option_002c-s390-1990"></a>
+<a name="index-g_t_0040samp_007b_002dm31_007d-option_002c-s390-2002"></a>
+<a name="index-g_t_0040samp_007b_002dm64_007d-option_002c-s390-2003"></a>
 <dl><dt><code>-m31 | -m64</code><dd>Select 31- or 64-bit ABI implying a word size of 32- or 64-bit.
 
      <p>These options are only available with the ELF object file format, and
@@ -58,14 +58,14 @@ require that the necessary BFD support has been included (on a 31-bit
 platform you must add &ndash;enable-64-bit-bfd on the call to the configure
 script to enable 64-bit usage and use s390x as target platform).
 
-     <p><a name="index-g_t_0040samp_007b_002dmesa_007d-option_002c-s390-1991"></a><a name="index-g_t_0040samp_007b_002dmzarch_007d-option_002c-s390-1992"></a><br><dt><code>-mesa | -mzarch</code><dd>Select the architecture mode, either the Enterprise System Architecture
+     <p><a name="index-g_t_0040samp_007b_002dmesa_007d-option_002c-s390-2004"></a><a name="index-g_t_0040samp_007b_002dmzarch_007d-option_002c-s390-2005"></a><br><dt><code>-mesa | -mzarch</code><dd>Select the architecture mode, either the Enterprise System Architecture
 (esa) mode or the z/Architecture mode (zarch).
 
      <p>The 64-bit instructions are only available with the z/Architecture mode. 
 The combination of &lsquo;<samp><span class="samp">-m64</span></samp>&rsquo; and &lsquo;<samp><span class="samp">-mesa</span></samp>&rsquo; results in a warning
 message.
 
-     <p><a name="index-g_t_0040samp_007b_002dmarch_003d_007d-option_002c-s390-1993"></a><br><dt><code>-march=</code><var>CPU</var><dd>This option specifies the target processor. The following processor names
+     <p><a name="index-g_t_0040samp_007b_002dmarch_003d_007d-option_002c-s390-2006"></a><br><dt><code>-march=</code><var>CPU</var><dd>This option specifies the target processor. The following processor names
 are recognized:
 <code>g5</code> (or <code>arch3</code>),
 <code>g6</code>,
@@ -93,11 +93,11 @@ on these processor levels.
      <p>There is no <code>arch4</code> option supported. <code>arch4</code> matches
 <code>-march=arch5 -mesa</code>.
 
-     <p><a name="index-g_t_0040samp_007b_002dmregnames_007d-option_002c-s390-1994"></a><br><dt><code>-mregnames</code><dd>Allow symbolic names for registers.
+     <p><a name="index-g_t_0040samp_007b_002dmregnames_007d-option_002c-s390-2007"></a><br><dt><code>-mregnames</code><dd>Allow symbolic names for registers.
 
-     <p><a name="index-g_t_0040samp_007b_002dmno_002dregnames_007d-option_002c-s390-1995"></a><br><dt><code>-mno-regnames</code><dd>Do not allow symbolic names for registers.
+     <p><a name="index-g_t_0040samp_007b_002dmno_002dregnames_007d-option_002c-s390-2008"></a><br><dt><code>-mno-regnames</code><dd>Do not allow symbolic names for registers.
 
-     <p><a name="index-g_t_0040samp_007b_002dmwarn_002dareg_002dzero_007d-option_002c-s390-1996"></a><br><dt><code>-mwarn-areg-zero</code><dd>Warn whenever the operand for a base or index register has been specified
+     <p><a name="index-g_t_0040samp_007b_002dmwarn_002dareg_002dzero_007d-option_002c-s390-2009"></a><br><dt><code>-mwarn-areg-zero</code><dd>Warn whenever the operand for a base or index register has been specified
 but evaluates to zero. This can indicate the misuse of general purpose
 register 0 as an address register.
 

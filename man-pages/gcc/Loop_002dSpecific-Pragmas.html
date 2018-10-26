@@ -54,7 +54,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Pragmas.html#Pragmas">Pragmas</a>
 <h4 class="subsection">6.61.16 Loop-Specific Pragmas</h4>
 
      <dl>
-<dt><code>#pragma GCC ivdep</code><dd><a name="index-pragma-GCC-ivdep-4701"></a>
+<dt><code>#pragma GCC ivdep</code><dd><a name="index-pragma-GCC-ivdep-4702"></a>
 With this pragma, the programmer asserts that there are no loop-carried
 dependencies which would prevent consecutive iterations of
 the following loop from executing concurrently with SIMD
@@ -83,7 +83,7 @@ that it can unconditionally vectorize the following loop:
               a[i] = a[i + k] * c;
           }
 </pre>
-     <br><dt><code>#pragma GCC unroll </code><var>n</var><dd><a name="index-pragma-GCC-unroll-_0040var_007bn_007d-4702"></a>
+     <br><dt><code>#pragma GCC unroll </code><var>n</var><dd><a name="index-pragma-GCC-unroll-_0040var_007bn_007d-4703"></a>
 You can use this pragma to control how many times a loop should be unrolled. 
 It must be placed immediately before a <code>for</code>, <code>while</code> or <code>do</code>
 loop or a <code>#pragma GCC ivdep</code>, and applies only to the loop that follows. 

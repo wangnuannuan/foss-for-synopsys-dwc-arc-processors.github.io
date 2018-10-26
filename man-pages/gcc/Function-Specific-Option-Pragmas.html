@@ -55,7 +55,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Pragmas.html#Pragmas">Pragmas</a>
 <h4 class="subsection">6.61.15 Function Specific Option Pragmas</h4>
 
      <dl>
-<dt><code>#pragma GCC target (</code><var>"string"</var><code>...)</code><dd><a name="index-pragma-GCC-target-4696"></a>
+<dt><code>#pragma GCC target (</code><var>"string"</var><code>...)</code><dd><a name="index-pragma-GCC-target-4697"></a>
 This pragma allows you to set target specific options for functions
 defined later in the source file.  One or more strings can be
 specified.  Each function that is defined after this point is as
@@ -67,7 +67,7 @@ See <a href="Function-Attributes.html#Function-Attributes">Function Attributes</
      <p>The <code>#pragma GCC target</code> pragma is presently implemented for
 x86, ARM, AArch64, PowerPC, S/390, and Nios II targets only.
 
-     <br><dt><code>#pragma GCC optimize (</code><var>"string"</var><code>...)</code><dd><a name="index-pragma-GCC-optimize-4697"></a>
+     <br><dt><code>#pragma GCC optimize (</code><var>"string"</var><code>...)</code><dd><a name="index-pragma-GCC-optimize-4698"></a>
 This pragma allows you to set global optimization options for functions
 defined later in the source file.  One or more strings can be
 specified.  Each function that is defined after this point is as
@@ -76,14 +76,14 @@ function.  The parenthesis around the options is optional.
 See <a href="Function-Attributes.html#Function-Attributes">Function Attributes</a>, for more information about the
 <code>optimize</code> attribute and the attribute syntax.
 
-     <br><dt><code>#pragma GCC push_options</code><dt><code>#pragma GCC pop_options</code><dd><a name="index-pragma-GCC-push_005foptions-4698"></a><a name="index-pragma-GCC-pop_005foptions-4699"></a>
+     <br><dt><code>#pragma GCC push_options</code><dt><code>#pragma GCC pop_options</code><dd><a name="index-pragma-GCC-push_005foptions-4699"></a><a name="index-pragma-GCC-pop_005foptions-4700"></a>
 These pragmas maintain a stack of the current target and optimization
 options.  It is intended for include files where you temporarily want
 to switch to using a different &lsquo;<samp><span class="samp">#pragma GCC target</span></samp>&rsquo; or
 &lsquo;<samp><span class="samp">#pragma GCC optimize</span></samp>&rsquo; and then to pop back to the previous
 options.
 
-     <br><dt><code>#pragma GCC reset_options</code><dd><a name="index-pragma-GCC-reset_005foptions-4700"></a>
+     <br><dt><code>#pragma GCC reset_options</code><dd><a name="index-pragma-GCC-reset_005foptions-4701"></a>
 This pragma clears the current <code>#pragma GCC target</code> and
 <code>#pragma GCC optimize</code> to use the default switches as specified
 on the command line.

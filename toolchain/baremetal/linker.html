@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Linker scripts and memory.x files &mdash; GNU Toolchain for ARC User Manual 2018.09 documentation</title>
+  <title>Linker scripts and memory.x files &mdash; GNU Toolchain for ARC User Manual 2019.03 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="GNU Toolchain for ARC User Manual 2018.09 documentation" href="../index.html"/>
+    <link rel="top" title="GNU Toolchain for ARC User Manual 2019.03 documentation" href="../index.html"/>
         <link rel="up" title="Building baremetal applications" href="index.html"/>
         <link rel="next" title="Using TCF" href="tcf.html"/>
         <link rel="prev" title="Understanding GCC -mcpu option" href="gcc-mcpu.html"/> 
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                2018.09
+                2019.03
               </div>
             
           
@@ -253,10 +253,12 @@ directly used by the linker. Second sections describes <code class="docutils lit
 this section translates arbitrary region names to standard region names
 expected by linker emulation. There are four such regions:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">startup</span></code> for interrupt vector table and initialization code. Note that
-currently there is a limitation that this section must always start always at
-address 0x0. That is - <code class="docutils literal"><span class="pre">arcv2elfx</span></code> emulation currently supports interrupt
-vector table only at address 0x0.</li>
+<li><code class="docutils literal"><span class="pre">startup</span></code> for interrupt vector table and initialization code. Typically it
+should be mapped to the address 0x0. If interrupt vector is mapped to a
+different address, then in addition to respective value in <code class="docutils literal"><span class="pre">memory.x</span></code> it is
+required to pass an option <code class="docutils literal"><span class="pre">--defsym=ivtbase_addr=&lt;your_ivt_address&gt;</span></code> to the
+linker. If linker is invoked through the GCC driver, then the option should be
+prefixed with <code class="docutils literal"><span class="pre">-Wl,</span></code>.</li>
 <li><code class="docutils literal"><span class="pre">text</span></code> is a region where code will be located.</li>
 <li><code class="docutils literal"><span class="pre">data</span></code> is a regions where data will be located (unsurprisingly).</li>
 <li><code class="docutils literal"><span class="pre">sdata</span></code> is a region where small data section will be located.</li>
@@ -322,7 +324,7 @@ installation directory.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2018.09',
+            VERSION:'2019.03',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>ARC Project Templates &mdash; GNU Toolchain for ARC User Manual 2018.09 documentation</title>
+  <title>ARC Project Templates &mdash; GNU Toolchain for ARC User Manual 2019.03 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="GNU Toolchain for ARC User Manual 2018.09 documentation" href="../index.html"/>
+    <link rel="top" title="GNU Toolchain for ARC User Manual 2019.03 documentation" href="../index.html"/>
         <link rel="up" title="ARC GNU IDE" href="index.html"/>
         <link rel="next" title="Building User Guide" href="building-user-guide.html"/>
         <link rel="prev" title="Getting Started with nSIM" href="getting-started-with-nsim.html"/> 
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                2018.09
+                2019.03
               </div>
             
           
@@ -156,17 +156,22 @@
 <span id="id1"></span><h1>ARC Project Templates<a class="headerlink" href="#arc-project-templates" title="Permalink to this headline">¶</a></h1>
 <p>There are several ARC projects types available in the C project dialog:
 <strong>ARC Cross ELF32 Target Application</strong>, <strong>ARC Cross ELF32 Target Static
-Library</strong>, <strong>AXS10x Projects</strong>, <strong>EM Starter Kit Projects</strong>.</p>
+Library</strong>, <strong>ARC AXS10x Projects</strong>, <strong>ARC EM Starter Kit Projects</strong>,
+<strong>ARC EM SDP Projects</strong>, <strong>ARC HS Development Kit Projects</strong> and
+<strong>ARC IoT Development Kit Projects</strong>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>Note: for each of these project types there is a list of toolchains which
 are supported by it.</p>
 <ul class="simple">
 <li><strong>ARC Cross ELF32 Target Application</strong> and <strong>ARC Cross ELF32 Target Static
-Library</strong> support all of the toolchains,</li>
-<li><strong>AXS101 Projects</strong> supports ARC 600, ARC 700 and ARC EM toolchains,</li>
-<li><strong>AXS102 Projects</strong> and <strong>AXS 103 Projects</strong> support only ARC HS toolchain,</li>
-<li><strong>EM Starter Kit Projects</strong> &#8211; only ARC EM toolchain.</li>
+Library</strong> support all of the toolchains;</li>
+<li><strong>ARC AXS101 Projects</strong> supports ARC 600, ARC 700 and ARC EM toolchains;</li>
+<li><strong>ARC AXS103 Projects</strong> support only ARC HS toolchain;</li>
+<li><strong>ARC EM Starter Kit Projects</strong> &#8211; only ARC EM toolchain;</li>
+<li><strong>ARC EM SDP Projects</strong> &#8211; only ARC EM toolchain;</li>
+<li><strong>ARC IoT Development Kit Projects</strong> &#8211; only ARC EM toolchain;</li>
+<li><strong>ARC HS Development Kit Projects</strong> &#8211; only ARC HS toolchain;</li>
 </ul>
 <p class="last">Project types are only available in the project creation dialog if at least one
 of the corresponding toolchain compilers is found in the <cite>PATH</cite> environment
@@ -188,16 +193,16 @@ C standard library I/O functions. For nSIM this project will work fine, but for
 hardware development systems please choose &#8220;Hello World&#8221; projects that use UART.
 On the contrary, &#8220;Hello World&#8221; projects under <strong>EM Starter Kit Projects</strong> project
 type use UART, so they are not suitable for nSIM.</p>
-<p>If you want to create a project for a hardware development system, choose one of
-<strong>AXS10x Projects</strong> or <strong>EM Starter Kit Projects</strong>. For each of these project
-types there is an <strong>Empty Project</strong> in the list of templates and also <strong>Empty
-Project For</strong> templates. If you want to create an empty project for your board,
-choose an empty project template that is specific for your board and core you
-are using. These templates contain memory maps of the cores, which are then
-passed to linker. As for <strong>Empty Project</strong> templates, they are generated
-automatically by Eclipse and do not contain any specific information, so you
-would have to provide a memory map yourself, or your application might not work
-properly.</p>
+<p>If you want to create a project for the Synopsys development system, choose one
+of projects that correspond to the system, for example <strong>ARC EM Starter Kit
+Projects</strong>.  For each of these project types there is an <strong>Empty Project</strong> in
+the list of templates and also <strong>&lt;board name&gt; Empty Project</strong> templates. If you
+want to create an empty project for your board, choose an empty project template
+that is specific for your board and core you are using. These templates contain
+memory maps of the cores, which are then passed to the linker. As for <strong>Empty
+Project</strong> templates, they are generated automatically by Eclipse and do not
+contain any specific information, so you would have to provide a memory map
+yourself, or your application might not work properly.</p>
 <div class="figure" id="id3">
 <img alt="../_images/memory_map.png" src="../_images/memory_map.png" />
 <p class="caption"><span class="caption-text">Memory map for <strong>Hello World for EM SK 2.1 Project</strong></span></p>
@@ -245,7 +250,7 @@ properly.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2018.09',
+            VERSION:'2019.03',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

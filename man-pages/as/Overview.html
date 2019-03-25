@@ -11,7 +11,7 @@
 <!--
 This file documents the GNU Assembler "as".
 
-Copyright (C) 1991-2018 Free Software Foundation, Inc.
+Copyright (C) 1991-2019 Free Software Foundation, Inc.
 
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
@@ -237,6 +237,7 @@ see <a href="Invoking.html#Invoking">Command-Line Options</a>.
         [<b>-mfix-rm7000</b>] [<b>-mno-fix-rm7000</b>]
         [<b>-mfix-vr4120</b>] [<b>-mno-fix-vr4120</b>]
         [<b>-mfix-vr4130</b>] [<b>-mno-fix-vr4130</b>]
+        [<b>-mfix-r5900</b>] [<b>-mno-fix-r5900</b>]
         [<b>-mdebug</b>] [<b>-no-mdebug</b>]
         [<b>-mpdr</b>] [<b>-mno-pdr</b>]
      
@@ -259,6 +260,7 @@ see <a href="Invoking.html#Invoking">Command-Line Options</a>.
          [<b>-m[no-]fpu-fma</b>] [<b>-mfpu-freg=</b><var>FREG</var>] [<b>-mreduced-regs</b>]
          [<b>-mfull-regs</b>] [<b>-m[no-]dx-regs</b>] [<b>-mpic</b>] [<b>-mno-relax</b>]
          [<b>-mb2bb</b>]
+     <!-- OpenRISC has no machine-dependent assembler options. -->
      
      <em>Target PDP11 options:</em>
         [<b>-mpic</b>|<b>-mno-pic</b>] [<b>-mall</b>] [<b>-mno-extensions</b>]
@@ -836,6 +838,12 @@ of an mfhi or mflo instruction occurs in the following two instructions.
 
      <br><dt><code>-mfix-rm7000</code><dt><code>-mno-fix-rm7000</code><dd>Cause nops to be inserted if a dmult or dmultu instruction is
 followed by a load instruction.
+
+     <br><dt><code>-mfix-r5900</code><dt><code>-mno-fix-r5900</code><dd>Do not attempt to schedule the preceding instruction into the delay slot
+of a branch instruction placed at the end of a short loop of six
+instructions or fewer and always schedule a <code>nop</code> instruction there
+instead.  The short loop bug under certain conditions causes loops to
+execute only once or twice, due to a hardware bug in the R5900 chip.
 
      <br><dt><code>-mdebug</code><dt><code>-no-mdebug</code><dd>Cause stabs-style debugging output to go into an ECOFF-style .mdebug
 section instead of the standard ELF .stabs sections.

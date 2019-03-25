@@ -54,7 +54,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Target-Builtins.html#Target-Builtins">T
 <h4 class="subsection">6.59.35 x86 Control-Flow Protection Intrinsics</h4>
 
 <div class="defun">
-&mdash; CET Function: ret_type <b>_get_ssp</b> (<var>void</var>)<var><a name="index-g_t_005fget_005fssp-4667"></a></var><br>
+&mdash; CET Function: ret_type <b>_get_ssp</b> (<var>void</var>)<var><a name="index-g_t_005fget_005fssp-4737"></a></var><br>
 <blockquote><p>Get the current value of shadow stack pointer if shadow stack support
 from Intel CET is enabled in the hardware or <code>0</code> otherwise. 
 The <code>ret_type</code> is <code>unsigned long long</code> for 64-bit targets
@@ -62,7 +62,7 @@ and <code>unsigned int</code> for 32-bit targets.
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; CET Function: void <b>_inc_ssp</b> (<var>unsigned int</var>)<var><a name="index-g_t_005finc_005fssp-4668"></a></var><br>
+&mdash; CET Function: void <b>_inc_ssp</b> (<var>unsigned int</var>)<var><a name="index-g_t_005finc_005fssp-4738"></a></var><br>
 <blockquote><p>Increment the current shadow stack pointer by the size specified by the
 function argument.  The argument is masked to a byte value for security
 reasons, so to increment by more than 255 bytes you must call the function

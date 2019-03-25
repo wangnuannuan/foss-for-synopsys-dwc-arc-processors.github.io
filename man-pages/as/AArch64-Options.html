@@ -11,7 +11,7 @@
 <!--
 This file documents the GNU Assembler "as".
 
-Copyright (C) 1991-2018 Free Software Foundation, Inc.
+Copyright (C) 1991-2019 Free Software Foundation, Inc.
 
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
@@ -70,8 +70,11 @@ on the target processor.  The following processor names are recognized:
 <code>cortex-a73</code>,
 <code>cortex-a75</code>,
 <code>cortex-a76</code>,
+<code>ares</code>,
 <code>exynos-m1</code>,
 <code>falkor</code>,
+<code>neoverse-n1</code>,
+<code>neoverse-e1</code>,
 <code>qdf24xx</code>,
 <code>saphira</code>,
 <code>thunderx</code>,
@@ -96,7 +99,8 @@ extensions.
 issue an error message if an attempt is made to assemble an
 instruction which will not execute on the target architecture.  The
 following architecture names are recognized: <code>armv8-a</code>,
-<code>armv8.1-a</code>, <code>armv8.2-a</code>, <code>armv8.3-a</code> and <code>armv8.4-a</code>.
+<code>armv8.1-a</code>, <code>armv8.2-a</code>, <code>armv8.3-a</code>, <code>armv8.4-a</code>
+and <code>armv8.5-a</code>.
 
      <p>If both <samp><span class="option">-mcpu</span></samp> and <samp><span class="option">-march</span></samp> are specified, the
 assembler will use the setting for <samp><span class="option">-mcpu</span></samp>.  If neither are

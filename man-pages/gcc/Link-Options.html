@@ -194,9 +194,9 @@ of these is when the application wishes to throw and catch exceptions
 across different shared libraries.  In that case, each of the libraries
 as well as the application itself should use the shared <samp><span class="file">libgcc</span></samp>.
 
-     <p>Therefore, the G++ and driver automatically adds <samp><span class="option">-shared-libgcc</span></samp>
- whenever you build a shared library or a main executable, because C++
- programs typically use exceptions, so this is the right thing to do.
+     <p>Therefore, the G++ driver automatically adds <samp><span class="option">-shared-libgcc</span></samp>
+whenever you build a shared library or a main executable, because C++
+programs typically use exceptions, so this is the right thing to do.
 
      <p>If, instead, you use the GCC driver to create shared libraries, you may
 find that they are not always linked with the shared <samp><span class="file">libgcc</span></samp>. 
@@ -210,8 +210,7 @@ propagate through such shared libraries, without incurring relocation
 costs at library load time.
 
      <p>However, if a library or main executable is supposed to throw or catch
-exceptions, you must link it using the G++ driver, as appropriate
-for the languages used in the program, or using the option
+exceptions, you must link it using the G++ driver, or using the option
 <samp><span class="option">-shared-libgcc</span></samp>, such that it is linked with the shared
 <samp><span class="file">libgcc</span></samp>.
 

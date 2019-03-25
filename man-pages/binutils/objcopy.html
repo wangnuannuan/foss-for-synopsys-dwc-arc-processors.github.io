@@ -9,7 +9,7 @@
 <link rel="next" href="objdump.html#objdump" title="objdump">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <!--
-Copyright (C) 1991-2018 Free Software Foundation, Inc.
+Copyright (C) 1991-2019 Free Software Foundation, Inc.
 
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
@@ -60,6 +60,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
              [<samp><span class="option">--localize-hidden</span></samp>]
              [<samp><span class="option">-L</span></samp> <var>symbolname</var>|<samp><span class="option">--localize-symbol=</span></samp><var>symbolname</var>]
              [<samp><span class="option">--globalize-symbol=</span></samp><var>symbolname</var>]
+             [<samp><span class="option">--globalize-symbols=</span></samp><var>filename</var>]
              [<samp><span class="option">-W</span></samp> <var>symbolname</var>|<samp><span class="option">--weaken-symbol=</span></samp><var>symbolname</var>]
              [<samp><span class="option">-w</span></samp>|<samp><span class="option">--wildcard</span></samp>]
              [<samp><span class="option">-x</span></samp>|<samp><span class="option">--discard-all</span></samp>]
@@ -100,7 +101,6 @@ Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
              [<samp><span class="option">--strip-unneeded-symbols=</span></samp><var>filename</var>]
              [<samp><span class="option">--keep-global-symbols=</span></samp><var>filename</var>]
              [<samp><span class="option">--localize-symbols=</span></samp><var>filename</var>]
-             [<samp><span class="option">--globalize-symbols=</span></samp><var>filename</var>]
              [<samp><span class="option">--weaken-symbols=</span></samp><var>filename</var>]
              [<samp><span class="option">--add-symbol</span></samp> <var>name</var>=[<var>section</var>:]<var>value</var>[,<var>flags</var>]]
              [<samp><span class="option">--alt-machine-code=</span></samp><var>index</var>]
@@ -273,7 +273,9 @@ by a relocation.  This option may be given more than once.
 
      <br><dt><samp><span class="env">-G </span><var>symbolname</var></samp><dt><samp><span class="env">--keep-global-symbol=</span><var>symbolname</var></samp><dd>Keep only symbol <var>symbolname</var> global.  Make all other symbols local
 to the file, so that they are not visible externally.  This option may
-be given more than once.
+be given more than once.  Note: this option cannot be used in
+conjunction with the <samp><span class="option">--globalize-symbol</span></samp> or
+<samp><span class="option">--globalize-symbols</span></samp> options.
 
      <br><dt><samp><span class="env">--localize-hidden</span></samp><dd>In an ELF object, mark all symbols that have hidden or internal visibility
 as local.  This option applies on top of symbol-specific localization options
@@ -287,7 +289,8 @@ given more than once.  Note - unique symbols are not converted.
 
      <br><dt><samp><span class="env">--globalize-symbol=</span><var>symbolname</var></samp><dd>Give symbol <var>symbolname</var> global scoping so that it is visible
 outside of the file in which it is defined.  This option may be given
-more than once.
+more than once.  Note: this option cannot be used in conjunction with
+the <samp><span class="option">-G</span></samp> or <samp><span class="option">--keep-global-symbol</span></samp> options.
 
      <br><dt><samp><span class="env">-w</span></samp><dt><samp><span class="env">--wildcard</span></samp><dd>Permit regular expressions in <var>symbolname</var>s used in other command
 line options.  The question mark (?), asterisk (*), backslash (\) and
@@ -594,7 +597,9 @@ This option may be given more than once.
      <br><dt><samp><span class="env">--globalize-symbols=</span><var>filename</var></samp><dd>Apply <samp><span class="option">--globalize-symbol</span></samp> option to each symbol listed in the file
 <var>filename</var>.  <var>filename</var> is simply a flat file, with one symbol
 name per line.  Line comments may be introduced by the hash character. 
-This option may be given more than once.
+This option may be given more than once.  Note: this option cannot be
+used in conjunction with the <samp><span class="option">-G</span></samp> or <samp><span class="option">--keep-global-symbol</span></samp>
+options.
 
      <br><dt><samp><span class="env">--weaken-symbols=</span><var>filename</var></samp><dd>Apply <samp><span class="option">--weaken-symbol</span></samp> option to each symbol listed in the file
 <var>filename</var>.  <var>filename</var> is simply a flat file, with one symbol

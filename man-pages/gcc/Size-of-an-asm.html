@@ -60,7 +60,7 @@ does this by counting the number of instructions in the pattern of the
 <code>asm</code> and multiplying that by the length of the longest
 instruction supported by that processor.  (When working out the number
 of instructions, it assumes that any occurrence of a newline or of
-whatever statement separator character is supported by the assembler &ndash;
+whatever statement separator character is supported by the assembler &mdash;
 typically &lsquo;<samp><span class="samp">;</span></samp>&rsquo; &mdash; indicates the end of an instruction.)
 
  <p>Normally, GCC's estimate is adequate to ensure that correct
@@ -70,6 +70,10 @@ instructions, or if you use assembler directives that expand to more
 space in the object file than is needed for a single instruction. 
 If this happens then the assembler may produce a diagnostic saying that
 a label is unreachable.
+
+ <p><a name="index-g_t_0040code_007basm-inline_007d-4050"></a>This size is also used for inlining decisions.  If you use <code>asm inline</code>
+instead of just <code>asm</code>, then for inlining purposes the size of the asm
+is taken as the minimum size, ignoring how many instructions GCC thinks it is.
 
  </body></html>
 

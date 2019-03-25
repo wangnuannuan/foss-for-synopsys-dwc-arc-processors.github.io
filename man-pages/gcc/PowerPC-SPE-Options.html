@@ -373,13 +373,15 @@ ABI.
 This is not likely to work if your system defaults to using IEEE
 extended-precision long double.  If you change the long double type
 from IEEE extended-precision, the compiler will issue a warning unless
-you use the <samp><span class="option">-Wno-psabi</span></samp> option.
+you use the <samp><span class="option">-Wno-psabi</span></samp> option.  Requires <samp><span class="option">-mlong-double-128</span></samp>
+to be enabled.
 
      <br><dt><code>-mabi=ieeelongdouble</code><dd><a name="index-mabi_003dieeelongdouble-2521"></a>Change the current ABI to use IEEE extended-precision long double. 
 This is not likely to work if your system defaults to using IBM
 extended-precision long double.  If you change the long double type
 from IBM extended-precision, the compiler will issue a warning unless
-you use the <samp><span class="option">-Wno-psabi</span></samp> option.
+you use the <samp><span class="option">-Wno-psabi</span></samp> option.  Requires <samp><span class="option">-mlong-double-128</span></samp>
+to be enabled.
 
      <br><dt><code>-mabi=elfv1</code><dd><a name="index-mabi_003delfv1-2522"></a>Change the current ABI to use the ELFv1 ABI. 
 This is the default ABI for big-endian PowerPC 64-bit Linux. 

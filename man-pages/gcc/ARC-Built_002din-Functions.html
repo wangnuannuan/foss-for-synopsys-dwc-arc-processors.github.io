@@ -68,7 +68,7 @@ guaranteed to detect such misuse, and as a result an internal compiler
 error may be generated.
 
 <div class="defun">
-&mdash; Built-in Function: int <b>__builtin_arc_aligned</b> (<var>void *val, int alignval</var>)<var><a name="index-g_t_005f_005fbuiltin_005farc_005faligned-4579"></a></var><br>
+&mdash; Built-in Function: int <b>__builtin_arc_aligned</b> (<var>void *val, int alignval</var>)<var><a name="index-g_t_005f_005fbuiltin_005farc_005faligned-4649"></a></var><br>
 <blockquote><p>Return 1 if <var>val</var> is known to have the byte alignment given
 by <var>alignval</var>, otherwise return 0. 
 Note that this is different from
@@ -81,14 +81,14 @@ The information available will depend on optimization level.
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Built-in Function: void <b>__builtin_arc_brk</b> (<var>void</var>)<var><a name="index-g_t_005f_005fbuiltin_005farc_005fbrk-4580"></a></var><br>
+&mdash; Built-in Function: void <b>__builtin_arc_brk</b> (<var>void</var>)<var><a name="index-g_t_005f_005fbuiltin_005farc_005fbrk-4650"></a></var><br>
 <blockquote><p>Generates
      <pre class="example">          brk
 </pre>
       </blockquote></div>
 
 <div class="defun">
-&mdash; Built-in Function: unsigned int <b>__builtin_arc_core_read</b> (<var>unsigned int regno</var>)<var><a name="index-g_t_005f_005fbuiltin_005farc_005fcore_005fread-4581"></a></var><br>
+&mdash; Built-in Function: unsigned int <b>__builtin_arc_core_read</b> (<var>unsigned int regno</var>)<var><a name="index-g_t_005f_005fbuiltin_005farc_005fcore_005fread-4651"></a></var><br>
 <blockquote><p>The operand is the number of a register to be read.  Generates:
      <pre class="example">          mov  <var>dest</var>, r<var>regno</var>
 </pre>
@@ -97,7 +97,7 @@ built-in.
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Built-in Function: void <b>__builtin_arc_core_write</b> (<var>unsigned int val, unsigned int regno</var>)<var><a name="index-g_t_005f_005fbuiltin_005farc_005fcore_005fwrite-4582"></a></var><br>
+&mdash; Built-in Function: void <b>__builtin_arc_core_write</b> (<var>unsigned int val, unsigned int regno</var>)<var><a name="index-g_t_005f_005fbuiltin_005farc_005fcore_005fwrite-4652"></a></var><br>
 <blockquote><p>The first operand is a compile time constant to write into the
 register given by the second operand.  Generates:
      <pre class="example">          mov  r<var>regno</var>, <var>val</var>
@@ -105,7 +105,7 @@ register given by the second operand.  Generates:
       </blockquote></div>
 
 <div class="defun">
-&mdash; Built-in Function: int <b>__builtin_arc_divaw</b> (<var>int a, int b</var>)<var><a name="index-g_t_005f_005fbuiltin_005farc_005fdivaw-4583"></a></var><br>
+&mdash; Built-in Function: int <b>__builtin_arc_divaw</b> (<var>int a, int b</var>)<var><a name="index-g_t_005f_005fbuiltin_005farc_005fdivaw-4653"></a></var><br>
 <blockquote><p>Only available if either <samp><span class="option">-mcpu=ARC700</span></samp> or <samp><span class="option">-meA</span></samp> is set. 
 Generates:
      <pre class="example">          divaw  <var>dest</var>, <var>a</var>, <var>b</var>
@@ -115,14 +115,14 @@ built-in.
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Built-in Function: void <b>__builtin_arc_flag</b> (<var>unsigned int a</var>)<var><a name="index-g_t_005f_005fbuiltin_005farc_005fflag-4584"></a></var><br>
+&mdash; Built-in Function: void <b>__builtin_arc_flag</b> (<var>unsigned int a</var>)<var><a name="index-g_t_005f_005fbuiltin_005farc_005fflag-4654"></a></var><br>
 <blockquote><p>Generates
      <pre class="example">          flag  <var>a</var>
 </pre>
       </blockquote></div>
 
 <div class="defun">
-&mdash; Built-in Function: unsigned int <b>__builtin_arc_lr</b> (<var>unsigned int auxr</var>)<var><a name="index-g_t_005f_005fbuiltin_005farc_005flr-4585"></a></var><br>
+&mdash; Built-in Function: unsigned int <b>__builtin_arc_lr</b> (<var>unsigned int auxr</var>)<var><a name="index-g_t_005f_005fbuiltin_005farc_005flr-4655"></a></var><br>
 <blockquote><p>The operand, <var>auxv</var>, is the address of an auxiliary register and
 must be a compile time constant.  Generates:
      <pre class="example">          lr  <var>dest</var>, [<var>auxr</var>]
@@ -132,28 +132,28 @@ built-in.
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Built-in Function: void <b>__builtin_arc_mul64</b> (<var>int a, int b</var>)<var><a name="index-g_t_005f_005fbuiltin_005farc_005fmul64-4586"></a></var><br>
+&mdash; Built-in Function: void <b>__builtin_arc_mul64</b> (<var>int a, int b</var>)<var><a name="index-g_t_005f_005fbuiltin_005farc_005fmul64-4656"></a></var><br>
 <blockquote><p>Only available with <samp><span class="option">-mmul64</span></samp>.  Generates:
      <pre class="example">          mul64  <var>a</var>, <var>b</var>
 </pre>
       </blockquote></div>
 
 <div class="defun">
-&mdash; Built-in Function: void <b>__builtin_arc_mulu64</b> (<var>unsigned int a, unsigned int b</var>)<var><a name="index-g_t_005f_005fbuiltin_005farc_005fmulu64-4587"></a></var><br>
+&mdash; Built-in Function: void <b>__builtin_arc_mulu64</b> (<var>unsigned int a, unsigned int b</var>)<var><a name="index-g_t_005f_005fbuiltin_005farc_005fmulu64-4657"></a></var><br>
 <blockquote><p>Only available with <samp><span class="option">-mmul64</span></samp>.  Generates:
      <pre class="example">          mulu64  <var>a</var>, <var>b</var>
 </pre>
       </blockquote></div>
 
 <div class="defun">
-&mdash; Built-in Function: void <b>__builtin_arc_nop</b> (<var>void</var>)<var><a name="index-g_t_005f_005fbuiltin_005farc_005fnop-4588"></a></var><br>
+&mdash; Built-in Function: void <b>__builtin_arc_nop</b> (<var>void</var>)<var><a name="index-g_t_005f_005fbuiltin_005farc_005fnop-4658"></a></var><br>
 <blockquote><p>Generates:
      <pre class="example">          nop
 </pre>
       </blockquote></div>
 
 <div class="defun">
-&mdash; Built-in Function: int <b>__builtin_arc_norm</b> (<var>int src</var>)<var><a name="index-g_t_005f_005fbuiltin_005farc_005fnorm-4589"></a></var><br>
+&mdash; Built-in Function: int <b>__builtin_arc_norm</b> (<var>int src</var>)<var><a name="index-g_t_005f_005fbuiltin_005farc_005fnorm-4659"></a></var><br>
 <blockquote><p>Only valid if the &lsquo;<samp><span class="samp">norm</span></samp>&rsquo; instruction is available through the
 <samp><span class="option">-mnorm</span></samp> option or by default with <samp><span class="option">-mcpu=ARC700</span></samp>. 
 Generates:
@@ -164,7 +164,7 @@ built-in.
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Built-in Function: short int <b>__builtin_arc_normw</b> (<var>short int src</var>)<var><a name="index-g_t_005f_005fbuiltin_005farc_005fnormw-4590"></a></var><br>
+&mdash; Built-in Function: short int <b>__builtin_arc_normw</b> (<var>short int src</var>)<var><a name="index-g_t_005f_005fbuiltin_005farc_005fnormw-4660"></a></var><br>
 <blockquote><p>Only valid if the &lsquo;<samp><span class="samp">normw</span></samp>&rsquo; instruction is available through the
 <samp><span class="option">-mnorm</span></samp> option or by default with <samp><span class="option">-mcpu=ARC700</span></samp>. 
 Generates:
@@ -175,21 +175,21 @@ built-in.
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Built-in Function: void <b>__builtin_arc_rtie</b> (<var>void</var>)<var><a name="index-g_t_005f_005fbuiltin_005farc_005frtie-4591"></a></var><br>
+&mdash; Built-in Function: void <b>__builtin_arc_rtie</b> (<var>void</var>)<var><a name="index-g_t_005f_005fbuiltin_005farc_005frtie-4661"></a></var><br>
 <blockquote><p>Generates:
      <pre class="example">          rtie
 </pre>
       </blockquote></div>
 
 <div class="defun">
-&mdash; Built-in Function: void <b>__builtin_arc_sleep</b> (<var>int a<a name="index-g_t_005f_005fbuiltin_005farc_005fsleep-4592"></a></var><br>
+&mdash; Built-in Function: void <b>__builtin_arc_sleep</b> (<var>int a<a name="index-g_t_005f_005fbuiltin_005farc_005fsleep-4662"></a></var><br>
 <blockquote><p>Generates:
      <pre class="example">          sleep  <var>a</var>
 </pre>
       </blockquote></div>
 
 <div class="defun">
-&mdash; Built-in Function: void <b>__builtin_arc_sr</b> (<var>unsigned int auxr, unsigned int val</var>)<var><a name="index-g_t_005f_005fbuiltin_005farc_005fsr-4593"></a></var><br>
+&mdash; Built-in Function: void <b>__builtin_arc_sr</b> (<var>unsigned int auxr, unsigned int val</var>)<var><a name="index-g_t_005f_005fbuiltin_005farc_005fsr-4663"></a></var><br>
 <blockquote><p>The first argument, <var>auxv</var>, is the address of an auxiliary
 register, the second argument, <var>val</var>, is a compile time constant
 to be written to the register.  Generates:
@@ -198,7 +198,7 @@ to be written to the register.  Generates:
       </blockquote></div>
 
 <div class="defun">
-&mdash; Built-in Function: int <b>__builtin_arc_swap</b> (<var>int src</var>)<var><a name="index-g_t_005f_005fbuiltin_005farc_005fswap-4594"></a></var><br>
+&mdash; Built-in Function: int <b>__builtin_arc_swap</b> (<var>int src</var>)<var><a name="index-g_t_005f_005fbuiltin_005farc_005fswap-4664"></a></var><br>
 <blockquote><p>Only valid with <samp><span class="option">-mswap</span></samp>.  Generates:
      <pre class="example">          swap  <var>dest</var>, <var>src</var>
 </pre>
@@ -207,28 +207,28 @@ built-in.
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Built-in Function: void <b>__builtin_arc_swi</b> (<var>void</var>)<var><a name="index-g_t_005f_005fbuiltin_005farc_005fswi-4595"></a></var><br>
+&mdash; Built-in Function: void <b>__builtin_arc_swi</b> (<var>void</var>)<var><a name="index-g_t_005f_005fbuiltin_005farc_005fswi-4665"></a></var><br>
 <blockquote><p>Generates:
      <pre class="example">          swi
 </pre>
       </blockquote></div>
 
 <div class="defun">
-&mdash; Built-in Function: void <b>__builtin_arc_sync</b> (<var>void</var>)<var><a name="index-g_t_005f_005fbuiltin_005farc_005fsync-4596"></a></var><br>
+&mdash; Built-in Function: void <b>__builtin_arc_sync</b> (<var>void</var>)<var><a name="index-g_t_005f_005fbuiltin_005farc_005fsync-4666"></a></var><br>
 <blockquote><p>Only available with <samp><span class="option">-mcpu=ARC700</span></samp>.  Generates:
      <pre class="example">          sync
 </pre>
       </blockquote></div>
 
 <div class="defun">
-&mdash; Built-in Function: void <b>__builtin_arc_trap_s</b> (<var>unsigned int c</var>)<var><a name="index-g_t_005f_005fbuiltin_005farc_005ftrap_005fs-4597"></a></var><br>
+&mdash; Built-in Function: void <b>__builtin_arc_trap_s</b> (<var>unsigned int c</var>)<var><a name="index-g_t_005f_005fbuiltin_005farc_005ftrap_005fs-4667"></a></var><br>
 <blockquote><p>Only available with <samp><span class="option">-mcpu=ARC700</span></samp>.  Generates:
      <pre class="example">          trap_s  <var>c</var>
 </pre>
       </blockquote></div>
 
 <div class="defun">
-&mdash; Built-in Function: void <b>__builtin_arc_unimp_s</b> (<var>void</var>)<var><a name="index-g_t_005f_005fbuiltin_005farc_005funimp_005fs-4598"></a></var><br>
+&mdash; Built-in Function: void <b>__builtin_arc_unimp_s</b> (<var>void</var>)<var><a name="index-g_t_005f_005fbuiltin_005farc_005funimp_005fs-4668"></a></var><br>
 <blockquote><p>Only available with <samp><span class="option">-mcpu=ARC700</span></samp>.  Generates:
      <pre class="example">          unimp_s
 </pre>

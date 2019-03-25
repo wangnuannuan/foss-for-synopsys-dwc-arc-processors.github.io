@@ -607,15 +607,17 @@ increases code size.  Code that is sensitive to stack space usage, such
 as embedded systems and operating system kernels, may want to reduce the
 preferred alignment to <samp><span class="option">-mpreferred-stack-boundary=2</span></samp>.
 
-     <br><dt><code>-mmmx</code><dd><a name="index-mmmx-3093"></a><dt><code>-msse</code><dd><a name="index-msse-3094"></a><dt><code>-msse2</code><dd><a name="index-msse2-3095"></a><dt><code>-msse3</code><dd><a name="index-msse3-3096"></a><dt><code>-mssse3</code><dd><a name="index-mssse3-3097"></a><dt><code>-msse4</code><dd><a name="index-msse4-3098"></a><dt><code>-msse4a</code><dd><a name="index-msse4a-3099"></a><dt><code>-msse4.1</code><dd><a name="index-msse4_002e1-3100"></a><dt><code>-msse4.2</code><dd><a name="index-msse4_002e2-3101"></a><dt><code>-mavx</code><dd><a name="index-mavx-3102"></a><dt><code>-mavx2</code><dd><a name="index-mavx2-3103"></a><dt><code>-mavx512f</code><dd><a name="index-mavx512f-3104"></a><dt><code>-mavx512pf</code><dd><a name="index-mavx512pf-3105"></a><dt><code>-mavx512er</code><dd><a name="index-mavx512er-3106"></a><dt><code>-mavx512cd</code><dd><a name="index-mavx512cd-3107"></a><dt><code>-mavx512vl</code><dd><a name="index-mavx512vl-3108"></a><dt><code>-mavx512bw</code><dd><a name="index-mavx512bw-3109"></a><dt><code>-mavx512dq</code><dd><a name="index-mavx512dq-3110"></a><dt><code>-mavx512ifma</code><dd><a name="index-mavx512ifma-3111"></a><dt><code>-mavx512vbmi</code><dd><a name="index-mavx512vbmi-3112"></a><dt><code>-msha</code><dd><a name="index-msha-3113"></a><dt><code>-maes</code><dd><a name="index-maes-3114"></a><dt><code>-mpclmul</code><dd><a name="index-mpclmul-3115"></a><dt><code>-mclflushopt</code><dd><a name="index-mclflushopt-3116"></a><dt><code>-mfsgsbase</code><dd><a name="index-mfsgsbase-3117"></a><dt><code>-mrdrnd</code><dd><a name="index-mrdrnd-3118"></a><dt><code>-mf16c</code><dd><a name="index-mf16c-3119"></a><dt><code>-mfma</code><dd><a name="index-mfma-3120"></a><dt><code>-mpconfig</code><dd><a name="index-mpconfig-3121"></a><dt><code>-mwbnoinvd</code><dd><a name="index-mwbnoinvd-3122"></a><dt><code>-mfma4</code><dd><a name="index-mfma4-3123"></a><dt><code>-mprefetchwt1</code><dd><a name="index-mprefetchwt1-3124"></a><dt><code>-mxop</code><dd><a name="index-mxop-3125"></a><dt><code>-mlwp</code><dd><a name="index-mlwp-3126"></a><dt><code>-m3dnow</code><dd><a name="index-m3dnow-3127"></a><dt><code>-m3dnowa</code><dd><a name="index-m3dnowa-3128"></a><dt><code>-mpopcnt</code><dd><a name="index-mpopcnt-3129"></a><dt><code>-mabm</code><dd><a name="index-mabm-3130"></a><dt><code>-mbmi</code><dd><a name="index-mbmi-3131"></a><dt><code>-mbmi2</code><dt><code>-mlzcnt</code><dd><a name="index-mlzcnt-3132"></a><dt><code>-mfxsr</code><dd><a name="index-mfxsr-3133"></a><dt><code>-mxsave</code><dd><a name="index-mxsave-3134"></a><dt><code>-mxsaveopt</code><dd><a name="index-mxsaveopt-3135"></a><dt><code>-mxsavec</code><dd><a name="index-mxsavec-3136"></a><dt><code>-mxsaves</code><dd><a name="index-mxsaves-3137"></a><dt><code>-mrtm</code><dd><a name="index-mrtm-3138"></a><dt><code>-mtbm</code><dd><a name="index-mtbm-3139"></a><dt><code>-mmpx</code><dd><a name="index-mmpx-3140"></a><dt><code>-mmwaitx</code><dd><a name="index-mmwaitx-3141"></a><dt><code>-mclzero</code><dd><a name="index-mclzero-3142"></a><dt><code>-mpku</code><dd><a name="index-mpku-3143"></a><dt><code>-mavx512vbmi2</code><dd><a name="index-mavx512vbmi2-3144"></a><dt><code>-mgfni</code><dd><a name="index-mgfni-3145"></a><dt><code>-mvaes</code><dd><a name="index-mvaes-3146"></a><dt><code>-mvpclmulqdq</code><dd><a name="index-mvpclmulqdq-3147"></a><dt><code>-mavx512bitalg</code><dd><a name="index-mavx512bitalg-3148"></a><dt><code>-mmovdiri</code><dd><a name="index-mmovdiri-3149"></a><dt><code>-mmovdir64b</code><dd><a name="index-mmovdir64b-3150"></a><dt><code>-mavx512vpopcntdq</code><dd><a name="index-mavx512vpopcntdq-3151"></a>These switches enable the use of instructions in the MMX, SSE,
-SSE2, SSE3, SSSE3, SSE4.1, AVX, AVX2, AVX512F, AVX512PF, AVX512ER, AVX512CD,
-SHA, AES, PCLMUL, FSGSBASE, RDRND, F16C, FMA, SSE4A, FMA4, XOP, LWP, ABM,
-AVX512VL, AVX512BW, AVX512DQ, AVX512IFMA, AVX512VBMI, BMI, BMI2, VAES,
-FXSR, XSAVE, XSAVEOPT, LZCNT, RTM, MPX, MWAITX, PKU, IBT, SHSTK, AVX512VBMI2,
-GFNI, VPCLMULQDQ, AVX512BITALG, MOVDIRI, MOVDIR64B,
-AVX512VPOPCNTDQ3DNow! or enhanced 3DNow! extended instruction sets. 
-Each has a corresponding <samp><span class="option">-mno-</span></samp> option to disable use of these
-instructions.
+     <br><dt><code>-mmmx</code><dd><a name="index-mmmx-3093"></a><dt><code>-msse</code><dd><a name="index-msse-3094"></a><dt><code>-msse2</code><dd><a name="index-msse2-3095"></a><dt><code>-msse3</code><dd><a name="index-msse3-3096"></a><dt><code>-mssse3</code><dd><a name="index-mssse3-3097"></a><dt><code>-msse4</code><dd><a name="index-msse4-3098"></a><dt><code>-msse4a</code><dd><a name="index-msse4a-3099"></a><dt><code>-msse4.1</code><dd><a name="index-msse4_002e1-3100"></a><dt><code>-msse4.2</code><dd><a name="index-msse4_002e2-3101"></a><dt><code>-mavx</code><dd><a name="index-mavx-3102"></a><dt><code>-mavx2</code><dd><a name="index-mavx2-3103"></a><dt><code>-mavx512f</code><dd><a name="index-mavx512f-3104"></a><dt><code>-mavx512pf</code><dd><a name="index-mavx512pf-3105"></a><dt><code>-mavx512er</code><dd><a name="index-mavx512er-3106"></a><dt><code>-mavx512cd</code><dd><a name="index-mavx512cd-3107"></a><dt><code>-mavx512vl</code><dd><a name="index-mavx512vl-3108"></a><dt><code>-mavx512bw</code><dd><a name="index-mavx512bw-3109"></a><dt><code>-mavx512dq</code><dd><a name="index-mavx512dq-3110"></a><dt><code>-mavx512ifma</code><dd><a name="index-mavx512ifma-3111"></a><dt><code>-mavx512vbmi</code><dd><a name="index-mavx512vbmi-3112"></a><dt><code>-msha</code><dd><a name="index-msha-3113"></a><dt><code>-maes</code><dd><a name="index-maes-3114"></a><dt><code>-mpclmul</code><dd><a name="index-mpclmul-3115"></a><dt><code>-mclflushopt</code><dd><a name="index-mclflushopt-3116"></a><dt><code>-mclwb</code><dd><a name="index-mclwb-3117"></a><dt><code>-mfsgsbase</code><dd><a name="index-mfsgsbase-3118"></a><dt><code>-mrdrnd</code><dd><a name="index-mrdrnd-3119"></a><dt><code>-mf16c</code><dd><a name="index-mf16c-3120"></a><dt><code>-mfma</code><dd><a name="index-mfma-3121"></a><dt><code>-mpconfig</code><dd><a name="index-mpconfig-3122"></a><dt><code>-mwbnoinvd</code><dd><a name="index-mwbnoinvd-3123"></a><dt><code>-mfma4</code><dd><a name="index-mfma4-3124"></a><dt><code>-mprfchw</code><dd><a name="index-mprfchw-3125"></a><dt><code>-mrdpid</code><dd><a name="index-mrdpid-3126"></a><dt><code>-mprefetchwt1</code><dd><a name="index-mprefetchwt1-3127"></a><dt><code>-mrdseed</code><dd><a name="index-mrdseed-3128"></a><dt><code>-msgx</code><dd><a name="index-msgx-3129"></a><dt><code>-mxop</code><dd><a name="index-mxop-3130"></a><dt><code>-mlwp</code><dd><a name="index-mlwp-3131"></a><dt><code>-m3dnow</code><dd><a name="index-m3dnow-3132"></a><dt><code>-m3dnowa</code><dd><a name="index-m3dnowa-3133"></a><dt><code>-mpopcnt</code><dd><a name="index-mpopcnt-3134"></a><dt><code>-mabm</code><dd><a name="index-mabm-3135"></a><dt><code>-madx</code><dd><a name="index-madx-3136"></a><dt><code>-mbmi</code><dd><a name="index-mbmi-3137"></a><dt><code>-mbmi2</code><dd><a name="index-mbmi2-3138"></a><dt><code>-mlzcnt</code><dd><a name="index-mlzcnt-3139"></a><dt><code>-mfxsr</code><dd><a name="index-mfxsr-3140"></a><dt><code>-mxsave</code><dd><a name="index-mxsave-3141"></a><dt><code>-mxsaveopt</code><dd><a name="index-mxsaveopt-3142"></a><dt><code>-mxsavec</code><dd><a name="index-mxsavec-3143"></a><dt><code>-mxsaves</code><dd><a name="index-mxsaves-3144"></a><dt><code>-mrtm</code><dd><a name="index-mrtm-3145"></a><dt><code>-mhle</code><dd><a name="index-mhle-3146"></a><dt><code>-mtbm</code><dd><a name="index-mtbm-3147"></a><dt><code>-mmpx</code><dd><a name="index-mmpx-3148"></a><dt><code>-mmwaitx</code><dd><a name="index-mmwaitx-3149"></a><dt><code>-mclzero</code><dd><a name="index-mclzero-3150"></a><dt><code>-mpku</code><dd><a name="index-mpku-3151"></a><dt><code>-mavx512vbmi2</code><dd><a name="index-mavx512vbmi2-3152"></a><dt><code>-mgfni</code><dd><a name="index-mgfni-3153"></a><dt><code>-mvaes</code><dd><a name="index-mvaes-3154"></a><dt><code>-mvpclmulqdq</code><dd><a name="index-mvpclmulqdq-3155"></a><dt><code>-mavx512bitalg</code><dd><a name="index-mavx512bitalg-3156"></a><dt><code>-mmovdiri</code><dd><a name="index-mmovdiri-3157"></a><dt><code>-mmovdir64b</code><dd><a name="index-mmovdir64b-3158"></a><dt><code>-mavx512vpopcntdq</code><dd><a name="index-mavx512vpopcntdq-3159"></a><dt><code>-mavx5124fmaps</code><dd><a name="index-mavx5124fmaps-3160"></a><dt><code>-mavx512vnni</code><dd><a name="index-mavx512vnni-3161"></a><dt><code>-mavx5124vnniw</code><dd><a name="index-mavx5124vnniw-3162"></a>These switches enable the use of instructions in the MMX, SSE,
+SSE2, SSE3, SSSE3, SSE4, SSE4A, SSE4.1, SSE4.2, AVX, AVX2, AVX512F, AVX512PF,
+AVX512ER, AVX512CD, AVX512VL, AVX512BW, AVX512DQ, AVX512IFMA, AVX512VBMI, SHA,
+AES, PCLMUL, CLFLUSHOPT, CLWB, FSGSBASE, RDRND, F16C, FMA, PCONFIG,
+WBNOINVD, FMA4, PREFETCHW, RDPID, PREFETCHWT1, RDSEED, SGX, XOP, LWP,
+3DNow!, enhanced 3DNow!, POPCNT, ABM, ADX, BMI, BMI2, LZCNT, FXSR, XSAVE,
+XSAVEOPT, XSAVEC, XSAVES, RTM, HLE, TBM, MPX, MWAITX, CLZERO, PKU, AVX512VBMI2,
+GFNI, VAES, VPCLMULQDQ, AVX512BITALG, MOVDIRI, MOVDIR64B,
+AVX512VPOPCNTDQ, AVX5124FMAPS, AVX512VNNI, or AVX5124VNNIW
+extended instruction sets.  Each has a corresponding <samp><span class="option">-mno-</span></samp> option to
+disable use of these instructions.
 
      <p>These extensions are also available as built-in functions: see
 <a href="x86-Built_002din-Functions.html#x86-Built_002din-Functions">x86 Built-in Functions</a>, for details of the functions enabled and
@@ -635,11 +637,11 @@ supported architecture, using the appropriate flags.  In particular,
 the file containing the CPU detection code should be compiled without
 these options.
 
-     <br><dt><code>-mdump-tune-features</code><dd><a name="index-mdump_002dtune_002dfeatures-3152"></a>This option instructs GCC to dump the names of the x86 performance
+     <br><dt><code>-mdump-tune-features</code><dd><a name="index-mdump_002dtune_002dfeatures-3163"></a>This option instructs GCC to dump the names of the x86 performance
 tuning features and default settings. The names can be used in
 <samp><span class="option">-mtune-ctrl=</span><var>feature-list</var></samp>.
 
-     <br><dt><code>-mtune-ctrl=</code><var>feature-list</var><dd><a name="index-mtune_002dctrl_003d_0040var_007bfeature_002dlist_007d-3153"></a>This option is used to do fine grain control of x86 code generation features. 
+     <br><dt><code>-mtune-ctrl=</code><var>feature-list</var><dd><a name="index-mtune_002dctrl_003d_0040var_007bfeature_002dlist_007d-3164"></a>This option is used to do fine grain control of x86 code generation features. 
 <var>feature-list</var> is a comma separated list of <var>feature</var> names. See also
 <samp><span class="option">-mdump-tune-features</span></samp>. When specified, the <var>feature</var> is turned
 on if it is not preceded with &lsquo;<samp><span class="samp">^</span></samp>&rsquo;, otherwise, it is turned off. 
@@ -647,10 +649,10 @@ on if it is not preceded with &lsquo;<samp><span class="samp">^</span></samp>&rs
 developers. Using it may lead to code paths not covered by testing and can
 potentially result in compiler ICEs or runtime errors.
 
-     <br><dt><code>-mno-default</code><dd><a name="index-mno_002ddefault-3154"></a>This option instructs GCC to turn off all tunable features. See also
+     <br><dt><code>-mno-default</code><dd><a name="index-mno_002ddefault-3165"></a>This option instructs GCC to turn off all tunable features. See also
 <samp><span class="option">-mtune-ctrl=</span><var>feature-list</var></samp> and <samp><span class="option">-mdump-tune-features</span></samp>.
 
-     <br><dt><code>-mcld</code><dd><a name="index-mcld-3155"></a>This option instructs GCC to emit a <code>cld</code> instruction in the prologue
+     <br><dt><code>-mcld</code><dd><a name="index-mcld-3166"></a>This option instructs GCC to emit a <code>cld</code> instruction in the prologue
 of functions that use string instructions.  String instructions depend on
 the DF flag to select between autoincrement or autodecrement mode.  While the
 ABI specifies the DF flag to be cleared on function entry, some operating
@@ -662,15 +664,15 @@ GCC with the <samp><span class="option">--enable-cld</span></samp> configure opt
 instructions can be suppressed with the <samp><span class="option">-mno-cld</span></samp> compiler option
 in this case.
 
-     <br><dt><code>-mvzeroupper</code><dd><a name="index-mvzeroupper-3156"></a>This option instructs GCC to emit a <code>vzeroupper</code> instruction
+     <br><dt><code>-mvzeroupper</code><dd><a name="index-mvzeroupper-3167"></a>This option instructs GCC to emit a <code>vzeroupper</code> instruction
 before a transfer of control flow out of the function to minimize
 the AVX to SSE transition penalty as well as remove unnecessary <code>zeroupper</code>
 intrinsics.
 
-     <br><dt><code>-mprefer-avx128</code><dd><a name="index-mprefer_002davx128-3157"></a>This option instructs GCC to use 128-bit AVX instructions instead of
+     <br><dt><code>-mprefer-avx128</code><dd><a name="index-mprefer_002davx128-3168"></a>This option instructs GCC to use 128-bit AVX instructions instead of
 256-bit AVX instructions in the auto-vectorizer.
 
-     <br><dt><code>-mprefer-vector-width=</code><var>opt</var><dd><a name="index-mprefer_002dvector_002dwidth-3158"></a>This option instructs GCC to use <var>opt</var>-bit vector width in instructions
+     <br><dt><code>-mprefer-vector-width=</code><var>opt</var><dd><a name="index-mprefer_002dvector_002dwidth-3169"></a>This option instructs GCC to use <var>opt</var>-bit vector width in instructions
 instead of default on the selected platform.
 
           <dl>
@@ -683,14 +685,14 @@ instead of default on the selected platform.
           <br><dt>&lsquo;<samp><span class="samp">512</span></samp>&rsquo;<dd>Prefer 512-bit vector width for instructions. 
 </dl>
 
-     <br><dt><code>-mcx16</code><dd><a name="index-mcx16-3159"></a>This option enables GCC to generate <code>CMPXCHG16B</code> instructions in 64-bit
+     <br><dt><code>-mcx16</code><dd><a name="index-mcx16-3170"></a>This option enables GCC to generate <code>CMPXCHG16B</code> instructions in 64-bit
 code to implement compare-and-exchange operations on 16-byte aligned 128-bit
 objects.  This is useful for atomic updates of data structures exceeding one
 machine word in size.  The compiler uses this instruction to implement
 <a href="_005f_005fsync-Builtins.html#g_t_005f_005fsync-Builtins">__sync Builtins</a>.  However, for <a href="_005f_005fatomic-Builtins.html#g_t_005f_005fatomic-Builtins">__atomic Builtins</a> operating on
 128-bit integers, a library call is always used.
 
-     <br><dt><code>-msahf</code><dd><a name="index-msahf-3160"></a>This option enables generation of <code>SAHF</code> instructions in 64-bit code. 
+     <br><dt><code>-msahf</code><dd><a name="index-msahf-3171"></a>This option enables generation of <code>SAHF</code> instructions in 64-bit code. 
 Early Intel Pentium 4 CPUs with Intel 64 support,
 prior to the introduction of Pentium 4 G1 step in December 2005,
 lacked the <code>LAHF</code> and <code>SAHF</code> instructions
@@ -700,17 +702,17 @@ In 64-bit mode, the <code>SAHF</code> instruction is used to optimize <code>fmod
 <code>drem</code>, and <code>remainder</code> built-in functions;
 see <a href="Other-Builtins.html#Other-Builtins">Other Builtins</a> for details.
 
-     <br><dt><code>-mmovbe</code><dd><a name="index-mmovbe-3161"></a>This option enables use of the <code>movbe</code> instruction to implement
+     <br><dt><code>-mmovbe</code><dd><a name="index-mmovbe-3172"></a>This option enables use of the <code>movbe</code> instruction to implement
 <code>__builtin_bswap32</code> and <code>__builtin_bswap64</code>.
 
-     <br><dt><code>-mshstk</code><dd><a name="index-mshstk-3162"></a>The <samp><span class="option">-mshstk</span></samp> option enables shadow stack built-in functions
+     <br><dt><code>-mshstk</code><dd><a name="index-mshstk-3173"></a>The <samp><span class="option">-mshstk</span></samp> option enables shadow stack built-in functions
 from x86 Control-flow Enforcement Technology (CET).
 
-     <br><dt><code>-mcrc32</code><dd><a name="index-mcrc32-3163"></a>This option enables built-in functions <code>__builtin_ia32_crc32qi</code>,
+     <br><dt><code>-mcrc32</code><dd><a name="index-mcrc32-3174"></a>This option enables built-in functions <code>__builtin_ia32_crc32qi</code>,
 <code>__builtin_ia32_crc32hi</code>, <code>__builtin_ia32_crc32si</code> and
 <code>__builtin_ia32_crc32di</code> to generate the <code>crc32</code> machine instruction.
 
-     <br><dt><code>-mrecip</code><dd><a name="index-mrecip-3164"></a>This option enables use of <code>RCPSS</code> and <code>RSQRTSS</code> instructions
+     <br><dt><code>-mrecip</code><dd><a name="index-mrecip-3175"></a>This option enables use of <code>RCPSS</code> and <code>RSQRTSS</code> instructions
 (and their vectorized variants <code>RCPPS</code> and <code>RSQRTPS</code>)
 with an additional Newton-Raphson step
 to increase precision instead of <code>DIVSS</code> and <code>SQRTSS</code>
@@ -731,7 +733,7 @@ for vectorized single-float division and vectorized <code>sqrtf(</code><var>x</v
 already with <samp><span class="option">-ffast-math</span></samp> (or the above option combination), and
 doesn't need <samp><span class="option">-mrecip</span></samp>.
 
-     <br><dt><code>-mrecip=</code><var>opt</var><dd><a name="index-mrecip_003dopt-3165"></a>This option controls which reciprocal estimate instructions
+     <br><dt><code>-mrecip=</code><var>opt</var><dd><a name="index-mrecip_003dopt-3176"></a>This option controls which reciprocal estimate instructions
 may be used.  <var>opt</var> is a comma-separated list of options, which may
 be preceded by a &lsquo;<samp><span class="samp">!</span></samp>&rsquo; to invert the option:
 
@@ -754,7 +756,7 @@ be preceded by a &lsquo;<samp><span class="samp">!</span></samp>&rsquo; to inver
      <p>So, for example, <samp><span class="option">-mrecip=all,!sqrt</span></samp> enables
 all of the reciprocal approximations, except for square root.
 
-     <br><dt><code>-mveclibabi=</code><var>type</var><dd><a name="index-mveclibabi-3166"></a>Specifies the ABI type to use for vectorizing intrinsics using an
+     <br><dt><code>-mveclibabi=</code><var>type</var><dd><a name="index-mveclibabi-3177"></a>Specifies the ABI type to use for vectorizing intrinsics using an
 external library.  Supported values for <var>type</var> are &lsquo;<samp><span class="samp">svml</span></samp>&rsquo;
 for the Intel short
 vector math library and &lsquo;<samp><span class="samp">acml</span></samp>&rsquo; for the AMD math core library. 
@@ -763,11 +765,11 @@ To use this option, both <samp><span class="option">-ftree-vectorize</span></sam
 ABI-compatible library must be specified at link time.
 
      <p>GCC currently emits calls to <code>vmldExp2</code>,
-<code>vmldLn2</code>, <code>vmldLog102</code>, <code>vmldLog102</code>, <code>vmldPow2</code>,
+<code>vmldLn2</code>, <code>vmldLog102</code>, <code>vmldPow2</code>,
 <code>vmldTanh2</code>, <code>vmldTan2</code>, <code>vmldAtan2</code>, <code>vmldAtanh2</code>,
 <code>vmldCbrt2</code>, <code>vmldSinh2</code>, <code>vmldSin2</code>, <code>vmldAsinh2</code>,
 <code>vmldAsin2</code>, <code>vmldCosh2</code>, <code>vmldCos2</code>, <code>vmldAcosh2</code>,
-<code>vmldAcos2</code>, <code>vmlsExp4</code>, <code>vmlsLn4</code>, <code>vmlsLog104</code>,
+<code>vmldAcos2</code>, <code>vmlsExp4</code>, <code>vmlsLn4</code>,
 <code>vmlsLog104</code>, <code>vmlsPow4</code>, <code>vmlsTanh4</code>, <code>vmlsTan4</code>,
 <code>vmlsAtan4</code>, <code>vmlsAtanh4</code>, <code>vmlsCbrt4</code>, <code>vmlsSinh4</code>,
 <code>vmlsSin4</code>, <code>vmlsAsinh4</code>, <code>vmlsAsin4</code>, <code>vmlsCosh4</code>,
@@ -779,7 +781,7 @@ function type when <samp><span class="option">-mveclibabi=svml</span></samp> is 
 <code>__vrs4_log10f</code> and <code>__vrs4_powf</code> for the corresponding function type
 when <samp><span class="option">-mveclibabi=acml</span></samp> is used.
 
-     <br><dt><code>-mabi=</code><var>name</var><dd><a name="index-mabi-3167"></a>Generate code for the specified calling convention.  Permissible values
+     <br><dt><code>-mabi=</code><var>name</var><dd><a name="index-mabi-3178"></a>Generate code for the specified calling convention.  Permissible values
 are &lsquo;<samp><span class="samp">sysv</span></samp>&rsquo; for the ABI used on GNU/Linux and other systems, and
 &lsquo;<samp><span class="samp">ms</span></samp>&rsquo; for the Microsoft ABI.  The default is to use the Microsoft
 ABI when targeting Microsoft Windows and the SysV ABI on all other systems. 
@@ -787,11 +789,11 @@ You can control this behavior for specific functions by
 using the function attributes <code>ms_abi</code> and <code>sysv_abi</code>. 
 See <a href="Function-Attributes.html#Function-Attributes">Function Attributes</a>.
 
-     <br><dt><code>-mforce-indirect-call</code><dd><a name="index-mforce_002dindirect_002dcall-3168"></a>Force all calls to functions to be indirect. This is useful
+     <br><dt><code>-mforce-indirect-call</code><dd><a name="index-mforce_002dindirect_002dcall-3179"></a>Force all calls to functions to be indirect. This is useful
 when using Intel Processor Trace where it generates more precise timing
 information for function calls.
 
-     <br><dt><code>-mcall-ms2sysv-xlogues</code><dd><a name="index-mcall_002dms2sysv_002dxlogues-3169"></a><a name="index-mno_002dcall_002dms2sysv_002dxlogues-3170"></a>Due to differences in 64-bit ABIs, any Microsoft ABI function that calls a
+     <br><dt><code>-mcall-ms2sysv-xlogues</code><dd><a name="index-mcall_002dms2sysv_002dxlogues-3180"></a><a name="index-mno_002dcall_002dms2sysv_002dxlogues-3181"></a>Due to differences in 64-bit ABIs, any Microsoft ABI function that calls a
 System V ABI function must consider RSI, RDI and XMM6-15 as clobbered.  By
 default, the code for saving and restoring these registers is emitted inline,
 resulting in fairly lengthy prologues and epilogues.  Using
@@ -799,29 +801,29 @@ resulting in fairly lengthy prologues and epilogues.  Using
 use stubs in the static portion of libgcc to perform these saves and restores,
 thus reducing function size at the cost of a few extra instructions.
 
-     <br><dt><code>-mtls-dialect=</code><var>type</var><dd><a name="index-mtls_002ddialect-3171"></a>Generate code to access thread-local storage using the &lsquo;<samp><span class="samp">gnu</span></samp>&rsquo; or
+     <br><dt><code>-mtls-dialect=</code><var>type</var><dd><a name="index-mtls_002ddialect-3182"></a>Generate code to access thread-local storage using the &lsquo;<samp><span class="samp">gnu</span></samp>&rsquo; or
 &lsquo;<samp><span class="samp">gnu2</span></samp>&rsquo; conventions.  &lsquo;<samp><span class="samp">gnu</span></samp>&rsquo; is the conservative default;
 &lsquo;<samp><span class="samp">gnu2</span></samp>&rsquo; is more efficient, but it may add compile- and run-time
 requirements that cannot be satisfied on all systems.
 
-     <br><dt><code>-mpush-args</code><dt><code>-mno-push-args</code><dd><a name="index-mpush_002dargs-3172"></a><a name="index-mno_002dpush_002dargs-3173"></a>Use PUSH operations to store outgoing parameters.  This method is shorter
+     <br><dt><code>-mpush-args</code><dt><code>-mno-push-args</code><dd><a name="index-mpush_002dargs-3183"></a><a name="index-mno_002dpush_002dargs-3184"></a>Use PUSH operations to store outgoing parameters.  This method is shorter
 and usually equally fast as method using SUB/MOV operations and is enabled
 by default.  In some cases disabling it may improve performance because of
 improved scheduling and reduced dependencies.
 
-     <br><dt><code>-maccumulate-outgoing-args</code><dd><a name="index-maccumulate_002doutgoing_002dargs-3174"></a>If enabled, the maximum amount of space required for outgoing arguments is
+     <br><dt><code>-maccumulate-outgoing-args</code><dd><a name="index-maccumulate_002doutgoing_002dargs-3185"></a>If enabled, the maximum amount of space required for outgoing arguments is
 computed in the function prologue.  This is faster on most modern CPUs
 because of reduced dependencies, improved scheduling and reduced stack usage
 when the preferred stack boundary is not equal to 2.  The drawback is a notable
 increase in code size.  This switch implies <samp><span class="option">-mno-push-args</span></samp>.
 
-     <br><dt><code>-mthreads</code><dd><a name="index-mthreads-3175"></a>Support thread-safe exception handling on MinGW.  Programs that rely
+     <br><dt><code>-mthreads</code><dd><a name="index-mthreads-3186"></a>Support thread-safe exception handling on MinGW.  Programs that rely
 on thread-safe exception handling must compile and link all code with the
 <samp><span class="option">-mthreads</span></samp> option.  When compiling, <samp><span class="option">-mthreads</span></samp> defines
 <samp><span class="option">-D_MT</span></samp>; when linking, it links in a special thread helper library
 <samp><span class="option">-lmingwthrd</span></samp> which cleans up per-thread exception-handling data.
 
-     <br><dt><code>-mms-bitfields</code><dt><code>-mno-ms-bitfields</code><dd><a name="index-mms_002dbitfields-3176"></a><a name="index-mno_002dms_002dbitfields-3177"></a>
+     <br><dt><code>-mms-bitfields</code><dt><code>-mno-ms-bitfields</code><dd><a name="index-mms_002dbitfields-3187"></a><a name="index-mno_002dms_002dbitfields-3188"></a>
 Enable/disable bit-field layout compatible with the native Microsoft
 Windows compiler.
 
@@ -938,21 +940,21 @@ still affect the alignment of the structure:
           <p class="noindent">Here, <code>t5</code> takes up 2 bytes.
           </ol>
 
-     <br><dt><code>-mno-align-stringops</code><dd><a name="index-mno_002dalign_002dstringops-3178"></a>Do not align the destination of inlined string operations.  This switch reduces
+     <br><dt><code>-mno-align-stringops</code><dd><a name="index-mno_002dalign_002dstringops-3189"></a>Do not align the destination of inlined string operations.  This switch reduces
 code size and improves performance in case the destination is already aligned,
 but GCC doesn't know about it.
 
-     <br><dt><code>-minline-all-stringops</code><dd><a name="index-minline_002dall_002dstringops-3179"></a>By default GCC inlines string operations only when the destination is
+     <br><dt><code>-minline-all-stringops</code><dd><a name="index-minline_002dall_002dstringops-3190"></a>By default GCC inlines string operations only when the destination is
 known to be aligned to least a 4-byte boundary. 
 This enables more inlining and increases code
 size, but may improve performance of code that depends on fast
 <code>memcpy</code>, <code>strlen</code>,
 and <code>memset</code> for short lengths.
 
-     <br><dt><code>-minline-stringops-dynamically</code><dd><a name="index-minline_002dstringops_002ddynamically-3180"></a>For string operations of unknown size, use run-time checks with
+     <br><dt><code>-minline-stringops-dynamically</code><dd><a name="index-minline_002dstringops_002ddynamically-3191"></a>For string operations of unknown size, use run-time checks with
 inline code for small blocks and a library call for large blocks.
 
-     <br><dt><code>-mstringop-strategy=</code><var>alg</var><dd><a name="index-mstringop_002dstrategy_003d_0040var_007balg_007d-3181"></a>Override the internal decision heuristic for the particular algorithm to use
+     <br><dt><code>-mstringop-strategy=</code><var>alg</var><dd><a name="index-mstringop_002dstrategy_003d_0040var_007balg_007d-3192"></a>Override the internal decision heuristic for the particular algorithm to use
 for inlining string operations.  The allowed values for <var>alg</var> are:
 
           <dl>
@@ -963,7 +965,7 @@ for inlining string operations.  The allowed values for <var>alg</var> are:
           <br><dt>&lsquo;<samp><span class="samp">libcall</span></samp>&rsquo;<dd>Always use a library call. 
 </dl>
 
-     <br><dt><code>-mmemcpy-strategy=</code><var>strategy</var><dd><a name="index-mmemcpy_002dstrategy_003d_0040var_007bstrategy_007d-3182"></a>Override the internal decision heuristic to decide if <code>__builtin_memcpy</code>
+     <br><dt><code>-mmemcpy-strategy=</code><var>strategy</var><dd><a name="index-mmemcpy_002dstrategy_003d_0040var_007bstrategy_007d-3193"></a>Override the internal decision heuristic to decide if <code>__builtin_memcpy</code>
 should be inlined and what inline algorithm to use when the expected size
 of the copy operation is known. <var>strategy</var>
 is a comma-separated list of <var>alg</var>:<var>max_size</var>:<var>dest_align</var> triplets. 
@@ -974,16 +976,16 @@ in the list must be specified in increasing order.  The minimal byte size for
 <var>alg</var> is <code>0</code> for the first triplet and <var>max_size</var><code> + 1</code> of the
 preceding range.
 
-     <br><dt><code>-mmemset-strategy=</code><var>strategy</var><dd><a name="index-mmemset_002dstrategy_003d_0040var_007bstrategy_007d-3183"></a>The option is similar to <samp><span class="option">-mmemcpy-strategy=</span></samp> except that it is to control
+     <br><dt><code>-mmemset-strategy=</code><var>strategy</var><dd><a name="index-mmemset_002dstrategy_003d_0040var_007bstrategy_007d-3194"></a>The option is similar to <samp><span class="option">-mmemcpy-strategy=</span></samp> except that it is to control
 <code>__builtin_memset</code> expansion.
 
-     <br><dt><code>-momit-leaf-frame-pointer</code><dd><a name="index-momit_002dleaf_002dframe_002dpointer-3184"></a>Don't keep the frame pointer in a register for leaf functions.  This
+     <br><dt><code>-momit-leaf-frame-pointer</code><dd><a name="index-momit_002dleaf_002dframe_002dpointer-3195"></a>Don't keep the frame pointer in a register for leaf functions.  This
 avoids the instructions to save, set up, and restore frame pointers and
 makes an extra register available in leaf functions.  The option
 <samp><span class="option">-fomit-leaf-frame-pointer</span></samp> removes the frame pointer for leaf functions,
 which might make debugging harder.
 
-     <br><dt><code>-mtls-direct-seg-refs</code><dt><code>-mno-tls-direct-seg-refs</code><dd><a name="index-mtls_002ddirect_002dseg_002drefs-3185"></a>Controls whether TLS variables may be accessed with offsets from the
+     <br><dt><code>-mtls-direct-seg-refs</code><dt><code>-mno-tls-direct-seg-refs</code><dd><a name="index-mtls_002ddirect_002dseg_002drefs-3196"></a>Controls whether TLS variables may be accessed with offsets from the
 TLS segment register (<code>%gs</code> for 32-bit, <code>%fs</code> for 64-bit),
 or whether the thread base pointer must be added.  Whether or not this
 is valid depends on the operating system, and whether it maps the
@@ -991,24 +993,24 @@ segment to cover the entire TLS area.
 
      <p>For systems that use the GNU C Library, the default is on.
 
-     <br><dt><code>-msse2avx</code><dt><code>-mno-sse2avx</code><dd><a name="index-msse2avx-3186"></a>Specify that the assembler should encode SSE instructions with VEX
+     <br><dt><code>-msse2avx</code><dt><code>-mno-sse2avx</code><dd><a name="index-msse2avx-3197"></a>Specify that the assembler should encode SSE instructions with VEX
 prefix.  The option <samp><span class="option">-mavx</span></samp> turns this on by default.
 
-     <br><dt><code>-mfentry</code><dt><code>-mno-fentry</code><dd><a name="index-mfentry-3187"></a>If profiling is active (<samp><span class="option">-pg</span></samp>), put the profiling
+     <br><dt><code>-mfentry</code><dt><code>-mno-fentry</code><dd><a name="index-mfentry-3198"></a>If profiling is active (<samp><span class="option">-pg</span></samp>), put the profiling
 counter call before the prologue. 
 Note: On x86 architectures the attribute <code>ms_hook_prologue</code>
 isn't possible at the moment for <samp><span class="option">-mfentry</span></samp> and <samp><span class="option">-pg</span></samp>.
 
-     <br><dt><code>-mrecord-mcount</code><dt><code>-mno-record-mcount</code><dd><a name="index-mrecord_002dmcount-3188"></a>If profiling is active (<samp><span class="option">-pg</span></samp>), generate a __mcount_loc section
+     <br><dt><code>-mrecord-mcount</code><dt><code>-mno-record-mcount</code><dd><a name="index-mrecord_002dmcount-3199"></a>If profiling is active (<samp><span class="option">-pg</span></samp>), generate a __mcount_loc section
 that contains pointers to each profiling call. This is useful for
 automatically patching and out calls.
 
-     <br><dt><code>-mnop-mcount</code><dt><code>-mno-nop-mcount</code><dd><a name="index-mnop_002dmcount-3189"></a>If profiling is active (<samp><span class="option">-pg</span></samp>), generate the calls to
+     <br><dt><code>-mnop-mcount</code><dt><code>-mno-nop-mcount</code><dd><a name="index-mnop_002dmcount-3200"></a>If profiling is active (<samp><span class="option">-pg</span></samp>), generate the calls to
 the profiling functions as NOPs. This is useful when they
 should be patched in later dynamically. This is likely only
 useful together with <samp><span class="option">-mrecord-mcount</span></samp>.
 
-     <br><dt><code>-mskip-rax-setup</code><dt><code>-mno-skip-rax-setup</code><dd><a name="index-mskip_002drax_002dsetup-3190"></a>When generating code for the x86-64 architecture with SSE extensions
+     <br><dt><code>-mskip-rax-setup</code><dt><code>-mno-skip-rax-setup</code><dd><a name="index-mskip_002drax_002dsetup-3201"></a>When generating code for the x86-64 architecture with SSE extensions
 disabled, <samp><span class="option">-mskip-rax-setup</span></samp> can be used to skip setting up RAX
 register when there are no variable arguments passed in vector registers.
 
@@ -1018,15 +1020,15 @@ impacts of this option are callees may waste some stack space,
 misbehave or jump to a random location.  GCC 4.4 or newer don't have
 those issues, regardless the RAX register value.
 
-     <br><dt><code>-m8bit-idiv</code><dt><code>-mno-8bit-idiv</code><dd><a name="index-m8bit_002didiv-3191"></a>On some processors, like Intel Atom, 8-bit unsigned integer divide is
+     <br><dt><code>-m8bit-idiv</code><dt><code>-mno-8bit-idiv</code><dd><a name="index-m8bit_002didiv-3202"></a>On some processors, like Intel Atom, 8-bit unsigned integer divide is
 much faster than 32-bit/64-bit integer divide.  This option generates a
 run-time check.  If both dividend and divisor are within range of 0
 to 255, 8-bit unsigned integer divide is used instead of
 32-bit/64-bit integer divide.
 
-     <br><dt><code>-mavx256-split-unaligned-load</code><dt><code>-mavx256-split-unaligned-store</code><dd><a name="index-mavx256_002dsplit_002dunaligned_002dload-3192"></a><a name="index-mavx256_002dsplit_002dunaligned_002dstore-3193"></a>Split 32-byte AVX unaligned load and store.
+     <br><dt><code>-mavx256-split-unaligned-load</code><dt><code>-mavx256-split-unaligned-store</code><dd><a name="index-mavx256_002dsplit_002dunaligned_002dload-3203"></a><a name="index-mavx256_002dsplit_002dunaligned_002dstore-3204"></a>Split 32-byte AVX unaligned load and store.
 
-     <br><dt><code>-mstack-protector-guard=</code><var>guard</var><dt><code>-mstack-protector-guard-reg=</code><var>reg</var><dt><code>-mstack-protector-guard-offset=</code><var>offset</var><dd><a name="index-mstack_002dprotector_002dguard-3194"></a><a name="index-mstack_002dprotector_002dguard_002dreg-3195"></a><a name="index-mstack_002dprotector_002dguard_002doffset-3196"></a>Generate stack protection code using canary at <var>guard</var>.  Supported
+     <br><dt><code>-mstack-protector-guard=</code><var>guard</var><dt><code>-mstack-protector-guard-reg=</code><var>reg</var><dt><code>-mstack-protector-guard-offset=</code><var>offset</var><dd><a name="index-mstack_002dprotector_002dguard-3205"></a><a name="index-mstack_002dprotector_002dguard_002dreg-3206"></a><a name="index-mstack_002dprotector_002dguard_002doffset-3207"></a>Generate stack protection code using canary at <var>guard</var>.  Supported
 locations are &lsquo;<samp><span class="samp">global</span></samp>&rsquo; for global canary or &lsquo;<samp><span class="samp">tls</span></samp>&rsquo; for per-thread
 canary in the TLS block (the default).  This option has effect only when
 <samp><span class="option">-fstack-protector</span></samp> or <samp><span class="option">-fstack-protector-all</span></samp> is specified.
@@ -1038,16 +1040,16 @@ which segment register (<code>%fs</code> or <code>%gs</code>) to use as base reg
 for reading the canary, and from what offset from that base register. 
 The default for those is as specified in the relevant ABI.
 
-     <br><dt><code>-mmitigate-rop</code><dd><a name="index-mmitigate_002drop-3197"></a>Try to avoid generating code sequences that contain unintended return
+     <br><dt><code>-mmitigate-rop</code><dd><a name="index-mmitigate_002drop-3208"></a>Try to avoid generating code sequences that contain unintended return
 opcodes, to mitigate against certain forms of attack. At the moment,
 this option is limited in what it can do and should not be relied
 on to provide serious protection.
 
-     <br><dt><code>-mgeneral-regs-only</code><dd><a name="index-mgeneral_002dregs_002donly-3198"></a>Generate code that uses only the general-purpose registers.  This
+     <br><dt><code>-mgeneral-regs-only</code><dd><a name="index-mgeneral_002dregs_002donly-3209"></a>Generate code that uses only the general-purpose registers.  This
 prevents the compiler from using floating-point, vector, mask and bound
 registers.
 
-     <br><dt><code>-mindirect-branch=</code><var>choice</var><dd><a name="index-g_t_002dmindirect_002dbranch-3199"></a>Convert indirect call and jump with <var>choice</var>.  The default is
+     <br><dt><code>-mindirect-branch=</code><var>choice</var><dd><a name="index-g_t_002dmindirect_002dbranch-3210"></a>Convert indirect call and jump with <var>choice</var>.  The default is
 &lsquo;<samp><span class="samp">keep</span></samp>&rsquo;, which keeps indirect call and jump unmodified. 
 &lsquo;<samp><span class="samp">thunk</span></samp>&rsquo; converts indirect call and jump to call and return thunk. 
 &lsquo;<samp><span class="samp">thunk-inline</span></samp>&rsquo; converts indirect call and jump to inlined call
@@ -1066,7 +1068,7 @@ not be reachable in the large code model.
 since the external thunk can not be modified to disable control-flow
 check.
 
-     <br><dt><code>-mfunction-return=</code><var>choice</var><dd><a name="index-g_t_002dmfunction_002dreturn-3200"></a>Convert function return with <var>choice</var>.  The default is &lsquo;<samp><span class="samp">keep</span></samp>&rsquo;,
+     <br><dt><code>-mfunction-return=</code><var>choice</var><dd><a name="index-g_t_002dmfunction_002dreturn-3211"></a>Convert function return with <var>choice</var>.  The default is &lsquo;<samp><span class="samp">keep</span></samp>&rsquo;,
 which keeps function return unmodified.  &lsquo;<samp><span class="samp">thunk</span></samp>&rsquo; converts function
 return to call and return thunk.  &lsquo;<samp><span class="samp">thunk-inline</span></samp>&rsquo; converts function
 return to inlined call and return thunk.  &lsquo;<samp><span class="samp">thunk-extern</span></samp>&rsquo; converts
@@ -1080,7 +1082,7 @@ See <a href="Function-Attributes.html#Function-Attributes">Function Attributes</
 <samp><span class="option">-mfunction-return=thunk-extern</span></samp> since the thunk function may
 not be reachable in the large code model.
 
-     <br><dt><code>-mindirect-branch-register</code><dd><a name="index-g_t_002dmindirect_002dbranch_002dregister-3201"></a>Force indirect call and jump via register.
+     <br><dt><code>-mindirect-branch-register</code><dd><a name="index-g_t_002dmindirect_002dbranch_002dregister-3212"></a>Force indirect call and jump via register.
 
  </dl>
 
@@ -1088,7 +1090,7 @@ not be reachable in the large code model.
 on x86-64 processors in 64-bit environments.
 
      <dl>
-<dt><code>-m32</code><dt><code>-m64</code><dt><code>-mx32</code><dt><code>-m16</code><dt><code>-miamcu</code><dd><a name="index-m32-3202"></a><a name="index-m64-3203"></a><a name="index-mx32-3204"></a><a name="index-m16-3205"></a><a name="index-miamcu-3206"></a>Generate code for a 16-bit, 32-bit or 64-bit environment. 
+<dt><code>-m32</code><dt><code>-m64</code><dt><code>-mx32</code><dt><code>-m16</code><dt><code>-miamcu</code><dd><a name="index-m32-3213"></a><a name="index-m64-3214"></a><a name="index-mx32-3215"></a><a name="index-m16-3216"></a><a name="index-miamcu-3217"></a>Generate code for a 16-bit, 32-bit or 64-bit environment. 
 The <samp><span class="option">-m32</span></samp> option sets <code>int</code>, <code>long</code>, and pointer types
 to 32 bits, and
 generates code that runs on any i386 system.
@@ -1109,35 +1111,35 @@ the assembly output so that the binary can run in 16-bit mode.
      <p>The <samp><span class="option">-miamcu</span></samp> option generates code which conforms to Intel MCU
 psABI.  It requires the <samp><span class="option">-m32</span></samp> option to be turned on.
 
-     <br><dt><code>-mno-red-zone</code><dd><a name="index-mno_002dred_002dzone-3207"></a>Do not use a so-called &ldquo;red zone&rdquo; for x86-64 code.  The red zone is mandated
+     <br><dt><code>-mno-red-zone</code><dd><a name="index-mno_002dred_002dzone-3218"></a>Do not use a so-called &ldquo;red zone&rdquo; for x86-64 code.  The red zone is mandated
 by the x86-64 ABI; it is a 128-byte area beyond the location of the
 stack pointer that is not modified by signal or interrupt handlers
 and therefore can be used for temporary data without adjusting the stack
 pointer.  The flag <samp><span class="option">-mno-red-zone</span></samp> disables this red zone.
 
-     <br><dt><code>-mcmodel=small</code><dd><a name="index-mcmodel_003dsmall-3208"></a>Generate code for the small code model: the program and its symbols must
+     <br><dt><code>-mcmodel=small</code><dd><a name="index-mcmodel_003dsmall-3219"></a>Generate code for the small code model: the program and its symbols must
 be linked in the lower 2 GB of the address space.  Pointers are 64 bits. 
 Programs can be statically or dynamically linked.  This is the default
 code model.
 
-     <br><dt><code>-mcmodel=kernel</code><dd><a name="index-mcmodel_003dkernel-3209"></a>Generate code for the kernel code model.  The kernel runs in the
+     <br><dt><code>-mcmodel=kernel</code><dd><a name="index-mcmodel_003dkernel-3220"></a>Generate code for the kernel code model.  The kernel runs in the
 negative 2 GB of the address space. 
 This model has to be used for Linux kernel code.
 
-     <br><dt><code>-mcmodel=medium</code><dd><a name="index-mcmodel_003dmedium-3210"></a>Generate code for the medium model: the program is linked in the lower 2
+     <br><dt><code>-mcmodel=medium</code><dd><a name="index-mcmodel_003dmedium-3221"></a>Generate code for the medium model: the program is linked in the lower 2
 GB of the address space.  Small symbols are also placed there.  Symbols
 with sizes larger than <samp><span class="option">-mlarge-data-threshold</span></samp> are put into
 large data or BSS sections and can be located above 2GB.  Programs can
 be statically or dynamically linked.
 
-     <br><dt><code>-mcmodel=large</code><dd><a name="index-mcmodel_003dlarge-3211"></a>Generate code for the large model.  This model makes no assumptions
+     <br><dt><code>-mcmodel=large</code><dd><a name="index-mcmodel_003dlarge-3222"></a>Generate code for the large model.  This model makes no assumptions
 about addresses and sizes of sections.
 
-     <br><dt><code>-maddress-mode=long</code><dd><a name="index-maddress_002dmode_003dlong-3212"></a>Generate code for long address mode.  This is only supported for 64-bit
+     <br><dt><code>-maddress-mode=long</code><dd><a name="index-maddress_002dmode_003dlong-3223"></a>Generate code for long address mode.  This is only supported for 64-bit
 and x32 environments.  It is the default address mode for 64-bit
 environments.
 
-     <br><dt><code>-maddress-mode=short</code><dd><a name="index-maddress_002dmode_003dshort-3213"></a>Generate code for short address mode.  This is only supported for 32-bit
+     <br><dt><code>-maddress-mode=short</code><dd><a name="index-maddress_002dmode_003dshort-3224"></a>Generate code for short address mode.  This is only supported for 32-bit
 and x32 environments.  It is the default address mode for 32-bit and
 x32 environments. 
 </dl>

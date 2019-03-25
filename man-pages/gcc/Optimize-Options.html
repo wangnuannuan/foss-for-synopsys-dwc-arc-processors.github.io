@@ -210,14 +210,17 @@ by <samp><span class="option">-O2</span></samp> and also turns on the following 
 results.  This is the default.
 
      <br><dt><code>-Os</code><dd><a name="index-Os-813"></a>Optimize for size.  <samp><span class="option">-Os</span></samp> enables all <samp><span class="option">-O2</span></samp> optimizations that
-do not typically increase code size.  It also performs further
-optimizations designed to reduce code size.
+do not typically increase code size.
 
      <p><samp><span class="option">-Os</span></samp> disables the following optimization flags:
      <pre class="smallexample">          -falign-functions  -falign-jumps  -falign-loops 
           -falign-labels  -freorder-blocks  -freorder-blocks-algorithm=stc 
           -freorder-blocks-and-partition  -fprefetch-loop-arrays
 </pre>
+     <p>It also enables <samp><span class="option">-finline-functions</span></samp>, causes the compiler to tune for
+code size rather than execution speed, and performs further optimizations
+designed to reduce code size.
+
      <br><dt><code>-Ofast</code><dd><a name="index-Ofast-814"></a>Disregard strict standards compliance.  <samp><span class="option">-Ofast</span></samp> enables all
 <samp><span class="option">-O3</span></samp> optimizations.  It also enables optimizations that are not
 valid for all standard-compliant programs. 
@@ -316,7 +319,8 @@ time thanks to previous inlining.  This option has any effect only
 when inlining itself is turned on by the <samp><span class="option">-finline-functions</span></samp>
 or <samp><span class="option">-finline-small-functions</span></samp> options.
 
-     <p>Enabled at levels <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
+     <p>Enabled at levels <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.  Also enabled
+by <samp><span class="option">-fprofile-use</span></samp> and <samp><span class="option">-fauto-profile</span></samp>.
 
      <br><dt><code>-finline-functions</code><dd><a name="index-finline_002dfunctions-825"></a>Consider all functions for inlining, even if they are not declared inline. 
 The compiler heuristically decides which functions are worth integrating
@@ -1623,7 +1627,7 @@ for LTO, use <samp><span class="command">gcc-ar</span></samp> and <samp><span cl
 and <samp><span class="command">ranlib</span></samp>;
 to show the symbols of object files with GIMPLE bytecode, use
 <samp><span class="command">gcc-nm</span></samp>.  Those commands require that <samp><span class="command">ar</span></samp>, <samp><span class="command">ranlib</span></samp>
-and <samp><span class="command">nm</span></samp> have been compiled with plugin support.  At link time, use the the
+and <samp><span class="command">nm</span></samp> have been compiled with plugin support.  At link time, use the
 flag <samp><span class="option">-fuse-linker-plugin</span></samp> to ensure that the library participates in
 the LTO optimization process:
 

@@ -233,17 +233,20 @@ an effect when SVE is enabled.
 
      <p>GCC supports two forms of SVE code generation: &ldquo;vector-length
 agnostic&rdquo; output that works with any size of vector register and
-&ldquo;vector-length specific&rdquo; output that only works when the vector
-registers are a particular size.  Replacing <var>bits</var> with
-&lsquo;<samp><span class="samp">scalable</span></samp>&rsquo; selects vector-length agnostic output while
-replacing it with a number selects vector-length specific output. 
-The possible lengths in the latter case are: 128, 256, 512, 1024
-and 2048.  &lsquo;<samp><span class="samp">scalable</span></samp>&rsquo; is the default.
+&ldquo;vector-length specific&rdquo; output that allows GCC to make assumptions
+about the vector length when it is useful for optimization reasons. 
+The possible values of &lsquo;<samp><span class="samp">bits</span></samp>&rsquo; are: &lsquo;<samp><span class="samp">scalable</span></samp>&rsquo;, &lsquo;<samp><span class="samp">128</span></samp>&rsquo;,
+&lsquo;<samp><span class="samp">256</span></samp>&rsquo;, &lsquo;<samp><span class="samp">512</span></samp>&rsquo;, &lsquo;<samp><span class="samp">1024</span></samp>&rsquo; and &lsquo;<samp><span class="samp">2048</span></samp>&rsquo;. 
+Specifying &lsquo;<samp><span class="samp">scalable</span></samp>&rsquo; selects vector-length agnostic
+output.  At present &lsquo;<samp><span class="samp">-msve-vector-bits=128</span></samp>&rsquo; also generates vector-length
+agnostic output.  All other values generate vector-length specific code. 
+The behavior of these values may change in future releases and no value except
+&lsquo;<samp><span class="samp">scalable</span></samp>&rsquo; should be relied on for producing code that is portable across
+different hardware SVE vector lengths.
 
-     <p>At present, &lsquo;<samp><span class="samp">-msve-vector-bits=128</span></samp>&rsquo; produces the same output
-as &lsquo;<samp><span class="samp">-msve-vector-bits=scalable</span></samp>&rsquo;.
-
- </dl>
+     <p>The default is &lsquo;<samp><span class="samp">-msve-vector-bits=scalable</span></samp>&rsquo;, which produces
+vector-length agnostic code. 
+</dl>
 
 <h5 class="subsubsection">3.18.1.1 <samp><span class="option">-march</span></samp> and <samp><span class="option">-mcpu</span></samp> Feature Modifiers</h5>
 

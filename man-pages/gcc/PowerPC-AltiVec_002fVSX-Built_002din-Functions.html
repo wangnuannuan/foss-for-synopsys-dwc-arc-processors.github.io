@@ -108,7 +108,23 @@ of the keywords <code>vector</code>, <code>pixel</code> and <code>bool</code> is
 disabled.  To use them, you must include <code>&lt;altivec.h&gt;</code> instead.
 
      <li>GCC allows using a <code>typedef</code> name as the type specifier for a
-vector type.
+vector type, but only under the following circumstances:
+
+          <ul>
+<li>When using <code>__vector</code> instead of <code>vector</code>; for example,
+
+          <pre class="smallexample">               typedef signed short int16;
+               __vector int16 data;
+</pre>
+          <li>When using <code>vector</code> in keyword-and-predefine mode; for example,
+
+          <pre class="smallexample">               typedef signed short int16;
+               vector int16 data;
+</pre>
+          <p>Note that keyword-and-predefine mode is enabled by disabling GNU
+extensions (e.g., by using <code>-std=c11</code>) and including
+<code>&lt;altivec.h&gt;</code>. 
+</ul>
 
      <li>For C, overloaded functions are implemented with macros so the following
 does not work:
@@ -2175,6 +2191,10 @@ additional functions are available:
      vector long vec_div (vector long, vector long);
      vector unsigned long vec_div (vector unsigned long, vector unsigned long);
      vector double vec_floor (vector double);
+     vector signed long long vec_ld (int, const vector signed long long *);
+     vector signed long long vec_ld (int, const signed long long *);
+     vector unsigned long long vec_ld (int, const vector unsigned long long *);
+     vector unsigned long long vec_ld (int, const unsigned long long *);
      vector __int128 vec_ld (int, const vector __int128 *);
      vector unsigned __int128 vec_ld (int, const vector unsigned __int128 *);
      vector __int128 vec_ld (int, const __int128 *);
@@ -2257,6 +2277,13 @@ additional functions are available:
      vector unsigned long vec_splats (unsigned long);
      vector float vec_sqrt (vector float);
      vector double vec_sqrt (vector double);
+     void vec_st (vector signed long long, int, vector signed long long *);
+     void vec_st (vector signed long long, int, signed long long *);
+     void vec_st (vector unsigned long long, int, vector unsigned long long *);
+     void vec_st (vector unsigned long long, int, unsigned long long *);
+     void vec_st (vector bool long long, int, vector bool long long *);
+     void vec_st (vector bool long long, int, signed long long *);
+     void vec_st (vector bool long long, int, unsigned long long *);
      void vec_st (vector double, int, vector double *);
      void vec_st (vector double, int, double *);
      vector double vec_sub (vector double, vector double);

@@ -59,13 +59,13 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Target-Builtins.html#Target-Builtins">T
 check the PowerPC target platform type:
 
 <div class="defun">
-&mdash; Built-in Function: void <b>__builtin_cpu_init</b> (<var>void</var>)<var><a name="index-g_t_005f_005fbuiltin_005fcpu_005finit-4607"></a></var><br>
+&mdash; Built-in Function: void <b>__builtin_cpu_init</b> (<var>void</var>)<var><a name="index-g_t_005f_005fbuiltin_005fcpu_005finit-4677"></a></var><br>
 <blockquote><p>This function is a <code>nop</code> on the PowerPC platform and is included solely
 to maintain API compatibility with the x86 builtins. 
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Built-in Function: int <b>__builtin_cpu_is</b> (<var>const char *cpuname</var>)<var><a name="index-g_t_005f_005fbuiltin_005fcpu_005fis-4608"></a></var><br>
+&mdash; Built-in Function: int <b>__builtin_cpu_is</b> (<var>const char *cpuname</var>)<var><a name="index-g_t_005f_005fbuiltin_005fcpu_005fis-4678"></a></var><br>
 <blockquote><p>This function returns a value of <code>1</code> if the run-time CPU is of type
 <var>cpuname</var> and returns <code>0</code> otherwise
 
@@ -113,7 +113,7 @@ issues a warning.
       </blockquote></div>
 
 <div class="defun">
-&mdash; Built-in Function: int <b>__builtin_cpu_supports</b> (<var>const char *feature</var>)<var><a name="index-g_t_005f_005fbuiltin_005fcpu_005fsupports-4609"></a></var><br>
+&mdash; Built-in Function: int <b>__builtin_cpu_supports</b> (<var>const char *feature</var>)<var><a name="index-g_t_005f_005fbuiltin_005fcpu_005fsupports-4679"></a></var><br>
 <blockquote><p>This function returns a value of <code>1</code> if the run-time CPU supports the HWCAP
 feature <var>feature</var> and returns <code>0</code> otherwise.
 
@@ -257,30 +257,30 @@ that use the ISA 3.0 instruction set.
 
      <dl>
 <dt><code>__float128 __builtin_sqrtf128 (__float128)</code><dd>Perform a 128-bit IEEE floating point square root operation. 
-<a name="index-g_t_005f_005fbuiltin_005fsqrtf128-4610"></a>
+<a name="index-g_t_005f_005fbuiltin_005fsqrtf128-4680"></a>
 <br><dt><code>__float128 __builtin_fmaf128 (__float128, __float128, __float128)</code><dd>Perform a 128-bit IEEE floating point fused multiply and add operation. 
-<a name="index-g_t_005f_005fbuiltin_005ffmaf128-4611"></a>
+<a name="index-g_t_005f_005fbuiltin_005ffmaf128-4681"></a>
 <br><dt><code>__float128 __builtin_addf128_round_to_odd (__float128, __float128)</code><dd>Perform a 128-bit IEEE floating point add using round to odd as the
 rounding mode. 
-<a name="index-g_t_005f_005fbuiltin_005faddf128_005fround_005fto_005fodd-4612"></a>
+<a name="index-g_t_005f_005fbuiltin_005faddf128_005fround_005fto_005fodd-4682"></a>
 <br><dt><code>__float128 __builtin_subf128_round_to_odd (__float128, __float128)</code><dd>Perform a 128-bit IEEE floating point subtract using round to odd as
 the rounding mode. 
-<a name="index-g_t_005f_005fbuiltin_005fsubf128_005fround_005fto_005fodd-4613"></a>
+<a name="index-g_t_005f_005fbuiltin_005fsubf128_005fround_005fto_005fodd-4683"></a>
 <br><dt><code>__float128 __builtin_mulf128_round_to_odd (__float128, __float128)</code><dd>Perform a 128-bit IEEE floating point multiply using round to odd as
 the rounding mode. 
-<a name="index-g_t_005f_005fbuiltin_005fmulf128_005fround_005fto_005fodd-4614"></a>
+<a name="index-g_t_005f_005fbuiltin_005fmulf128_005fround_005fto_005fodd-4684"></a>
 <br><dt><code>__float128 __builtin_divf128_round_to_odd (__float128, __float128)</code><dd>Perform a 128-bit IEEE floating point divide using round to odd as
 the rounding mode. 
-<a name="index-g_t_005f_005fbuiltin_005fdivf128_005fround_005fto_005fodd-4615"></a>
+<a name="index-g_t_005f_005fbuiltin_005fdivf128_005fround_005fto_005fodd-4685"></a>
 <br><dt><code>__float128 __builtin_sqrtf128_round_to_odd (__float128)</code><dd>Perform a 128-bit IEEE floating point square root using round to odd
 as the rounding mode. 
-<a name="index-g_t_005f_005fbuiltin_005fsqrtf128_005fround_005fto_005fodd-4616"></a>
+<a name="index-g_t_005f_005fbuiltin_005fsqrtf128_005fround_005fto_005fodd-4686"></a>
 <br><dt><code>__float128 __builtin_fmaf128 (__float128, __float128, __float128)</code><dd>Perform a 128-bit IEEE floating point fused multiply and add operation
 using round to odd as the rounding mode. 
-<a name="index-g_t_005f_005fbuiltin_005ffmaf128_005fround_005fto_005fodd-4617"></a>
+<a name="index-g_t_005f_005fbuiltin_005ffmaf128_005fround_005fto_005fodd-4687"></a>
 <br><dt><code>double __builtin_truncf128_round_to_odd (__float128)</code><dd>Convert a 128-bit IEEE floating point value to <code>double</code> using
 round to odd as the rounding mode. 
-<a name="index-g_t_005f_005fbuiltin_005ftruncf128_005fround_005fto_005fodd-4618"></a></dl>
+<a name="index-g_t_005f_005fbuiltin_005ftruncf128_005fround_005fto_005fodd-4688"></a></dl>
 
  <p>The following built-in functions are available for the PowerPC family
 of processors, starting with ISA 2.05 or later (<samp><span class="option">-mcpu=power6</span></samp>

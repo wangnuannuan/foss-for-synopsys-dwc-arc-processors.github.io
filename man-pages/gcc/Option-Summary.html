@@ -142,7 +142,7 @@ in the following sections.
      <br><dt><em>Warning Options</em><dd>See <a href="Warning-Options.html#Warning-Options">Options to Request or Suppress Warnings</a>.
      <pre class="smallexample">          -fsyntax-only  -fmax-errors=<var>n</var>  -Wpedantic 
           -pedantic-errors 
-          -w  -Wextra  -Wall  -Waddress  -Waggregate-return  
+          -w  -Wextra  -Wall  -Waddress  -Waggregate-return  -Waligned-new 
           -Walloc-zero  -Walloc-size-larger-than=<var>n</var>
           -Walloca  -Walloca-larger-than=<var>n</var> 
           -Wno-aggressive-loop-optimizations  -Warray-bounds  -Warray-bounds=<var>n</var> 
@@ -1129,12 +1129,14 @@ See RS/6000 and PowerPC Options.
           -mavx2  -mavx512f  -mavx512pf  -mavx512er  -mavx512cd  -mavx512vl 
           -mavx512bw  -mavx512dq  -mavx512ifma  -mavx512vbmi  -msha  -maes 
           -mpclmul  -mfsgsbase  -mrdrnd  -mf16c  -mfma -mpconfig -mwbnoinvd 
-          -mprefetchwt1  -mclflushopt  -mxsavec  -mxsaves 
+          -mprefetchwt1  -mclflushopt  -mclwb  -mxsavec  -mxsaves 
           -msse4a  -m3dnow  -m3dnowa  -mpopcnt  -mabm  -mbmi  -mtbm  -mfma4  -mxop 
-          -mlzcnt  -mbmi2  -mfxsr  -mxsave  -mxsaveopt  -mrtm  -mlwp  -mmpx  
+          -madx  -mlzcnt  -mbmi2  -mfxsr  -mxsave  -mxsaveopt  -mrtm  -mlwp  -mmpx  
           -mmwaitx  -mclzero  -mpku  -mthreads -mgfni  -mvaes  
           -mshstk -mforce-indirect-call -mavx512vbmi2 
           -mvpclmulqdq -mavx512bitalg -mmovdiri -mmovdir64b -mavx512vpopcntdq 
+          -mavx5124fmaps  -mavx512vnni  -mavx5124vnniw  -mprfchw  -mrdpid 
+          -mrdseed  -msgx 
           -mms-bitfields  -mno-align-stringops  -minline-all-stringops 
           -minline-stringops-dynamically  -mstringop-strategy=<var>alg</var> 
           -mmemcpy-strategy=<var>strategy</var>  -mmemset-strategy=<var>strategy</var> 

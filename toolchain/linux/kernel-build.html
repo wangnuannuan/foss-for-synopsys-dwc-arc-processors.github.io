@@ -209,24 +209,24 @@ Synopsys will be used.</p>
 <p>Check <a class="reference external" href="http://buildroot.org/download.html">Buildroot downloads page</a> for
 latest release. This guide further assumes latest snapshot. Get Buildroot
 sources:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>$ mkdir arc-2019.03-linux-guide
-$ cd arc-2019.03-linux-guide
-$ wget https://buildroot.org/downloads/buildroot-2019.02.tar.bz2
-$ tar xf buildroot-2019.02.tar.bz2
+<div class="highlight-none"><div class="highlight"><pre><span></span>$ mkdir arc-2019.09-linux-guide
+$ cd arc-2019.09-linux-guide
+$ wget https://buildroot.org/downloads/buildroot-2019.11.tar.bz2
+$ tar xf buildroot-2019.11.tar.bz2
 </pre></div>
 </div>
 <p>To build Linux and rootfs Buildroot should be configured. For the purpose of
 this guide, a custom &#8220;defconfig&#8221; file will be created and then will be used to
 configure Buildroot. Custom &#8220;defconfig&#8221; file can be located anywhere and have
-any name. For example it can be <code class="docutils literal"><span class="pre">arc-2019.03-linux-guide/hs_defconfig</span></code>.
+any name. For example it can be <code class="docutils literal"><span class="pre">arc-2019.09-linux-guide/hs_defconfig</span></code>.
 Contents of this file should be following:</p>
 <div class="highlight-none"><div class="highlight"><pre><span></span>BR2_arcle=y
 BR2_archs38=y
 BR2_TOOLCHAIN_EXTERNAL=y
 BR2_TOOLCHAIN_EXTERNAL_CUSTOM=y
 BR2_TOOLCHAIN_EXTERNAL_DOWNLOAD=y
-BR2_TOOLCHAIN_EXTERNAL_URL=&quot;http://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2019.03-rc1/arc_gnu_2019.03_prebuilt_uclibc_le_archs_linux_install.tar.gz&quot;
-BR2_TOOLCHAIN_EXTERNAL_GCC_8=y
+BR2_TOOLCHAIN_EXTERNAL_URL=&quot;https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2019.09-rc2/arc_gnu_2019.09-rc2_prebuilt_uclibc_le_archs_linux_install.tar.gz&quot;
+BR2_TOOLCHAIN_EXTERNAL_GCC_9=y
 BR2_TOOLCHAIN_EXTERNAL_HEADERS_4_15=y
 BR2_TOOLCHAIN_EXTERNAL_LOCALE=y
 BR2_TOOLCHAIN_EXTERNAL_HAS_SSP=y
@@ -235,7 +235,6 @@ BR2_LINUX_KERNEL=y
 BR2_LINUX_KERNEL_DEFCONFIG=&quot;nsim_hs&quot;
 BR2_LINUX_KERNEL_VMLINUX=y
 BR2_PACKAGE_GDB=y
-BR2_PACKAGE_GDB_SERVER=y
 BR2_PACKAGE_GDB_DEBUGGER=y
 BR2_TARGET_ROOTFS_INITRAMFS=y
 # BR2_TARGET_ROOTFS_TAR is not set
@@ -259,31 +258,34 @@ version used for the toolchain build.</p>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>2019.03</td>
+<tr class="row-even"><td>2019.09</td>
 <td>4.15</td>
 </tr>
-<tr class="row-odd"><td>2018.09</td>
+<tr class="row-odd"><td>2019.03</td>
 <td>4.15</td>
 </tr>
-<tr class="row-even"><td>2018.03</td>
+<tr class="row-even"><td>2018.09</td>
 <td>4.15</td>
 </tr>
-<tr class="row-odd"><td>2017.09</td>
+<tr class="row-odd"><td>2018.03</td>
+<td>4.15</td>
+</tr>
+<tr class="row-even"><td>2017.09</td>
 <td>4.12</td>
 </tr>
-<tr class="row-even"><td>2017.03</td>
+<tr class="row-odd"><td>2017.03</td>
 <td>4.9</td>
 </tr>
-<tr class="row-odd"><td>2016.09</td>
+<tr class="row-even"><td>2016.09</td>
 <td>4.8</td>
 </tr>
-<tr class="row-even"><td>2016.03</td>
+<tr class="row-odd"><td>2016.03</td>
 <td>4.6</td>
 </tr>
-<tr class="row-odd"><td>2015.06, 2015.12</td>
+<tr class="row-even"><td>2015.06, 2015.12</td>
 <td>3.18</td>
 </tr>
-<tr class="row-even"><td>earlier</td>
+<tr class="row-odd"><td>earlier</td>
 <td>3.13</td>
 </tr>
 </tbody>
@@ -315,41 +317,21 @@ $ make
 <p>It&#8217;s necessary to pass an absolute path to Buildroot, because there is the issue
 with a relative path.</p>
 <p>After that there will be Linux kernel image file
-<code class="docutils literal"><span class="pre">arc-2019.03-linux-guide/output/images/vmlinux</span></code>.</p>
+<code class="docutils literal"><span class="pre">arc-2019.09-linux-guide/output/images/vmlinux</span></code>.</p>
 </div>
 <div class="section" id="running-on-nsim">
 <h2>Running on nSIM<a class="headerlink" href="#running-on-nsim" title="Permalink to this headline">¶</a></h2>
 <p>Linux configuration in the provided Buildroot defconfig is for the standalone
 nSIM. This kernel image can be run directly on nSIM, without any other
 additional software. Assuming current directory is
-<code class="docutils literal"><span class="pre">arc-2019.03-linux-guide</span></code>:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>$ $NSIM_HOME/bin/nsimdrv -propsfile archs38.props output_hs/images/vmlinux
+<code class="docutils literal"><span class="pre">arc-2019.09-linux-guide</span></code>:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>$ $NSIM_HOME/bin/nsimdrv -prop=nsim_isa_family=av2hs -prop=nsim_isa_core=3 -prop=chipid=0xffff -prop=nsim_isa_atomic_option=1 -prop=nsim_isa_ll64_option=1 -prop=nsim_mmu=4 -prop=mmu_pagesize=8192 -prop=mmu_super_pagesize=2097152 -prop=mmu_stlb_entries=16 -prop=mmu_ntlb_ways=4 -prop=mmu_ntlb_sets=128 -prop=icache=32768,64,4,0 -prop=dcache=16384,64,2,0 -prop=nsim_isa_shift_option=2 -prop=nsim_isa_swap_option=1 -prop=nsim_isa_bitscan_option=1 -prop=nsim_isa_sat=1 -prop=nsim_isa_div_rem_option=1 -prop=nsim_isa_mpy_option=9 -prop=nsim_isa_enable_timer_0=1 -prop=nsim_isa_enable_timer_1=1 -prop=nsim_isa_number_of_interrupts=32 -prop=nsim_isa_number_of_external_interrupts=32 -prop=isa_counters=1 -prop=nsim_isa_pct_counters=8 -prop=nsim_isa_pct_size=48 -prop=nsim_isa_pct_interrupt=1 -prop=nsim_mem-dev=uart0,base=0xc0fc1000,irq=24 -prop=nsim_isa_aps_feature=1 -prop=nsim_isa_num_actionpoints=4 -prop=nsim_isa_rtc_option=1 output_hs/images/vmlinux
 </pre></div>
 </div>
 <p>Username is <code class="docutils literal"><span class="pre">root</span></code> without a password. To halt target system issue <code class="docutils literal"><span class="pre">halt</span></code>
 command.</p>
-<p>Contents of archs38.props file is following:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>nsim_isa_family=av2hs
-nsim_isa_core=3
-chipid=0xffff
-nsim_isa_atomic_option=1
-nsim_isa_ll64_option=1
-nsim_isa_mpy_option=9
-nsim_isa_div_rem_option=2
-nsim_isa_sat=1
-nsim_isa_code_density_option=2
-nsim_isa_enable_timer_0=1
-nsim_isa_enable_timer_1=1
-nsim_isa_rtc_option=1
-icache=65536,64,4,0
-dcache=65536,64,2,0
-nsim_mmu=4
-nsim_mem-dev=uart0,base=0xc0fc1000,irq=24
-nsim_isa_number_of_interrupts=32
-nsim_isa_number_of_external_interrupts=32
-</pre></div>
-</div>
-<p>Add <code class="docutils literal"><span class="pre">nsim_fast=1</span></code> to props file if you have nSIM Pro license.</p>
+<p>Add <code class="docutils literal"><span class="pre">-prop=nsim_fast=1</span></code> to props file if you have nSIM Pro license.</p>
+<p>For more information visit this page: <a class="reference external" href="https://github.com/foss-for-synopsys-dwc-arc-processors/linux/wiki/How-to-run-ARC-Linux-kernel-and-debug-%28with-MetaWare-Debugger%29">How to run ARC Linux kernel and debug</a></p>
 </div>
 <div class="section" id="using-different-linux-configuration">
 <h2>Using different Linux configuration<a class="headerlink" href="#using-different-linux-configuration" title="Permalink to this headline">¶</a></h2>
@@ -372,8 +354,8 @@ BR2_archs38=y
 BR2_TOOLCHAIN_EXTERNAL=y
 BR2_TOOLCHAIN_EXTERNAL_CUSTOM=y
 BR2_TOOLCHAIN_EXTERNAL_DOWNLOAD=y
-BR2_TOOLCHAIN_EXTERNAL_URL=&quot;http://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2019.03-rc1/arc_gnu_2019.03_prebuilt_glibc_le_archs_linux_install.tar.gz&quot;
-BR2_TOOLCHAIN_EXTERNAL_GCC_8=y
+BR2_TOOLCHAIN_EXTERNAL_URL=&quot;https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2019.09-rc2/arc_gnu_2019.09-rc2_prebuilt_glibc_le_archs_linux_install.tar.gz&quot;
+BR2_TOOLCHAIN_EXTERNAL_GCC_9=y
 BR2_TOOLCHAIN_EXTERNAL_HEADERS_4_15=y
 BR2_TOOLCHAIN_EXTERNAL_CUSTOM_GLIBC=y
 BR2_TOOLCHAIN_EXTERNAL_CXX=y
@@ -381,7 +363,6 @@ BR2_LINUX_KERNEL=y
 BR2_LINUX_KERNEL_DEFCONFIG=&quot;nsim_hs&quot;
 BR2_LINUX_KERNEL_VMLINUX=y
 BR2_PACKAGE_GDB=y
-BR2_PACKAGE_GDB_SERVER=y
 BR2_PACKAGE_GDB_DEBUGGER=y
 BR2_TARGET_ROOTFS_INITRAMFS=y
 # BR2_TARGET_ROOTFS_TAR is not set
@@ -395,32 +376,16 @@ required only to change several option in Buildroot defconfig:</p>
 <blockquote>
 <div><ul class="simple">
 <li><code class="docutils literal"><span class="pre">BR2_archs38=y</span></code> with <code class="docutils literal"><span class="pre">BR2_arc770d=y</span></code></li>
-<li><code class="docutils literal"><span class="pre">BR2_TOOLCHAIN_EXTERNAL_URL=&quot;http://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2019.03-rc1/arc_gnu_2019.03_prebuilt_uclibc_le_archs_linux_install.tar.gz&quot;</span></code>
+<li><code class="docutils literal"><span class="pre">BR2_TOOLCHAIN_EXTERNAL_URL=&quot;https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2019.09-rc2/arc_gnu_2019.09-rc2_prebuilt_uclibc_le_archs_linux_install.tar.gz&quot;</span></code>
 with
-<code class="docutils literal"><span class="pre">BR2_TOOLCHAIN_EXTERNAL_URL=&quot;http://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2019.03-rc1/arc_gnu_2019.03_prebuilt_uclibc_le_arc700_linux_install.tar.gz&quot;</span></code></li>
+<code class="docutils literal"><span class="pre">BR2_TOOLCHAIN_EXTERNAL_URL=&quot;https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2019.09-rc2/arc_gnu_2019.09-rc2_prebuilt_uclibc_le_arc700_linux_install.tar.gz&quot;</span></code></li>
 <li><code class="docutils literal"><span class="pre">BR2_LINUX_KERNEL_DEFCONFIG=&quot;nsim_hs&quot;</span></code> with
 <code class="docutils literal"><span class="pre">BR2_LINUX_KERNEL_DEFCONFIG=&quot;nsim_700&quot;</span></code></li>
 </ul>
 </div></blockquote>
 <p>Then repeat steps from :ref`linux-building-label` section of this document to build
-Linux kernel image. To run this image following <code class="docutils literal"><span class="pre">arc770d.props</span></code> nSIM properties
-file may be used:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>nsim_isa_family=a700
-nsim_isa_atomic_option=1
-nsim_mmu=3
-icache=32768,64,2,0
-dcache=32768,64,4,0
-nsim_isa_spfp=fast
-nsim_isa_shift_option=2
-nsim_isa_swap_option=1
-nsim_isa_bitscan_option=1
-nsim_isa_sat=1
-nsim_isa_mpy32=1
-nsim_isa_enable_timer_0=1
-nsim_isa_enable_timer_1=1
-nsim_mem-dev=uart0,base=0xc0fc1000,irq=5
-nsim_isa_number_of_interrupts=32
-nsim_isa_number_of_external_interrupts=32
+Linux kernel image. To run this image in nSIM use next command:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>$ $NSIM_HOME/bin/nsimdrv -prop=nsim_isa_family=a700 -prop=nsim_isa_atomic_option=1 -prop=nsim_mmu=3 -prop=icache=32768,64,2,0 -prop=dcache=32768,64,4,0 -prop=nsim_isa_dpfp=none -prop=nsim_isa_shift_option=2 -prop=nsim_isa_swap_option=1 -prop=nsim_isa_bitscan_option=1 -prop=nsim_isa_sat=1 -prop=nsim_isa_mpy32=1 -prop=nsim_isa_enable_timer_0=1 -prop=nsim_isa_enable_timer_1=1 -prop=nsim_mem-dev=uart0 -prop=isa_counters=1 -prop=nsim_isa_pct_counters=8 -prop=nsim_isa_pct_size=48 output_hs/images/vmlinux
 </pre></div>
 </div>
 </div>
@@ -440,8 +405,8 @@ BR2_archs38=y
 BR2_TOOLCHAIN_EXTERNAL=y
 BR2_TOOLCHAIN_EXTERNAL_CUSTOM=y
 BR2_TOOLCHAIN_EXTERNAL_DOWNLOAD=y
-BR2_TOOLCHAIN_EXTERNAL_URL=&quot;http://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2019.03-rc1/arc_gnu_2019.03_prebuilt_uclibc_le_archs_linux_install.tar.gz&quot;
-BR2_TOOLCHAIN_EXTERNAL_GCC_8=y
+BR2_TOOLCHAIN_EXTERNAL_URL=&quot;https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2019.09-rc2/arc_gnu_2019.09-rc2_prebuilt_uclibc_le_archs_linux_install.tar.gz&quot;
+BR2_TOOLCHAIN_EXTERNAL_GCC_9=y
 BR2_TOOLCHAIN_EXTERNAL_HEADERS_4_15=y
 BR2_TOOLCHAIN_EXTERNAL_LOCALE=y
 BR2_TOOLCHAIN_EXTERNAL_HAS_SSP=y
@@ -450,7 +415,6 @@ BR2_LINUX_KERNEL=y
 BR2_LINUX_KERNEL_DEFCONFIG=&quot;vdk_hs38_smp&quot;
 BR2_LINUX_KERNEL_VMLINUX=y
 BR2_PACKAGE_GDB=y
-BR2_PACKAGE_GDB_SERVER=y
 BR2_PACKAGE_GDB_DEBUGGER=y
 BR2_TARGET_ROOTFS_EXT2=y
 # BR2_TARGET_ROOTFS_TAR is not set
@@ -527,8 +491,8 @@ BR2_archs38=y
 BR2_TOOLCHAIN_EXTERNAL=y
 BR2_TOOLCHAIN_EXTERNAL_CUSTOM=y
 BR2_TOOLCHAIN_EXTERNAL_DOWNLOAD=y
-BR2_TOOLCHAIN_EXTERNAL_URL=&quot;http://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2019.03-rc1/arc_gnu_2019.03_prebuilt_uclibc_le_archs_linux_install.tar.gz&quot;
-BR2_TOOLCHAIN_EXTERNAL_GCC_8=y
+BR2_TOOLCHAIN_EXTERNAL_URL=&quot;https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2019.09-rc2/arc_gnu_2019.09-rc2_prebuilt_uclibc_le_archs_linux_install.tar.gz&quot;
+BR2_TOOLCHAIN_EXTERNAL_GCC_9=y
 BR2_TOOLCHAIN_EXTERNAL_HEADERS_4_15=y
 BR2_TOOLCHAIN_EXTERNAL_LOCALE=y
 BR2_TOOLCHAIN_EXTERNAL_HAS_SSP=y
@@ -536,7 +500,6 @@ BR2_TOOLCHAIN_EXTERNAL_CXX=y
 BR2_LINUX_KERNEL=y
 BR2_LINUX_KERNEL_DEFCONFIG=&quot;axs103_smp&quot;
 BR2_PACKAGE_GDB=y
-BR2_PACKAGE_GDB_SERVER=y
 BR2_PACKAGE_GDB_DEBUGGER=y
 BR2_TARGET_ROOTFS_INITRAMFS=y
 # BR2_TARGET_ROOTFS_TAR is not set

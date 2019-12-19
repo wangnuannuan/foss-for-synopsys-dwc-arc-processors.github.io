@@ -184,6 +184,11 @@ User Guide of the AXC00x CPU card you are using for more details.</p>
 </div>
 <div class="section" id="running-ashling-gdb-server">
 <span id="run-ashling-gdb-server"></span><h2>Running Ashling GDB Server<a class="headerlink" href="#running-ashling-gdb-server" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Starting from Ashling ver. 1.2.6 <strong>&#8211;device</strong> option should contain specific cpu name of the board:
+&#8220;arc-600&#8221;, &#8220;arc-700&#8221;, &#8220;arc-em&#8221;, &#8220;arc-hs&#8221;. Using simple &#8220;arc&#8221; would cause an error.</p>
+</div>
 <p>Options of the Ashling GDB Server are described in its User Manual. It is
 highly recommended that users be familiar with Ashling GDB Server operation
 before proceeding. In a nutshell, to run GDB Server with multiple cores in the
@@ -192,6 +197,12 @@ JTAG chain:</p>
     --scan-file arc2core.xml  --tap-number 1,2
 </pre></div>
 </div>
+<p>Command for Ashling version  starting from 1.2.6:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>$ ./ash-arc-gdb-server --device arc-<span class="o">{</span>CPU<span class="o">}</span> --arc-reg-file &lt;ARC_REG_FILE&gt; <span class="se">\</span>
+    --scan-file arc2core.xml  --tap-number 1,2
+</pre></div>
+</div>
+<p>where &#8220;arc-{CPU}&#8221; is equal to &#8220;arc-600&#8221;, &#8220;arc-700&#8221;, &#8220;arc-em&#8221;, &#8220;arc-hs&#8221;.</p>
 <p>That will open GDB server connections on port 2331 (core 1) and 2332 (core 2).
 Use GDB to connect to the core you want to debug. <code class="docutils literal"><span class="pre">&lt;ARC_REG_FILE&gt;</span></code> is a path
 to a file with AUX register definitions for the core you are going to debug.
@@ -199,11 +210,17 @@ Actual file that should be used depends on what target core is. A set of files
 can be found in this <code class="docutils literal"><span class="pre">toolchain</span></code> repository in <code class="docutils literal"><span class="pre">extras/opella-xd</span></code>
 directory. In this directory there are <code class="docutils literal"><span class="pre">arc600-cpu.xml</span></code>, <code class="docutils literal"><span class="pre">arc700-cpu.xml</span></code>,
 <code class="docutils literal"><span class="pre">arc-em-cpu.xml</span></code> and <code class="docutils literal"><span class="pre">arc-hs-cpu.xml</span></code> files for GDB server, <a class="reference external" href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/tree/arc-staging/extras/opella-xd">direct link</a>.</p>
-<p>To run with AXS101 with all four cores in a chain:</p>
+<p>To run with AXS101 with all four cores in a chain</p>
 <div class="highlight-shell"><div class="highlight"><pre><span></span>$ ./ash-arc-gdb-server --device arc --arc-reg-file &lt;ARC_REG_FILE&gt; <span class="se">\</span>
     --scan-file arc4core.xml  --tap-number 1,2,3,4
 </pre></div>
 </div>
+<p>Command for Ashling version  starting from 1.2.6:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>$ ./ash-arc-gdb-server --device arc-<span class="o">{</span>CPU<span class="o">}</span> --arc-reg-file &lt;ARC_REG_FILE&gt; <span class="se">\</span>
+    --scan-file arc4core.xml  --tap-number 1,2,3,4
+</pre></div>
+</div>
+<p>where &#8220;arc-{CPU}&#8221; is equal to &#8220;arc-600&#8221;, &#8220;arc-700&#8221;, &#8220;arc-em&#8221;, &#8220;arc-hs&#8221;.</p>
 <p>File <code class="docutils literal"><span class="pre">arc4core.xml</span></code> is not shipped with Ashling GDB Server, but can be easily
 created after looking at <code class="docutils literal"><span class="pre">arc2core.xml</span></code> and reading Ashling Opella-XD User
 Manual.</p>
@@ -211,6 +228,11 @@ Manual.</p>
 <div class="highlight-shell"><div class="highlight"><pre><span></span>$ ./ash-arc-gdb-server --device arc --arc-reg-file &lt;ARC_REG_FILE&gt;
 </pre></div>
 </div>
+<p>Command for Ashling version starting from 1.2.6:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>$ ./ash-arc-gdb-server --device arc-<span class="o">{</span>CPU<span class="o">}</span> --arc-reg-file &lt;ARC_REG_FILE&gt;
+</pre></div>
+</div>
+<p>where &#8220;arc-{CPU}&#8221; is equal to &#8220;arc-600&#8221;, &#8220;arc-700&#8221;, &#8220;arc-em&#8221;, &#8220;arc-hs&#8221;.</p>
 <p>Option <code class="docutils literal"><span class="pre">--jtag-frequency</span> <span class="pre">...MHz</span></code> can be passed to gdbserver to change JTAG
 frequency from default 1MHz. Rule of the thumb is that maximum frequency can
 be no bigger than half of the frequency, but for cores with external memory

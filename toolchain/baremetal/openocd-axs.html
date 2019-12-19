@@ -234,12 +234,18 @@ $ arc-elf32-gcc -Wl,-marcv2elfx --specs<span class="o">=</span>nosys.specs -O2 -
 <tr class="row-even"><td>HS36</td>
 <td>-mcpu=hs -mdiv-rem -mmpy-option=9 -mll64 -mfpu=fpud_all</td>
 </tr>
-<tr class="row-odd"><td rowspan="2">103</td>
+<tr class="row-odd"><td rowspan="4">103</td>
 <td>HS36</td>
 <td>-mcpu=hs38_linux</td>
 </tr>
 <tr class="row-even"><td>HS38</td>
 <td>-mcpu=hs38_linux</td>
+</tr>
+<tr class="row-odd"><td>HS47</td>
+<td>-mcpu=hs4x_rel31</td>
+</tr>
+<tr class="row-even"><td>HS48</td>
+<td>-mcpu=hs4x_rel31</td>
 </tr>
 </tbody>
 </table>
@@ -323,6 +329,14 @@ to implement HS36 or to implement HS38.</p>
 <div class="highlight-shell"><div class="highlight"><pre><span></span>$ openocd -f board/snps_axs103_hs38.cfg
 </pre></div>
 </div>
+<p>To run OpenOCD for the AXS103 platform with HS47D:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>$ openocd -f board/snps_axs103_hs47D.cfg
+</pre></div>
+</div>
+<p>To run OpenOCD for the AXS103 platform with HS48x2:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>$ openocd -f board/snps_axs103_hs48.cfg
+</pre></div>
+</div>
 <p>OpenOCD will open a GDBserver connection for each CPU core on target (4 for
 AXS101, 2 for AXS102, 1 or 2 for AXS103). GDBserver for the first core listens
 on the TCP port 3333, second on port 3334 and so on. Note that OpenOCD
@@ -339,10 +353,14 @@ Therefore for AXS101 port assignment is following:</p>
 <li>3333 - ARC HS36</li>
 <li>3334 - ARC HS34.</li>
 </ul>
-<p>For AXS103 HS38x2 ports are:</p>
+<p>For AXS103 HS38x2 or HS48x2 ports are:</p>
 <ul class="simple">
-<li>3333 - ARC HS38 core 1</li>
-<li>3334 - ARC HS38 core 0.</li>
+<li>3333 - ARC HS38 or HS48 core 1</li>
+<li>3334 - ARC HS38 or HS48 core 0.</li>
+</ul>
+<p>For AXS103 HS47D ports are:</p>
+<ul class="simple">
+<li>3333 - ARC HS47D</li>
 </ul>
 </div>
 <div class="section" id="running-gdb">

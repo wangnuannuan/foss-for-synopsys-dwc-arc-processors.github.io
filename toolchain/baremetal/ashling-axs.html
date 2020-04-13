@@ -8,48 +8,46 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Using Ashling Opella-XD GDB server with AXS SDP &mdash; GNU Toolchain for ARC User Manual 2019.09 documentation</title>
+  <title>Using Ashling Opella-XD GDB server with AXS SDP &mdash; GNU Toolchain for ARC User Manual 2020.03 documentation</title>
   
 
   
   
+  
+  
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/style_overrides.css" type="text/css" />
-  
-
-  
-    <link rel="top" title="GNU Toolchain for ARC User Manual 2019.09 documentation" href="../index.html"/>
-        <link rel="up" title="Building baremetal applications" href="index.html"/>
-        <link rel="next" title="Linux applications" href="../linux/index.html"/>
-        <link rel="prev" title="Using OpenOCD with AXS SDP" href="openocd-axs.html"/> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/style_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Linux applications" href="../linux/index.html" />
+    <link rel="prev" title="Using OpenOCD with AXS SDP" href="openocd-axs.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
+   
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -63,7 +61,7 @@
             
             
               <div class="version">
-                2019.09
+                2020.03
               </div>
             
           
@@ -84,12 +82,15 @@
           
             
             
-                <ul class="current">
+              
+            
+            
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Building baremetal applications</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html#debugging-baremetal-applications">Debugging baremetal applications</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="em-starter-kit.html">Using GNU Toolchain to Debug Applications on EM Starter Kit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="openocd-axs.html">Using OpenOCD with AXS SDP</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Using Ashling Opella-XD GDB server with AXS SDP</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Using Ashling Opella-XD GDB server with AXS SDP</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#building-an-application">Building an application</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#board-configuration">Board configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#running-ashling-gdb-server">Running Ashling GDB Server</a></li>
@@ -120,36 +121,56 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">GNU Toolchain for ARC User Manual</a>
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GNU Toolchain for ARC User Manual</a>
+        
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="../index.html">Docs</a> &raquo;</li>
-      
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
           <li><a href="index.html">Building baremetal applications</a> &raquo;</li>
-      
-    <li>Using Ashling Opella-XD GDB server with AXS SDP</li>
+        
+      <li>Using Ashling Opella-XD GDB server with AXS SDP</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
-            <a href="../_sources/baremetal/ashling-axs.txt" rel="nofollow"> View page source</a>
+            
+            <a href="../_sources/baremetal/ashling-axs.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -158,8 +179,8 @@
   <div class="section" id="using-ashling-opella-xd-gdb-server-with-axs-sdp">
 <span id="index-0"></span><h1>Using Ashling Opella-XD GDB server with AXS SDP<a class="headerlink" href="#using-ashling-opella-xd-gdb-server-with-axs-sdp" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The Ashling GDB Server software for ARC is implemented by Ashling and
+<p class="admonition-title">Note</p>
+<p>The Ashling GDB Server software for ARC is implemented by Ashling and
 delivered as part of the Ashling Opella-XD probe for ARC processors
 product.  This guide aims to provide all necessary information to
 successfully debug ARC applications using the GNU toolchain for ARC and the
@@ -172,68 +193,68 @@ version of Ashling drivers and software package available.</p>
 <div class="section" id="building-an-application">
 <h2>Building an application<a class="headerlink" href="#building-an-application" title="Permalink to this headline">¶</a></h2>
 <p>To learn how to build applications for AXS SDP, please refer to corresponding
-section of <a class="reference internal" href="openocd-axs.html#label-building-an-application-axs"><span>OpenOCD manual</span></a>.</p>
+section of <a class="reference internal" href="openocd-axs.html#label-building-an-application-axs"><span class="std std-ref">OpenOCD manual</span></a>.</p>
 </div>
 <div class="section" id="board-configuration">
 <span id="axs-opella-board-configuration"></span><h2>Board configuration<a class="headerlink" href="#board-configuration" title="Permalink to this headline">¶</a></h2>
 <p>Board should be configured mostly the same way as for the OpenOCD, but it is
 required to change <em>JP1402</em> and <em>JP1403</em> jumpers - to debug with Opella-XD it is
 required to set <em>JP1403</em> and unset <em>JP1402</em>, while for OpenOCD it is otherwise.
-Refer to <a class="reference internal" href="openocd-axs.html#label-building-an-application-axs"><span>OpenOCD manual</span></a> and to the
+Refer to <a class="reference internal" href="openocd-axs.html#label-building-an-application-axs"><span class="std std-ref">OpenOCD manual</span></a> and to the
 User Guide of the AXC00x CPU card you are using for more details.</p>
 </div>
 <div class="section" id="running-ashling-gdb-server">
 <span id="run-ashling-gdb-server"></span><h2>Running Ashling GDB Server<a class="headerlink" href="#running-ashling-gdb-server" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Starting from Ashling ver. 1.2.6 <strong>&#8211;device</strong> option should contain specific cpu name of the board:
-&#8220;arc-600&#8221;, &#8220;arc-700&#8221;, &#8220;arc-em&#8221;, &#8220;arc-hs&#8221;. Using simple &#8220;arc&#8221; would cause an error.</p>
+<p class="admonition-title">Note</p>
+<p>Starting from Ashling ver. 1.2.6 <strong>–device</strong> option should contain specific cpu name of the board:
+“arc-600”, “arc-700”, “arc-em”, “arc-hs”. Using simple “arc” would cause an error.</p>
 </div>
 <p>Options of the Ashling GDB Server are described in its User Manual. It is
 highly recommended that users be familiar with Ashling GDB Server operation
 before proceeding. In a nutshell, to run GDB Server with multiple cores in the
 JTAG chain:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>$ ./ash-arc-gdb-server --device arc --arc-reg-file &lt;ARC_REG_FILE&gt; <span class="se">\</span>
-    --scan-file arc2core.xml  --tap-number 1,2
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ ./ash-arc-gdb-server --device arc --arc-reg-file &lt;ARC_REG_FILE&gt; <span class="se">\</span>
+    --scan-file arc2core.xml  --tap-number <span class="m">1</span>,2
 </pre></div>
 </div>
 <p>Command for Ashling version  starting from 1.2.6:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>$ ./ash-arc-gdb-server --device arc-<span class="o">{</span>CPU<span class="o">}</span> --arc-reg-file &lt;ARC_REG_FILE&gt; <span class="se">\</span>
-    --scan-file arc2core.xml  --tap-number 1,2
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ ./ash-arc-gdb-server --device arc-<span class="o">{</span>CPU<span class="o">}</span> --arc-reg-file &lt;ARC_REG_FILE&gt; <span class="se">\</span>
+    --scan-file arc2core.xml  --tap-number <span class="m">1</span>,2
 </pre></div>
 </div>
-<p>where &#8220;arc-{CPU}&#8221; is equal to &#8220;arc-600&#8221;, &#8220;arc-700&#8221;, &#8220;arc-em&#8221;, &#8220;arc-hs&#8221;.</p>
+<p>where “arc-{CPU}” is equal to “arc-600”, “arc-700”, “arc-em”, “arc-hs”.</p>
 <p>That will open GDB server connections on port 2331 (core 1) and 2332 (core 2).
-Use GDB to connect to the core you want to debug. <code class="docutils literal"><span class="pre">&lt;ARC_REG_FILE&gt;</span></code> is a path
+Use GDB to connect to the core you want to debug. <code class="docutils literal notranslate"><span class="pre">&lt;ARC_REG_FILE&gt;</span></code> is a path
 to a file with AUX register definitions for the core you are going to debug.
 Actual file that should be used depends on what target core is. A set of files
-can be found in this <code class="docutils literal"><span class="pre">toolchain</span></code> repository in <code class="docutils literal"><span class="pre">extras/opella-xd</span></code>
-directory. In this directory there are <code class="docutils literal"><span class="pre">arc600-cpu.xml</span></code>, <code class="docutils literal"><span class="pre">arc700-cpu.xml</span></code>,
-<code class="docutils literal"><span class="pre">arc-em-cpu.xml</span></code> and <code class="docutils literal"><span class="pre">arc-hs-cpu.xml</span></code> files for GDB server, <a class="reference external" href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/tree/arc-staging/extras/opella-xd">direct link</a>.</p>
+can be found in this <code class="docutils literal notranslate"><span class="pre">toolchain</span></code> repository in <code class="docutils literal notranslate"><span class="pre">extras/opella-xd</span></code>
+directory. In this directory there are <code class="docutils literal notranslate"><span class="pre">arc600-cpu.xml</span></code>, <code class="docutils literal notranslate"><span class="pre">arc700-cpu.xml</span></code>,
+<code class="docutils literal notranslate"><span class="pre">arc-em-cpu.xml</span></code> and <code class="docutils literal notranslate"><span class="pre">arc-hs-cpu.xml</span></code> files for GDB server, <a class="reference external" href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/tree/arc-staging/extras/opella-xd">direct link</a>.</p>
 <p>To run with AXS101 with all four cores in a chain</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>$ ./ash-arc-gdb-server --device arc --arc-reg-file &lt;ARC_REG_FILE&gt; <span class="se">\</span>
-    --scan-file arc4core.xml  --tap-number 1,2,3,4
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ ./ash-arc-gdb-server --device arc --arc-reg-file &lt;ARC_REG_FILE&gt; <span class="se">\</span>
+    --scan-file arc4core.xml  --tap-number <span class="m">1</span>,2,3,4
 </pre></div>
 </div>
 <p>Command for Ashling version  starting from 1.2.6:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>$ ./ash-arc-gdb-server --device arc-<span class="o">{</span>CPU<span class="o">}</span> --arc-reg-file &lt;ARC_REG_FILE&gt; <span class="se">\</span>
-    --scan-file arc4core.xml  --tap-number 1,2,3,4
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ ./ash-arc-gdb-server --device arc-<span class="o">{</span>CPU<span class="o">}</span> --arc-reg-file &lt;ARC_REG_FILE&gt; <span class="se">\</span>
+    --scan-file arc4core.xml  --tap-number <span class="m">1</span>,2,3,4
 </pre></div>
 </div>
-<p>where &#8220;arc-{CPU}&#8221; is equal to &#8220;arc-600&#8221;, &#8220;arc-700&#8221;, &#8220;arc-em&#8221;, &#8220;arc-hs&#8221;.</p>
-<p>File <code class="docutils literal"><span class="pre">arc4core.xml</span></code> is not shipped with Ashling GDB Server, but can be easily
-created after looking at <code class="docutils literal"><span class="pre">arc2core.xml</span></code> and reading Ashling Opella-XD User
+<p>where “arc-{CPU}” is equal to “arc-600”, “arc-700”, “arc-em”, “arc-hs”.</p>
+<p>File <code class="docutils literal notranslate"><span class="pre">arc4core.xml</span></code> is not shipped with Ashling GDB Server, but can be easily
+created after looking at <code class="docutils literal notranslate"><span class="pre">arc2core.xml</span></code> and reading Ashling Opella-XD User
 Manual.</p>
 <p>To run Ashling GDB Server with JTAG chain of a single core:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>$ ./ash-arc-gdb-server --device arc --arc-reg-file &lt;ARC_REG_FILE&gt;
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ ./ash-arc-gdb-server --device arc --arc-reg-file &lt;ARC_REG_FILE&gt;
 </pre></div>
 </div>
 <p>Command for Ashling version starting from 1.2.6:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>$ ./ash-arc-gdb-server --device arc-<span class="o">{</span>CPU<span class="o">}</span> --arc-reg-file &lt;ARC_REG_FILE&gt;
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ ./ash-arc-gdb-server --device arc-<span class="o">{</span>CPU<span class="o">}</span> --arc-reg-file &lt;ARC_REG_FILE&gt;
 </pre></div>
 </div>
-<p>where &#8220;arc-{CPU}&#8221; is equal to &#8220;arc-600&#8221;, &#8220;arc-700&#8221;, &#8220;arc-em&#8221;, &#8220;arc-hs&#8221;.</p>
-<p>Option <code class="docutils literal"><span class="pre">--jtag-frequency</span> <span class="pre">...MHz</span></code> can be passed to gdbserver to change JTAG
+<p>where “arc-{CPU}” is equal to “arc-600”, “arc-700”, “arc-em”, “arc-hs”.</p>
+<p>Option <code class="docutils literal notranslate"><span class="pre">--jtag-frequency</span> <span class="pre">...MHz</span></code> can be passed to gdbserver to change JTAG
 frequency from default 1MHz. Rule of the thumb is that maximum frequency can
 be no bigger than half of the frequency, but for cores with external memory
 that value can be much lower. Most of the cores in different SDP models can
@@ -243,37 +264,37 @@ an exception - maximum recommended frequency is 5MHz.</p>
 <div class="section" id="running-gdb">
 <h2>Running GDB<a class="headerlink" href="#running-gdb" title="Permalink to this headline">¶</a></h2>
 <p>Run GDB:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>$ arc-elf32-gdb ./application.to.debug
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ arc-elf32-gdb ./application.to.debug
 </pre></div>
 </div>
 <p>Then it is required to specify description of target core that will be debugged
 with Ashling GDB Server.</p>
 <p>Then it is required to specify XML target description file appropriate for the
-<code class="docutils literal"><span class="pre">ARC_REG_FILE</span></code> used to start Ashling GDB server. XML target description files
-for <code class="docutils literal"><span class="pre">arc600-cpu.xml</span></code>, <code class="docutils literal"><span class="pre">arc700-cpu.xml</span></code>, <code class="docutils literal"><span class="pre">arc-em-cpu.xml</span></code> and
-<code class="docutils literal"><span class="pre">arc-hs-cpu.xml</span></code> can be found in this <code class="docutils literal"><span class="pre">toolchain</span></code> repository in
-<code class="docutils literal"><span class="pre">extras/opella-xd</span></code>, <a class="reference external" href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/tree/arc-staging/extras/opella-xd">direct link</a>.
-Provided files are: <code class="docutils literal"><span class="pre">opella-arc600-tdesc.xml</span></code>, <code class="docutils literal"><span class="pre">opella-arc700-tdesc.xml</span></code>,
-<code class="docutils literal"><span class="pre">opella-arcem-tdesc.xml</span></code> and <code class="docutils literal"><span class="pre">opella-archs-tdesc.xml</span></code>.
-File <code class="docutils literal"><span class="pre">aux-minimal.xml</span></code> should be also downloaded from that folder
-and put into the same folder as <code class="docutils literal"><span class="pre">opella-*-tdesc.xml</span></code>. This file
+<code class="docutils literal notranslate"><span class="pre">ARC_REG_FILE</span></code> used to start Ashling GDB server. XML target description files
+for <code class="docutils literal notranslate"><span class="pre">arc600-cpu.xml</span></code>, <code class="docutils literal notranslate"><span class="pre">arc700-cpu.xml</span></code>, <code class="docutils literal notranslate"><span class="pre">arc-em-cpu.xml</span></code> and
+<code class="docutils literal notranslate"><span class="pre">arc-hs-cpu.xml</span></code> can be found in this <code class="docutils literal notranslate"><span class="pre">toolchain</span></code> repository in
+<code class="docutils literal notranslate"><span class="pre">extras/opella-xd</span></code>, <a class="reference external" href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/tree/arc-staging/extras/opella-xd">direct link</a>.
+Provided files are: <code class="docutils literal notranslate"><span class="pre">opella-arc600-tdesc.xml</span></code>, <code class="docutils literal notranslate"><span class="pre">opella-arc700-tdesc.xml</span></code>,
+<code class="docutils literal notranslate"><span class="pre">opella-arcem-tdesc.xml</span></code> and <code class="docutils literal notranslate"><span class="pre">opella-archs-tdesc.xml</span></code>.
+File <code class="docutils literal notranslate"><span class="pre">aux-minimal.xml</span></code> should be also downloaded from that folder
+and put into the same folder as <code class="docutils literal notranslate"><span class="pre">opella-*-tdesc.xml</span></code>. This file
 contains description common to all architectures and is included by all
-&#8220;tdesc&#8221; files.
-It is important that <code class="docutils literal"><span class="pre">ARC_REG_FILE</span></code> for Ashling GDB server and target
-description file for GDB match each other, so if Opella&#8217;s file has been
+“tdesc” files.
+It is important that <code class="docutils literal notranslate"><span class="pre">ARC_REG_FILE</span></code> for Ashling GDB server and target
+description file for GDB match each other, so if Opella’s file has been
 modified, so should be the target description.:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span><span class="o">(</span>gdb<span class="o">)</span> <span class="nb">set</span> tdesc filename &lt;path/to/opella-CPU-tdesc.xml&gt;
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>gdb<span class="o">)</span> <span class="nb">set</span> tdesc filename &lt;path/to/opella-CPU-tdesc.xml&gt;
 </pre></div>
 </div>
 <p>Connect to the target GDB server:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span><span class="o">(</span>gdb<span class="o">)</span> target remote &lt;gdbserver-host&gt;:&lt;port-number&gt;
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>gdb<span class="o">)</span> target remote &lt;gdbserver-host&gt;:&lt;port-number&gt;
 </pre></div>
 </div>
-<p>where <code class="docutils literal"><span class="pre">&lt;gdbserver-host&gt;</span></code> is a hostname/IP-address of the host that runs OpenOCD
-(can be omitted if it is localhost), and <code class="docutils literal"><span class="pre">&lt;port-number&gt;</span></code> is a number of port of
+<p>where <code class="docutils literal notranslate"><span class="pre">&lt;gdbserver-host&gt;</span></code> is a hostname/IP-address of the host that runs OpenOCD
+(can be omitted if it is localhost), and <code class="docutils literal notranslate"><span class="pre">&lt;port-number&gt;</span></code> is a number of port of
 the core you want to debug (see previous section).</p>
 <p>In most cases you need to load application into the target:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span><span class="o">(</span>gdb<span class="o">)</span> load
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>gdb<span class="o">)</span> load
 </pre></div>
 </div>
 <p>The system is now ready to debug the application.</p>
@@ -284,56 +305,54 @@ independently from each other.</p>
 <div class="section" id="known-issues">
 <span id="id2"></span><h2>Known issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>XML register file is specified only once in the GDB Server argument, that
+<li><p>XML register file is specified only once in the GDB Server argument, that
 means that if your JTAG chain includes multiple cores of different model
 (e.g. ARC 700 and EM) you cannot debug them simultaneously, but you can debug
-multiple cores of they same type (e.g. all EM).</li>
-<li>GDB on Windows can&#8217;t read XML files with Windows line endings (CR/LF) - tdesc
-XML file must be converted to UNIX line endings (LF).</li>
-<li>HS36 core of the AXS102 cannot be used when both cores are in the JTAG chain
-- if &#8220;resume&#8221; operation is initiated on the core, GDB Server and GDB will
+multiple cores of they same type (e.g. all EM).</p></li>
+<li><p>GDB on Windows can’t read XML files with Windows line endings (CR/LF) - tdesc
+XML file must be converted to UNIX line endings (LF).</p></li>
+<li><p>HS36 core of the AXS102 cannot be used when both cores are in the JTAG chain
+- if “resume” operation is initiated on the core, GDB Server and GDB will
 behave like it is running and never halting, but in reality it never started
 to run. To workaround this issue remove HS34 from the JTAG chain (remove
-JP1200 jumper on the AXC002 card, remove <code class="docutils literal"><span class="pre">--scan-file</span></code> and <code class="docutils literal"><span class="pre">--tap-number</span></code>
+JP1200 jumper on the AXC002 card, remove <code class="docutils literal notranslate"><span class="pre">--scan-file</span></code> and <code class="docutils literal notranslate"><span class="pre">--tap-number</span></code>
 options from Ashling GDB Server command line). If you need both HS34 and HS36
 in the JTAG chain use OpenOCD instead of Ashling GDB Server. Why this problem
 happens is a mystery, since HS36 works without problems when it is single in
 the JTAG chain, and HS34 always work fine; this is likely a problem with
-Ashling GDB Server.</li>
-<li>In Opella software version of 1.0.6 prior to 1.0.6-D it has been observed
+Ashling GDB Server.</p></li>
+<li><p>In Opella software version of 1.0.6 prior to 1.0.6-D it has been observed
 that in some cases target core may hang on application load, if target has
 external memory attached. This happens when P-packet is disabled, and since
 P-packet should be disabled when using new GDB with those versions of Opella
 software, effectively it is not possible to use GDB &gt;= 7.9 with Ashling
-GDBserver &lt; 1.0.6-D to debug cores that employ external memory.</li>
-<li>In version of 1.0.6 it has been observed that breakpoint set at <code class="docutils literal"><span class="pre">main()</span></code>
-function of application may be not hit on first run in HS34 core in AXS102.</li>
-<li>In version 1.0.6-D it has been observed that gdbserver doesn&#8217;t invalidate I$
+GDBserver &lt; 1.0.6-D to debug cores that employ external memory.</p></li>
+<li><p>In version of 1.0.6 it has been observed that breakpoint set at <code class="docutils literal notranslate"><span class="pre">main()</span></code>
+function of application may be not hit on first run in HS34 core in AXS102.</p></li>
+<li><p>In version 1.0.6-D it has been observed that gdbserver doesn’t invalidate I$
 of the second ARC 600 core of AXS101 - if this core hits a software
-breakpoint it gets stuck at it forever.</li>
+breakpoint it gets stuck at it forever.</p></li>
 </ul>
 <div class="section" id="known-issues-of-previous-versions-of-ashling-software">
 <h3>Known Issues of previous versions of Ashling software<a class="headerlink" href="#known-issues-of-previous-versions-of-ashling-software" title="Permalink to this headline">¶</a></h3>
 <ul>
-<li><p class="first">In version of Ashling software up to 1.0.5B, passing option <code class="docutils literal"><span class="pre">--tap-number</span>
+<li><p>In version of Ashling software up to 1.0.5B, passing option <code class="docutils literal notranslate"><span class="pre">--tap-number</span>
 <span class="pre">2</span></code> will cause GDB Server to print that it opened connection on port 2331 for
 core 2, however that is not true, instead GDB Server will create this
 connection for core 1. Therefore if your JTAG chain contains multiple ARC
-TAPs you _must_ specify all of them in the argument to <code class="docutils literal"><span class="pre">--tap-number</span></code>
-option.</p>
-</li>
-<li><p class="first">Up to version 1.0.5F there is an error in handling of 4-byte software
+TAPs you _must_ specify all of them in the argument to <code class="docutils literal notranslate"><span class="pre">--tap-number</span></code>
+option.</p></li>
+<li><p>Up to version 1.0.5F there is an error in handling of 4-byte software
 breakpoints at 2-byte aligned addresses.  For example in this sample of code
 attempt to set breakpoint at 0x2b2 will fail.:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>0x000002b0 &lt;+0&gt;:    push_s     blink
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>0x000002b0 &lt;+0&gt;:    push_s     blink
 0x000002b2 &lt;+2&gt;:    st.a       fp,<span class="o">[</span>sp,-4<span class="o">]</span>
 0x000002b6 &lt;+6&gt;:    mov_s      fp,sp
 0x000002b8 &lt;+8&gt;:    sub_s      sp,sp,16
 </pre></div>
 </div>
 </li>
-<li><p class="first">Big endian ARC v2 cores are not supported on versions prior to 1.0.5-F.</p>
-</li>
+<li><p>Big endian ARC v2 cores are not supported on versions prior to 1.0.5-F.</p></li>
 </ul>
 </div>
 </div>
@@ -341,15 +360,16 @@ attempt to set breakpoint at 0x2b2 will fail.:</p>
 
 
            </div>
+           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../linux/index.html" class="btn btn-neutral float-right" title="Linux applications" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../linux/index.html" class="btn btn-neutral float-right" title="Linux applications" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="openocd-axs.html" class="btn btn-neutral" title="Using OpenOCD with AXS SDP" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="openocd-axs.html" class="btn btn-neutral float-left" title="Using OpenOCD with AXS SDP" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -358,11 +378,11 @@ attempt to set breakpoint at 0x2b2 will fail.:</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2019, Synopsys.
+        &copy; Copyright 2016-2020, Synopsys
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -375,35 +395,15 @@ attempt to set breakpoint at 0x2b2 will fail.:</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'2019.09',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

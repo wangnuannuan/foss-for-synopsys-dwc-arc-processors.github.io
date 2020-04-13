@@ -8,48 +8,46 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Using JLI Instructions with GNU &mdash; GNU Toolchain for ARC User Manual 2019.09 documentation</title>
+  <title>Using JLI Instructions with GNU &mdash; GNU Toolchain for ARC User Manual 2020.03 documentation</title>
   
 
   
   
+  
+  
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/style_overrides.css" type="text/css" />
-  
-
-  
-    <link rel="top" title="GNU Toolchain for ARC User Manual 2019.09 documentation" href="../index.html"/>
-        <link rel="up" title="GCC documentation" href="index.html"/>
-        <link rel="next" title="SecureShield Programming" href="secure-shield.html"/>
-        <link rel="prev" title="Impact of 64-bit integral operation on GCC toolchain" href="64bit.html"/> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/style_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="SecureShield Programming" href="secure-shield.html" />
+    <link rel="prev" title="Impact of 64-bit integral operation on GCC toolchain" href="64bit.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
+   
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -63,7 +61,7 @@
             
             
               <div class="version">
-                2019.09
+                2020.03
               </div>
             
           
@@ -84,7 +82,10 @@
           
             
             
-                <ul class="current">
+              
+            
+            
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../baremetal/index.html">Building baremetal applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../baremetal/index.html#debugging-baremetal-applications">Debugging baremetal applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux applications</a></li>
@@ -93,9 +94,9 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">GCC documentation</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="index.html#arc-specific-tech-discussion">ARC specific tech discussion</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="custom-instructions.html">Custom instructions: what and how</a></li>
-<li class="toctree-l3"><a class="reference internal" href="extensions-support.html">GCC&#8217;s support for ARC custom extensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="extensions-support.html">GCC’s support for ARC custom extensions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="64bit.html">Impact of 64-bit integral operation on GCC toolchain</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="">Using JLI Instructions with GNU</a><ul>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Using JLI Instructions with GNU</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#optimizing-code-using-jli-calls-on-functions">Optimizing Code using JLI Calls on Functions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#discussion-about-mwdt-gnu-compatibility">Discussion about MWDT/GNU Compatibility</a></li>
 </ul>
@@ -123,36 +124,56 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">GNU Toolchain for ARC User Manual</a>
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GNU Toolchain for ARC User Manual</a>
+        
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="../index.html">Docs</a> &raquo;</li>
-      
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
           <li><a href="index.html">GCC documentation</a> &raquo;</li>
-      
-    <li>Using JLI Instructions with GNU</li>
+        
+      <li>Using JLI Instructions with GNU</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
-            <a href="../_sources/gcc/jli.txt" rel="nofollow"> View page source</a>
+            
+            <a href="../_sources/gcc/jli.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -162,20 +183,20 @@
 <h1>Using JLI Instructions with GNU<a class="headerlink" href="#using-jli-instructions-with-gnu" title="Permalink to this headline">¶</a></h1>
 <p>The ARCv2 ISA provides the JLI instruction, which is two-byte instructions that
 can be used to reduce code size for an application. To make use of it, we
-provide two new function attributes <code class="docutils literal"><span class="pre">jli_always</span></code> and <code class="docutils literal"><span class="pre">jli_fixed</span></code> which will
+provide two new function attributes <code class="docutils literal notranslate"><span class="pre">jli_always</span></code> and <code class="docutils literal notranslate"><span class="pre">jli_fixed</span></code> which will
 force the compiler to call the indicated function using a jli_s instruction. The
 compiler also generates the entries in the JLI table for the case when we use
-<code class="docutils literal"><span class="pre">jli_always</span></code> attribute. In the case of <code class="docutils literal"><span class="pre">jli_fixed</span></code> the compiler assumes a
+<code class="docutils literal notranslate"><span class="pre">jli_always</span></code> attribute. In the case of <code class="docutils literal notranslate"><span class="pre">jli_fixed</span></code> the compiler assumes a
 fixed position of the function into JLI table. Thus, the user needs to provide
 an assembly file with the JLI table for the final link. This is useful when we
 want to have a table in ROM and a second table in the RAM memory.</p>
 <p>The jli instruction usage can be also forced without the need to annotate the
-source code via <code class="docutils literal"><span class="pre">-mjli-always</span></code> command.</p>
+source code via <code class="docutils literal notranslate"><span class="pre">-mjli-always</span></code> command.</p>
 <div class="section" id="optimizing-code-using-jli-calls-on-functions">
 <h2>Optimizing Code using JLI Calls on Functions<a class="headerlink" href="#optimizing-code-using-jli-calls-on-functions" title="Permalink to this headline">¶</a></h2>
 <p>The usual way of using jli calls is to use the attribute _jli_always_ with a
 function. For example:</p>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">func</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span> <span class="n">__attribute__</span><span class="p">((</span><span class="n">jli_always</span><span class="p">));</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">func</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span> <span class="n">__attribute__</span><span class="p">((</span><span class="n">jli_always</span><span class="p">));</span>
 
 <span class="kt">int</span> <span class="nf">func</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span>
 <span class="p">{</span>
@@ -190,31 +211,31 @@ function. For example:</p>
 </pre></div>
 </div>
 <p>which leads to:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>main:
-        push_s blink
-        st.a fp,[sp,-4] ;28
-        mov_s fp,sp     ;4
-        mov_s r0,100    ;3
-        jli_s @__jli.func
-        mov_s r2,r0     ;4
-        mov_s r1,r2     ;4
-        mov_s r0,@.LC0  ;14
-        bl @printf;1
-        mov_s r2,0      ;3
-        mov_s r0,r2     ;4
-        ld.ab fp,[sp,4] ;25
-        pop_s blink
-        j_s [blink]
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">main</span><span class="p">:</span>
+        <span class="n">push_s</span> <span class="n">blink</span>
+        <span class="n">st</span><span class="o">.</span><span class="n">a</span> <span class="n">fp</span><span class="p">,[</span><span class="n">sp</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span> <span class="p">;</span><span class="mi">28</span>
+        <span class="n">mov_s</span> <span class="n">fp</span><span class="p">,</span><span class="n">sp</span>     <span class="p">;</span><span class="mi">4</span>
+        <span class="n">mov_s</span> <span class="n">r0</span><span class="p">,</span><span class="mi">100</span>    <span class="p">;</span><span class="mi">3</span>
+        <span class="n">jli_s</span> <span class="nd">@__jli</span><span class="o">.</span><span class="n">func</span>
+        <span class="n">mov_s</span> <span class="n">r2</span><span class="p">,</span><span class="n">r0</span>     <span class="p">;</span><span class="mi">4</span>
+        <span class="n">mov_s</span> <span class="n">r1</span><span class="p">,</span><span class="n">r2</span>     <span class="p">;</span><span class="mi">4</span>
+        <span class="n">mov_s</span> <span class="n">r0</span><span class="p">,</span><span class="o">@.</span><span class="n">LC0</span>  <span class="p">;</span><span class="mi">14</span>
+        <span class="n">bl</span> <span class="nd">@printf</span><span class="p">;</span><span class="mi">1</span>
+        <span class="n">mov_s</span> <span class="n">r2</span><span class="p">,</span><span class="mi">0</span>      <span class="p">;</span><span class="mi">3</span>
+        <span class="n">mov_s</span> <span class="n">r0</span><span class="p">,</span><span class="n">r2</span>     <span class="p">;</span><span class="mi">4</span>
+        <span class="n">ld</span><span class="o">.</span><span class="n">ab</span> <span class="n">fp</span><span class="p">,[</span><span class="n">sp</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span> <span class="p">;</span><span class="mi">25</span>
+        <span class="n">pop_s</span> <span class="n">blink</span>
+        <span class="n">j_s</span> <span class="p">[</span><span class="n">blink</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>As we can see the call to func is done via the <code class="docutils literal"><span class="pre">jli_s</span></code> instruction, while the
-other calls are done using regular <code class="docutils literal"><span class="pre">bl</span></code> instruction. If we want all calls to
+<p>As we can see the call to func is done via the <code class="docutils literal notranslate"><span class="pre">jli_s</span></code> instruction, while the
+other calls are done using regular <code class="docutils literal notranslate"><span class="pre">bl</span></code> instruction. If we want all calls to
 non-local functions to be done using jli instructions we can use
-<code class="docutils literal"><span class="pre">-mjli-always</span></code> compiler option. However, we need to be careful in using this
+<code class="docutils literal notranslate"><span class="pre">-mjli-always</span></code> compiler option. However, we need to be careful in using this
 option as the JLI table can hold only 1024 entries. The compiler cannot
 efficiently check the number of entries as it only has a limited view over the
 whole application. In this case the GNU tool takes care of generating the JLI
-table, patching the <code class="docutils literal"><span class="pre">jli_s</span></code> instruction with the correct entry number
+table, patching the <code class="docutils literal notranslate"><span class="pre">jli_s</span></code> instruction with the correct entry number
 corresponding to the called function, and the initialization of the jli_base
 auxiliary register.</p>
 <p>A special way to use the jli instruction is for ROM patching. Because with the
@@ -222,11 +243,11 @@ jli instruction function calls are made indirectly through the JLI table, the
 JLI table entries can be changed to invoke alternative functions without
 affecting the executable code. Thus, in this case the location of each function
 called via jli instruction must be fixed and known at compile time. To achieve
-this, we have introduced a new <code class="docutils literal"><span class="pre">jli_fixed</span></code> function attribute which accept a
+this, we have introduced a new <code class="docutils literal notranslate"><span class="pre">jli_fixed</span></code> function attribute which accept a
 numerical parameter to specify the function call entry in the JLI table. This
 attribute is GNU specific.</p>
 <p>Let us consider the following example:</p>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">func</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span> <span class="n">__attribute__</span><span class="p">((</span><span class="n">jli_fixed</span><span class="p">(</span><span class="mi">2</span><span class="p">)));</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">func</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span> <span class="n">__attribute__</span><span class="p">((</span><span class="n">jli_fixed</span><span class="p">(</span><span class="mi">2</span><span class="p">)));</span>
 
 <span class="kt">int</span> <span class="nf">func</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span>
 <span class="p">{</span>
@@ -241,28 +262,28 @@ attribute is GNU specific.</p>
 </pre></div>
 </div>
 <p>which leads to:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>main:
-        push_s blink
-        st.a fp,[sp,-4] ;28
-        mov_s fp,sp     ;4
-        mov_s r0,100    ;3
-        jli_s 2 ; @func
-        mov_s r2,r0     ;4
-        mov_s r1,r2     ;4
-        mov_s r0,@.LC0  ;14
-        bl @printf;1
-        mov_s r2,0      ;3
-        mov_s r0,r2     ;4
-        ld.ab fp,[sp,4] ;25
-        pop_s blink
-        j_s [blink]
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">main</span><span class="p">:</span>
+        <span class="n">push_s</span> <span class="n">blink</span>
+        <span class="n">st</span><span class="o">.</span><span class="n">a</span> <span class="n">fp</span><span class="p">,[</span><span class="n">sp</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span> <span class="p">;</span><span class="mi">28</span>
+        <span class="n">mov_s</span> <span class="n">fp</span><span class="p">,</span><span class="n">sp</span>     <span class="p">;</span><span class="mi">4</span>
+        <span class="n">mov_s</span> <span class="n">r0</span><span class="p">,</span><span class="mi">100</span>    <span class="p">;</span><span class="mi">3</span>
+        <span class="n">jli_s</span> <span class="mi">2</span> <span class="p">;</span> <span class="nd">@func</span>
+        <span class="n">mov_s</span> <span class="n">r2</span><span class="p">,</span><span class="n">r0</span>     <span class="p">;</span><span class="mi">4</span>
+        <span class="n">mov_s</span> <span class="n">r1</span><span class="p">,</span><span class="n">r2</span>     <span class="p">;</span><span class="mi">4</span>
+        <span class="n">mov_s</span> <span class="n">r0</span><span class="p">,</span><span class="o">@.</span><span class="n">LC0</span>  <span class="p">;</span><span class="mi">14</span>
+        <span class="n">bl</span> <span class="nd">@printf</span><span class="p">;</span><span class="mi">1</span>
+        <span class="n">mov_s</span> <span class="n">r2</span><span class="p">,</span><span class="mi">0</span>      <span class="p">;</span><span class="mi">3</span>
+        <span class="n">mov_s</span> <span class="n">r0</span><span class="p">,</span><span class="n">r2</span>     <span class="p">;</span><span class="mi">4</span>
+        <span class="n">ld</span><span class="o">.</span><span class="n">ab</span> <span class="n">fp</span><span class="p">,[</span><span class="n">sp</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span> <span class="p">;</span><span class="mi">25</span>
+        <span class="n">pop_s</span> <span class="n">blink</span>
+        <span class="n">j_s</span> <span class="p">[</span><span class="n">blink</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>As we can see now, the operand of jli instruction is already resolved and points
-to entry 2 in the JLI table. In this case, the compiler doesn&#8217;t generate the JLI
+to entry 2 in the JLI table. In this case, the compiler doesn’t generate the JLI
 table, as it needs to be provided by the user. A JLI table can be something like
 this:</p>
-<div class="highlight-objdump"><div class="highlight"><pre><span></span><span class="x">        .section .jlitab</span>
+<div class="highlight-objdump notranslate"><div class="highlight"><pre><span></span><span class="x">        .section .jlitab</span>
 <span class="x">        .align  4</span>
 <span class="x">JLI_table:</span>
 <span class="x">__jli.entry0:   b       entry0  ; 0</span>
@@ -281,21 +302,22 @@ provided.</p>
 <p>In general the GNU jli implementation is compatible with MWDT implementation,
 except for the code that invokes the MetaWare runtime initialization code that
 sets the JLI_BASE register to address the JLI table. GNU additionally introduces
-the <code class="docutils literal"><span class="pre">jli_fixed</span></code> attribute to closely mimic the MWDT <code class="docutils literal"><span class="pre">jli_call_fixed</span></code> pragma.</p>
+the <code class="docutils literal notranslate"><span class="pre">jli_fixed</span></code> attribute to closely mimic the MWDT <code class="docutils literal notranslate"><span class="pre">jli_call_fixed</span></code> pragma.</p>
 </div>
 </div>
 
 
            </div>
+           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="secure-shield.html" class="btn btn-neutral float-right" title="SecureShield Programming" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="secure-shield.html" class="btn btn-neutral float-right" title="SecureShield Programming" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="64bit.html" class="btn btn-neutral" title="Impact of 64-bit integral operation on GCC toolchain" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="64bit.html" class="btn btn-neutral float-left" title="Impact of 64-bit integral operation on GCC toolchain" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -304,11 +326,11 @@ the <code class="docutils literal"><span class="pre">jli_fixed</span></code> att
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2019, Synopsys.
+        &copy; Copyright 2016-2020, Synopsys
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -321,35 +343,15 @@ the <code class="docutils literal"><span class="pre">jli_fixed</span></code> att
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'2019.09',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

@@ -8,48 +8,46 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Sanitizers support for ARC &mdash; GNU Toolchain for ARC User Manual 2019.09 documentation</title>
+  <title>Sanitizers support for ARC &mdash; GNU Toolchain for ARC User Manual 2020.03 documentation</title>
   
 
   
   
+  
+  
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/style_overrides.css" type="text/css" />
-  
-
-  
-    <link rel="top" title="GNU Toolchain for ARC User Manual 2019.09 documentation" href="../index.html"/>
-        <link rel="up" title="GCC documentation" href="index.html"/>
-        <link rel="next" title="Working with small data section" href="small-data.html"/>
-        <link rel="prev" title="SecureShield Programming" href="secure-shield.html"/> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/style_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Working with small data section" href="small-data.html" />
+    <link rel="prev" title="SecureShield Programming" href="secure-shield.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
+   
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -63,7 +61,7 @@
             
             
               <div class="version">
-                2019.09
+                2020.03
               </div>
             
           
@@ -84,7 +82,10 @@
           
             
             
-                <ul class="current">
+              
+            
+            
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../baremetal/index.html">Building baremetal applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../baremetal/index.html#debugging-baremetal-applications">Debugging baremetal applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux applications</a></li>
@@ -93,11 +94,11 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">GCC documentation</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="index.html#arc-specific-tech-discussion">ARC specific tech discussion</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="custom-instructions.html">Custom instructions: what and how</a></li>
-<li class="toctree-l3"><a class="reference internal" href="extensions-support.html">GCC&#8217;s support for ARC custom extensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="extensions-support.html">GCC’s support for ARC custom extensions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="64bit.html">Impact of 64-bit integral operation on GCC toolchain</a></li>
 <li class="toctree-l3"><a class="reference internal" href="jli.html">Using JLI Instructions with GNU</a></li>
 <li class="toctree-l3"><a class="reference internal" href="secure-shield.html">SecureShield Programming</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="">Sanitizers support for ARC</a><ul>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Sanitizers support for ARC</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#address-sanitizer-examples">Address Sanitizer Examples</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#references">References</a></li>
 </ul>
@@ -123,36 +124,56 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">GNU Toolchain for ARC User Manual</a>
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GNU Toolchain for ARC User Manual</a>
+        
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="../index.html">Docs</a> &raquo;</li>
-      
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
           <li><a href="index.html">GCC documentation</a> &raquo;</li>
-      
-    <li>Sanitizers support for ARC</li>
+        
+      <li>Sanitizers support for ARC</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
-            <a href="../_sources/gcc/sanitizers.txt" rel="nofollow"> View page source</a>
+            
+            <a href="../_sources/gcc/sanitizers.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -165,21 +186,21 @@
 with upcoming glibc (GNU C Library) port.</p>
 <p>ARC supports the following sanitizers:</p>
 <ul class="simple">
-<li>Address,</li>
-<li>Memory,</li>
-<li>Undefined behavior and</li>
-<li>Leak sanitizers.</li>
+<li><p>Address,</p></li>
+<li><p>Memory,</p></li>
+<li><p>Undefined behavior and</p></li>
+<li><p>Leak sanitizers.</p></li>
 </ul>
 <p>AddressSanitizer is a fast memory error detector. It consists of a compiler
 instrumentation module and a run-time library. The tool can detect the following
 types of bugs:</p>
 <ul class="simple">
-<li>Out-of-bounds accesses to heap, stack and globals</li>
-<li>Use-after-free</li>
-<li>Use-after-return (runtime flag ASAN_OPTIONS=detect_stack_use_after_return=1)</li>
-<li>Use-after-scope (clang flag -fsanitize-address-use-after-scope)</li>
-<li>Double-free, invalid free</li>
-<li>Memory leaks (experimental)</li>
+<li><p>Out-of-bounds accesses to heap, stack and globals</p></li>
+<li><p>Use-after-free</p></li>
+<li><p>Use-after-return (runtime flag ASAN_OPTIONS=detect_stack_use_after_return=1)</p></li>
+<li><p>Use-after-scope (clang flag -fsanitize-address-use-after-scope)</p></li>
+<li><p>Double-free, invalid free</p></li>
+<li><p>Memory leaks (experimental)</p></li>
 </ul>
 <p>Typical slowdown introduced by AddressSanitizer is 2x.</p>
 <p>MemorySanitizer is a detector of uninitialized reads. It consists of a compiler
@@ -189,11 +210,11 @@ MemorySanitizer is 3x.</p>
 modifies the program at compile-time to catch various kinds of undefined
 behavior during program execution, for example:</p>
 <ul class="simple">
-<li>Using misaligned or null pointer</li>
-<li>Signed integer overflow</li>
-<li>Conversion to, from, or between floating-point types which would overflow the
-destination</li>
-<li>See the full list of available checks below.</li>
+<li><p>Using misaligned or null pointer</p></li>
+<li><p>Signed integer overflow</p></li>
+<li><p>Conversion to, from, or between floating-point types which would overflow the
+destination</p></li>
+<li><p>See the full list of available checks below.</p></li>
 </ul>
 <p>UBSan has an optional run-time library which provides better error reporting.
 The checks have small runtime cost and no impact on address space layout or ABI.</p>
@@ -208,7 +229,7 @@ examples, please refer to <a class="reference external" href="https://clang.llvm
 <h2>Address Sanitizer Examples<a class="headerlink" href="#address-sanitizer-examples" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="heap-use-after-free">
 <h3>Heap-use-after-free<a class="headerlink" href="#heap-use-after-free" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="c1">// To compile: clang++ -O -g -fsanitize=address heap-use-after-free.cc</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// To compile: clang++ -O -g -fsanitize=address heap-use-after-free.cc</span>
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
   <span class="kt">int</span> <span class="o">*</span><span class="n">array</span> <span class="o">=</span> <span class="n">new</span> <span class="kt">int</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
   <span class="n">delete</span> <span class="p">[]</span> <span class="n">array</span><span class="p">;</span>
@@ -216,7 +237,7 @@ examples, please refer to <a class="reference external" href="https://clang.llvm
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-text"><div class="highlight"><pre><span></span>$ ./a.out
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ ./a.out
 ==5587==ERROR: AddressSanitizer: heap-use-after-free on address 0x61400000fe44 at pc 0x47b55f bp 0x7ffc36b28200
  sp 0x7ffc36b281f8
 READ of size 4 at 0x61400000fe44 thread T0
@@ -268,7 +289,7 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
 </div>
 <div class="section" id="heap-buffer-overflow">
 <h3>Heap-buffer-overflow<a class="headerlink" href="#heap-buffer-overflow" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="c1">// RUN: clang++ -O -g -fsanitize=address %t &amp;&amp; ./a.out</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// RUN: clang++ -O -g -fsanitize=address %t &amp;&amp; ./a.out</span>
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
       <span class="kt">int</span> <span class="o">*</span><span class="n">array</span> <span class="o">=</span> <span class="n">new</span> <span class="kt">int</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
       <span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
@@ -278,7 +299,7 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-text"><div class="highlight"><pre><span></span>==25372==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x61400000ffd4 at pc 0x0000004ddb59 bp 0x7fffea6005a0 sp 0x7fffea600598
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>==25372==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x61400000ffd4 at pc 0x0000004ddb59 bp 0x7fffea6005a0 sp 0x7fffea600598
 READ of size 4 at 0x61400000ffd4 thread T0
     #0 0x46bfee in main /tmp/main.cpp:4:13
 
@@ -292,7 +313,7 @@ allocated by thread T0 here:
 </div>
 <div class="section" id="stack-buffer-overflow">
 <h3>Stack-buffer-overflow<a class="headerlink" href="#stack-buffer-overflow" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="c1">// RUN: clang -O -g -fsanitize=address %t &amp;&amp; ./a.out</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// RUN: clang -O -g -fsanitize=address %t &amp;&amp; ./a.out</span>
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
       <span class="kt">int</span> <span class="n">stack_array</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
       <span class="n">stack_array</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
@@ -300,7 +321,7 @@ allocated by thread T0 here:
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-text"><div class="highlight"><pre><span></span>==7405==ERROR: AddressSanitizer: stack-buffer-overflow on address 0x7fff64740634 at pc 0x46c103 bp 0x7fff64740470 sp 0x7fff64740468
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>==7405==ERROR: AddressSanitizer: stack-buffer-overflow on address 0x7fff64740634 at pc 0x46c103 bp 0x7fff64740470 sp 0x7fff64740468
 READ of size 4 at 0x7fff64740634 thread T0
     #0 0x46c102 in main /tmp/example_StackOutOfBounds.cc:5
 
@@ -314,14 +335,14 @@ Address 0x7fff64740634 is located in stack of thread T0 at offset 436 in frame
 </div>
 <div class="section" id="global-buffer-overflow">
 <h3>Global-buffer-overflow<a class="headerlink" href="#global-buffer-overflow" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="c1">// RUN: clang -O -g -fsanitize=address %t &amp;&amp; ./a.out</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// RUN: clang -O -g -fsanitize=address %t &amp;&amp; ./a.out</span>
 <span class="kt">int</span> <span class="n">global_array</span><span class="p">[</span><span class="mi">100</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="mi">1</span><span class="p">};</span>
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">return</span> <span class="n">global_array</span><span class="p">[</span><span class="n">argc</span> <span class="o">+</span> <span class="mi">100</span><span class="p">];</span>  <span class="c1">// BOOM</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-text"><div class="highlight"><pre><span></span>==7455==ERROR: AddressSanitizer: global-buffer-overflow on address 0x000000689b54 at pc 0x46bfd8 bp 0x7fff515e5ba0 sp 0x7fff515e5b98
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>==7455==ERROR: AddressSanitizer: global-buffer-overflow on address 0x000000689b54 at pc 0x46bfd8 bp 0x7fff515e5ba0 sp 0x7fff515e5b98
 READ of size 4 at 0x000000689b54 thread T0
     #0 0x46bfd7 in main /tmp/example_GlobalOutOfBounds.cc:4
 
@@ -334,23 +355,24 @@ READ of size 4 at 0x000000689b54 thread T0
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="https://en.wikipedia.org/wiki/AddressSanitizer">Wikipedia</a></li>
-<li><a class="reference external" href="https://clang.llvm.org/docs">Clang documentation</a></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/AddressSanitizer">Wikipedia</a></p></li>
+<li><p><a class="reference external" href="https://clang.llvm.org/docs">Clang documentation</a></p></li>
 </ul>
 </div>
 </div>
 
 
            </div>
+           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="small-data.html" class="btn btn-neutral float-right" title="Working with small data section" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="small-data.html" class="btn btn-neutral float-right" title="Working with small data section" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="secure-shield.html" class="btn btn-neutral" title="SecureShield Programming" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="secure-shield.html" class="btn btn-neutral float-left" title="SecureShield Programming" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -359,11 +381,11 @@ READ of size 4 at 0x000000689b54 thread T0
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2019, Synopsys.
+        &copy; Copyright 2016-2020, Synopsys
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -376,35 +398,15 @@ READ of size 4 at 0x000000689b54 thread T0
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'2019.09',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

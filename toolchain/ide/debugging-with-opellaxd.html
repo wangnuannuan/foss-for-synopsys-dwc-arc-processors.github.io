@@ -8,48 +8,46 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Debugging with OpellaXD &mdash; GNU Toolchain for ARC User Manual 2019.09 documentation</title>
+  <title>Debugging with OpellaXD &mdash; GNU Toolchain for ARC User Manual 2020.03 documentation</title>
   
 
   
   
+  
+  
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/style_overrides.css" type="text/css" />
-  
-
-  
-    <link rel="top" title="GNU Toolchain for ARC User Manual 2019.09 documentation" href="../index.html"/>
-        <link rel="up" title="ARC GNU IDE" href="index.html"/>
-        <link rel="next" title="Debugging with nSIM" href="debugging-with-nsim.html"/>
-        <link rel="prev" title="How to Use OpenOCD on Windows" href="how-to-use-openocd-on-windows.html"/> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/style_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Debugging with nSIM" href="debugging-with-nsim.html" />
+    <link rel="prev" title="How to Use OpenOCD on Windows" href="how-to-use-openocd-on-windows.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
+   
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -63,7 +61,7 @@
             
             
               <div class="version">
-                2019.09
+                2020.03
               </div>
             
           
@@ -84,7 +82,10 @@
           
             
             
-                <ul class="current">
+              
+            
+            
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../baremetal/index.html">Building baremetal applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../baremetal/index.html#debugging-baremetal-applications">Debugging baremetal applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux applications</a></li>
@@ -97,7 +98,7 @@
 <li class="toctree-l3"><a class="reference internal" href="creating-a-debug-configuration.html">Creating a Debug Configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="debugging-with-openocd.html">Debugging with OpenOCD</a></li>
 <li class="toctree-l3"><a class="reference internal" href="how-to-use-openocd-on-windows.html">How to Use OpenOCD on Windows</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="">Debugging with OpellaXD</a><ul>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Debugging with OpellaXD</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#board-configuration">Board Configuration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#specifying-properties-for-opella-xd">Specifying properties for Opella-XD</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#starting-a-debug-session">Starting a debug session</a></li>
@@ -128,36 +129,56 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">GNU Toolchain for ARC User Manual</a>
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GNU Toolchain for ARC User Manual</a>
+        
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="../index.html">Docs</a> &raquo;</li>
-      
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
           <li><a href="index.html">ARC GNU IDE</a> &raquo;</li>
-      
-    <li>Debugging with OpellaXD</li>
+        
+      <li>Debugging with OpellaXD</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
-            <a href="../_sources/ide/debugging-with-opellaxd.txt" rel="nofollow"> View page source</a>
+            
+            <a href="../_sources/ide/debugging-with-opellaxd.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -168,66 +189,66 @@
 <p>It is expected here that you have already built your application and created a
 debug configuration for it. Please refer to the following pages for more information:</p>
 <ul class="simple">
-<li><a class="reference internal" href="building-user-guide.html#building-user-guide"><span>Building an Application</span></a></li>
-<li><a class="reference internal" href="creating-a-debug-configuration.html#creating-a-debug-configuration"><span>Creating a Debug Configuration</span></a></li>
+<li><p><a class="reference internal" href="building-user-guide.html#building-user-guide"><span class="std std-ref">Building an Application</span></a></p></li>
+<li><p><a class="reference internal" href="creating-a-debug-configuration.html#creating-a-debug-configuration"><span class="std std-ref">Creating a Debug Configuration</span></a></p></li>
 </ul>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p>Opella-XD has some problems, see section <a class="reference internal" href="../baremetal/ashling-axs.html#known-issues"><span>Known issues</span></a>.</p>
-<p class="last">On some platforms debugging fails when Opella-XD gdb server is started from the IDE, in this case use <a class="reference internal" href="#alt-way"><span>Alternative way of debugging</span></a>.</p>
+<p class="admonition-title">Note</p>
+<p>Opella-XD has some problems, see section <a class="reference internal" href="../baremetal/ashling-axs.html#known-issues"><span class="std std-ref">Known issues</span></a>.</p>
+<p>On some platforms debugging fails when Opella-XD gdb server is started from the IDE, in this case use <a class="reference internal" href="#alt-way"><span class="std std-ref">Alternative way of debugging</span></a>.</p>
 </div>
 <div class="section" id="board-configuration">
 <h2>Board Configuration<a class="headerlink" href="#board-configuration" title="Permalink to this headline">¶</a></h2>
-<p>Board should be configured mostly the same way as for OpenOCD, see <a class="reference internal" href="debugging-with-openocd.html#debugging-with-openocd-board-configuration"><span>Board Configuration</span></a>.</p>
+<p>Board should be configured mostly the same way as for OpenOCD, see <a class="reference internal" href="debugging-with-openocd.html#debugging-with-openocd-board-configuration"><span class="std std-ref">Board Configuration</span></a>.</p>
 <p>However, for AXS it is necessary to change some jumper settings when comparing
-to OpenOCD configuration. Please refer to <a class="reference internal" href="../baremetal/ashling-axs.html#axs-opella-board-configuration"><span>AXS with Opella-XD board
+to OpenOCD configuration. Please refer to <a class="reference internal" href="../baremetal/ashling-axs.html#axs-opella-board-configuration"><span class="std std-ref">AXS with Opella-XD board
 configuration</span></a>.</p>
 </div>
 <div class="section" id="specifying-properties-for-opella-xd">
 <h2>Specifying properties for Opella-XD<a class="headerlink" href="#specifying-properties-for-opella-xd" title="Permalink to this headline">¶</a></h2>
-<div class="figure" id="id1">
+<div class="figure align-center" id="id1">
 <img alt="../_images/ashling_tab.png" src="../_images/ashling_tab.png" />
 <p class="caption"><span class="caption-text">Opella-XD on debugger tab</span></p>
 </div>
 <p>In this tab you should specify paths to your ashling executable file and two XML
 files. Both these files you can find <a class="reference external" href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/tree/arc-staging/extras/opella-xd">here</a>.
-In the <strong>Ashling XML File</strong> field you should choose one of <code class="docutils literal"><span class="pre">arc600-cpu.xml</span></code>,
-<code class="docutils literal"><span class="pre">arc700-cpu.xml</span></code>, <code class="docutils literal"><span class="pre">arc-em-cpu.xml</span></code> and <code class="docutils literal"><span class="pre">arc-hs-cpu.xml</span></code>. In the
-<strong>Target description XML file</strong> should be path to <code class="docutils literal"><span class="pre">opella-YOUR_CPU-tdesc.xml</span></code>.
-Note that file <code class="docutils literal"><span class="pre">aux-minimal.xml</span></code> should be also downloaded from that folder
-and put into the same folder as <code class="docutils literal"><span class="pre">opella-YOUR_CPU-tdesc.xml</span></code>. This file
+In the <strong>Ashling XML File</strong> field you should choose one of <code class="docutils literal notranslate"><span class="pre">arc600-cpu.xml</span></code>,
+<code class="docutils literal notranslate"><span class="pre">arc700-cpu.xml</span></code>, <code class="docutils literal notranslate"><span class="pre">arc-em-cpu.xml</span></code> and <code class="docutils literal notranslate"><span class="pre">arc-hs-cpu.xml</span></code>. In the
+<strong>Target description XML file</strong> should be path to <code class="docutils literal notranslate"><span class="pre">opella-YOUR_CPU-tdesc.xml</span></code>.
+Note that file <code class="docutils literal notranslate"><span class="pre">aux-minimal.xml</span></code> should be also downloaded from that folder
+and put into the same folder as <code class="docutils literal notranslate"><span class="pre">opella-YOUR_CPU-tdesc.xml</span></code>. This file
 contains description common to all architectures and is included by all
-&#8220;tdesc&#8221; files.</p>
+“tdesc” files.</p>
 <p><strong>JTAG frequency</strong> should be set to <strong>7 MHz</strong> for EM Starter Kit 2.0 and 2.1.
 For EM Starter Kit 2.2 select <strong>5 MHZ</strong>. For other hardware development systems
 leave <strong>10 MHz</strong>.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Note that if you are using Opella-XD, you can not specify the core to debug,
+<p class="admonition-title">Note</p>
+<p>Note that if you are using Opella-XD, you can not specify the core to debug,
 so you will be able to debug your application only if you have just one core
 in your JTAG chain.</p>
 </div>
-<p>Currently IDE always passes option <code class="docutils literal"><span class="pre">--device</span> <span class="pre">arc</span></code> to Opella-XD GDB-server
+<p>Currently IDE always passes option <code class="docutils literal notranslate"><span class="pre">--device</span> <span class="pre">arc</span></code> to Opella-XD GDB-server
 which means that server would be configured to work with TPAOP-ARC20-R0 cable. Server
-configured in such way doesn&#8217;t work with TPAOP-ARC20-R1 - this cable requires
-<code class="docutils literal"><span class="pre">--device</span> <span class="pre">arc-jtag-tpa-r1</span></code> or <code class="docutils literal"><span class="pre">--device</span> <span class="pre">arc-cjtag-tpa-r1</span></code> option to be
+configured in such way doesn’t work with TPAOP-ARC20-R1 - this cable requires
+<code class="docutils literal notranslate"><span class="pre">--device</span> <span class="pre">arc-jtag-tpa-r1</span></code> or <code class="docutils literal notranslate"><span class="pre">--device</span> <span class="pre">arc-cjtag-tpa-r1</span></code> option to be
 passed to Opella-XD GDB-server. As a consequence currently GNU IDE supports only
 TPAOP-ARC20-R0 cable.</p>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">GDB on Windows can&#8217;t read XML files with Windows line endings (CR/LF) - tdesc
+<p class="admonition-title">Warning</p>
+<p>GDB on Windows can’t read XML files with Windows line endings (CR/LF) - tdesc
 XML file must be converted to UNIX line endings (LF).</p>
 </div>
 </div>
 <div class="section" id="starting-a-debug-session">
 <h2>Starting a debug session<a class="headerlink" href="#starting-a-debug-session" title="Permalink to this headline">¶</a></h2>
-<p>To debug an application using OpenOCD, press <strong>Debug</strong> button of IDE and confirm
+<p>To debug an application using Ashling Opella-XD, press <strong>Debug</strong> button of IDE and confirm
 switching to Debug Perspective.</p>
-<div class="figure" id="id2">
+<div class="figure align-center" id="id2">
 <img alt="../_images/ashling_properties.png" src="../_images/ashling_properties.png" />
 <p class="caption"><span class="caption-text">Opella-XD properties</span></p>
 </div>
-<div class="figure" id="id3">
+<div class="figure align-center" id="id3">
 <img alt="../_images/ashling_debugging_process.png" src="../_images/ashling_debugging_process.png" />
 <p class="caption"><span class="caption-text">Debugging process with Opella-XD</span></p>
 </div>
@@ -235,9 +256,9 @@ switching to Debug Perspective.</p>
 <div class="section" id="alternative-way-of-debugging">
 <span id="alt-way"></span><h2>Alternative way of debugging<a class="headerlink" href="#alternative-way-of-debugging" title="Permalink to this headline">¶</a></h2>
 <p>Another way to debug an application is connecting to running gdb-server.
-Run Ashling GDB Server from command line as described in <a class="reference internal" href="../baremetal/ashling-axs.html#run-ashling-gdb-server"><span>Running Ashling GDB Server</span></a>.
-Choose the &#8220;Connect to running GDB server&#8221; value of ARC GDB Server field on Debugger tab of debug configuration.</p>
-<div class="figure">
+Run Ashling GDB Server from command line as described in <a class="reference internal" href="../baremetal/ashling-axs.html#run-ashling-gdb-server"><span class="std std-ref">Running Ashling GDB Server</span></a>.
+Choose the “Connect to running GDB server” value of ARC GDB Server field on Debugger tab of debug configuration.</p>
+<div class="figure align-center">
 <img alt="../_images/ashling_dbg_config_commands.png" src="../_images/ashling_dbg_config_commands.png" />
 </div>
 <p>On the next tab, Commands, specify path to your tdesc file.</p>
@@ -247,15 +268,16 @@ Choose the &#8220;Connect to running GDB server&#8221; value of ARC GDB Server f
 
 
            </div>
+           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="debugging-with-nsim.html" class="btn btn-neutral float-right" title="Debugging with nSIM" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="debugging-with-nsim.html" class="btn btn-neutral float-right" title="Debugging with nSIM" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="how-to-use-openocd-on-windows.html" class="btn btn-neutral" title="How to Use OpenOCD on Windows" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="how-to-use-openocd-on-windows.html" class="btn btn-neutral float-left" title="How to Use OpenOCD on Windows" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -264,11 +286,11 @@ Choose the &#8220;Connect to running GDB server&#8221; value of ARC GDB Server f
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2019, Synopsys.
+        &copy; Copyright 2016-2020, Synopsys
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -281,35 +303,15 @@ Choose the &#8220;Connect to running GDB server&#8221; value of ARC GDB Server f
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'2019.09',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

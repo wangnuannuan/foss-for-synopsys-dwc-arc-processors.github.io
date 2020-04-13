@@ -8,48 +8,46 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Understanding compiler options &mdash; GNU Toolchain for ARC User Manual 2019.09 documentation</title>
+  <title>Understanding compiler options &mdash; GNU Toolchain for ARC User Manual 2020.03 documentation</title>
   
 
   
   
+  
+  
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/style_overrides.css" type="text/css" />
-  
-
-  
-    <link rel="top" title="GNU Toolchain for ARC User Manual 2019.09 documentation" href="../index.html"/>
-        <link rel="up" title="GCC documentation" href="index.html"/>
-        <link rel="next" title="Information for Toolchain maintainers" href="../maintainer/index.html"/>
-        <link rel="prev" title="ARC GNU builtins vs MWDT builtins" href="builtins.html"/> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/style_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Information for Toolchain maintainers" href="../maintainer/index.html" />
+    <link rel="prev" title="ARC GNU builtins vs MWDT builtins" href="builtins.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
+   
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -63,7 +61,7 @@
             
             
               <div class="version">
-                2019.09
+                2020.03
               </div>
             
           
@@ -84,7 +82,10 @@
           
             
             
-                <ul class="current">
+              
+            
+            
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../baremetal/index.html">Building baremetal applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../baremetal/index.html#debugging-baremetal-applications">Debugging baremetal applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux applications</a></li>
@@ -94,7 +95,7 @@
 <li class="toctree-l2"><a class="reference internal" href="index.html#arc-specific-tech-discussion">ARC specific tech discussion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#from-mwdt-to-gcc">From MWDT to GCC</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html#improving-gcc-output">Improving GCC output</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="">Understanding compiler options</a><ul>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Understanding compiler options</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#architecture-independent-optimizations">Architecture-Independent Optimizations</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#processor-specific-optimizations">Processor-Specific Optimizations</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#gcc-optimizations-for-code-size">GCC optimizations for Code Size</a></li>
@@ -121,36 +122,56 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">GNU Toolchain for ARC User Manual</a>
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GNU Toolchain for ARC User Manual</a>
+        
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="../index.html">Docs</a> &raquo;</li>
-      
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
           <li><a href="index.html">GCC documentation</a> &raquo;</li>
-      
-    <li>Understanding compiler options</li>
+        
+      <li>Understanding compiler options</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
-            <a href="../_sources/gcc/optimizations.txt" rel="nofollow"> View page source</a>
+            
+            <a href="../_sources/gcc/optimizations.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -160,9 +181,9 @@
 <h1>Understanding compiler options<a class="headerlink" href="#understanding-compiler-options" title="Permalink to this headline">¶</a></h1>
 <p>There are cases when using solely the -Ox options will not bring the desired
 optimization (either size or speed) for a compiled function/application. In
-these cases we need to understand where is the program&#8217;s bottleneck and if it
+these cases we need to understand where is the program’s bottleneck and if it
 can be solved either by passing various options to the compiler or by source
-code modifications. In this section, we look into compiler&#8217;s command-line
+code modifications. In this section, we look into compiler’s command-line
 options and how they can help us in achieving better results.</p>
 <div class="section" id="architecture-independent-optimizations">
 <h2>Architecture-Independent Optimizations<a class="headerlink" href="#architecture-independent-optimizations" title="Permalink to this headline">¶</a></h2>
@@ -179,64 +200,64 @@ properly use them.</p>
 <p>To avoid being overwhelmed by the sheer amount of options available, I use for
 my day-to-day source code exploration the following tree related options (either
 on or off):</p>
-<dl class="docutils">
-<dt><code class="docutils literal"><span class="pre">-ftree-loop-ivcanon</span></code></dt>
-<dd>Create a canonical counter for number of iterations in loops for which
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">-ftree-loop-ivcanon</span></code></dt><dd><p>Create a canonical counter for number of iterations in loops for which
 determining number of iterations requires complicated analysis. Later
 optimizations then may determine the number easily. Useful especially in
-connection with unrolling.</dd>
-<dt><code class="docutils literal"><span class="pre">-ftree-vectorize</span></code></dt>
-<dd>Perform loop vectorization on trees. This flag is enabled by default at -O3.
-This option is useful to use either if the ARC processor doesn&#8217;t have the
+connection with unrolling.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-ftree-vectorize</span></code></dt><dd><p>Perform loop vectorization on trees. This flag is enabled by default at -O3.
+This option is useful to use either if the ARC processor doesn’t have the
 SIMD extensions as it performs extra code analysis and may improve the
-following optimizations.</dd>
-<dt><code class="docutils literal"><span class="pre">-ftree-loop-if-convert</span></code></dt>
-<dd>Attempt to transform conditional jumps in the innermost loops to branch-less
+following optimizations.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-ftree-loop-if-convert</span></code></dt><dd><p>Attempt to transform conditional jumps in the innermost loops to branch-less
 equivalents. The intent is to remove control-flow from the innermost loops in
 order to improve the ability of the vectorization pass to handle these loops.
-This is enabled by default if vectorization is enabled.</dd>
-<dt><code class="docutils literal"><span class="pre">-f[no-]tree-dominator-opts</span></code></dt>
-<dd>Perform a variety of simple scalar cleanups (constant/copy propagation,
+This is enabled by default if vectorization is enabled.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-f[no-]tree-dominator-opts</span></code></dt><dd><p>Perform a variety of simple scalar cleanups (constant/copy propagation,
 redundancy elimination, range propagation and expression simplification)
 based on a dominator tree traversal. This also performs jump threading (to
-reduce jumps to jumps). This flag is enabled by default at -O and higher.</dd>
-<dt><code class="docutils literal"><span class="pre">-f(no-)ivopts</span></code></dt>
-<dd>Perform induction variable optimizations (strength reduction, induction
+reduce jumps to jumps). This flag is enabled by default at -O and higher.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-f(no-)ivopts</span></code></dt><dd><p>Perform induction variable optimizations (strength reduction, induction
 variable merging and induction variable elimination) on trees. Disabling the
-<code class="docutils literal"><span class="pre">ivopts</span></code> optimization may improve the number of hardware loops recognized by
-the compiler.</dd>
-<dt><code class="docutils literal"><span class="pre">-fselective-scheduling</span></code></dt>
-<dd>Schedule instructions using selective scheduling algorithm. Selective
-scheduling runs instead of the first scheduler pass.</dd>
-<dt><code class="docutils literal"><span class="pre">-fgcse</span></code></dt>
-<dd>Perform a global common subexpression elimination pass. This pass also
+<code class="docutils literal notranslate"><span class="pre">ivopts</span></code> optimization may improve the number of hardware loops recognized by
+the compiler.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-fselective-scheduling</span></code></dt><dd><p>Schedule instructions using selective scheduling algorithm. Selective
+scheduling runs instead of the first scheduler pass.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-fgcse</span></code></dt><dd><p>Perform a global common subexpression elimination pass. This pass also
 performs global constant and copy propagation. It may be useful to disable
 this step specially when we want to have more SUB1/2/3, ADD1/2/3 type of
-operations generated.</dd>
-<dt><code class="docutils literal"><span class="pre">-frename-registers</span></code></dt>
-<dd>Attempt to avoid false dependencies in scheduled code by making use of
+operations generated.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-frename-registers</span></code></dt><dd><p>Attempt to avoid false dependencies in scheduled code by making use of
 registers left over after register allocation. This optimization most
 benefits processors with lots of registers. Depending on the debug
 information format adopted by the target, however, it can make debugging
-impossible, since variables no longer stay in a &#8220;home register&#8221;. Enabled by
-default with <code class="docutils literal"><span class="pre">-funroll-loops</span></code> and <code class="docutils literal"><span class="pre">-fpeel-loops</span></code>.</dd>
-<dt><code class="docutils literal"><span class="pre">-fira-loop-pressure</span></code></dt>
-<dd>Use IRA to evaluate register pressure in loops for decisions to move loop
+impossible, since variables no longer stay in a “home register”. Enabled by
+default with <code class="docutils literal notranslate"><span class="pre">-funroll-loops</span></code> and <code class="docutils literal notranslate"><span class="pre">-fpeel-loops</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-fira-loop-pressure</span></code></dt><dd><p>Use IRA to evaluate register pressure in loops for decisions to move loop
 invariants. This option usually results in generation of faster and smaller
 code on machines with large register files (&gt;= 32 registers), but it can slow
-the compiler down.</dd>
-<dt><code class="docutils literal"><span class="pre">-fsched-pressure</span></code></dt>
-<dd>Enable register pressure sensitive insn scheduling before register
+the compiler down.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-fsched-pressure</span></code></dt><dd><p>Enable register pressure sensitive insn scheduling before register
 allocation. This only makes sense when scheduling before register allocation
-is enabled, i.e. with <code class="docutils literal"><span class="pre">-fschedule-insns</span></code>. Usage of this option can improve
+is enabled, i.e. with <code class="docutils literal notranslate"><span class="pre">-fschedule-insns</span></code>. Usage of this option can improve
 the generated code and decrease its size by preventing register pressure
 increase above the number of available hard registers and subsequent spills
-in register allocation.</dd>
-<dt><code class="docutils literal"><span class="pre">-f[no-]regmove</span></code></dt>
-<dd>Attempt to reassign register numbers in move instructions and as operands of
+in register allocation.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-f[no-]regmove</span></code></dt><dd><p>Attempt to reassign register numbers in move instructions and as operands of
 other simple instructions in order to maximize the amount of register tying.
 This is especially helpful on machines with two-operand instructions.
-Disabling this optimization may result in faster code.</dd>
+Disabling this optimization may result in faster code.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="processor-specific-optimizations">
@@ -244,31 +265,31 @@ Disabling this optimization may result in faster code.</dd>
 <p>ARC GCC specific backend switches can be used to improve the code size or code
 speed. We need always to use the ARC switches that enables usage of the hardware
 extensions (such as -mdiv-rem). An overview of those options can be found in
-ARC&#8217;s gcc manual or by invoking gcc with <code class="docutils literal"><span class="pre">--help=target</span></code>. Additionally, I use
+ARC’s gcc manual or by invoking gcc with <code class="docutils literal notranslate"><span class="pre">--help=target</span></code>. Additionally, I use
 the next switches to enable better handling of LD/ST operations:</p>
-<dl class="docutils">
-<dt><code class="docutils literal"><span class="pre">-mindexed-loads</span></code></dt>
-<dd>Enable the use of indexed loads.  This can be problematic because some
-optimizers will then assume that indexed stores exist, which is not the case.</dd>
-<dt><code class="docutils literal"><span class="pre">-mauto-modify-reg</span></code></dt>
-<dd>Enable the use of pre/post modify with register displacement.</dd>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">-mindexed-loads</span></code></dt><dd><p>Enable the use of indexed loads.  This can be problematic because some
+optimizers will then assume that indexed stores exist, which is not the case.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-mauto-modify-reg</span></code></dt><dd><p>Enable the use of pre/post modify with register displacement.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="gcc-optimizations-for-code-size">
 <h2>GCC optimizations for Code Size<a class="headerlink" href="#gcc-optimizations-for-code-size" title="Permalink to this headline">¶</a></h2>
-<p>If code size is our target, beside the GCC&#8217;s -Os option, it may make sense to
+<p>If code size is our target, beside the GCC’s -Os option, it may make sense to
 use it in conjunction with following command-line options:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">-fsection-anchors</span></code></li>
-<li><code class="docutils literal"><span class="pre">-fno-branch-count-reg</span></code></li>
-<li><code class="docutils literal"><span class="pre">-fira-loop-pressure</span></code></li>
-<li><code class="docutils literal"><span class="pre">-fira-region=all</span></code></li>
-<li><code class="docutils literal"><span class="pre">-fno-sched-spec-insn-heuristic</span></code></li>
-<li><code class="docutils literal"><span class="pre">-fno-move-loop-invariants</span></code></li>
-<li><code class="docutils literal"><span class="pre">-fno-tree-dominator-opts</span></code></li>
-<li><code class="docutils literal"><span class="pre">-ftree-vectorize</span></code></li>
-<li><code class="docutils literal"><span class="pre">-fno-cse-follow-jumps</span></code></li>
-<li><code class="docutils literal"><span class="pre">-fno-jump-tables</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-fsection-anchors</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-fno-branch-count-reg</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-fira-loop-pressure</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-fira-region=all</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-fno-sched-spec-insn-heuristic</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-fno-move-loop-invariants</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-fno-tree-dominator-opts</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-ftree-vectorize</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-fno-cse-follow-jumps</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-fno-jump-tables</span></code></p></li>
 </ul>
 <p>I would advise compiling a program with -O2 and -Os and comparing runtime
 performance and memory footprint. It may be that the code is as fast as compiled
@@ -306,185 +327,185 @@ options are assumed to be used with a -f prefix.</p>
 <h2>Default GCC driver options and parameters; ARC specific<a class="headerlink" href="#default-gcc-driver-options-and-parameters-arc-specific" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="optimizations">
 <h3>Optimizations<a class="headerlink" href="#optimizations" title="Permalink to this headline">¶</a></h3>
-<table border="1" class="docutils">
+<table class="docutils align-center">
 <colgroup>
-<col width="50%" />
-<col width="10%" />
-<col width="10%" />
-<col width="10%" />
-<col width="10%" />
-<col width="10%" />
+<col style="width: 50%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Optimizations</th>
-<th class="head">O0</th>
-<th class="head">O1</th>
-<th class="head">Os</th>
-<th class="head">O2</th>
-<th class="head">O3</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Optimizations</p></th>
+<th class="head"><p>O0</p></th>
+<th class="head"><p>O1</p></th>
+<th class="head"><p>Os</p></th>
+<th class="head"><p>O2</p></th>
+<th class="head"><p>O3</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>fomit-frame-pointer</td>
-<td>&nbsp;</td>
-<td>On</td>
-<td>On</td>
-<td>On</td>
-<td>On</td>
+<tbody>
+<tr class="row-even"><td><p>fomit-frame-pointer</p></td>
+<td></td>
+<td><p>On</p></td>
+<td><p>On</p></td>
+<td><p>On</p></td>
+<td><p>On</p></td>
 </tr>
-<tr class="row-odd"><td>fschedule-insns</td>
-<td>&nbsp;</td>
-<td>On</td>
-<td>On</td>
-<td>On</td>
-<td>On</td>
+<tr class="row-odd"><td><p>fschedule-insns</p></td>
+<td></td>
+<td><p>On</p></td>
+<td><p>On</p></td>
+<td><p>On</p></td>
+<td><p>On</p></td>
 </tr>
-<tr class="row-even"><td>fschedule-insns2</td>
-<td>&nbsp;</td>
-<td>On</td>
-<td>On</td>
-<td>On</td>
-<td>On</td>
+<tr class="row-even"><td><p>fschedule-insns2</p></td>
+<td></td>
+<td><p>On</p></td>
+<td><p>On</p></td>
+<td><p>On</p></td>
+<td><p>On</p></td>
 </tr>
-<tr class="row-odd"><td>mearly-cbranchsi</td>
-<td>On</td>
-<td>On</td>
-<td>On</td>
-<td>On</td>
-<td>On</td>
+<tr class="row-odd"><td><p>mearly-cbranchsi</p></td>
+<td><p>On</p></td>
+<td><p>On</p></td>
+<td><p>On</p></td>
+<td><p>On</p></td>
+<td><p>On</p></td>
 </tr>
-<tr class="row-even"><td>mbbit-peephole</td>
-<td>On</td>
-<td>On</td>
-<td>On</td>
-<td>On</td>
-<td>On</td>
+<tr class="row-even"><td><p>mbbit-peephole</p></td>
+<td><p>On</p></td>
+<td><p>On</p></td>
+<td><p>On</p></td>
+<td><p>On</p></td>
+<td><p>On</p></td>
 </tr>
-<tr class="row-odd"><td>mcase-vector-pcrel</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>On</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<tr class="row-odd"><td><p>mcase-vector-pcrel</p></td>
+<td></td>
+<td></td>
+<td><p>On</p></td>
+<td></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>mcompact-casesi</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>On</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<tr class="row-even"><td><p>mcompact-casesi</p></td>
+<td></td>
+<td></td>
+<td><p>On</p></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="parameters">
 <h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h3>
-<table border="1" class="docutils">
+<table class="docutils align-center">
 <colgroup>
-<col width="73%" />
-<col width="27%" />
+<col style="width: 73%" />
+<col style="width: 27%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Parameter</th>
-<th class="head">Value</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Value</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>simultaneous-prefetches</td>
-<td>4</td>
+<tbody>
+<tr class="row-even"><td><p>simultaneous-prefetches</p></td>
+<td><p>4</p></td>
 </tr>
-<tr class="row-odd"><td>prefetch-latency</td>
-<td>4</td>
+<tr class="row-odd"><td><p>prefetch-latency</p></td>
+<td><p>4</p></td>
 </tr>
-<tr class="row-even"><td>l1-cache-line-size</td>
-<td>64</td>
+<tr class="row-even"><td><p>l1-cache-line-size</p></td>
+<td><p>64</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="arc-hardware-variation">
 <h3>ARC hardware variation<a class="headerlink" href="#arc-hardware-variation" title="Permalink to this headline">¶</a></h3>
-<table border="1" class="docutils">
+<table class="docutils align-center">
 <colgroup>
-<col width="8%" />
-<col width="6%" />
-<col width="19%" />
-<col width="7%" />
-<col width="7%" />
-<col width="9%" />
-<col width="8%" />
-<col width="16%" />
-<col width="9%" />
-<col width="10%" />
+<col style="width: 8%" />
+<col style="width: 6%" />
+<col style="width: 19%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 9%" />
+<col style="width: 8%" />
+<col style="width: 16%" />
+<col style="width: 9%" />
+<col style="width: 10%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">CPU</th>
-<th class="head">mpy</th>
-<th class="head">barrel shifter</th>
-<th class="head">norm</th>
-<th class="head">swap</th>
-<th class="head">atomic</th>
-<th class="head">mpy16</th>
-<th class="head">code density</th>
-<th class="head">divrem</th>
-<th class="head">ll64</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>CPU</p></th>
+<th class="head"><p>mpy</p></th>
+<th class="head"><p>barrel shifter</p></th>
+<th class="head"><p>norm</p></th>
+<th class="head"><p>swap</p></th>
+<th class="head"><p>atomic</p></th>
+<th class="head"><p>mpy16</p></th>
+<th class="head"><p>code density</p></th>
+<th class="head"><p>divrem</p></th>
+<th class="head"><p>ll64</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>ARC600</td>
-<td>N.A.</td>
-<td>On</td>
-<td>Off</td>
-<td>Off</td>
-<td>N.A.</td>
-<td>N.A.</td>
-<td>N.A.</td>
-<td>N.A.</td>
-<td>N.A.</td>
+<tbody>
+<tr class="row-even"><td><p>ARC600</p></td>
+<td><p>N.A.</p></td>
+<td><p>On</p></td>
+<td><p>Off</p></td>
+<td><p>Off</p></td>
+<td><p>N.A.</p></td>
+<td><p>N.A.</p></td>
+<td><p>N.A.</p></td>
+<td><p>N.A.</p></td>
+<td><p>N.A.</p></td>
 </tr>
-<tr class="row-odd"><td>ARC601</td>
-<td>N.A.</td>
-<td>Off</td>
-<td>Off</td>
-<td>Off</td>
-<td>N.A.</td>
-<td>N.A.</td>
-<td>N.A.</td>
-<td>N.A.</td>
-<td>N.A.</td>
+<tr class="row-odd"><td><p>ARC601</p></td>
+<td><p>N.A.</p></td>
+<td><p>Off</p></td>
+<td><p>Off</p></td>
+<td><p>Off</p></td>
+<td><p>N.A.</p></td>
+<td><p>N.A.</p></td>
+<td><p>N.A.</p></td>
+<td><p>N.A.</p></td>
+<td><p>N.A.</p></td>
 </tr>
-<tr class="row-even"><td>ARC700</td>
-<td>On</td>
-<td>On</td>
-<td>On</td>
-<td>Off</td>
-<td>Off</td>
-<td>N.A.</td>
-<td>N.A.</td>
-<td>N.A.</td>
-<td>N.A.</td>
+<tr class="row-even"><td><p>ARC700</p></td>
+<td><p>On</p></td>
+<td><p>On</p></td>
+<td><p>On</p></td>
+<td><p>Off</p></td>
+<td><p>Off</p></td>
+<td><p>N.A.</p></td>
+<td><p>N.A.</p></td>
+<td><p>N.A.</p></td>
+<td><p>N.A.</p></td>
 </tr>
-<tr class="row-odd"><td>ARC EM</td>
-<td>On</td>
-<td>On</td>
-<td>Off</td>
-<td>Off</td>
-<td>Off</td>
-<td>On</td>
-<td>Off</td>
-<td>Off</td>
-<td>N.A.</td>
+<tr class="row-odd"><td><p>ARC EM</p></td>
+<td><p>On</p></td>
+<td><p>On</p></td>
+<td><p>Off</p></td>
+<td><p>Off</p></td>
+<td><p>Off</p></td>
+<td><p>On</p></td>
+<td><p>Off</p></td>
+<td><p>Off</p></td>
+<td><p>N.A.</p></td>
 </tr>
-<tr class="row-even"><td>ARC HS</td>
-<td>On</td>
-<td>On</td>
-<td>On</td>
-<td>On</td>
-<td>On</td>
-<td>On</td>
-<td>On</td>
-<td>On</td>
-<td>On</td>
+<tr class="row-even"><td><p>ARC HS</p></td>
+<td><p>On</p></td>
+<td><p>On</p></td>
+<td><p>On</p></td>
+<td><p>On</p></td>
+<td><p>On</p></td>
+<td><p>On</p></td>
+<td><p>On</p></td>
+<td><p>On</p></td>
+<td><p>On</p></td>
 </tr>
 </tbody>
 </table>
@@ -494,15 +515,16 @@ options are assumed to be used with a -f prefix.</p>
 
 
            </div>
+           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../maintainer/index.html" class="btn btn-neutral float-right" title="Information for Toolchain maintainers" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../maintainer/index.html" class="btn btn-neutral float-right" title="Information for Toolchain maintainers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="builtins.html" class="btn btn-neutral" title="ARC GNU builtins vs MWDT builtins" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="builtins.html" class="btn btn-neutral float-left" title="ARC GNU builtins vs MWDT builtins" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -511,11 +533,11 @@ options are assumed to be used with a -f prefix.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2019, Synopsys.
+        &copy; Copyright 2016-2020, Synopsys
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -528,35 +550,15 @@ options are assumed to be used with a -f prefix.</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'2019.09',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

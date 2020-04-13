@@ -8,48 +8,46 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Creating a Debug Configuration &mdash; GNU Toolchain for ARC User Manual 2019.09 documentation</title>
+  <title>Creating a Debug Configuration &mdash; GNU Toolchain for ARC User Manual 2020.03 documentation</title>
   
 
   
   
+  
+  
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/style_overrides.css" type="text/css" />
-  
-
-  
-    <link rel="top" title="GNU Toolchain for ARC User Manual 2019.09 documentation" href="../index.html"/>
-        <link rel="up" title="ARC GNU IDE" href="index.html"/>
-        <link rel="next" title="Debugging with OpenOCD" href="debugging-with-openocd.html"/>
-        <link rel="prev" title="Using Debug Perspective" href="using-debug-perspective.html"/> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/style_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Debugging with OpenOCD" href="debugging-with-openocd.html" />
+    <link rel="prev" title="Using Debug Perspective" href="using-debug-perspective.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
+   
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -63,7 +61,7 @@
             
             
               <div class="version">
-                2019.09
+                2020.03
               </div>
             
           
@@ -84,7 +82,10 @@
           
             
             
-                <ul class="current">
+              
+            
+            
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../baremetal/index.html">Building baremetal applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../baremetal/index.html#debugging-baremetal-applications">Debugging baremetal applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux applications</a></li>
@@ -94,7 +95,7 @@
 <li class="toctree-l2"><a class="reference internal" href="index.html#creating-and-building-an-application">Creating and building an application</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html#debugging">Debugging</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="using-debug-perspective.html">Using Debug Perspective</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="">Creating a Debug Configuration</a><ul>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Creating a Debug Configuration</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#creating-a-new-debug-configuration">Creating a new debug configuration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#setting-a-com-port">Setting a COM port</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#starting-a-debug-session">Starting a debug session</a></li>
@@ -127,36 +128,56 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">GNU Toolchain for ARC User Manual</a>
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GNU Toolchain for ARC User Manual</a>
+        
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="../index.html">Docs</a> &raquo;</li>
-      
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
           <li><a href="index.html">ARC GNU IDE</a> &raquo;</li>
-      
-    <li>Creating a Debug Configuration</li>
+        
+      <li>Creating a Debug Configuration</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
-            <a href="../_sources/ide/creating-a-debug-configuration.txt" rel="nofollow"> View page source</a>
+            
+            <a href="../_sources/ide/creating-a-debug-configuration.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -171,26 +192,26 @@ resulting executable on a board or using nSIM.</p>
 <p>To debug the project, create a new debug configuration.</p>
 <p>1. Select <strong>Debug Configurations</strong>  from the  <strong>Run</strong>  menu or by clicking on
 the down arrow next to the bug icon:</p>
-<div class="figure" id="id3">
+<div class="figure align-center" id="id3">
 <img alt="../_images/debug_configurations.png" src="../_images/debug_configurations.png" />
 <p class="caption"><span class="caption-text">Debug Configurations</span></p>
 </div>
 <p>2. Double click on the <strong>ARC C/C++ Application</strong>  or click on the top left icon
 to create a new debug configuration for the project:</p>
-<div class="figure" id="id4">
+<div class="figure align-center" id="id4">
 <img alt="../_images/arc_debug_configurations.png" src="../_images/arc_debug_configurations.png" />
 <p class="caption"><span class="caption-text">ARC Embedded Debug Configurations</span></p>
 </div>
 <p>3. Select a name for the new debug configuration (by default, it equals the
-project name followed by &#8220;Debug&#8221;).</p>
-<div class="figure" id="id5">
+project name followed by “Debug”).</p>
+<div class="figure align-center" id="id5">
 <img alt="../_images/debug_configuration.png" src="../_images/debug_configuration.png" />
 <p class="caption"><span class="caption-text">New debug Configuration</span></p>
 </div>
 <ol class="arabic simple" start="4">
-<li>Click the <strong>Debugger</strong> tab.</li>
+<li><p>Click the <strong>Debugger</strong> tab.</p></li>
 </ol>
-<div class="figure" id="id6">
+<div class="figure align-center" id="id6">
 <img alt="../_images/debugger_tab_default.jpg" src="../_images/debugger_tab_default.jpg" />
 <p class="caption"><span class="caption-text">Default values in the Debugger tab for JTAG via OpenOCD</span></p>
 </div>
@@ -198,18 +219,18 @@ project name followed by &#8220;Debug&#8221;).</p>
 and their settings see pages</p>
 <blockquote>
 <div><ul class="simple">
-<li><cite>Debugging with OpenOCD &lt;debugging-with-openocd&gt;</cite></li>
-<li><cite>Debugging with Opella-XD &lt;debugging-with-opellaxd&gt;</cite></li>
-<li><cite>Debugging with nSIM &lt;debugging-with-nsim&gt;</cite></li>
-<li><cite>Debugging using custom GDB server &lt;debugging-with-custom-gdb-server&gt;</cite></li>
-<li><cite>Using running GDB server &lt;debugging-with-running-gdb-server&gt;</cite></li>
+<li><p><cite>Debugging with OpenOCD &lt;debugging-with-openocd&gt;</cite></p></li>
+<li><p><cite>Debugging with Opella-XD &lt;debugging-with-opellaxd&gt;</cite></p></li>
+<li><p><cite>Debugging with nSIM &lt;debugging-with-nsim&gt;</cite></p></li>
+<li><p><cite>Debugging using custom GDB server &lt;debugging-with-custom-gdb-server&gt;</cite></p></li>
+<li><p><cite>Using running GDB server &lt;debugging-with-running-gdb-server&gt;</cite></p></li>
 </ul>
 </div></blockquote>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">There is a known problem with changing <strong>ARC GDB Server</strong>&#8216;s value on
+<p class="admonition-title">Note</p>
+<p>There is a known problem with changing <strong>ARC GDB Server</strong>’s value on
 Ubuntu. After changing the value there are only two fields visible: <strong>ARC GDB
-Server</strong> and <strong>Port number</strong>. Workaround: select GDB server&#8217;s value,
+Server</strong> and <strong>Port number</strong>. Workaround: select GDB server’s value,
 press <strong>Apply</strong> button, then close and open the dialog again. After that all
 the necessary fields become visible.</p>
 </div>
@@ -218,7 +239,7 @@ the necessary fields become visible.</p>
 <span id="id2"></span><h2>Setting a COM port<a class="headerlink" href="#setting-a-com-port" title="Permalink to this headline">¶</a></h2>
 <p>If you are debugging an application on a board you need to specify a COM port
 to connect to. Open the <strong>Terminal</strong> tab.</p>
-<div class="figure" id="id7">
+<div class="figure align-center" id="id7">
 <img alt="../_images/com_port.png" src="../_images/com_port.png" />
 <p class="caption"><span class="caption-text">Terminal Tab</span></p>
 </div>
@@ -226,7 +247,7 @@ to connect to. Open the <strong>Terminal</strong> tab.</p>
 USB Serial Port from the Windows registry. You can modify the value as
 desired, but the selection must match the port number in Device and
 Printers as shown in below.</p>
-<div class="figure" id="id8">
+<div class="figure align-center" id="id8">
 <img alt="../_images/serial_port_window.png" src="../_images/serial_port_window.png" />
 <p class="caption"><span class="caption-text">Digilent USB Serial COM Port</span></p>
 </div>
@@ -234,29 +255,29 @@ Printers as shown in below.</p>
 <div class="section" id="starting-a-debug-session">
 <h2>Starting a debug session<a class="headerlink" href="#starting-a-debug-session" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Click the <strong>Debug</strong> button in the <strong>Debug configurations</strong> dialog or <strong>Debug</strong>
+<li><p>Click the <strong>Debug</strong> button in the <strong>Debug configurations</strong> dialog or <strong>Debug</strong>
 button of IDE to initiate debug session.</p>
 <p>This action automatically launches your GDB server (if you are not connecting to
 a running one). If you are using a board, it also launches the Serial terminal
 and connects to your board.</p>
 </li>
-<li><p class="first">Click <strong>Yes</strong> in the confirmation dialog to switch to the Debug perspective.</p>
-</li>
+<li><p>Click <strong>Yes</strong> in the confirmation dialog to switch to the Debug perspective.</p></li>
 </ol>
 </div>
 </div>
 
 
            </div>
+           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="debugging-with-openocd.html" class="btn btn-neutral float-right" title="Debugging with OpenOCD" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="debugging-with-openocd.html" class="btn btn-neutral float-right" title="Debugging with OpenOCD" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="using-debug-perspective.html" class="btn btn-neutral" title="Using Debug Perspective" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="using-debug-perspective.html" class="btn btn-neutral float-left" title="Using Debug Perspective" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -265,11 +286,11 @@ and connects to your board.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2019, Synopsys.
+        &copy; Copyright 2016-2020, Synopsys
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -282,35 +303,15 @@ and connects to your board.</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'2019.09',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

@@ -8,48 +8,46 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Linker scripts and memory.x files &mdash; GNU Toolchain for ARC User Manual 2019.09 documentation</title>
+  <title>Linker scripts and memory.x files &mdash; GNU Toolchain for ARC User Manual 2020.03 documentation</title>
   
 
   
   
+  
+  
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/style_overrides.css" type="text/css" />
-  
-
-  
-    <link rel="top" title="GNU Toolchain for ARC User Manual 2019.09 documentation" href="../index.html"/>
-        <link rel="up" title="Building baremetal applications" href="index.html"/>
-        <link rel="next" title="Using TCF" href="tcf.html"/>
-        <link rel="prev" title="Understanding GCC -mcpu option" href="gcc-mcpu.html"/> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/style_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Using TCF" href="tcf.html" />
+    <link rel="prev" title="Understanding GCC -mcpu option" href="gcc-mcpu.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
+   
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -63,7 +61,7 @@
             
             
               <div class="version">
-                2019.09
+                2020.03
               </div>
             
           
@@ -84,11 +82,14 @@
           
             
             
-                <ul class="current">
+              
+            
+            
+              <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Building baremetal applications</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="hostlink.html">Hostlink and libgloss</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gcc-mcpu.html">Understanding GCC -mcpu option</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Linker scripts and memory.x files</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Linker scripts and memory.x files</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#introduction-to-linker-and-linker-scripts">Introduction to linker and linker scripts</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#linux-user-space-applications">Linux user-space applications</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#baremetal-applications">Baremetal applications</a><ul>
@@ -121,36 +122,56 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">GNU Toolchain for ARC User Manual</a>
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GNU Toolchain for ARC User Manual</a>
+        
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="../index.html">Docs</a> &raquo;</li>
-      
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
           <li><a href="index.html">Building baremetal applications</a> &raquo;</li>
-      
-    <li>Linker scripts and memory.x files</li>
+        
+      <li>Linker scripts and memory.x files</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
-            <a href="../_sources/baremetal/linker.txt" rel="nofollow"> View page source</a>
+            
+            <a href="../_sources/baremetal/linker.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -171,7 +192,7 @@ one of the predetermined linker scripts of the GNU linker.</p>
 <h2>Linux user-space applications<a class="headerlink" href="#linux-user-space-applications" title="Permalink to this headline">¶</a></h2>
 <p>Linux user-space applications are loaded by the dynamically linker in their own
 virtual memory address space, where they do not collide with other applications
-and it is a duty of dynamic linker to make sure that application doesn&#8217;t collide
+and it is a duty of dynamic linker to make sure that application doesn’t collide
 with libraries it uses (if any). In most cases there is no need to use custom
 linker scripts.</p>
 </div>
@@ -192,47 +213,36 @@ sections as a consecutive region, starting with address 0x0. This is usually
 enough for an application prototyping, however real systems often has a more
 complex memory maps. Application linked with default linker emulation may not
 run on systems with CCMs and it is unlikely to run on systems with external
-memory if it is mapped to address other than 0x0. If system has some of it&#8217;s
+memory if it is mapped to address other than 0x0. If system has some of it’s
 memories mapped to 0x0 this memory may be overwritten by the debugger or
 application loader when it will be loading application into target - this may
 cause undesired effects. Default linker emulation also puts interrupt vector
-table (<code class="docutils literal"><span class="pre">.ivt</span></code> section) between code and data sections which is rarely
-reflects a reality and also default linker emulation doesn&#8217;t align <code class="docutils literal"><span class="pre">.ivt</span></code>
+table (<code class="docutils literal notranslate"><span class="pre">.ivt</span></code> section) between code and data sections which is rarely
+reflects a reality and also default linker emulation doesn’t align <code class="docutils literal notranslate"><span class="pre">.ivt</span></code>
 properly (address of interrupt vector table in ARC processors must be
 1KiB-aligned). Therefore default linker emulation is not appropriate if
 application should handle interrupts. So default linker emulation can be used
-safely only with applications that don&#8217;t handle interrupts and only on
+safely only with applications that don’t handle interrupts and only on
 simulations that simulate whole address space, like following templates:
 em6_dmips, em6_gp, em6_mini, em7d_nrg, em7d_voice_audio, em11d_nrg,
 em11d_voice_audio, hs36_base, hs36, hs38_base, hs38, hs38_full, hs38_slc_full.</p>
 </div>
 <div class="section" id="arcv2elfx-linker-emulation">
 <h3>arcv2elfx linker emulation<a class="headerlink" href="#arcv2elfx-linker-emulation" title="Permalink to this headline">¶</a></h3>
-<p>For cases where default linker emulation is not enough there is an <code class="docutils literal"><span class="pre">arcv2elfx</span></code>
+<p>For cases where default linker emulation is not enough there is an <code class="docutils literal notranslate"><span class="pre">arcv2elfx</span></code>
 linker emulation, which provides an ability to specify custom memory map to
 linker without the need to write a complete linker scripts. To use it pass
-option <code class="docutils literal"><span class="pre">-marcv2elfx</span></code> to the linker, but note that when invoking gcc driver it is
-required to specify this option as <code class="docutils literal"><span class="pre">-Wl,-marcv2elfx</span></code>, so that compiler driver
+option <code class="docutils literal notranslate"><span class="pre">-marcv2elfx</span></code> to the linker, but note that when invoking gcc driver it is
+required to specify this option as <code class="docutils literal notranslate"><span class="pre">-Wl,-marcv2elfx</span></code>, so that compiler driver
 would know that this is an option to pass to the linker, and not a
 machine-specific compiler option. When this option is present, linker will try
-to open a file named <code class="docutils literal"><span class="pre">memory.x</span></code>. Linker searches for this file in current
-working directory and in directories listed via <code class="docutils literal"><span class="pre">-L</span></code> option, but unfortunately
-there is no way to pass custom file name to the linker. <code class="docutils literal"><span class="pre">memory.x</span></code> must specify
+to open a file named <code class="docutils literal notranslate"><span class="pre">memory.x</span></code>. Linker searches for this file in current
+working directory and in directories listed via <code class="docutils literal notranslate"><span class="pre">-L</span></code> option, but unfortunately
+there is no way to pass custom file name to the linker. <code class="docutils literal notranslate"><span class="pre">memory.x</span></code> must specify
 base addresses and sizes of memory regions where to put code and data sections.
 It also specifies parameters of heap and stack sections.</p>
-<p>For example, here is a sample <code class="docutils literal"><span class="pre">memory.x</span></code> map for <code class="docutils literal"><span class="pre">hs34.tcf</span></code> template:</p>
-<div class="highlight-text"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12</pre></div></td><td class="code"><div class="highlight"><pre><span></span>MEMORY {
+<p>For example, here is a sample <code class="docutils literal notranslate"><span class="pre">memory.x</span></code> map for <code class="docutils literal notranslate"><span class="pre">hs34.tcf</span></code> template:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>MEMORY {
     ICCM0    : ORIGIN = 0x00000000, LENGTH = 0x00004000
     DCCM     : ORIGIN = 0x80000000, LENGTH = 0x00004000
 }
@@ -245,39 +255,39 @@ REGION_ALIAS(&quot;sdata&quot;, DCCM)
 PROVIDE (__stack_top = (0x80003fff &amp; -4 ));
 PROVIDE (__end_heap =  (0x80003fff ));
 </pre></div>
-</td></tr></table></div>
-<p>This <code class="docutils literal"><span class="pre">memory.x</span></code> consists of three logical sections. First sections <code class="docutils literal"><span class="pre">MEMORY</span></code>
+</div>
+<p>This <code class="docutils literal notranslate"><span class="pre">memory.x</span></code> consists of three logical sections. First sections <code class="docutils literal notranslate"><span class="pre">MEMORY</span></code>
 specifies a list of memory regions - their base address and size. Names of
 those regions can be arbitrary, and also it may describe regions that are not
-directly used by the linker. Second sections describes <code class="docutils literal"><span class="pre">REGION_ALIAS</span></code> es -
+directly used by the linker. Second sections describes <code class="docutils literal notranslate"><span class="pre">REGION_ALIAS</span></code> es -
 this section translates arbitrary region names to standard region names
 expected by linker emulation. There are four such regions:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">startup</span></code> for interrupt vector table and initialization code. Typically it
+<li><p><code class="docutils literal notranslate"><span class="pre">startup</span></code> for interrupt vector table and initialization code. Typically it
 should be mapped to the address 0x0. If interrupt vector is mapped to a
-different address, then in addition to respective value in <code class="docutils literal"><span class="pre">memory.x</span></code> it is
-required to pass an option <code class="docutils literal"><span class="pre">--defsym=ivtbase_addr=&lt;your_ivt_address&gt;</span></code> to the
+different address, then in addition to respective value in <code class="docutils literal notranslate"><span class="pre">memory.x</span></code> it is
+required to pass an option <code class="docutils literal notranslate"><span class="pre">--defsym=ivtbase_addr=&lt;your_ivt_address&gt;</span></code> to the
 linker. If linker is invoked through the GCC driver, then the option should be
-prefixed with <code class="docutils literal"><span class="pre">-Wl,</span></code>.</li>
-<li><code class="docutils literal"><span class="pre">text</span></code> is a region where code will be located.</li>
-<li><code class="docutils literal"><span class="pre">data</span></code> is a regions where data will be located (unsurprisingly).</li>
-<li><code class="docutils literal"><span class="pre">sdata</span></code> is a region where small data section will be located.</li>
+prefixed with <code class="docutils literal notranslate"><span class="pre">-Wl,</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text</span></code> is a region where code will be located.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">data</span></code> is a regions where data will be located (unsurprisingly).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sdata</span></code> is a region where small data section will be located.</p></li>
 </ul>
 <p>Finally two symbols are provided to specify end of data region in memory -
-<code class="docutils literal"><span class="pre">__stack_top</span></code> and <code class="docutils literal"><span class="pre">__end_heap</span></code>. They effectively point to same address, although
-<code class="docutils literal"><span class="pre">__stack_top</span></code> should be 4-byte aligned. <code class="docutils literal"><span class="pre">__stack_top</span></code> is a location where stack
+<code class="docutils literal notranslate"><span class="pre">__stack_top</span></code> and <code class="docutils literal notranslate"><span class="pre">__end_heap</span></code>. They effectively point to same address, although
+<code class="docutils literal notranslate"><span class="pre">__stack_top</span></code> should be 4-byte aligned. <code class="docutils literal notranslate"><span class="pre">__stack_top</span></code> is a location where stack
 starts and it will grow downward. Heap starts at the address immediately
-following end of data sections (<code class="docutils literal"><span class="pre">.noinit</span></code> section to be exact) and grows upward
-to <code class="docutils literal"><span class="pre">__end_heap</span></code>. Therefore heap and stack grow towards each other and eventually
-may collide and overwrite each over. This linker emulation doesn&#8217;t provide any
+following end of data sections (<code class="docutils literal notranslate"><span class="pre">.noinit</span></code> section to be exact) and grows upward
+to <code class="docutils literal notranslate"><span class="pre">__end_heap</span></code>. Therefore heap and stack grow towards each other and eventually
+may collide and overwrite each over. This linker emulation doesn’t provide any
 protection against this scenario.</p>
 </div>
 <div class="section" id="custom-linker-scripts">
 <h3>Custom linker scripts<a class="headerlink" href="#custom-linker-scripts" title="Permalink to this headline">¶</a></h3>
-<p>In many cases neither default linker emulation, nor <code class="docutils literal"><span class="pre">arcv2elfx</span></code> are enough to
+<p>In many cases neither default linker emulation, nor <code class="docutils literal notranslate"><span class="pre">arcv2elfx</span></code> are enough to
 describe memory map of a system, therefore it would be needed to write a custom
 linker script. Please consult GNU linker User manual for details. Default linker
-scripts can be found in <code class="docutils literal"><span class="pre">arc-elf32/lib/ldscripts</span></code> folder in toolchain
+scripts can be found in <code class="docutils literal notranslate"><span class="pre">arc-elf32/lib/ldscripts</span></code> folder in toolchain
 installation directory.</p>
 </div>
 </div>
@@ -285,15 +295,16 @@ installation directory.</p>
 
 
            </div>
+           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="tcf.html" class="btn btn-neutral float-right" title="Using TCF" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="tcf.html" class="btn btn-neutral float-right" title="Using TCF" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="gcc-mcpu.html" class="btn btn-neutral" title="Understanding GCC -mcpu option" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="gcc-mcpu.html" class="btn btn-neutral float-left" title="Understanding GCC -mcpu option" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -302,11 +313,11 @@ installation directory.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2019, Synopsys.
+        &copy; Copyright 2016-2020, Synopsys
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -319,35 +330,15 @@ installation directory.</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'2019.09',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

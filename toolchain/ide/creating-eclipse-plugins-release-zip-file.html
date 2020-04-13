@@ -8,48 +8,46 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Creating Eclipse plugins release zip file &mdash; GNU Toolchain for ARC User Manual 2019.09 documentation</title>
+  <title>Creating Eclipse plugins release zip file &mdash; GNU Toolchain for ARC User Manual 2020.03 documentation</title>
   
 
   
   
+  
+  
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/style_overrides.css" type="text/css" />
-  
-
-  
-    <link rel="top" title="GNU Toolchain for ARC User Manual 2019.09 documentation" href="../index.html"/>
-        <link rel="up" title="ARC GNU IDE" href="index.html"/>
-        <link rel="next" title="GCC documentation" href="../gcc/index.html"/>
-        <link rel="prev" title="Plugin preferences" href="preferences.html"/> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/style_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="GCC documentation" href="../gcc/index.html" />
+    <link rel="prev" title="Plugin preferences" href="preferences.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
+   
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -63,7 +61,7 @@
             
             
               <div class="version">
-                2019.09
+                2020.03
               </div>
             
           
@@ -84,7 +82,10 @@
           
             
             
-                <ul class="current">
+              
+            
+            
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../baremetal/index.html">Building baremetal applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../baremetal/index.html#debugging-baremetal-applications">Debugging baremetal applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux applications</a></li>
@@ -95,7 +96,7 @@
 <li class="toctree-l2"><a class="reference internal" href="index.html#debugging">Debugging</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html#miscellaneous">Miscellaneous</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="preferences.html">Plugin preferences</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="">Creating Eclipse plugins release zip file</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Creating Eclipse plugins release zip file</a></li>
 </ul>
 </li>
 </ul>
@@ -115,36 +116,56 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">GNU Toolchain for ARC User Manual</a>
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GNU Toolchain for ARC User Manual</a>
+        
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="../index.html">Docs</a> &raquo;</li>
-      
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
           <li><a href="index.html">ARC GNU IDE</a> &raquo;</li>
-      
-    <li>Creating Eclipse plugins release zip file</li>
+        
+      <li>Creating Eclipse plugins release zip file</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
-            <a href="../_sources/ide/creating-eclipse-plugins-release-zip-file.txt" rel="nofollow"> View page source</a>
+            
+            <a href="../_sources/ide/creating-eclipse-plugins-release-zip-file.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -155,49 +176,43 @@
 <p>Following is an guide how to create distributable release file for
 Eclipse for GNU Toolchain for ARC.</p>
 <ol class="arabic">
-<li><p class="first">Create tag for release: <code class="docutils literal"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">tag</span> <span class="pre">arc-2014.12</span></code></p>
-</li>
-<li><p class="first">Clean all past artifacts: <code class="docutils literal"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">clean</span> <span class="pre">-dfx</span></code></p>
-</li>
-<li><p class="first">Ensure that no files are modified: <code class="docutils literal"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span> <span class="pre">HEAD</span></code></p>
-</li>
-<li><p class="first">Start Eclipse</p>
-</li>
-<li><p class="first">Build plugins. That is important, because even when it is not done,
-&#8220;publishing step&#8221; will somehow succeed, but will produce plugins that
+<li><p>Create tag for release: <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">tag</span> <span class="pre">arc-2014.12</span></code></p></li>
+<li><p>Clean all past artifacts: <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">clean</span> <span class="pre">-dfx</span></code></p></li>
+<li><p>Ensure that no files are modified: <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span> <span class="pre">HEAD</span></code></p></li>
+<li><p>Start Eclipse</p></li>
+<li><p>Build plugins. That is important, because even when it is not done,
+“publishing step” will somehow succeed, but will produce plugins that
 are only partially functional.</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li>Make sure that &#8220;Project / Build Automatically&#8221; is checked</li>
-<li>Go to &#8220;Project / Clean&#8221;</li>
-<li>Check &#8220;Clean all projects&#8221;</li>
-<li>Press OK button</li>
+<li><p>Make sure that “Project / Build Automatically” is checked</p></li>
+<li><p>Go to “Project / Clean”</p></li>
+<li><p>Check “Clean all projects”</p></li>
+<li><p>Press OK button</p></li>
 </ol>
 </div></blockquote>
 </li>
-<li><p class="first">Open <code class="docutils literal"><span class="pre">site.xml</span></code> file of &#8220;ARC GNU Eclipse Update Site&#8221;</p>
-</li>
-<li><p class="first">Press &#8220;Build All&#8221;</p>
-</li>
-<li><p class="first">Zip contents of &#8220;updatesite&#8221; folder. Note that contents of this folder
-should be zipped, not the folder itself. Files <code class="docutils literal"><span class="pre">.gitignore</span></code> and <code class="docutils literal"><span class="pre">.project</span></code>
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">site.xml</span></code> file of “ARC GNU Eclipse Update Site”</p></li>
+<li><p>Press “Build All”</p></li>
+<li><p>Zip contents of “updatesite” folder. Note that contents of this folder
+should be zipped, not the folder itself. Files <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> and <code class="docutils literal notranslate"><span class="pre">.project</span></code>
 should be excluded from zip:
-<code class="docutils literal"><span class="pre">zip</span> <span class="pre">-r</span> <span class="pre">arc_gnu_2015.12_ide_plugins.zip</span> <span class="pre">artifacts.jar</span> <span class="pre">content.jar</span> <span class="pre">features/</span> <span class="pre">plugins/</span> <span class="pre">site.xml</span></code></p>
-</li>
+<code class="docutils literal notranslate"><span class="pre">zip</span> <span class="pre">-r</span> <span class="pre">arc_gnu_2015.12_ide_plugins.zip</span> <span class="pre">artifacts.jar</span> <span class="pre">content.jar</span> <span class="pre">features/</span> <span class="pre">plugins/</span> <span class="pre">site.xml</span></code></p></li>
 </ol>
 </div>
 
 
            </div>
+           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../gcc/index.html" class="btn btn-neutral float-right" title="GCC documentation" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../gcc/index.html" class="btn btn-neutral float-right" title="GCC documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="preferences.html" class="btn btn-neutral" title="Plugin preferences" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="preferences.html" class="btn btn-neutral float-left" title="Plugin preferences" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -206,11 +221,11 @@ should be excluded from zip:
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2019, Synopsys.
+        &copy; Copyright 2016-2020, Synopsys
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -223,35 +238,15 @@ should be excluded from zip:
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'2019.09',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

@@ -8,48 +8,46 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Working with small data section &mdash; GNU Toolchain for ARC User Manual 2019.09 documentation</title>
+  <title>Working with small data section &mdash; GNU Toolchain for ARC User Manual 2020.03 documentation</title>
   
 
   
   
+  
+  
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/style_overrides.css" type="text/css" />
-  
-
-  
-    <link rel="top" title="GNU Toolchain for ARC User Manual 2019.09 documentation" href="../index.html"/>
-        <link rel="up" title="GCC documentation" href="index.html"/>
-        <link rel="next" title="MWDT vs. GCC option matrix" href="option-matrix.html"/>
-        <link rel="prev" title="Sanitizers support for ARC" href="sanitizers.html"/> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/style_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="MWDT vs. GCC option matrix" href="option-matrix.html" />
+    <link rel="prev" title="Sanitizers support for ARC" href="sanitizers.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
+   
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -63,7 +61,7 @@
             
             
               <div class="version">
-                2019.09
+                2020.03
               </div>
             
           
@@ -84,7 +82,10 @@
           
             
             
-                <ul class="current">
+              
+            
+            
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../baremetal/index.html">Building baremetal applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../baremetal/index.html#debugging-baremetal-applications">Debugging baremetal applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux applications</a></li>
@@ -93,12 +94,12 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">GCC documentation</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="index.html#arc-specific-tech-discussion">ARC specific tech discussion</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="custom-instructions.html">Custom instructions: what and how</a></li>
-<li class="toctree-l3"><a class="reference internal" href="extensions-support.html">GCC&#8217;s support for ARC custom extensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="extensions-support.html">GCC’s support for ARC custom extensions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="64bit.html">Impact of 64-bit integral operation on GCC toolchain</a></li>
 <li class="toctree-l3"><a class="reference internal" href="jli.html">Using JLI Instructions with GNU</a></li>
 <li class="toctree-l3"><a class="reference internal" href="secure-shield.html">SecureShield Programming</a></li>
 <li class="toctree-l3"><a class="reference internal" href="sanitizers.html">Sanitizers support for ARC</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="">Working with small data section</a><ul>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Working with small data section</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#small-data-available-access-range">Small data available access range</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#controlling-what-goes-into-sdata-segment">Controlling what goes into SDATA segment</a></li>
 </ul>
@@ -123,36 +124,56 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">GNU Toolchain for ARC User Manual</a>
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GNU Toolchain for ARC User Manual</a>
+        
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="../index.html">Docs</a> &raquo;</li>
-      
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
           <li><a href="index.html">GCC documentation</a> &raquo;</li>
-      
-    <li>Working with small data section</li>
+        
+      <li>Working with small data section</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
-            <a href="../_sources/gcc/small-data.txt" rel="nofollow"> View page source</a>
+            
+            <a href="../_sources/gcc/small-data.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -161,40 +182,40 @@
   <div class="section" id="working-with-small-data-section">
 <h1>Working with small data section<a class="headerlink" href="#working-with-small-data-section" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">These notes are applicable to ARC GCC starting only with 2017.09 release.</p>
+<p class="admonition-title">Note</p>
+<p>These notes are applicable to ARC GCC starting only with 2017.09 release.</p>
 </div>
 <div class="section" id="small-data-available-access-range">
 <h2>Small data available access range<a class="headerlink" href="#small-data-available-access-range" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="docutils">
+<table class="docutils align-center">
 <colgroup>
-<col width="22%" />
-<col width="27%" />
-<col width="24%" />
-<col width="27%" />
+<col style="width: 22%" />
+<col style="width: 27%" />
+<col style="width: 24%" />
+<col style="width: 27%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Data Type</th>
-<th class="head">Range</th>
-<th class="head">#Elements</th>
-<th class="head">Size</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Data Type</p></th>
+<th class="head"><p>Range</p></th>
+<th class="head"><p>#Elements</p></th>
+<th class="head"><p>Size</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>char</td>
-<td>[-256,255]</td>
-<td>512</td>
-<td>512 bytes</td>
+<tbody>
+<tr class="row-even"><td><p>char</p></td>
+<td><p>[-256,255]</p></td>
+<td><p>512</p></td>
+<td><p>512 bytes</p></td>
 </tr>
-<tr class="row-odd"><td>short</td>
-<td>[-256,510]</td>
-<td>383</td>
-<td>766 bytes</td>
+<tr class="row-odd"><td><p>short</p></td>
+<td><p>[-256,510]</p></td>
+<td><p>383</p></td>
+<td><p>766 bytes</p></td>
 </tr>
-<tr class="row-even"><td>int</td>
-<td>[-256,1020]</td>
-<td>319</td>
-<td>1276 bytes</td>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>[-256,1020]</p></td>
+<td><p>319</p></td>
+<td><p>1276 bytes</p></td>
 </tr>
 </tbody>
 </table>
@@ -212,9 +233,9 @@ to [-1024,1020] for 32-bit data (e.g., _int_) if type aligned (i.e., 4-bytes).
 However, as we cannot be 100% sure we address only 32-bit/4-byte aligned data,
 we need to consider the worst case which is byte-aligned data. Thus, the
 effective range is [-256,255], with possibilities to access 16-bit aligned data
-(e.g., _short_) up to 510, and 32-bit aligned data (e.g., <code class="docutils literal"><span class="pre">int</span></code> or <code class="docutils literal"><span class="pre">long</span>
+(e.g., _short_) up to 510, and 32-bit aligned data (e.g., <code class="docutils literal notranslate"><span class="pre">int</span></code> or <code class="docutils literal notranslate"><span class="pre">long</span>
 <span class="pre">long</span></code>) up to 1020. While the lower limit remains set to -256. This is because
-we set the linker script defined variable <code class="docutils literal"><span class="pre">__SDATA_BEGIN__</span></code> with an offset of
+we set the linker script defined variable <code class="docutils literal notranslate"><span class="pre">__SDATA_BEGIN__</span></code> with an offset of
 0x100.  However, this rule can be overwritten by using a custom linker script.</p>
 </div>
 </div>
@@ -228,7 +249,7 @@ section. The number of bytes can be controlled via <strong>-G&lt;number&gt;</str
 operations available (i.e., ARC HS architecture), otherwise to 4.</p>
 <p>For example, a 8 bytes setting will allow us to place into sdata the following
 variables:</p>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="kt">char</span> <span class="n">gA</span><span class="p">[</span><span class="mi">8</span><span class="p">];</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span> <span class="n">gA</span><span class="p">[</span><span class="mi">8</span><span class="p">];</span>
 <span class="kt">short</span> <span class="n">gB</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
 <span class="kt">int</span> <span class="n">gC</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
 <span class="kt">long</span> <span class="kt">long</span> <span class="n">gD</span><span class="p">;</span>
@@ -236,19 +257,19 @@ variables:</p>
 </div>
 <p>Notable exceptions:</p>
 <ul class="simple">
-<li>Volatile global data will not be placed into sdata section when
-<strong>-mno-volatile-cache</strong> option is used;</li>
-<li>Strings and functions never end in small data area;</li>
-<li>Weak variables as well not;</li>
-<li>No constant will end in small data area as those one, we would like to place
-into ROM.</li>
+<li><p>Volatile global data will not be placed into sdata section when
+<strong>-mno-volatile-cache</strong> option is used;</p></li>
+<li><p>Strings and functions never end in small data area;</p></li>
+<li><p>Weak variables as well not;</p></li>
+<li><p>No constant will end in small data area as those one, we would like to place
+into ROM.</p></li>
 </ul>
 </div>
 <div class="section" id="using-named-sections">
 <h3>Using named sections<a class="headerlink" href="#using-named-sections" title="Permalink to this headline">¶</a></h3>
 <p>Another way to control which data goes into small data area is to use named
 sections like this:</p>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">a</span> <span class="nf">__attribute__</span><span class="p">((</span><span class="n">section</span> <span class="p">(</span><span class="s">&quot;.sdata&quot;</span><span class="p">)))</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">a</span> <span class="nf">__attribute__</span><span class="p">((</span><span class="n">section</span> <span class="p">(</span><span class="s">&quot;.sdata&quot;</span><span class="p">)))</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">b</span> <span class="nf">__attribute__</span><span class="p">((</span><span class="n">section</span> <span class="p">(</span><span class="s">&quot;.sbss&quot;</span><span class="p">)));</span>
 </pre></div>
 </div>
@@ -263,15 +284,16 @@ data.</p>
 
 
            </div>
+           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="option-matrix.html" class="btn btn-neutral float-right" title="MWDT vs. GCC option matrix" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="option-matrix.html" class="btn btn-neutral float-right" title="MWDT vs. GCC option matrix" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="sanitizers.html" class="btn btn-neutral" title="Sanitizers support for ARC" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="sanitizers.html" class="btn btn-neutral float-left" title="Sanitizers support for ARC" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -280,11 +302,11 @@ data.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2019, Synopsys.
+        &copy; Copyright 2016-2020, Synopsys
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -297,35 +319,15 @@ data.</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'2019.09',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

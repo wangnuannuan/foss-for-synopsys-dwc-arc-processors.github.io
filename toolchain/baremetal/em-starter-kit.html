@@ -8,48 +8,46 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Using GNU Toolchain to Debug Applications on EM Starter Kit &mdash; GNU Toolchain for ARC User Manual 2019.09 documentation</title>
+  <title>Using GNU Toolchain to Debug Applications on EM Starter Kit &mdash; GNU Toolchain for ARC User Manual 2020.03 documentation</title>
   
 
   
   
+  
+  
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/style_overrides.css" type="text/css" />
-  
-
-  
-    <link rel="top" title="GNU Toolchain for ARC User Manual 2019.09 documentation" href="../index.html"/>
-        <link rel="up" title="Building baremetal applications" href="index.html"/>
-        <link rel="next" title="Using OpenOCD with AXS SDP" href="openocd-axs.html"/>
-        <link rel="prev" title="Using TCF" href="tcf.html"/> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/style_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Using OpenOCD with AXS SDP" href="openocd-axs.html" />
+    <link rel="prev" title="Using TCF" href="tcf.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
+   
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -63,7 +61,7 @@
             
             
               <div class="version">
-                2019.09
+                2020.03
               </div>
             
           
@@ -84,10 +82,13 @@
           
             
             
-                <ul class="current">
+              
+            
+            
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Building baremetal applications</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html#debugging-baremetal-applications">Debugging baremetal applications</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="">Using GNU Toolchain to Debug Applications on EM Starter Kit</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Using GNU Toolchain to Debug Applications on EM Starter Kit</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#building-an-application">Building an application</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#running-an-application-with-openocd">Running an application with OpenOCD</a><ul>
@@ -120,36 +121,56 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">GNU Toolchain for ARC User Manual</a>
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GNU Toolchain for ARC User Manual</a>
+        
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="../index.html">Docs</a> &raquo;</li>
-      
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
           <li><a href="index.html">Building baremetal applications</a> &raquo;</li>
-      
-    <li>Using GNU Toolchain to Debug Applications on EM Starter Kit</li>
+        
+      <li>Using GNU Toolchain to Debug Applications on EM Starter Kit</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
-            <a href="../_sources/baremetal/em-starter-kit.txt" rel="nofollow"> View page source</a>
+            
+            <a href="../_sources/baremetal/em-starter-kit.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -165,110 +186,110 @@ For Linux hosts there is a choice between complete tarballs that include
 toolchain, IDE and OpenOCD (like installer for Windows), and tarballs that
 include toolchain only.</p>
 <p>In order to use OpenOCD on Windows it is required to install appropriate WinUSB drivers,
-see <a class="reference internal" href="../ide/how-to-use-openocd-on-windows.html"><em>How to Use OpenOCD on Windows</em></a> for details.</p>
+see <a class="reference internal" href="../ide/how-to-use-openocd-on-windows.html"><span class="doc">How to Use OpenOCD on Windows</span></a> for details.</p>
 </div>
 <div class="section" id="building-an-application">
 <h2>Building an application<a class="headerlink" href="#building-an-application" title="Permalink to this headline">¶</a></h2>
 <p>To learn how to build and debug application with Eclipse IDE, please use
-<a class="reference internal" href="../ide/index.html"><em>ARC GNU IDE</em></a> manual.</p>
+<a class="reference internal" href="../ide/index.html"><span class="doc">ARC GNU IDE</span></a> manual.</p>
 <p>Different core templates in EM Starter Kit use different memory maps, so
 different memory map files are required to compile applications that work
-properly on those configurations. This &#8220;toolchain&#8221; repository includes memory
+properly on those configurations. This “toolchain” repository includes memory
 maps for all supported EM Starter Kit versions and configurations. They can be
 found at
 <a class="reference external" href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/tree/arc-staging/extras/dev_systems">https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/tree/arc-staging/extras/dev_systems</a>
-Memory map files in that directory have <code class="docutils literal"><span class="pre">.x</span></code> extension and file to be used
-should be renamed to <code class="docutils literal"><span class="pre">memory.x</span></code>, because <code class="docutils literal"><span class="pre">arcv2elfx</span></code> linker emulation
-doesn&#8217;t support ability to override that file name. Please refer to
-<a class="reference internal" href="linker.html"><em>Linker scripts and memory.x files</em></a> for more details about <code class="docutils literal"><span class="pre">memory.x</span></code> files.</p>
+Memory map files in that directory have <code class="docutils literal notranslate"><span class="pre">.x</span></code> extension and file to be used
+should be renamed to <code class="docutils literal notranslate"><span class="pre">memory.x</span></code>, because <code class="docutils literal notranslate"><span class="pre">arcv2elfx</span></code> linker emulation
+doesn’t support ability to override that file name. Please refer to
+<a class="reference internal" href="linker.html"><span class="doc">Linker scripts and memory.x files</span></a> for more details about <code class="docutils literal notranslate"><span class="pre">memory.x</span></code> files.</p>
 <p>For example for EM Starter Kit v2.3 EM7D to build an application:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>$ cp -a toolchain/extras/dev_systems/sk2.3_em7d.x memory.x
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ cp -a toolchain/extras/dev_systems/sk2.3_em7d.x memory.x
 $ arc-elf32-gcc -Wl,-marcv2elfx --specs<span class="o">=</span>nosys.specs -mcpu<span class="o">=</span>em4_dmips -O2 -g <span class="se">\</span>
      test.c -o test.elf
 </pre></div>
 </div>
-<table border="1" class="docutils" id="id1">
+<table class="docutils align-center" id="id1">
 <caption><span class="caption-text">List of compiler flags corresponding to particular CPUs</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col width="8%" />
-<col width="11%" />
-<col width="81%" />
+<col style="width: 8%" />
+<col style="width: 11%" />
+<col style="width: 81%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">EM SK</th>
-<th class="head">CPU</th>
-<th class="head">Flags</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>EM SK</p></th>
+<th class="head"><p>CPU</p></th>
+<th class="head"><p>Flags</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td rowspan="2">v1</td>
-<td>EM4</td>
-<td>-mcpu=em4_dmips -mmpy-option=wlh5</td>
+<tbody>
+<tr class="row-even"><td rowspan="2"><p>v1</p></td>
+<td><p>EM4</p></td>
+<td><p>-mcpu=em4_dmips -mmpy-option=wlh5</p></td>
 </tr>
-<tr class="row-odd"><td>EM6</td>
-<td>-mcpu=em4_dmips -mmpy-option=wlh5</td>
+<tr class="row-odd"><td><p>EM6</p></td>
+<td><p>-mcpu=em4_dmips -mmpy-option=wlh5</p></td>
 </tr>
-<tr class="row-even"><td rowspan="3">v2.0</td>
-<td>EM5D</td>
-<td>-mcpu=em4 -mswap -mnorm -mmpy-option=wlh3 -mbarrel-shifter</td>
+<tr class="row-even"><td rowspan="3"><p>v2.0</p></td>
+<td><p>EM5D</p></td>
+<td><p>-mcpu=em4 -mswap -mnorm -mmpy-option=wlh3 -mbarrel-shifter</p></td>
 </tr>
-<tr class="row-odd"><td>EM7D</td>
-<td>-mcpu=em4 -mswap -mnorm -mmpy-option=wlh3 -mbarrel-shifter</td>
+<tr class="row-odd"><td><p>EM7D</p></td>
+<td><p>-mcpu=em4 -mswap -mnorm -mmpy-option=wlh3 -mbarrel-shifter</p></td>
 </tr>
-<tr class="row-even"><td>EM7DFPU</td>
-<td>-mcpu=em4 -mswap -mnorm -mmpy-option=wlh3 -mbarrel-shifter
--mfpu=fpuda_all</td>
+<tr class="row-even"><td><p>EM7DFPU</p></td>
+<td><p>-mcpu=em4 -mswap -mnorm -mmpy-option=wlh3 -mbarrel-shifter
+-mfpu=fpuda_all</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="3">v2.1</td>
-<td>EM5D</td>
-<td>-mcpu=em4_dmips -mmpy-option=wlh3</td>
+<tr class="row-odd"><td rowspan="3"><p>v2.1</p></td>
+<td><p>EM5D</p></td>
+<td><p>-mcpu=em4_dmips -mmpy-option=wlh3</p></td>
 </tr>
-<tr class="row-even"><td>EM7D</td>
-<td>-mcpu=em4_dmips -mmpy-option=wlh3</td>
+<tr class="row-even"><td><p>EM7D</p></td>
+<td><p>-mcpu=em4_dmips -mmpy-option=wlh3</p></td>
 </tr>
-<tr class="row-odd"><td>EM7DFPU</td>
-<td>-mcpu=em4_fpuda -mmpy-option=wlh3</td>
+<tr class="row-odd"><td><p>EM7DFPU</p></td>
+<td><p>-mcpu=em4_fpuda -mmpy-option=wlh3</p></td>
 </tr>
-<tr class="row-even"><td rowspan="3">v2.2</td>
-<td>EM7D</td>
-<td>-mcpu=em4_dmips</td>
+<tr class="row-even"><td rowspan="3"><p>v2.2</p></td>
+<td><p>EM7D</p></td>
+<td><p>-mcpu=em4_dmips</p></td>
 </tr>
-<tr class="row-odd"><td>EM9D</td>
-<td>-mcpu=em4_fpus -mfpu=fpus_all</td>
+<tr class="row-odd"><td><p>EM9D</p></td>
+<td><p>-mcpu=em4_fpus -mfpu=fpus_all</p></td>
 </tr>
-<tr class="row-even"><td>EM11D</td>
-<td>-mcpu=em4_fpuda -mfpu=fpuda_all</td>
+<tr class="row-even"><td><p>EM11D</p></td>
+<td><p>-mcpu=em4_fpuda -mfpu=fpuda_all</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="3">v2.3</td>
-<td>EM7D</td>
-<td>-mcpu=em4_dmips</td>
+<tr class="row-odd"><td rowspan="3"><p>v2.3</p></td>
+<td><p>EM7D</p></td>
+<td><p>-mcpu=em4_dmips</p></td>
 </tr>
-<tr class="row-even"><td>EM9D</td>
-<td>-mcpu=em4_fpus -mfpu=fpus_all</td>
+<tr class="row-even"><td><p>EM9D</p></td>
+<td><p>-mcpu=em4_fpus -mfpu=fpus_all</p></td>
 </tr>
-<tr class="row-odd"><td>EM11D</td>
-<td>-mcpu=em4_fpuda -mfpu=fpuda_all</td>
+<tr class="row-odd"><td><p>EM11D</p></td>
+<td><p>-mcpu=em4_fpuda -mfpu=fpuda_all</p></td>
 </tr>
 </tbody>
 </table>
 <p>C library for GNU Toolchain for ARC provides basic support for UART module of EM
 Starter Kit, which allows to use standard C function for input and output:
-<code class="docutils literal"><span class="pre">printf()</span></code>, <code class="docutils literal"><span class="pre">scanf()</span></code>, etc. Memory map files are also provided for processor
+<code class="docutils literal notranslate"><span class="pre">printf()</span></code>, <code class="docutils literal notranslate"><span class="pre">scanf()</span></code>, etc. Memory map files are also provided for processor
 configurations of EM Starter Kit. Both of those features are available via
-special &#8220;specs&#8221; files: <code class="docutils literal"><span class="pre">emsk_em9d.specs</span></code> and <code class="docutils literal"><span class="pre">emsk_em11d.specs</span></code> (there is no
+special “specs” files: <code class="docutils literal notranslate"><span class="pre">emsk_em9d.specs</span></code> and <code class="docutils literal notranslate"><span class="pre">emsk_em11d.specs</span></code> (there is no
 separate file for EM7D of EM Starter Kit, it is identical to EM9D). Usage
 example is following:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>$ cat hello_world.c
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ cat hello_world.c
 <span class="c1">#include &lt;stdio.h&gt;</span>
 int main<span class="o">()</span> <span class="o">{</span>
     printf<span class="o">(</span><span class="s2">&quot;hello world\n&quot;</span><span class="o">)</span><span class="p">;</span>
-    <span class="k">return</span> 0<span class="p">;</span>
+    <span class="k">return</span> <span class="m">0</span><span class="p">;</span>
 <span class="o">}</span>
 
 $ arc-elf32-gcc --specs<span class="o">=</span>emsk_em9d.specs -mcpu<span class="o">=</span>em4_dmips hello_world.c
 </pre></div>
 </div>
-<p>Note that it is still required to specify valid <code class="docutils literal"><span class="pre">-mcpu</span></code> option value - it is
+<p>Note that it is still required to specify valid <code class="docutils literal notranslate"><span class="pre">-mcpu</span></code> option value - it is
 not set by the specs file.</p>
 </div>
 <div class="section" id="running-an-application-with-openocd">
@@ -282,17 +303,17 @@ ARC EM Starter Kit and ARC SDP. Due to differences between different versions
 of ARC EM Starter Kit hardware, there are separate configuration files for
 different ARC EM Starter Kit versions:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">snps_em_sk_v1.cfg</span></code> - for ARC EM Starter Kit v1.x.</li>
-<li><code class="docutils literal"><span class="pre">snps_em_sk_v2.1.cfg</span></code> - for ARC EM Starter Kit versions 2.0 and 2.1.</li>
-<li><code class="docutils literal"><span class="pre">snps_em_sk_v2.2.cfg</span></code> - for ARC EM Starter Kit version 2.2.</li>
-<li><code class="docutils literal"><span class="pre">snps_em_sk_v2.3.cfg</span></code> - for ARC EM Starter Kit version 2.3.</li>
-<li><code class="docutils literal"><span class="pre">snps_em_sk.cfg</span></code> - this is a configuration for ARC EM Starter Kit 2.0 and
-2.1, preserved for compatibility.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">snps_em_sk_v1.cfg</span></code> - for ARC EM Starter Kit v1.x.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">snps_em_sk_v2.1.cfg</span></code> - for ARC EM Starter Kit versions 2.0 and 2.1.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">snps_em_sk_v2.2.cfg</span></code> - for ARC EM Starter Kit version 2.2.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">snps_em_sk_v2.3.cfg</span></code> - for ARC EM Starter Kit version 2.3.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">snps_em_sk.cfg</span></code> - this is a configuration for ARC EM Starter Kit 2.0 and
+2.1, preserved for compatibility.</p></li>
 </ul>
 <p>Following documentation would assume the usage of the latest ARC EM Starter Kit
 version 2.3 which is similar to 2.2.</p>
 <p>Start OpenOCD:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span><span class="c1"># On Linux (for manually built OpenOCD):</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># On Linux (for manually built OpenOCD):</span>
 $ openocd  -c <span class="s1">&#39;gdb_port 49101&#39;</span> -f board/snps_em_sk_v2.3.cfg
 
 <span class="c1"># On Linux (for prebuilt OpenOCD from IDE package):</span>
@@ -305,11 +326,11 @@ $ <span class="nv">$ide_dir</span>/bin/openocd -s <span class="nv">$ide_dir</spa
 </pre></div>
 </div>
 <p>OpenOCD will be waiting for GDB connections on TCP port specified as an
-argument to <code class="docutils literal"><span class="pre">gdb_port</span></code> command, in this example it is 49101. When
-<code class="docutils literal"><span class="pre">gdb_port</span></code> command hasn&#8217;t been specified, OpenOCD will use its default port,
+argument to <code class="docutils literal notranslate"><span class="pre">gdb_port</span></code> command, in this example it is 49101. When
+<code class="docutils literal notranslate"><span class="pre">gdb_port</span></code> command hasn’t been specified, OpenOCD will use its default port,
 which is 3333, however this port might be already occupied by some other
 software. In our experience we had a case, where port 3333 has been occupied,
-however no error messages has been printed but OpenOCD and GDB wasn&#8217;t printing
+however no error messages has been printed but OpenOCD and GDB wasn’t printing
 anything useful as well, instead it was just printing some ambiguous error
 messages after timeout. In that case another application was occupying TCP port
 only on localhost address, thus OpenOCD was able to start listening on other IP
@@ -323,35 +344,28 @@ as an external application.</p>
 <div class="section" id="connecting-gdb-to-openocd">
 <h3>Connecting GDB to OpenOCD<a class="headerlink" href="#connecting-gdb-to-openocd" title="Permalink to this headline">¶</a></h3>
 <p>Write a sample application:</p>
-<div class="highlight-c"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="cm">/* simple.c */</span>
- <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-     <span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">;</span>
-     <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-     <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
-     <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
-     <span class="k">return</span> <span class="n">c</span><span class="p">;</span>
- <span class="p">}</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* simple.c */</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">;</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">c</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
-</td></tr></table></div>
-<p>Compile it - refer to &#8220;Building application&#8221; section for details, creation of
-<code class="docutils literal"><span class="pre">memory.x</span></code> is not shown in this example:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>$ arc-elf32-gcc -Wl,-marcv2elfx --specs<span class="o">=</span>nosys.specs -mcpu<span class="o">=</span>em4_dmips -O2 -g <span class="se">\</span>
+</div>
+<p>Compile it - refer to “Building application” section for details, creation of
+<code class="docutils literal notranslate"><span class="pre">memory.x</span></code> is not shown in this example:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ arc-elf32-gcc -Wl,-marcv2elfx --specs<span class="o">=</span>nosys.specs -mcpu<span class="o">=</span>em4_dmips -O2 -g <span class="se">\</span>
     simple.c -o simple_sk2.3_em7d.elf
 </pre></div>
 </div>
 <p>Start GDB, connect to target and run it:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>$ arc-elf32-gdb --quiet simple_sk2.1_em5d.elf
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ arc-elf32-gdb --quiet simple_sk2.1_em5d.elf
 <span class="c1"># Connect. Replace 3333 with port of your choice if you changed it when starting OpenOCD</span>
 <span class="o">(</span>gdb<span class="o">)</span> target remote :3333
 <span class="c1"># Increase timeout, because OpenOCD sometimes can be slow</span>
-<span class="o">(</span>gdb<span class="o">)</span> <span class="nb">set</span> remotetimeout 15
+<span class="o">(</span>gdb<span class="o">)</span> <span class="nb">set</span> remotetimeout <span class="m">15</span>
 <span class="c1"># Load application into target</span>
 <span class="o">(</span>gdb<span class="o">)</span> load
 <span class="c1"># Go to start of main function</span>
@@ -367,47 +381,47 @@ as an external application.</p>
 <span class="o">(</span>gdb<span class="o">)</span> info reg r0
 </pre></div>
 </div>
-<p>Execution should stop at function <code class="docutils literal"><span class="pre">exit</span></code>. Value of register <code class="docutils literal"><span class="pre">r0</span></code> should be
-<code class="docutils literal"><span class="pre">3</span></code>.</p>
+<p>Execution should stop at function <code class="docutils literal notranslate"><span class="pre">exit</span></code>. Value of register <code class="docutils literal notranslate"><span class="pre">r0</span></code> should be
+<code class="docutils literal notranslate"><span class="pre">3</span></code>.</p>
 </div>
 </div>
 <div class="section" id="known-issues-and-limitations">
 <h2>Known issues and limitations<a class="headerlink" href="#known-issues-and-limitations" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first">Out of the box it is impossible to perform any input/output operations, like
+<li><p>Out of the box it is impossible to perform any input/output operations, like
 printf, scanf, file IO, etc.</p>
 <blockquote>
 <div><ul class="simple">
-<li>When using an nSIM hostlink (GCC option <code class="docutils literal"><span class="pre">--specs=nsim.specs</span></code>), calling
+<li><p>When using an nSIM hostlink (GCC option <code class="docutils literal notranslate"><span class="pre">--specs=nsim.specs</span></code>), calling
 any of those function in application will result in a hang (unhandled
-system call to be exact).</li>
-<li>When using libnosys (<code class="docutils literal"><span class="pre">--specs=nosys.specs</span></code>), standard IO functions will
-simply do nothing - they will set <code class="docutils literal"><span class="pre">errno</span> <span class="pre">=</span> <span class="pre">ENOSYS</span></code> and return -1 at most.</li>
-<li>It is possible to use UART for text console I/O operations, but that is
+system call to be exact).</p></li>
+<li><p>When using libnosys (<code class="docutils literal notranslate"><span class="pre">--specs=nosys.specs</span></code>), standard IO functions will
+simply do nothing - they will set <code class="docutils literal notranslate"><span class="pre">errno</span> <span class="pre">=</span> <span class="pre">ENOSYS</span></code> and return -1 at most.</p></li>
+<li><p>It is possible to use UART for text console I/O operations, but that is
 not implemented by default in GNU toolchain. Consult EM Starter Kit
-documentation and examples for details.</li>
+documentation and examples for details.</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">Bare metal applications has nowhere to exit, and default implementation of
+<li><p>Bare metal applications has nowhere to exit, and default implementation of
 exit is an infinite loop. To catch exit from application you should set
-breakpoint at function <code class="docutils literal"><span class="pre">exit</span></code> like in the example.</p>
-</li>
+breakpoint at function <code class="docutils literal notranslate"><span class="pre">exit</span></code> like in the example.</p></li>
 </ul>
 </div>
 </div>
 
 
            </div>
+           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="openocd-axs.html" class="btn btn-neutral float-right" title="Using OpenOCD with AXS SDP" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="openocd-axs.html" class="btn btn-neutral float-right" title="Using OpenOCD with AXS SDP" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="tcf.html" class="btn btn-neutral" title="Using TCF" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="tcf.html" class="btn btn-neutral float-left" title="Using TCF" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -416,11 +430,11 @@ breakpoint at function <code class="docutils literal"><span class="pre">exit</sp
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2019, Synopsys.
+        &copy; Copyright 2016-2020, Synopsys
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -433,35 +447,15 @@ breakpoint at function <code class="docutils literal"><span class="pre">exit</sp
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'2019.09',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

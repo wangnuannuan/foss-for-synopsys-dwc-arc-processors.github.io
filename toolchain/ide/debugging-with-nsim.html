@@ -8,48 +8,46 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Debugging with nSIM &mdash; GNU Toolchain for ARC User Manual 2019.09 documentation</title>
+  <title>Debugging with nSIM &mdash; GNU Toolchain for ARC User Manual 2020.03 documentation</title>
   
 
   
   
+  
+  
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/style_overrides.css" type="text/css" />
-  
-
-  
-    <link rel="top" title="GNU Toolchain for ARC User Manual 2019.09 documentation" href="../index.html"/>
-        <link rel="up" title="ARC GNU IDE" href="index.html"/>
-        <link rel="next" title="Debugging with Custom GDB Server" href="debugging-with-custom-gdb-server.html"/>
-        <link rel="prev" title="Debugging with OpellaXD" href="debugging-with-opellaxd.html"/> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/style_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Debugging with Custom GDB Server" href="debugging-with-custom-gdb-server.html" />
+    <link rel="prev" title="Debugging with OpellaXD" href="debugging-with-opellaxd.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
+   
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -63,7 +61,7 @@
             
             
               <div class="version">
-                2019.09
+                2020.03
               </div>
             
           
@@ -84,7 +82,10 @@
           
             
             
-                <ul class="current">
+              
+            
+            
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../baremetal/index.html">Building baremetal applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../baremetal/index.html#debugging-baremetal-applications">Debugging baremetal applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux applications</a></li>
@@ -98,7 +99,7 @@
 <li class="toctree-l3"><a class="reference internal" href="debugging-with-openocd.html">Debugging with OpenOCD</a></li>
 <li class="toctree-l3"><a class="reference internal" href="how-to-use-openocd-on-windows.html">How to Use OpenOCD on Windows</a></li>
 <li class="toctree-l3"><a class="reference internal" href="debugging-with-opellaxd.html">Debugging with OpellaXD</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="">Debugging with nSIM</a><ul>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Debugging with nSIM</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#specifying-nsim-properties">Specifying nSIM properties</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#debugging-an-application">Debugging an application</a></li>
 </ul>
@@ -126,36 +127,56 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">GNU Toolchain for ARC User Manual</a>
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GNU Toolchain for ARC User Manual</a>
+        
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="../index.html">Docs</a> &raquo;</li>
-      
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
           <li><a href="index.html">ARC GNU IDE</a> &raquo;</li>
-      
-    <li>Debugging with nSIM</li>
+        
+      <li>Debugging with nSIM</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
-            <a href="../_sources/ide/debugging-with-nsim.txt" rel="nofollow"> View page source</a>
+            
+            <a href="../_sources/ide/debugging-with-nsim.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -167,12 +188,12 @@
 debug configuration for it. About how to do it you can read on the following
 pages:</p>
 <ul class="simple">
-<li><a class="reference internal" href="building-user-guide.html#building-user-guide"><span>Building an Application</span></a></li>
-<li><a class="reference internal" href="creating-a-debug-configuration.html#creating-a-debug-configuration"><span>Creating a Debug Configuration</span></a></li>
+<li><p><a class="reference internal" href="building-user-guide.html#building-user-guide"><span class="std std-ref">Building an Application</span></a></p></li>
+<li><p><a class="reference internal" href="creating-a-debug-configuration.html#creating-a-debug-configuration"><span class="std std-ref">Creating a Debug Configuration</span></a></p></li>
 </ul>
 <div class="section" id="specifying-nsim-properties">
 <h2>Specifying nSIM properties<a class="headerlink" href="#specifying-nsim-properties" title="Permalink to this headline">¶</a></h2>
-<div class="figure" id="id1">
+<div class="figure align-center" id="id1">
 <img alt="../_images/nsim_tab.png" src="../_images/nsim_tab.png" />
 <p class="caption"><span class="caption-text">Choosing nSIM on debug tab</span></p>
 </div>
@@ -189,24 +210,23 @@ simulate it as a big endian, it is possible to create an properties file
 that will set only a single property for big endian, then in IDE GUI in nSIM
 GDBserver settings specify paths to both TCF and properties file and that
 will give a desired results.</p>
-<dl class="docutils">
-<dt>Other available options:</dt>
-<dd><ul class="first last simple">
-<li><strong>JIT</strong> checkbox enables Just-In-Time compilation. You can also specify a number
-of threads to use in JIT mode.</li>
-<li><strong>GNU host I/O support</strong>, if checked, enables nSIM GNU host I/O support. It means
+<dl class="simple">
+<dt>Other available options:</dt><dd><ul class="simple">
+<li><p><strong>JIT</strong> checkbox enables Just-In-Time compilation. You can also specify a number
+of threads to use in JIT mode.</p></li>
+<li><p><strong>GNU host I/O support</strong>, if checked, enables nSIM GNU host I/O support. It means
 that input/output requests from application will be handled by nSIM and redirected
 to the host system. This could be used, for example, to enable functions in the
-C library, such as <code class="docutils literal"><span class="pre">printf()</span></code> and <code class="docutils literal"><span class="pre">scanf()</span></code>. This option works only if the application
-is built with the ARC GCC compiler and <code class="docutils literal"><span class="pre">--specs=nsim.specs</span></code> flag is used.</li>
-<li><strong>Enable Exception</strong>, <strong>Memory Exception</strong> and <strong>Invalid Instruction Exception</strong>
+C library, such as <code class="docutils literal notranslate"><span class="pre">printf()</span></code> and <code class="docutils literal notranslate"><span class="pre">scanf()</span></code>. This option works only if the application
+is built with the ARC GCC compiler and <code class="docutils literal notranslate"><span class="pre">--specs=nsim.specs</span></code> flag is used.</p></li>
+<li><p><strong>Enable Exception</strong>, <strong>Memory Exception</strong> and <strong>Invalid Instruction Exception</strong>
 options, if checked, tell nSIM to simulate all exceptions, memory exceptions and
 invalid instruction exceptions, respectively. If one of these options is unchecked
-and corresponding exception happens, nSIM will exit with an error instead.</li>
-<li><strong>Working Directory</strong> is a directory from which nSIM GDB server will be
+and corresponding exception happens, nSIM will exit with an error instead.</p></li>
+<li><p><strong>Working Directory</strong> is a directory from which nSIM GDB server will be
 started. By default it is project location. This option might be useful if
 your program works with files. To open a file, you can instead of its
-absolute path provide a path relative to the specified working directory.</li>
+absolute path provide a path relative to the specified working directory.</p></li>
 </ul>
 </dd>
 </dl>
@@ -214,15 +234,15 @@ absolute path provide a path relative to the specified working directory.</li>
 <div class="section" id="debugging-an-application">
 <h2>Debugging an application<a class="headerlink" href="#debugging-an-application" title="Permalink to this headline">¶</a></h2>
 <p>To debug application using nSIM, press <strong>Debug</strong> button of IDE.</p>
-<div class="figure" id="id2">
+<div class="figure align-center" id="id2">
 <img alt="../_images/nsim_debug.png" src="../_images/nsim_debug.png" />
 <p class="caption"><span class="caption-text">Debugging with nSIM gdbserver</span></p>
 </div>
-<div class="figure" id="id3">
+<div class="figure align-center" id="id3">
 <img alt="../_images/nsim_debug_window.png" src="../_images/nsim_debug_window.png" />
 <p class="caption"><span class="caption-text">Debug Window</span></p>
 </div>
-<div class="figure" id="id4">
+<div class="figure align-center" id="id4">
 <img alt="../_images/nsim_output.png" src="../_images/nsim_output.png" />
 <p class="caption"><span class="caption-text">nSIM gdbserver output in console</span></p>
 </div>
@@ -231,15 +251,16 @@ absolute path provide a path relative to the specified working directory.</li>
 
 
            </div>
+           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="debugging-with-custom-gdb-server.html" class="btn btn-neutral float-right" title="Debugging with Custom GDB Server" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="debugging-with-custom-gdb-server.html" class="btn btn-neutral float-right" title="Debugging with Custom GDB Server" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="debugging-with-opellaxd.html" class="btn btn-neutral" title="Debugging with OpellaXD" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="debugging-with-opellaxd.html" class="btn btn-neutral float-left" title="Debugging with OpellaXD" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -248,11 +269,11 @@ absolute path provide a path relative to the specified working directory.</li>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2019, Synopsys.
+        &copy; Copyright 2016-2020, Synopsys
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -265,35 +286,15 @@ absolute path provide a path relative to the specified working directory.</li>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'2019.09',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

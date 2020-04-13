@@ -8,48 +8,46 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>How to Build GNU Toolchain for ARC Manually &mdash; GNU Toolchain for ARC User Manual 2019.09 documentation</title>
+  <title>How to Build GNU Toolchain for ARC Manually &mdash; GNU Toolchain for ARC User Manual 2020.03 documentation</title>
   
 
   
   
+  
+  
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/style_overrides.css" type="text/css" />
-  
-
-  
-    <link rel="top" title="GNU Toolchain for ARC User Manual 2019.09 documentation" href="../index.html"/>
-        <link rel="up" title="Information for Toolchain maintainers" href="index.html"/>
-        <link rel="next" title="Frequently asked questions" href="../faq.html"/>
-        <link rel="prev" title="Creating toolchain release" href="release.html"/> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/style_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Frequently asked questions" href="../faq.html" />
+    <link rel="prev" title="Creating toolchain release" href="release.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
+   
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -63,7 +61,7 @@
             
             
               <div class="version">
-                2019.09
+                2020.03
               </div>
             
           
@@ -84,7 +82,10 @@
           
             
             
-                <ul class="current">
+              
+            
+            
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../baremetal/index.html">Building baremetal applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../baremetal/index.html#debugging-baremetal-applications">Debugging baremetal applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux applications</a></li>
@@ -93,7 +94,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../gcc/index.html">GCC documentation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Information for Toolchain maintainers</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="release.html">Creating toolchain release</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">How to Build GNU Toolchain for ARC Manually</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">How to Build GNU Toolchain for ARC Manually</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#baremetal-elf32-toolchain">Baremetal (elf32) toolchain</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#linux-toolchain">Linux toolchain</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#uclibc-toolchain">uClibc toolchain</a></li>
@@ -117,36 +118,56 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">GNU Toolchain for ARC User Manual</a>
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GNU Toolchain for ARC User Manual</a>
+        
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="../index.html">Docs</a> &raquo;</li>
-      
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
           <li><a href="index.html">Information for Toolchain maintainers</a> &raquo;</li>
-      
-    <li>How to Build GNU Toolchain for ARC Manually</li>
+        
+      <li>How to Build GNU Toolchain for ARC Manually</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
-            <a href="../_sources/maintainer/manual-build.txt" rel="nofollow"> View page source</a>
+            
+            <a href="../_sources/maintainer/manual-build.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -157,7 +178,7 @@
 <p>This document is a quick set of commands to build GNU toolchain for ARC
 manually, without <strong class="program">build-all.sh</strong> script from this repository. Those
 instructions do everything mostly the same, sans scripting sugar. In general it
-is recommended to build GNU Toolchain for ARC using the <span class="target" id="index-0"></span><code class="xref std std-envvar docutils literal"><span class="pre">build-all.sh</span></code>
+is recommended to build GNU Toolchain for ARC using the <span class="target" id="index-0"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">build-all.sh</span></code>
 script.  This document describes what is done by this scripts and can be useful
 for situations where those scripts do not work for one or another reason.</p>
 <p>It is assumed that current directory is top level directory, which contains all
@@ -165,7 +186,7 @@ of the requires git repositories checked out.</p>
 <div class="section" id="baremetal-elf32-toolchain">
 <h2>Baremetal (elf32) toolchain<a class="headerlink" href="#baremetal-elf32-toolchain" title="Permalink to this headline">¶</a></h2>
 <p>Build GNU binutils:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>$ mkdir -p build/binutils
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ mkdir -p build/binutils
 $ <span class="nb">cd</span> build/binutils
 $ ../../binutils/configure <span class="se">\</span>
     --target<span class="o">=</span>arc-elf32<span class="p">|</span>arceb-elf32 <span class="se">\</span>
@@ -184,7 +205,7 @@ $ <span class="nb">cd</span> -
 </div>
 <p>Build GCC, but without libstdc++. Libstdc++ requires libc which is not
 available at that stage:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>$ mkdir -p build/gcc
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ mkdir -p build/gcc
 $ <span class="nb">cd</span> build/gcc
 $ ../../gcc/configure <span class="se">\</span>
     --target<span class="o">=</span>arc-elf32<span class="p">|</span>arceb-elf32 <span class="se">\</span>
@@ -202,7 +223,7 @@ $ <span class="nb">cd</span> -
 </pre></div>
 </div>
 <p>Build newlib, build tools should be added to the PATH:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>$ <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$INSTALLDIR</span>:<span class="nv">$PATH</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$INSTALLDIR</span>:<span class="nv">$PATH</span>
 $ mkdir -p build/newlib
 $ <span class="nb">cd</span> build/newlib
 $ ../../newlib/configure <span class="se">\</span>
@@ -221,16 +242,16 @@ $ <span class="nb">cd</span> -
 </pre></div>
 </div>
 <p>Now it is possible to build listdc++. Note extra options passed to configure.
-Without &#8211;disable-gcc and &#8211;disable-libgcc make would try to build those two
-once again, and without &#8211;with-newlib configuration will fail with &#8220;unsupported
-target/host combination&#8221;. Another option is to build libstdc++ using build tree
-of GCC and calling <code class="docutils literal"><span class="pre">make</span> <span class="pre">all-target-libstdc++-v3</span></code>, in that case there is no
-need to call &#8220;configure&#8221; separately, but &#8211;with-newlib should be passed when
+Without –disable-gcc and –disable-libgcc make would try to build those two
+once again, and without –with-newlib configuration will fail with “unsupported
+target/host combination”. Another option is to build libstdc++ using build tree
+of GCC and calling <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">all-target-libstdc++-v3</span></code>, in that case there is no
+need to call “configure” separately, but –with-newlib should be passed when
 configuring GCC. Note that in case of a separate build directory things might
 get awry if there is already a previous version of toolchain at the
 installation target location and in that case it is required to use build tree
 of GCC. Command to build listdc++:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>$ mkdir -p build/libstdc++-v3
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ mkdir -p build/libstdc++-v3
 $ <span class="nb">cd</span> build/libstdc++-v3
 $ ../../gcc/configure <span class="se">\</span>
     --target<span class="o">=</span>arc-elf32<span class="p">|</span>arceb-elf32 <span class="se">\</span>
@@ -249,8 +270,8 @@ $ <span class="nb">cd</span> -
 </pre></div>
 </div>
 <p>Finally build GDB. GDB is the only component here that can be built in any
-order, as it doesn&#8217;t depend on other components:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>$ mkdir -p build/gdb
+order, as it doesn’t depend on other components:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ mkdir -p build/gdb
 $ <span class="nb">cd</span> build/gdb
 $ ../../gdb/configure <span class="se">\</span>
     --target<span class="o">=</span>arc-elf32<span class="p">|</span>arceb-elf32 <span class="se">\</span>
@@ -273,18 +294,18 @@ $ <span class="nb">cd</span> -
 <div class="section" id="uclibc-toolchain">
 <h3>uClibc toolchain<a class="headerlink" href="#uclibc-toolchain" title="Permalink to this headline">¶</a></h3>
 <p>Define location of sysroot directory:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>$ <span class="nb">export</span> <span class="nv">SYSROOTDIR</span><span class="o">=</span><span class="nv">$INSTALLDIR</span>/arc-snps-linux-uclibc/sysroot
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">export</span> <span class="nv">SYSROOTDIR</span><span class="o">=</span><span class="nv">$INSTALLDIR</span>/arc-snps-linux-uclibc/sysroot
 </pre></div>
 </div>
 <p>Install Linux headers:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> linux
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> linux
 $ make <span class="nv">ARCH</span><span class="o">=</span>arc defconfig
 $ make <span class="nv">ARCH</span><span class="o">=</span>arc <span class="nv">INSTALL_HDR_PATH</span><span class="o">=</span><span class="nv">$SYSROOTDIR</span>/usr headers_install
 $ <span class="nb">cd</span> -
 </pre></div>
 </div>
 <p>Build binutils:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>$ mkdir -p build/binutils
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ mkdir -p build/binutils
 $ <span class="nb">cd</span> build/binutils
 $ ../../binutils/configure <span class="se">\</span>
     --target<span class="o">=</span>arc-snps-linux-uclibc <span class="se">\</span>
@@ -304,7 +325,7 @@ $ <span class="nb">cd</span> -
 </pre></div>
 </div>
 <p>Build Stage 1 GCC (without libgcc):</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>$ mkdir -p build/gcc-stage1
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ mkdir -p build/gcc-stage1
 $ <span class="nb">cd</span> build/gcc-stage1
 $ ../../gcc/configure <span class="se">\</span>
     --target<span class="o">=</span>arc-snps-linux-uclibc <span class="se">\</span>
@@ -329,7 +350,7 @@ $ <span class="nb">cd</span> -
 </pre></div>
 </div>
 <p>Install uClibc headers:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> uClibc
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> uClibc
 $ make <span class="nv">ARCH</span><span class="o">=</span>arc arcv2_defconfig
 $ sed <span class="se">\</span>
     -e <span class="s2">&quot;s#%KERNEL_HEADERS%#</span><span class="nv">$SYSROOTDIR</span><span class="s2">/usr/include#&quot;</span> <span class="se">\</span>
@@ -342,21 +363,21 @@ $ <span class="nb">cd</span> -
 </pre></div>
 </div>
 <p>Build libgcc using build tree of stage 1 GCC:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> build/gcc-stage1
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> build/gcc-stage1
 $ make all-target-libgcc
 $ make install-target-libgcc
 $ <span class="nb">cd</span> -
 </pre></div>
 </div>
 <p>Build uClibc:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> uClibc
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> uClibc
 $ make <span class="nv">ARCH</span><span class="o">=</span>arc <span class="nv">PREFIX</span><span class="o">=</span><span class="nv">$SYSROOTDIR</span>
 $ make <span class="nv">ARCH</span><span class="o">=</span>arc <span class="nv">PREFIX</span><span class="o">=</span><span class="nv">$SYSROOTDIR</span> install
 $ <span class="nb">cd</span> -
 </pre></div>
 </div>
 <p>Build Stage 2 GCC:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>$ mkdir -p build/gcc-stage2
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ mkdir -p build/gcc-stage2
 $ <span class="nb">cd</span> build/gcc-stage2
 $ ../../gcc/configure <span class="se">\</span>
     --target<span class="o">=</span>arc-snps-linux-uclibc <span class="se">\</span>
@@ -376,7 +397,7 @@ $ <span class="nb">cd</span> -
 </pre></div>
 </div>
 <p>Build GDB:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>$ mkdir -p build/gdb
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ mkdir -p build/gdb
 $ <span class="nb">cd</span> build/gdb
 $ ../../gcc/configure <span class="se">\</span>
     --target<span class="o">=</span>arc-snps-linux-uclibc <span class="se">\</span>
@@ -399,10 +420,10 @@ $ <span class="nb">cd</span> -
 <div class="section" id="glibc-toolchain">
 <h3>Glibc toolchain<a class="headerlink" href="#glibc-toolchain" title="Permalink to this headline">¶</a></h3>
 <p>Glibc toolchain is built like the uClibc toolchain, but there are few differences.
-First, it is needed to change <code class="docutils literal"><span class="pre">--target=arc-snps-linux-uclibc</span></code> to <code class="docutils literal"><span class="pre">--target=arc-snps-linux-gnu</span></code>.
+First, it is needed to change <code class="docutils literal notranslate"><span class="pre">--target=arc-snps-linux-uclibc</span></code> to <code class="docutils literal notranslate"><span class="pre">--target=arc-snps-linux-gnu</span></code>.
 Second, uClibc-specific stages should be replaced with following glibc-specific stages.</p>
 <p>Install glibc headers:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>$ mkdir -p build/glibc
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ mkdir -p build/glibc
 $ <span class="nb">cd</span> build/glibc
 $ ../../glibc/configure <span class="se">\</span>
     --target<span class="o">=</span>arc-snps-linux-gnu <span class="se">\</span>
@@ -418,7 +439,7 @@ $ <span class="nb">cd</span> -
 </pre></div>
 </div>
 <p>Build glibc:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> build/glibc
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> build/glibc
 $ make
 $ make install <span class="nv">DESTDIR</span><span class="o">=</span><span class="nv">$SYSROOTDIR</span>
 $ <span class="nb">cd</span> -
@@ -430,15 +451,16 @@ $ <span class="nb">cd</span> -
 
 
            </div>
+           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../faq.html" class="btn btn-neutral float-right" title="Frequently asked questions" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../faq.html" class="btn btn-neutral float-right" title="Frequently asked questions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="release.html" class="btn btn-neutral" title="Creating toolchain release" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="release.html" class="btn btn-neutral float-left" title="Creating toolchain release" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -447,11 +469,11 @@ $ <span class="nb">cd</span> -
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2019, Synopsys.
+        &copy; Copyright 2016-2020, Synopsys
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -464,35 +486,15 @@ $ <span class="nb">cd</span> -
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'2019.09',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

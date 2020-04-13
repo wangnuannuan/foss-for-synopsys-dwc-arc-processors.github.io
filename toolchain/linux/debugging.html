@@ -8,48 +8,46 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Debugging Linux Applications &mdash; GNU Toolchain for ARC User Manual 2019.09 documentation</title>
+  <title>Debugging Linux Applications &mdash; GNU Toolchain for ARC User Manual 2020.03 documentation</title>
   
 
   
   
+  
+  
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/style_overrides.css" type="text/css" />
-  
-
-  
-    <link rel="top" title="GNU Toolchain for ARC User Manual 2019.09 documentation" href="../index.html"/>
-        <link rel="up" title="Linux applications" href="index.html"/>
-        <link rel="next" title="How to build Linux with GNU tools and run on simulator" href="kernel-build.html"/>
-        <link rel="prev" title="Linux applications" href="index.html"/> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/style_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="How to build Linux with GNU tools and run on simulator" href="kernel-build.html" />
+    <link rel="prev" title="Linux applications" href="index.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
+   
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -63,7 +61,7 @@
             
             
               <div class="version">
-                2019.09
+                2020.03
               </div>
             
           
@@ -84,11 +82,14 @@
           
             
             
-                <ul class="current">
+              
+            
+            
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../baremetal/index.html">Building baremetal applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../baremetal/index.html#debugging-baremetal-applications">Debugging baremetal applications</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Linux applications</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="">Debugging Linux Applications</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Debugging Linux Applications</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#building-toolchain">Building toolchain</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#building-linux">Building Linux</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#configuring-target-system">Configuring target system</a><ul>
@@ -122,36 +123,56 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">GNU Toolchain for ARC User Manual</a>
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GNU Toolchain for ARC User Manual</a>
+        
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="../index.html">Docs</a> &raquo;</li>
-      
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
           <li><a href="index.html">Linux applications</a> &raquo;</li>
-      
-    <li>Debugging Linux Applications</li>
+        
+      <li>Debugging Linux Applications</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
-            <a href="../_sources/linux/debugging.txt" rel="nofollow"> View page source</a>
+            
+            <a href="../_sources/linux/debugging.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -165,14 +186,14 @@ ARC.</p>
 <h2>Building toolchain<a class="headerlink" href="#building-toolchain" title="Permalink to this headline">¶</a></h2>
 <p>In most cases it should be enough to use binary distribution of GNU Toolchain
 for ARC, which can be downloaded from <a class="reference external" href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases">our Releases page</a>.
-If toolchain in binary distribution doesn&#8217;t fit some particular requirements,
+If toolchain in binary distribution doesn’t fit some particular requirements,
 then instruction to build toolchain from source can be found in README.md file
-in the <code class="docutils literal"><span class="pre">toolchain</span></code> repository.</p>
+in the <code class="docutils literal notranslate"><span class="pre">toolchain</span></code> repository.</p>
 </div>
 <div class="section" id="building-linux">
 <h2>Building Linux<a class="headerlink" href="#building-linux" title="Permalink to this headline">¶</a></h2>
 <p>The simple guide to build kernel can be found in this manual page
-<a class="reference internal" href="kernel-build.html"><em>How to build Linux with GNU tools and run on simulator</em></a>. More instructions can be found in ARC Linux <a class="reference external" href="https://github.com/foss-for-synopsys-dwc-arc-processors/linux/wiki">wiki</a> and in
+<a class="reference internal" href="kernel-build.html"><span class="doc">How to build Linux with GNU tools and run on simulator</span></a>. More instructions can be found in ARC Linux <a class="reference external" href="https://github.com/foss-for-synopsys-dwc-arc-processors/linux/wiki">wiki</a> and in
 the Internet in general.</p>
 </div>
 <div class="section" id="configuring-target-system">
@@ -182,30 +203,30 @@ convenience - there are other ways to achieve same result.</p>
 <div class="section" id="configuring-networking">
 <h3>Configuring networking<a class="headerlink" href="#configuring-networking" title="Permalink to this headline">¶</a></h3>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Ethernet model is not available in standalone nSIM simulation.</p>
+<p class="admonition-title">Note</p>
+<p>Ethernet model is not available in standalone nSIM simulation.</p>
 </div>
 <p>By default target system will not bring up networking device. To do this:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>[arclinux] $ ifconfig eth0 up
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[arclinux] $ ifconfig eth0 up
 </pre></div>
 </div>
 <p>If network to which board or virtual platform is attached has a DHCP server,
 then run DHCP client:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>[arclinux] $ udhcpc
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[arclinux] $ udhcpc
 </pre></div>
 </div>
 <p>If there is no DHCP server, then configure networking manually:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>[arclinux] $ ifconfig eth0 &lt;IP_ADDRESS&gt; netmask &lt;IP_NETMASK&gt;
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[arclinux] $ ifconfig eth0 &lt;IP_ADDRESS&gt; netmask &lt;IP_NETMASK&gt;
 [arclinux] $ route add default gw &lt;NETWORK_GATEWAY&gt; eth0
 </pre></div>
 </div>
-<p>Where <code class="docutils literal"><span class="pre">&lt;IP_ADDRESS&gt;</span></code> is an IP address to assign to ARC Linux, <code class="docutils literal"><span class="pre">&lt;IP_NETMASK&gt;</span></code> is
-a mask of this network, <code class="docutils literal"><span class="pre">&lt;NETWORK_GATEWAY&gt;</span></code> is default gateway of network.</p>
+<p>Where <code class="docutils literal notranslate"><span class="pre">&lt;IP_ADDRESS&gt;</span></code> is an IP address to assign to ARC Linux, <code class="docutils literal notranslate"><span class="pre">&lt;IP_NETMASK&gt;</span></code> is
+a mask of this network, <code class="docutils literal notranslate"><span class="pre">&lt;NETWORK_GATEWAY&gt;</span></code> is default gateway of network.</p>
 <p>To gain access to the Internet DNS must servers must be configured. This is
 usually not required when using DHCP, because in this case information about
 DNS servers is provided via DHCP. To configure DNS manually, create
-<code class="docutils literal"><span class="pre">/etc/resolv.conf</span></code> which lists DNS servers by IP. For example:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>nameserver 8.8.8.8
+<code class="docutils literal notranslate"><span class="pre">/etc/resolv.conf</span></code> which lists DNS servers by IP. For example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>nameserver 8.8.8.8
 nameserver 8.8.4.4
 </pre></div>
 </div>
@@ -216,41 +237,41 @@ nameserver 8.8.4.4
 <p>To ease process of delivering target application into the ARC Linux it is
 recommended to configure NFS share and mount it on the ARC Linux.</p>
 <p>Install NFS server on the development host (in this example it is Ubuntu):</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>$ sudo apt-get install nfs-kernel-server
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ sudo apt-get install nfs-kernel-server
 </pre></div>
 </div>
-<p>Edit <code class="docutils literal"><span class="pre">/etc/exports</span></code>: describe you public folder there. For example:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>/home/arc/snps/pub *(rw,no_subtree_check,anonuid=1000,anongid=1000,all_squash)
+<p>Edit <code class="docutils literal notranslate"><span class="pre">/etc/exports</span></code>: describe you public folder there. For example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>/home/arc/snps/pub *(rw,no_subtree_check,anonuid=1000,anongid=1000,all_squash)
 </pre></div>
 </div>
 <p>Restart NFS server:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>$ sudo service nfs-kernel-server restart
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ sudo service nfs-kernel-server restart
 </pre></div>
 </div>
 <p>Open required ports in firewall. To make things easier this example will open
-<em>all</em> ports for the hosts in the <code class="docutils literal"><span class="pre">tap0</span></code> network:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>$ sudo ufw allow from 192.168.218.0/24 to 192.168.218.1
+<em>all</em> ports for the hosts in the <code class="docutils literal notranslate"><span class="pre">tap0</span></code> network:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ sudo ufw allow from 192.168.218.0/24 to 192.168.218.1
 </pre></div>
 </div>
 <p>Now you can mount your share on the target:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>[arclinux] # mount -t nfs -o nolock,rw 192.168.218.1:/home/arc/snps/pub /mnt
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[arclinux] # mount -t nfs -o nolock,rw 192.168.218.1:/home/arc/snps/pub /mnt
 </pre></div>
 </div>
-<p>Public share will be mounted to the <code class="docutils literal"><span class="pre">/mnt</span></code> directory.</p>
+<p>Public share will be mounted to the <code class="docutils literal notranslate"><span class="pre">/mnt</span></code> directory.</p>
 </div>
 <div class="section" id="additional-services">
 <h3>Additional services<a class="headerlink" href="#additional-services" title="Permalink to this headline">¶</a></h3>
 <p>Another thing that might be useful is to have network services like telnet,
 ftp, etc, that will run on ARC Linux.  First make sure that desired service is
-available in the Busybox configuration. Run <code class="docutils literal"><span class="pre">make</span> <span class="pre">menuconfig</span></code> from Busybox
-directory or <code class="docutils literal"><span class="pre">make</span> <span class="pre">busybox-menuconfig</span></code> if you are using Buildroot. Make sure
-that &#8220;inetd&#8221; server is enabled. Select required packages (telnet, ftpd, etc)
-and save configuration.  Rebuild busybox (run <code class="docutils literal"><span class="pre">make</span> <span class="pre">busybox-rebuild</span></code> if you
+available in the Busybox configuration. Run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">menuconfig</span></code> from Busybox
+directory or <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">busybox-menuconfig</span></code> if you are using Buildroot. Make sure
+that “inetd” server is enabled. Select required packages (telnet, ftpd, etc)
+and save configuration.  Rebuild busybox (run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">busybox-rebuild</span></code> if you
 are using Buildroot).</p>
 <p>Then configure inetd daemon. Refer to inetd documentation to learn how to do
-this. In the simple case it is required to create <code class="docutils literal"><span class="pre">/etc/inetd.conf</span></code> file on
+this. In the simple case it is required to create <code class="docutils literal notranslate"><span class="pre">/etc/inetd.conf</span></code> file on
 the target system with following contents:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>ftp     stream  tcp nowait  root    /usr/sbin/ftpd      ftpd -w /
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ftp     stream  tcp nowait  root    /usr/sbin/ftpd      ftpd -w /
 telnet  stream  tcp nowait  root    /usr/sbin/telnetd   telnetd -i -l /bin/sh
 </pre></div>
 </div>
@@ -258,7 +279,7 @@ telnet  stream  tcp nowait  root    /usr/sbin/telnetd   telnetd -i -l /bin/sh
 system. Other services can be added if required.</p>
 <p>Rebuild and update rootfs and vmlinux. Start rebuilt system and run <cite>inetd</cite> to
 start inetd daemon on target:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>[arclinux] $ inetd
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[arclinux] $ inetd
 </pre></div>
 </div>
 </div>
@@ -267,35 +288,35 @@ start inetd daemon on target:</p>
 <h2>Debugging applications with gdbserver<a class="headerlink" href="#debugging-applications-with-gdbserver" title="Permalink to this headline">¶</a></h2>
 <p>It is assumed that one or another way  application to debug is on to the target
 system. Run application on target with gdbserver:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>[arclinux] $ gdbserver :49101 &lt;application-to-debug&gt; [application arguments]
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[arclinux] $ gdbserver :49101 &lt;application-to-debug&gt; [application arguments]
 </pre></div>
 </div>
 <p>TCP port number could any port not occupied by another application. Then run
 GDB on the host:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>$ arc-linux-gdb &lt;application-to-debug&gt;
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ arc-linux-gdb &lt;application-to-debug&gt;
 </pre></div>
 </div>
-<p>Then set sysroot directory path. Sysroot is a &#8220;mirror&#8221; of the target system
+<p>Then set sysroot directory path. Sysroot is a “mirror” of the target system
 file system: it contains copies of the applications and shared libraries
 installed on the target system. Path to the sysroot directory should be set to
 allow GDB to step into shared libraries functions. Note that shared libraries
 and applications on the target system can be stripped from the debug symbols to
-preserve disk space, while files in the sysroot shouldn&#8217;t be stripped. In case
+preserve disk space, while files in the sysroot shouldn’t be stripped. In case
 of Buildroot-generated rootfs sysroot directory can be found under
-<code class="docutils literal"><span class="pre">&lt;BUILDROOT_OUTPUT&gt;/staging</span></code>.:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>(gdb) set sysroot &lt;SYSROOT_PATH&gt;
+<code class="docutils literal notranslate"><span class="pre">&lt;BUILDROOT_OUTPUT&gt;/staging</span></code>.:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(gdb) set sysroot &lt;SYSROOT_PATH&gt;
 </pre></div>
 </div>
 <p>Then connect to the remote gdbserver:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>(gdb) target remote &lt;TARGET_IP&gt;:49101
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(gdb) target remote &lt;TARGET_IP&gt;:49101
 </pre></div>
 </div>
-<p>You can find <code class="docutils literal"><span class="pre">&lt;TARGET_IP&gt;</span></code> via running <code class="docutils literal"><span class="pre">ifconfig</span></code> on the target system. TCP
+<p>You can find <code class="docutils literal notranslate"><span class="pre">&lt;TARGET_IP&gt;</span></code> via running <code class="docutils literal notranslate"><span class="pre">ifconfig</span></code> on the target system. TCP
 port must much the one used when starting up gdbserver. It is important that
 sysroot should be set before connecting to remote target, otherwise GDB might
 have issues with stepping into shared libraries functions.</p>
 <p>Then you can your debug session as usual. In the simplest case:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>(gdb) continue
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(gdb) continue
 </pre></div>
 </div>
 </div>
@@ -304,9 +325,9 @@ have issues with stepping into shared libraries functions.</p>
 <p>Starting from GNU Toolchain for ARC release 2014.08 it is possible to build
 full GDB to run natively on ARC Linux. Starting from GNU Tooolchain for ARC
 release 2015.06 native GDB is automatically built for uClibc toolchain (can be
-disabled by <code class="docutils literal"><span class="pre">--no-native-gdb</span></code> option). In GNU Toolchain prebuilt tarballs
+disabled by <code class="docutils literal notranslate"><span class="pre">--no-native-gdb</span></code> option). In GNU Toolchain prebuilt tarballs
 native GDB binary can be found in sysroot directory:
-<code class="docutils literal"><span class="pre">arc-snps-linux-uclibc/sysroot/usr/bin/gdb</span></code></p>
+<code class="docutils literal notranslate"><span class="pre">arc-snps-linux-uclibc/sysroot/usr/bin/gdb</span></code></p>
 <p>With native GDB it is possible to debug applications the same way as it is done
 on the host system without gdbserver.</p>
 </div>
@@ -314,15 +335,16 @@ on the host system without gdbserver.</p>
 
 
            </div>
+           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="kernel-build.html" class="btn btn-neutral float-right" title="How to build Linux with GNU tools and run on simulator" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="kernel-build.html" class="btn btn-neutral float-right" title="How to build Linux with GNU tools and run on simulator" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="Linux applications" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Linux applications" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -331,11 +353,11 @@ on the host system without gdbserver.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2019, Synopsys.
+        &copy; Copyright 2016-2020, Synopsys
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -348,35 +370,15 @@ on the host system without gdbserver.</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'2019.09',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

@@ -8,48 +8,46 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Understanding GCC -mcpu option &mdash; GNU Toolchain for ARC User Manual 2019.09 documentation</title>
+  <title>Understanding GCC -mcpu option &mdash; GNU Toolchain for ARC User Manual 2020.03 documentation</title>
   
 
   
   
+  
+  
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/style_overrides.css" type="text/css" />
-  
-
-  
-    <link rel="top" title="GNU Toolchain for ARC User Manual 2019.09 documentation" href="../index.html"/>
-        <link rel="up" title="Building baremetal applications" href="index.html"/>
-        <link rel="next" title="Linker scripts and memory.x files" href="linker.html"/>
-        <link rel="prev" title="Hostlink and libgloss" href="hostlink.html"/> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/style_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Linker scripts and memory.x files" href="linker.html" />
+    <link rel="prev" title="Hostlink and libgloss" href="hostlink.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
+   
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -63,7 +61,7 @@
             
             
               <div class="version">
-                2019.09
+                2020.03
               </div>
             
           
@@ -84,10 +82,13 @@
           
             
             
-                <ul class="current">
+              
+            
+            
+              <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Building baremetal applications</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="hostlink.html">Hostlink and libgloss</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Understanding GCC -mcpu option</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Understanding GCC -mcpu option</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#arc-em">ARC EM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#arc-hs">ARC HS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#arc-600-and-arc-700">ARC 600 and ARC 700</a></li>
@@ -116,36 +117,56 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">GNU Toolchain for ARC User Manual</a>
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GNU Toolchain for ARC User Manual</a>
+        
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="../index.html">Docs</a> &raquo;</li>
-      
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
           <li><a href="index.html">Building baremetal applications</a> &raquo;</li>
-      
-    <li>Understanding GCC -mcpu option</li>
+        
+      <li>Understanding GCC -mcpu option</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
-            <a href="../_sources/baremetal/gcc-mcpu.txt" rel="nofollow"> View page source</a>
+            
+            <a href="../_sources/baremetal/gcc-mcpu.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -153,202 +174,195 @@
             
   <div class="section" id="understanding-gcc-mcpu-option">
 <span id="index-0"></span><h1>Understanding GCC -mcpu option<a class="headerlink" href="#understanding-gcc-mcpu-option" title="Permalink to this headline">¶</a></h1>
-<p>The GCC option <code class="docutils literal"><span class="pre">-mcpu=</span></code> for ARC does not only designate the ARC CPU family
+<p>The GCC option <code class="docutils literal notranslate"><span class="pre">-mcpu=</span></code> for ARC does not only designate the ARC CPU family
 (ARC EM, HS, 600 or 700), but also enables the corresponding set of optional
 instructions defined for the selected configuration. Therefore a particular
-<code class="docutils literal"><span class="pre">-mcpu</span></code> value selects not only a family, but also other <code class="docutils literal"><span class="pre">-m&lt;something&gt;</span></code> GCC
+<code class="docutils literal notranslate"><span class="pre">-mcpu</span></code> value selects not only a family, but also other <code class="docutils literal notranslate"><span class="pre">-m&lt;something&gt;</span></code> GCC
 options for ARC.</p>
-<p>Value of <code class="docutils literal"><span class="pre">-mcpu=</span></code> option not only sets various other <code class="docutils literal"><span class="pre">-m&lt;something&gt;</span></code>
+<p>Value of <code class="docutils literal notranslate"><span class="pre">-mcpu=</span></code> option not only sets various other <code class="docutils literal notranslate"><span class="pre">-m&lt;something&gt;</span></code>
 options to particular values, but also selects a specific standard library
 build which was done for this particular core configuration. It is possible to
 override selection of hardware extensions by passing individual
-<code class="docutils literal"><span class="pre">-m&lt;something&gt;</span></code> options to compiler <em>after</em> the <code class="docutils literal"><span class="pre">-mcpu=</span></code> option, however
+<code class="docutils literal notranslate"><span class="pre">-m&lt;something&gt;</span></code> options to compiler <em>after</em> the <code class="docutils literal notranslate"><span class="pre">-mcpu=</span></code> option, however
 standard library build used for linkage still will be the one matching
-<code class="docutils literal"><span class="pre">-mcpu=</span></code> value. Therefore, for example, option combination <code class="docutils literal"><span class="pre">-mcpu=em4</span>
-<span class="pre">-mno-code-density</span></code> will generate code that doesn&#8217;t use code density
+<code class="docutils literal notranslate"><span class="pre">-mcpu=</span></code> value. Therefore, for example, option combination <code class="docutils literal notranslate"><span class="pre">-mcpu=em4</span>
+<span class="pre">-mno-code-density</span></code> will generate code that doesn’t use code density
 instructions, however it will be linked with standard library that has been
-built with just <code class="docutils literal"><span class="pre">-mcpu=em4</span></code>, which uses code density instructions - therefore
-final application still may use code density instructions. That&#8217;s why TCF
+built with just <code class="docutils literal notranslate"><span class="pre">-mcpu=em4</span></code>, which uses code density instructions - therefore
+final application still may use code density instructions. That’s why TCF
 generator, for example, analyzes hardware features present in the configured
-processor and selects <code class="docutils literal"><span class="pre">-mcpu=</span></code> value that is the best match for this
+processor and selects <code class="docutils literal notranslate"><span class="pre">-mcpu=</span></code> value that is the best match for this
 configuration.</p>
 <div class="section" id="arc-em">
 <h2>ARC EM<a class="headerlink" href="#arc-em" title="Permalink to this headline">¶</a></h2>
 <p>The following table summarize what options are set by each of the possible
-<code class="docutils literal"><span class="pre">-mcpu</span></code> values for ARC EM.</p>
-<table border="1" class="docutils" id="id1">
+<code class="docutils literal notranslate"><span class="pre">-mcpu</span></code> values for ARC EM.</p>
+<table class="docutils align-center" id="id1">
 <caption><span class="caption-text">-mcpu values for ARC EM</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col width="13%" />
-<col width="11%" />
-<col width="11%" />
-<col width="11%" />
-<col width="13%" />
-<col width="10%" />
-<col width="13%" />
-<col width="10%" />
-<col width="8%" />
+<col style="width: 13%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 13%" />
+<col style="width: 10%" />
+<col style="width: 13%" />
+<col style="width: 10%" />
+<col style="width: 8%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">-mcpu=</th>
-<th class="head">-mcode-density</th>
-<th class="head">-mnorm</th>
-<th class="head">-mswap</th>
-<th class="head">-mbarrel-shifter</th>
-<th class="head">-mdiv-rem</th>
-<th class="head">-mmpy-option</th>
-<th class="head">-mfpu</th>
-<th class="head">-mrf16</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>-mcpu=</p></th>
+<th class="head"><p>-mcode-density</p></th>
+<th class="head"><p>-mnorm</p></th>
+<th class="head"><p>-mswap</p></th>
+<th class="head"><p>-mbarrel-shifter</p></th>
+<th class="head"><p>-mdiv-rem</p></th>
+<th class="head"><p>-mmpy-option</p></th>
+<th class="head"><p>-mfpu</p></th>
+<th class="head"><p>-mrf16</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>em</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>none</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<tbody>
+<tr class="row-even"><td><p>em</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>none</p></td>
+<td></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>em_mini</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>none</td>
-<td>&nbsp;</td>
-<td>Y</td>
+<tr class="row-odd"><td><p>em_mini</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>none</p></td>
+<td></td>
+<td><p>Y</p></td>
 </tr>
-<tr class="row-even"><td>em4</td>
-<td>Y</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>none</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<tr class="row-even"><td><p>em4</p></td>
+<td><p>Y</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>none</p></td>
+<td></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>arcem</td>
-<td>Y</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>Y</td>
-<td>&nbsp;</td>
-<td>wlh1</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<tr class="row-odd"><td><p>arcem</p></td>
+<td><p>Y</p></td>
+<td></td>
+<td></td>
+<td><p>Y</p></td>
+<td></td>
+<td><p>wlh1</p></td>
+<td></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>em4_dmips</td>
-<td>Y</td>
-<td>Y</td>
-<td>Y</td>
-<td>Y</td>
-<td>Y</td>
-<td>wlh1</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<tr class="row-even"><td><p>em4_dmips</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>wlh1</p></td>
+<td></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>em4_fpus</td>
-<td>Y</td>
-<td>Y</td>
-<td>Y</td>
-<td>Y</td>
-<td>Y</td>
-<td>wlh1</td>
-<td>fpus</td>
-<td>&nbsp;</td>
+<tr class="row-odd"><td><p>em4_fpus</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>wlh1</p></td>
+<td><p>fpus</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>em4_fpuda</td>
-<td>Y</td>
-<td>Y</td>
-<td>Y</td>
-<td>Y</td>
-<td>Y</td>
-<td>wlh1</td>
-<td>fpuda</td>
-<td>&nbsp;</td>
+<tr class="row-even"><td><p>em4_fpuda</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>wlh1</p></td>
+<td><p>fpuda</p></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<p>The above <code class="docutils literal"><span class="pre">-mcpu</span></code> values correspond to specific ARC EM Processor templates
+<p>The above <code class="docutils literal notranslate"><span class="pre">-mcpu</span></code> values correspond to specific ARC EM Processor templates
 presented in the ARChitect tool. It should be noted however that some ARC
 features are not currently supported in the GNU toolchain, for example DSP
 instruction support, reduced register size and reduced register sets.
-Relationship between <code class="docutils literal"><span class="pre">-mcpu</span></code> values above and ARC EM Processor templates in
+Relationship between <code class="docutils literal notranslate"><span class="pre">-mcpu</span></code> values above and ARC EM Processor templates in
 ARChitect tool are limited to options listed in the table.  Tables will be
 updated as support for more options get added to the GNU toolchain.</p>
 <ul>
-<li><p class="first"><code class="docutils literal"><span class="pre">-mcpu=em</span></code> doesn&#8217;t correspond to any specific template, it simply defines
-the base ARC EM configuration without any optional instructions.</p>
-</li>
-<li><p class="first"><code class="docutils literal"><span class="pre">-mcpu=em_mini</span></code> is same as <code class="docutils literal"><span class="pre">em</span></code>, but uses reduced register file with
-only 16 core registers.</p>
-</li>
-<li><p class="first"><code class="docutils literal"><span class="pre">-mcpu=em4</span></code> is a base ARC EM core configuration with <code class="docutils literal"><span class="pre">-mcode-density</span></code>
+<li><p><code class="docutils literal notranslate"><span class="pre">-mcpu=em</span></code> doesn’t correspond to any specific template, it simply defines
+the base ARC EM configuration without any optional instructions.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-mcpu=em_mini</span></code> is same as <code class="docutils literal notranslate"><span class="pre">em</span></code>, but uses reduced register file with
+only 16 core registers.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-mcpu=em4</span></code> is a base ARC EM core configuration with <code class="docutils literal notranslate"><span class="pre">-mcode-density</span></code>
 option.  It corresponds to the following ARC EM templates in ARChitect:
 em4_mini, em4_sensor, em4_ecc, em6_mini, em5d_mini, em5d_mini_v3, em5d_nrg,
-em7d_nrg, em9d_mini. Note, however, that those <code class="docutils literal"><span class="pre">mini</span></code> templates has a
-reduced core register file, while this option doesn&#8217;t specify it.</p>
-</li>
-<li><p class="first"><code class="docutils literal"><span class="pre">-mcpu=arcem</span></code> doesn&#8217;t correspond to any specific template, it is legacy
+em7d_nrg, em9d_mini. Note, however, that those <code class="docutils literal notranslate"><span class="pre">mini</span></code> templates has a
+reduced core register file, while this option doesn’t specify it.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-mcpu=arcem</span></code> doesn’t correspond to any specific template, it is legacy
 flag preserved for compatibility with older GNU toolchain versions, where
-<code class="docutils literal"><span class="pre">-mcpu</span></code> used to select only a CPU family, while optional features were
-enabled or disable by individual <code class="docutils literal"><span class="pre">-m&lt;something&gt;</span></code> options.</p>
-</li>
-<li><p class="first"><code class="docutils literal"><span class="pre">-mcpu=em4_dmips</span></code> is a full-featured ARC EM configuration for integer
+<code class="docutils literal notranslate"><span class="pre">-mcpu</span></code> used to select only a CPU family, while optional features were
+enabled or disable by individual <code class="docutils literal notranslate"><span class="pre">-m&lt;something&gt;</span></code> options.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-mcpu=em4_dmips</span></code> is a full-featured ARC EM configuration for integer
 operations. It corresponds to the following ARC EM templates in ARChitect:
 em4_dmips, em4_rtos, em6_dmips, em4_dmips_v3, em4_parity, em6_dmips_v3,
 em6_gp, em5d_voice_audio, em5d_nrg_v3, em7d_nrg_v3, em7d_voice_audio,
-em9d_nrg, em9d_voice_audio, em11d_nrg and em11d_voice_audio.</p>
-</li>
-<li><p class="first"><code class="docutils literal"><span class="pre">-mcpu=em4_fpus</span></code> is like <code class="docutils literal"><span class="pre">em4_dmips</span></code> but with additional support for
+em9d_nrg, em9d_voice_audio, em11d_nrg and em11d_voice_audio.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-mcpu=em4_fpus</span></code> is like <code class="docutils literal notranslate"><span class="pre">em4_dmips</span></code> but with additional support for
 single-precision floating point unit. It corresponds to the following ARC EM
 templates in ARChitect: em4_dmips_fpusp, em4_dmips_fpusp_v3, em5d_nrg_fpusp
-and em9d_nrg_fpusp.</p>
-</li>
-<li><p class="first"><code class="docutils literal"><span class="pre">-mcpu=em4_fpuda</span></code> is like <code class="docutils literal"><span class="pre">em4_fpus</span></code> but with additional support for
+and em9d_nrg_fpusp.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-mcpu=em4_fpuda</span></code> is like <code class="docutils literal notranslate"><span class="pre">em4_fpus</span></code> but with additional support for
 double-precision assist instructions. It corresponds to the following ARC EM
-templates in ARChitect: em4_dmips_fpuspdp and em4_dmips_fpuspdp_v3.</p>
-</li>
-<li><p class="first"><code class="docutils literal"><span class="pre">-mcpu=quarkse_em</span></code> is a configuration for ARC processor in Intel Quark SE chip.</p>
-<table border="1" class="docutils">
+templates in ARChitect: em4_dmips_fpuspdp and em4_dmips_fpuspdp_v3.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-mcpu=quarkse_em</span></code> is a configuration for ARC processor in Intel Quark SE chip.</p>
+<table class="docutils align-center">
 <colgroup>
-<col width="60%" />
-<col width="40%" />
+<col style="width: 60%" />
+<col style="width: 40%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Option</th>
-<th class="head">quarkse_em</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>quarkse_em</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>-mcode-density</td>
-<td>Y</td>
+<tbody>
+<tr class="row-even"><td><p>-mcode-density</p></td>
+<td><p>Y</p></td>
 </tr>
-<tr class="row-odd"><td>-mnorm</td>
-<td>Y</td>
+<tr class="row-odd"><td><p>-mnorm</p></td>
+<td><p>Y</p></td>
 </tr>
-<tr class="row-even"><td>-mswap</td>
-<td>Y</td>
+<tr class="row-even"><td><p>-mswap</p></td>
+<td><p>Y</p></td>
 </tr>
-<tr class="row-odd"><td>-mbarrel-shifter</td>
-<td>Y</td>
+<tr class="row-odd"><td><p>-mbarrel-shifter</p></td>
+<td><p>Y</p></td>
 </tr>
-<tr class="row-even"><td>-mdiv-rem</td>
-<td>Y</td>
+<tr class="row-even"><td><p>-mdiv-rem</p></td>
+<td><p>Y</p></td>
 </tr>
-<tr class="row-odd"><td>-mmpy-option</td>
-<td>wlh2</td>
+<tr class="row-odd"><td><p>-mmpy-option</p></td>
+<td><p>wlh2</p></td>
 </tr>
-<tr class="row-even"><td>-mfpu</td>
-<td>quark</td>
+<tr class="row-even"><td><p>-mfpu</p></td>
+<td><p>quark</p></td>
 </tr>
-<tr class="row-odd"><td>-mrf16</td>
-<td>&nbsp;</td>
+<tr class="row-odd"><td><p>-mrf16</p></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -357,178 +371,178 @@ templates in ARChitect: em4_dmips_fpuspdp and em4_dmips_fpuspdp_v3.</p>
 </div>
 <div class="section" id="arc-hs">
 <h2>ARC HS<a class="headerlink" href="#arc-hs" title="Permalink to this headline">¶</a></h2>
-<p>The following table summarize what options are set by each of the possible <code class="docutils literal"><span class="pre">-mcpu</span></code>
+<p>The following table summarize what options are set by each of the possible <code class="docutils literal notranslate"><span class="pre">-mcpu</span></code>
 values for ARC HS.</p>
-<table border="1" class="docutils" id="id2">
+<table class="docutils align-center" id="id2">
 <caption><span class="caption-text">-mcpu values for ARC HS</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col width="18%" />
-<col width="17%" />
-<col width="15%" />
-<col width="14%" />
-<col width="23%" />
-<col width="14%" />
+<col style="width: 18%" />
+<col style="width: 17%" />
+<col style="width: 15%" />
+<col style="width: 14%" />
+<col style="width: 23%" />
+<col style="width: 14%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">-mcpu=</th>
-<th class="head">-mdiv-rem</th>
-<th class="head">-matomic</th>
-<th class="head">-mll64</th>
-<th class="head">-mmpy-option</th>
-<th class="head">-mfpu</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>-mcpu=</p></th>
+<th class="head"><p>-mdiv-rem</p></th>
+<th class="head"><p>-matomic</p></th>
+<th class="head"><p>-mll64</p></th>
+<th class="head"><p>-mmpy-option</p></th>
+<th class="head"><p>-mfpu</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>hs</td>
-<td>&nbsp;</td>
-<td>Y</td>
-<td>&nbsp;</td>
-<td>none</td>
-<td>&nbsp;</td>
+<tbody>
+<tr class="row-even"><td><p>hs</p></td>
+<td></td>
+<td><p>Y</p></td>
+<td></td>
+<td><p>none</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>hs34</td>
-<td>&nbsp;</td>
-<td>Y</td>
-<td>&nbsp;</td>
-<td>mpy</td>
-<td>&nbsp;</td>
+<tr class="row-odd"><td><p>hs34</p></td>
+<td></td>
+<td><p>Y</p></td>
+<td></td>
+<td><p>mpy</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>archs</td>
-<td>Y</td>
-<td>Y</td>
-<td>Y</td>
-<td>mpy</td>
-<td>&nbsp;</td>
+<tr class="row-even"><td><p>archs</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>mpy</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>hs38</td>
-<td>Y</td>
-<td>Y</td>
-<td>Y</td>
-<td>plus_qmacw</td>
-<td>&nbsp;</td>
+<tr class="row-odd"><td><p>hs38</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>plus_qmacw</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>hs4x</td>
-<td>Y</td>
-<td>Y</td>
-<td>Y</td>
-<td>plus_qmacw</td>
-<td>&nbsp;</td>
+<tr class="row-even"><td><p>hs4x</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>plus_qmacw</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>hs4xd</td>
-<td>Y</td>
-<td>Y</td>
-<td>Y</td>
-<td>plus_qmacw</td>
-<td>&nbsp;</td>
+<tr class="row-odd"><td><p>hs4xd</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>plus_qmacw</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>hs38_linux</td>
-<td>Y</td>
-<td>Y</td>
-<td>Y</td>
-<td>plus_qmacw</td>
-<td>fpud_all</td>
+<tr class="row-even"><td><p>hs38_linux</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>plus_qmacw</p></td>
+<td><p>fpud_all</p></td>
 </tr>
 </tbody>
 </table>
-<p>The above <code class="docutils literal"><span class="pre">-mcpu</span></code> values correspond to specific ARC HS Processor templates
+<p>The above <code class="docutils literal notranslate"><span class="pre">-mcpu</span></code> values correspond to specific ARC HS Processor templates
 presented in the ARChitect tool. It should be noted however that some ARC
 features are not currently supported in the GNU toolchain, for example reduced
-register size and reduced register sets.  Relationship between <code class="docutils literal"><span class="pre">-mcpu</span></code> values
+register size and reduced register sets.  Relationship between <code class="docutils literal notranslate"><span class="pre">-mcpu</span></code> values
 above and ARC HS Processor templates in ARChitect tool are limited to options
 listed in the table.  Tables will be updated as support for more options get
 added to the GNU toolchain.</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">-mcpu=hs</span></code> corresponds to a basic ARC HS with only atomic instructions
+<li><p><code class="docutils literal notranslate"><span class="pre">-mcpu=hs</span></code> corresponds to a basic ARC HS with only atomic instructions
 enabled. It corresponds to the following ARC HS templates in ARChitect:
-hs34_base, hs36_base and hs38_base.</li>
-<li><code class="docutils literal"><span class="pre">-mcpu=hs34</span></code> is like <code class="docutils literal"><span class="pre">hs</span></code> but with with additional support for standard
+hs34_base, hs36_base and hs38_base.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-mcpu=hs34</span></code> is like <code class="docutils literal notranslate"><span class="pre">hs</span></code> but with with additional support for standard
 hardware multiplier.  It corresponds to the following ARC HS templates in
-ARChitect: hs34, hs36 and hs38.</li>
-<li><code class="docutils literal"><span class="pre">-mcpu=archs</span></code> is a generic CPU, which corresponds to the default
-configuration in older GNU toolchain versions.</li>
-<li><code class="docutils literal"><span class="pre">-mcpu=hs38</span></code> is a fully featured ARC HS.  It corresponds to the following
-ARC HS templates in ARChitect: hs38_full</li>
-<li><code class="docutils literal"><span class="pre">-mcpu=hs4x</span></code> and <code class="docutils literal"><span class="pre">-mcpu=hs4xd</span></code> have same option set as <code class="docutils literal"><span class="pre">-mcpu=hs38</span></code> but compiler will
-optimize instruction scheduling for specified processors.</li>
-<li><code class="docutils literal"><span class="pre">-mcpu=hs38_linux</span></code> is a fully featured ARC HS with additional support for
-double-precision FPU.</li>
+ARChitect: hs34, hs36 and hs38.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-mcpu=archs</span></code> is a generic CPU, which corresponds to the default
+configuration in older GNU toolchain versions.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-mcpu=hs38</span></code> is a fully featured ARC HS.  It corresponds to the following
+ARC HS templates in ARChitect: hs38_full</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-mcpu=hs4x</span></code> and <code class="docutils literal notranslate"><span class="pre">-mcpu=hs4xd</span></code> have same option set as <code class="docutils literal notranslate"><span class="pre">-mcpu=hs38</span></code> but compiler will
+optimize instruction scheduling for specified processors.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-mcpu=hs38_linux</span></code> is a fully featured ARC HS with additional support for
+double-precision FPU.</p></li>
 </ul>
 </div>
 <div class="section" id="arc-600-and-arc-700">
 <h2>ARC 600 and ARC 700<a class="headerlink" href="#arc-600-and-arc-700" title="Permalink to this headline">¶</a></h2>
-<p>The following table summarize what options are set by each of the possible <code class="docutils literal"><span class="pre">-mcpu</span></code>
+<p>The following table summarize what options are set by each of the possible <code class="docutils literal notranslate"><span class="pre">-mcpu</span></code>
 values for ARC 600 and ARC 700.</p>
-<table border="1" class="docutils" id="id3">
+<table class="docutils align-center" id="id3">
 <caption><span class="caption-text">-mcpu values for ARC 600 and ARC 700</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col width="27%" />
-<col width="13%" />
-<col width="13%" />
-<col width="29%" />
-<col width="19%" />
+<col style="width: 27%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 29%" />
+<col style="width: 19%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">-mcpu</th>
-<th class="head">-mnorm</th>
-<th class="head">-mswap</th>
-<th class="head">-mbarrel-shifter</th>
-<th class="head">multiplier</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>-mcpu</p></th>
+<th class="head"><p>-mnorm</p></th>
+<th class="head"><p>-mswap</p></th>
+<th class="head"><p>-mbarrel-shifter</p></th>
+<th class="head"><p>multiplier</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>arc700</td>
-<td>Y</td>
-<td>Y</td>
-<td>Y</td>
-<td>-mmpy</td>
+<tbody>
+<tr class="row-even"><td><p>arc700</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>-mmpy</p></td>
 </tr>
-<tr class="row-odd"><td>arc600</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>Y</td>
-<td>&nbsp;</td>
+<tr class="row-odd"><td><p>arc600</p></td>
+<td></td>
+<td></td>
+<td><p>Y</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>arc600_norm</td>
-<td>Y</td>
-<td>&nbsp;</td>
-<td>Y</td>
-<td>&nbsp;</td>
+<tr class="row-even"><td><p>arc600_norm</p></td>
+<td><p>Y</p></td>
+<td></td>
+<td><p>Y</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>arc600_mul64</td>
-<td>Y</td>
-<td>&nbsp;</td>
-<td>Y</td>
-<td>-mmul64</td>
+<tr class="row-odd"><td><p>arc600_mul64</p></td>
+<td><p>Y</p></td>
+<td></td>
+<td><p>Y</p></td>
+<td><p>-mmul64</p></td>
 </tr>
-<tr class="row-even"><td>arc600_mul32x16</td>
-<td>Y</td>
-<td>&nbsp;</td>
-<td>Y</td>
-<td>-mmul32x16</td>
+<tr class="row-even"><td><p>arc600_mul32x16</p></td>
+<td><p>Y</p></td>
+<td></td>
+<td><p>Y</p></td>
+<td><p>-mmul32x16</p></td>
 </tr>
-<tr class="row-odd"><td>arc601</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<tr class="row-odd"><td><p>arc601</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>arc601_norm</td>
-<td>Y</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<tr class="row-even"><td><p>arc601_norm</p></td>
+<td><p>Y</p></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>arc601_mul64</td>
-<td>Y</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>-mmul64</td>
+<tr class="row-odd"><td><p>arc601_mul64</p></td>
+<td><p>Y</p></td>
+<td></td>
+<td></td>
+<td><p>-mmul64</p></td>
 </tr>
-<tr class="row-even"><td>arc601_mul32x16</td>
-<td>Y</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>-mmul32x16</td>
+<tr class="row-even"><td><p>arc601_mul32x16</p></td>
+<td><p>Y</p></td>
+<td></td>
+<td></td>
+<td><p>-mmul32x16</p></td>
 </tr>
 </tbody>
 </table>
@@ -537,15 +551,16 @@ values for ARC 600 and ARC 700.</p>
 
 
            </div>
+           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="linker.html" class="btn btn-neutral float-right" title="Linker scripts and memory.x files" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="linker.html" class="btn btn-neutral float-right" title="Linker scripts and memory.x files" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="hostlink.html" class="btn btn-neutral" title="Hostlink and libgloss" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="hostlink.html" class="btn btn-neutral float-left" title="Hostlink and libgloss" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -554,11 +569,11 @@ values for ARC 600 and ARC 700.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2019, Synopsys.
+        &copy; Copyright 2016-2020, Synopsys
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -571,35 +586,15 @@ values for ARC 600 and ARC 700.</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'2019.09',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

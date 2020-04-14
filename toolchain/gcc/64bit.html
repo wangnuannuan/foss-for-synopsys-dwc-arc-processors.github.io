@@ -21,10 +21,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -186,7 +186,7 @@
 <h2>Intro<a class="headerlink" href="#intro" title="Permalink to this headline">¶</a></h2>
 <p>Some of the new 64 bit integral operations made available for ARCv2HS can be
 used to map the C-type long long. These are:</p>
-<table class="docutils align-center">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 23%" />
 <col style="width: 20%" />
@@ -277,7 +277,7 @@ register pair. All the MAC operations are using the 64-bit accumulator register
 <p>Using a MAC operation needs to set up the accumulator register, as well as
 collecting the result from the accumulator and place it into a general purpose
 register. Hence,</p>
-<table class="docutils align-center">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 25%" />
@@ -335,7 +335,7 @@ it is faster to use an implementation with ADD/MPYD operations.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<table class="docutils align-center">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 37%" />
 <col style="width: 63%" />
@@ -394,7 +394,7 @@ it is faster to use an implementation with ADD/MPYD operations.</p>
 <h3>Implementation matrix used by GCC<a class="headerlink" href="#implementation-matrix-used-by-gcc" title="Permalink to this headline">¶</a></h3>
 <p>Due to the accumulator caveats, I propose the following implementation matrix
 for MAC ops:</p>
-<table class="docutils align-center">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 29%" />
 <col style="width: 9%" />

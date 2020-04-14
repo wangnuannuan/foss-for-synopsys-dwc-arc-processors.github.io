@@ -21,10 +21,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -187,9 +187,9 @@
 <p>To see your project build settings, right click on your project and select
 <strong>Properties</strong> from the pop-up menu. In the appeared dialog choose
 <strong>C/C++ Build &gt; Settings</strong>, then select <strong>Tool Settings</strong> tab.</p>
-<div class="figure align-center" id="id2">
+<div class="figure align-default" id="id2">
 <img alt="../_images/properties.png" src="../_images/properties.png" />
-<p class="caption"><span class="caption-text">Project Build Settings page</span></p>
+<p class="caption"><span class="caption-text">Project Build Settings page</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>At the left of the tab there is a list of tools which are used to build your
 project and <strong>Target Processor</strong>, <strong>Debugging</strong> and <strong>Additional Tools</strong> pages.
@@ -200,9 +200,9 @@ for these tools.</p>
 <h2>Target Processor Page<a class="headerlink" href="#target-processor-page" title="Permalink to this headline">¶</a></h2>
 <p>On this page there are properties that describe your target. These properties
 are different for different processors.</p>
-<div class="figure align-center" id="id3">
+<div class="figure align-default" id="id3">
 <img alt="../_images/hs_target_options.png" src="../_images/hs_target_options.png" />
-<p class="caption"><span class="caption-text">Target Processor Page for ARC HS</span></p>
+<p class="caption"><span class="caption-text">Target Processor Page for ARC HS</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="cpu-option">
@@ -217,12 +217,12 @@ option “mpy” will be used. Values of these options are set in IDE when CPU i
 selected and can not be changed to weaker values without changing CPU. For
 example, if DP FPU is selected as a result of selecting CPU, you can not change
 it to any of SP FPU values or “None”, but you can change it to DP FPU with extensions.</p>
-<div class="figure align-center" id="id4">
+<div class="figure align-default" id="id4">
 <img alt="../_images/hs34_selected.png" src="../_images/hs34_selected.png" />
-<p class="caption"><span class="caption-text">ARC HS Target Processor Page with <code class="docutils literal notranslate"><span class="pre">hs34</span></code> selected as CPU value</span></p>
+<p class="caption"><span class="caption-text">ARC HS Target Processor Page with <code class="docutils literal notranslate"><span class="pre">hs34</span></code> selected as CPU value</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p>Here are the options that are required for each of CPU values:</p>
-<table class="docutils align-center">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 9%" />
@@ -301,7 +301,7 @@ it to any of SP FPU values or “None”, but you can change it to DP FPU with e
 </tr>
 </tbody>
 </table>
-<table class="docutils align-center">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 12%" />
 <col style="width: 12%" />
@@ -375,9 +375,9 @@ which spec-file to use.</p>
 <li><p><strong>emsk_em11d</strong> (<code class="docutils literal notranslate"><span class="pre">--specs=emsk_em11d.specs</span></code>)</p></li>
 <li><p><strong>None</strong> (don’t pass any option).</p></li>
 </ul>
-<div class="figure align-center" id="id5">
+<div class="figure align-default" id="id5">
 <img alt="../_images/using_gcc_specs_file.png" src="../_images/using_gcc_specs_file.png" />
-<p class="caption"><span class="caption-text">Dropdown list to select GCC specs file</span></p>
+<p class="caption"><span class="caption-text">Dropdown list to select GCC specs file</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="other-options-and-tcf">
@@ -390,9 +390,9 @@ for used CPU core (available only for ARC EM and HS), which will set these optio
 automatically. The only option that is not set automatically by selecting
 a TCF file is <strong>ABI selection</strong> option, which is available only for ARC HS processors.</p></li>
 </ul>
-<div class="figure align-center" id="id6">
+<div class="figure align-default" id="id6">
 <img alt="../_images/target_tcf_selected.png" src="../_images/target_tcf_selected.png" />
-<p class="caption"><span class="caption-text">Target Processor Page for ARC HS with TCF checkbox selected</span></p>
+<p class="caption"><span class="caption-text">Target Processor Page for ARC HS with TCF checkbox selected</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p>It is recommended to use TCF files, because they are generated from the Build
 Configuration Registers and thus most reliably describe target core.
@@ -400,9 +400,9 @@ TCF files are provided by your chip designer.</p>
 <p>To see which options are set automatically if TCF is chosen, you can select a
 tool from the list on the left of the dialog and see the list of options to be
 passed to this tool in the <strong>All options</strong> field.</p>
-<div class="figure align-center" id="id7">
+<div class="figure align-default" id="id7">
 <img alt="../_images/compiler_options_list.png" src="../_images/compiler_options_list.png" />
-<p class="caption"><span class="caption-text">List of all the options to be passed to compilerx</span></p>
+<p class="caption"><span class="caption-text">List of all the options to be passed to compilerx</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p>If <strong>TCF</strong> is selected, <strong>Use memory map from TCF</strong> and <strong>Include C defines from TCF</strong> checkboxes become enabled.
 If you check <strong>Use memory map from TCF</strong> box, memory map from TCF file will be
@@ -412,9 +412,9 @@ already contain memory maps that are used if no other is provided. However,
 this is true only for <strong>Hello World for EM SK</strong> and <strong>Empty Project For</strong>
 templates, but not <strong>Empty Project</strong> ones. <strong>Empty Project</strong> templates are
 generated automatically by Eclipse and do not contain any specific information.</p>
-<div class="figure align-center" id="id8">
+<div class="figure align-default" id="id8">
 <img alt="../_images/memory_map.png" src="../_images/memory_map.png" />
-<p class="caption"><span class="caption-text">Memory map for <strong>Hello World for EM SK 2.1 Project</strong></span></p>
+<p class="caption"><span class="caption-text">Memory map for <strong>Hello World for EM SK 2.1 Project</strong></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>

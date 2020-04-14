@@ -21,10 +21,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -226,7 +226,7 @@ $ <span class="nb">popd</span>
 that will be sourced by <code class="docutils literal notranslate"><span class="pre">release.mk</span></code>.</p>
 <dl class="envvar">
 <dt id="envvar-CONFIG_STATIC_TOOLCHAIN">
-<code class="descname">CONFIG_STATIC_TOOLCHAIN</code><a class="headerlink" href="#envvar-CONFIG_STATIC_TOOLCHAIN" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">CONFIG_STATIC_TOOLCHAIN</code><a class="headerlink" href="#envvar-CONFIG_STATIC_TOOLCHAIN" title="Permalink to this definition">¶</a></dt>
 <dd><p>Whether to build toolchain linked dynamically or statically. Note this
 affects the toolchain executable files, not the target libraries.</p>
 <dl class="simple">
@@ -239,7 +239,7 @@ affects the toolchain executable files, not the target libraries.</p>
 
 <dl class="envvar">
 <dt id="envvar-DEPLOY_BUILD_DESTINATION">
-<code class="descname">DEPLOY_BUILD_DESTINATION</code><a class="headerlink" href="#envvar-DEPLOY_BUILD_DESTINATION" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">DEPLOY_BUILD_DESTINATION</code><a class="headerlink" href="#envvar-DEPLOY_BUILD_DESTINATION" title="Permalink to this definition">¶</a></dt>
 <dd><p>Where to copy unpacked engineering build. Location is in format
 <code class="docutils literal notranslate"><span class="pre">[hostname:]/path</span></code>. A directory named <code class="docutils literal notranslate"><span class="pre">${RELEASE_TAG##-arc}</span></code> will be
 created in the target path and will contain unpacked directories. Directories
@@ -252,7 +252,7 @@ will be elf32_le_linux.</p>
 
 <dl class="envvar">
 <dt id="envvar-DEPLOY_DESTINATION">
-<code class="descname">DEPLOY_DESTINATION</code><a class="headerlink" href="#envvar-DEPLOY_DESTINATION" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">DEPLOY_DESTINATION</code><a class="headerlink" href="#envvar-DEPLOY_DESTINATION" title="Permalink to this definition">¶</a></dt>
 <dd><p>Where to copy release distributables. Location is in format
 <code class="docutils literal notranslate"><span class="pre">[hostname:]/path</span></code>. A directory named <code class="docutils literal notranslate"><span class="pre">${RELEASE_TAG##-arc}</span></code> will be
 created in the target path and will contain all deploy artifacts. So for
@@ -262,7 +262,7 @@ for <code class="docutils literal notranslate"><span class="pre">RELEASE_TAG</sp
 
 <dl class="envvar">
 <dt id="envvar-ENABLE_BIG_ENDIAN">
-<code class="descname">ENABLE_BIG_ENDIAN</code><a class="headerlink" href="#envvar-ENABLE_BIG_ENDIAN" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">ENABLE_BIG_ENDIAN</code><a class="headerlink" href="#envvar-ENABLE_BIG_ENDIAN" title="Permalink to this definition">¶</a></dt>
 <dd><p>Whether to build and upload big endian toolchain builds. Big endian toolchain
 is required for IDE targets.</p>
 <dl class="simple">
@@ -275,7 +275,7 @@ is required for IDE targets.</p>
 
 <dl class="envvar">
 <dt id="envvar-ENABLE_DOCS_PACKAGE">
-<code class="descname">ENABLE_DOCS_PACKAGE</code><a class="headerlink" href="#envvar-ENABLE_DOCS_PACKAGE" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">ENABLE_DOCS_PACKAGE</code><a class="headerlink" href="#envvar-ENABLE_DOCS_PACKAGE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Whether to build separate packages with just documentation PDF files.</p>
 <dl class="simple">
 <dt>Possible values</dt><dd><p><code class="docutils literal notranslate"><span class="pre">y</span></code> and <code class="docutils literal notranslate"><span class="pre">n</span></code></p>
@@ -287,7 +287,7 @@ is required for IDE targets.</p>
 
 <dl class="envvar">
 <dt id="envvar-ENABLE_IDE">
-<code class="descname">ENABLE_IDE</code><a class="headerlink" href="#envvar-ENABLE_IDE" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">ENABLE_IDE</code><a class="headerlink" href="#envvar-ENABLE_IDE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Whether to build and upload IDE distributable package.  Note that build
 script for Windows installer always assumes presence of IDE, therefore it is
 not possible to build it when this option is <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p>
@@ -301,7 +301,7 @@ not possible to build it when this option is <code class="docutils literal notra
 
 <dl class="envvar">
 <dt id="envvar-ENABLE_IDE_MACOS">
-<code class="descname">ENABLE_IDE_MACOS</code><a class="headerlink" href="#envvar-ENABLE_IDE_MACOS" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">ENABLE_IDE_MACOS</code><a class="headerlink" href="#envvar-ENABLE_IDE_MACOS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Whether to build and upload IDE distributable package on macOS.</p>
 <dl class="simple">
 <dt>Possible values</dt><dd><p><code class="docutils literal notranslate"><span class="pre">y</span></code> and <code class="docutils literal notranslate"><span class="pre">n</span></code></p>
@@ -313,7 +313,7 @@ not possible to build it when this option is <code class="docutils literal notra
 
 <dl class="envvar">
 <dt id="envvar-ENABLE_IDE_PLUGINS_BUILD">
-<code class="descname">ENABLE_IDE_PLUGINS_BUILD</code><a class="headerlink" href="#envvar-ENABLE_IDE_PLUGINS_BUILD" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">ENABLE_IDE_PLUGINS_BUILD</code><a class="headerlink" href="#envvar-ENABLE_IDE_PLUGINS_BUILD" title="Permalink to this definition">¶</a></dt>
 <dd><p>Whether to build IDE plugins as part of ARC GNU Toolchain or download prebuilt ZIP.</p>
 <dl class="simple">
 <dt>Possible values</dt><dd><p><code class="docutils literal notranslate"><span class="pre">y</span></code> and <code class="docutils literal notranslate"><span class="pre">n</span></code></p>
@@ -325,7 +325,7 @@ not possible to build it when this option is <code class="docutils literal notra
 
 <dl class="envvar">
 <dt id="envvar-ENABLE_LINUX_IMAGES">
-<code class="descname">ENABLE_LINUX_IMAGES</code><a class="headerlink" href="#envvar-ENABLE_LINUX_IMAGES" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">ENABLE_LINUX_IMAGES</code><a class="headerlink" href="#envvar-ENABLE_LINUX_IMAGES" title="Permalink to this definition">¶</a></dt>
 <dd><p>Whether to build and deploy Linux images built with this toolchain. This
 targets uses Buildroot to build rootfs and uImage for AXS103.</p>
 <dl class="simple">
@@ -338,7 +338,7 @@ targets uses Buildroot to build rootfs and uImage for AXS103.</p>
 
 <dl class="envvar">
 <dt id="envvar-ENABLE_LINUX_TOOLS">
-<code class="descname">ENABLE_LINUX_TOOLS</code><a class="headerlink" href="#envvar-ENABLE_LINUX_TOOLS" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">ENABLE_LINUX_TOOLS</code><a class="headerlink" href="#envvar-ENABLE_LINUX_TOOLS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Whether to build and deploy GNU Toolchain for Linux targets.</p>
 <dl class="simple">
 <dt>Possible values</dt><dd><p><code class="docutils literal notranslate"><span class="pre">y</span></code> and <code class="docutils literal notranslate"><span class="pre">n</span></code></p>
@@ -350,7 +350,7 @@ targets uses Buildroot to build rootfs and uImage for AXS103.</p>
 
 <dl class="envvar">
 <dt id="envvar-ENABLE_GLIBC_TOOLS">
-<code class="descname">ENABLE_GLIBC_TOOLS</code><a class="headerlink" href="#envvar-ENABLE_GLIBC_TOOLS" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">ENABLE_GLIBC_TOOLS</code><a class="headerlink" href="#envvar-ENABLE_GLIBC_TOOLS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Whether to build and deploy GNU Toolchain for Linux/glibc targets.</p>
 <dl class="simple">
 <dt>Possible values</dt><dd><p><code class="docutils literal notranslate"><span class="pre">y</span></code> and <code class="docutils literal notranslate"><span class="pre">n</span></code></p>
@@ -362,7 +362,7 @@ targets uses Buildroot to build rootfs and uImage for AXS103.</p>
 
 <dl class="envvar">
 <dt id="envvar-ENABLE_NATIVE_TOOLS">
-<code class="descname">ENABLE_NATIVE_TOOLS</code><a class="headerlink" href="#envvar-ENABLE_NATIVE_TOOLS" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">ENABLE_NATIVE_TOOLS</code><a class="headerlink" href="#envvar-ENABLE_NATIVE_TOOLS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Whether to build and upload native toolchain. Currently toolchain is built
 only for ARC HS Linux.</p>
 <dl class="simple">
@@ -375,7 +375,7 @@ only for ARC HS Linux.</p>
 
 <dl class="envvar">
 <dt id="envvar-ENABLE_OPENOCD">
-<code class="descname">ENABLE_OPENOCD</code><a class="headerlink" href="#envvar-ENABLE_OPENOCD" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">ENABLE_OPENOCD</code><a class="headerlink" href="#envvar-ENABLE_OPENOCD" title="Permalink to this definition">¶</a></dt>
 <dd><p>Whether to build and upload OpenOCD distributable package for Linux. IDE
 targets will not work if OpenOCD is disabled. Therefore if this is <code class="docutils literal notranslate"><span class="pre">n</span></code>,
 then :envvar:<code class="docutils literal notranslate"><span class="pre">ENABLE_IDE</span></code> and <span class="target" id="index-1"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">ENABLE_WINDOWS_INSTALLER`</span></code> also must
@@ -390,7 +390,7 @@ be <code class="docutils literal notranslate"><span class="pre">n</span></code>.
 
 <dl class="envvar">
 <dt id="envvar-ENABLE_OPENOCD_WIN">
-<code class="descname">ENABLE_OPENOCD_WIN</code><a class="headerlink" href="#envvar-ENABLE_OPENOCD_WIN" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">ENABLE_OPENOCD_WIN</code><a class="headerlink" href="#envvar-ENABLE_OPENOCD_WIN" title="Permalink to this definition">¶</a></dt>
 <dd><p>Whether to build and upload OpenOCD for Windows. This target currently
 depends on <span class="target" id="index-2"></span><a class="reference internal" href="#envvar-ENABLE_OPENOCD"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">ENABLE_OPENOCD</span></code></a>, which causes source code to be cloned
 for OpenOCD. OpenOCD for Windows build will download and build libusb library
@@ -405,7 +405,7 @@ and is a prerequisite for IDE for Windows build.</p>
 
 <dl class="envvar">
 <dt id="envvar-ENABLE_PDF_DOCS">
-<code class="descname">ENABLE_PDF_DOCS</code><a class="headerlink" href="#envvar-ENABLE_PDF_DOCS" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">ENABLE_PDF_DOCS</code><a class="headerlink" href="#envvar-ENABLE_PDF_DOCS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Whether to build Toolchain PDF documentation. This affects only the
 “toolchain” repository - PDF documents from gcc, binutils, etc are always
 created, regardless of this option.</p>
@@ -419,7 +419,7 @@ created, regardless of this option.</p>
 
 <dl class="envvar">
 <dt id="envvar-ENABLE_SOURCE_TARBALL">
-<code class="descname">ENABLE_SOURCE_TARBALL</code><a class="headerlink" href="#envvar-ENABLE_SOURCE_TARBALL" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">ENABLE_SOURCE_TARBALL</code><a class="headerlink" href="#envvar-ENABLE_SOURCE_TARBALL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Whether to create a source tarball. Usually that should be true, so that
 release would include source tarball, however if release makefile is run
 multiple times on various machines to create packages for various target
@@ -434,7 +434,7 @@ systems, then it makes sense to have this true only on one system.</p>
 
 <dl class="envvar">
 <dt id="envvar-ENABLE_WINDOWS_INSTALLER">
-<code class="descname">ENABLE_WINDOWS_INSTALLER</code><a class="headerlink" href="#envvar-ENABLE_WINDOWS_INSTALLER" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">ENABLE_WINDOWS_INSTALLER</code><a class="headerlink" href="#envvar-ENABLE_WINDOWS_INSTALLER" title="Permalink to this definition">¶</a></dt>
 <dd><p>Whether to build and upload Windows installer for toolchain and IDE. While
 building of installer can be also skipped simply by not invoking respective
 make targets, installer files still will be in the list of files that should
@@ -451,7 +451,7 @@ build of the toolchain for Windows as well.</p>
 
 <dl class="envvar">
 <dt id="envvar-GIT_REFERENCE_ROOT">
-<code class="descname">GIT_REFERENCE_ROOT</code><a class="headerlink" href="#envvar-GIT_REFERENCE_ROOT" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">GIT_REFERENCE_ROOT</code><a class="headerlink" href="#envvar-GIT_REFERENCE_ROOT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Root location of existing source tree with all toolchain components Git
 repositories. Those repositorie swill be used as a reference when cloning
 source tree - this reduces time to clone and disk space consumed. Note that
@@ -461,7 +461,7 @@ fail.</p>
 
 <dl class="envvar">
 <dt id="envvar-IDE_PLUGIN_LOCATION">
-<code class="descname">IDE_PLUGIN_LOCATION</code><a class="headerlink" href="#envvar-IDE_PLUGIN_LOCATION" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">IDE_PLUGIN_LOCATION</code><a class="headerlink" href="#envvar-IDE_PLUGIN_LOCATION" title="Permalink to this definition">¶</a></dt>
 <dd><p>Location of ARC plugin for Eclipse. This must be a directory and plugin file
 must have a name <code class="docutils literal notranslate"><span class="pre">arc_gnu_${RELEASE_TAG##arc-}_ide_plugin.zip</span></code>. File will
 be copied with rsync therefore location may be prefixed with hostname
@@ -471,7 +471,7 @@ be set only if :envvar:<code class="docutils literal notranslate"><span class="p
 
 <dl class="envvar">
 <dt id="envvar-LIBUSB_VERSION">
-<code class="descname">LIBUSB_VERSION</code><a class="headerlink" href="#envvar-LIBUSB_VERSION" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">LIBUSB_VERSION</code><a class="headerlink" href="#envvar-LIBUSB_VERSION" title="Permalink to this definition">¶</a></dt>
 <dd><p>Version of Libusb used for OpenOCD build for Windows.</p>
 <dl class="simple">
 <dt>Default value</dt><dd><p>1.0.20</p>
@@ -481,27 +481,27 @@ be set only if :envvar:<code class="docutils literal notranslate"><span class="p
 
 <dl class="envvar">
 <dt id="envvar-RELEASE_NAME">
-<code class="descname">RELEASE_NAME</code><a class="headerlink" href="#envvar-RELEASE_NAME" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">RELEASE_NAME</code><a class="headerlink" href="#envvar-RELEASE_NAME" title="Permalink to this definition">¶</a></dt>
 <dd><p>Name of the release, for example “GNU Toolchain for ARC Processors, 2016.03”.</p>
 </dd></dl>
 
 <dl class="envvar">
 <dt id="envvar-RELEASE_TAG">
-<code class="descname">RELEASE_TAG</code><a class="headerlink" href="#envvar-RELEASE_TAG" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">RELEASE_TAG</code><a class="headerlink" href="#envvar-RELEASE_TAG" title="Permalink to this definition">¶</a></dt>
 <dd><p>Git tag for this release. Tag is used literally and can be for example,
 arc-2016.03-alpha1.</p>
 </dd></dl>
 
 <dl class="envvar">
 <dt id="envvar-THIRD_PARTY_SOFTWARE_LOCATION">
-<code class="descname">THIRD_PARTY_SOFTWARE_LOCATION</code><a class="headerlink" href="#envvar-THIRD_PARTY_SOFTWARE_LOCATION" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">THIRD_PARTY_SOFTWARE_LOCATION</code><a class="headerlink" href="#envvar-THIRD_PARTY_SOFTWARE_LOCATION" title="Permalink to this definition">¶</a></dt>
 <dd><p>Location of 3rd party software, namely Java Runtime Environment (JRE) and
 Eclipse tarballs.</p>
 </dd></dl>
 
 <dl class="envvar">
 <dt id="envvar-WINDOWS_TRIPLET">
-<code class="descname">WINDOWS_TRIPLET</code><a class="headerlink" href="#envvar-WINDOWS_TRIPLET" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">WINDOWS_TRIPLET</code><a class="headerlink" href="#envvar-WINDOWS_TRIPLET" title="Permalink to this definition">¶</a></dt>
 <dd><p>Triplet of MinGW toolchain to do a cross-build of toolchain for Windows.</p>
 <dl class="simple">
 <dt>Default value</dt><dd><p>i686-w64-mingw32</p>
@@ -511,7 +511,7 @@ Eclipse tarballs.</p>
 
 <dl class="envvar">
 <dt id="envvar-WINDOWS_WORKSPACE">
-<code class="descname">WINDOWS_WORKSPACE</code><a class="headerlink" href="#envvar-WINDOWS_WORKSPACE" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">WINDOWS_WORKSPACE</code><a class="headerlink" href="#envvar-WINDOWS_WORKSPACE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Path to a directory that is present on build host and is also somehow
 available on a Windows host where Windows installer will be built. Basic
 scenario is when this location is on the Linux hosts, shared via Samba/CIFS
@@ -527,7 +527,7 @@ if <span class="target" id="index-3"></span><code class="xref std std-envvar doc
 <h2>Make targets<a class="headerlink" href="#make-targets" title="Permalink to this headline">¶</a></h2>
 <dl class="option">
 <dt id="cmdoption-arg-build">
-<code class="descname">build</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-arg-build" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">build</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-arg-build" title="Permalink to this definition">¶</a></dt>
 <dd><p>Build all distributable components that can be built on RHEL hosts. The
 only components that are not built by this target are:</p>
 <ul class="simple">
@@ -541,14 +541,14 @@ toolchain created by <a class="reference internal" href="#cmdoption-arg-build"><
 
 <dl class="option">
 <dt id="cmdoption-arg-copy-windows-installer">
-<code class="descname">copy-windows-installer</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-arg-copy-windows-installer" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">copy-windows-installer</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-arg-copy-windows-installer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Copy Windows installer, created by <code class="docutils literal notranslate"><span class="pre">windows-installer/build-installer.sh</span></code>
 from <span class="target" id="index-5"></span><a class="reference internal" href="#envvar-WINDOWS_WORKSPACE"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">WINDOWS_WORKSPACE</span></code></a> to <code class="docutils literal notranslate"><span class="pre">release_output</span></code> directory.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-arg-create-tag">
-<code class="descname">create-tag</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-arg-create-tag" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">create-tag</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-arg-create-tag" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create Git tags for released components. Required environment variables:
 <span class="target" id="index-6"></span><a class="reference internal" href="#envvar-RELEASE_TAG"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">RELEASE_TAG</span></code></a>, <span class="target" id="index-7"></span><a class="reference internal" href="#envvar-RELEASE_NAME"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">RELEASE_NAME</span></code></a>. OpenOCD must have a branch
 named <code class="docutils literal notranslate"><span class="pre">arc-0.9-dev-${RELEASE_BRANCH}</span></code>, where <code class="docutils literal notranslate"><span class="pre">RELEASE_BRANCH</span></code> is a bare
@@ -558,7 +558,7 @@ release, evaluated from the tag, so for <span class="target" id="index-8"></span
 
 <dl class="option">
 <dt id="cmdoption-arg-deploy">
-<code class="descname">deploy</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-arg-deploy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">deploy</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-arg-deploy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deploy build artifacts to remote locations. It deploys same files as those
 that are released, and a few extra ones (like Windows toolchain tarballs).
 This target just copies deploy artifacts to location specified by
@@ -568,13 +568,13 @@ This target just copies deploy artifacts to location specified by
 
 <dl class="option">
 <dt id="cmdoption-arg-distclean">
-<code class="descname">distclean</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-arg-distclean" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">distclean</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-arg-distclean" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove all cloned sources as well as build artifacts.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-arg-prerequisites">
-<code class="descname">prerequisites</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-arg-prerequisites" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">prerequisites</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-arg-prerequisites" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clone sources of toolchain components from GitHub. Copy external components
 from specified locations. Is affected by following environment variables:
 <span class="target" id="index-12"></span><a class="reference internal" href="#envvar-RELEASE_TAG"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">RELEASE_TAG</span></code></a>, <span class="target" id="index-13"></span><a class="reference internal" href="#envvar-GIT_REFERENCE_ROOT"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">GIT_REFERENCE_ROOT</span></code></a> (optional),
@@ -583,13 +583,13 @@ from specified locations. Is affected by following environment variables:
 
 <dl class="option">
 <dt id="cmdoption-arg-push-tag">
-<code class="descname">push-tag</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-arg-push-tag" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">push-tag</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-arg-push-tag" title="Permalink to this definition">¶</a></dt>
 <dd><p>Push Git tags to GitHub.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-arg-upload">
-<code class="descname">upload</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-arg-upload" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">upload</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-arg-upload" title="Permalink to this definition">¶</a></dt>
 <dd><p>Upload release distributables to GitHub Releases. A new GitHub “Release” is
 created and bound to the Git tag specified in <span class="target" id="index-15"></span><a class="reference internal" href="#envvar-RELEASE_TAG"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">RELEASE_TAG</span></code></a>. This
 target also depends on <span class="target" id="index-16"></span><a class="reference internal" href="#envvar-RELEASE_NAME"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">RELEASE_NAME</span></code></a> to specify name of release on
@@ -598,7 +598,7 @@ GitHub.</p>
 
 <dl class="option">
 <dt id="cmdoption-arg-windows-workspace">
-<code class="descname">windows-workspace</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-arg-windows-workspace" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">windows-workspace</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-arg-windows-workspace" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a workspace to run <code class="docutils literal notranslate"><span class="pre">windows-installer/build-installer.sh</span></code> script.
 Location of workspace is specified with <span class="target" id="index-17"></span><a class="reference internal" href="#envvar-WINDOWS_WORKSPACE"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">WINDOWS_WORKSPACE</span></code></a>.
 <code class="docutils literal notranslate"><span class="pre">build-installer.sh</span></code> script will create an installer in the workspace

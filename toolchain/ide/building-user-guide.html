@@ -240,7 +240,7 @@ are different for different processors.</p>
 <p>CPU option for ARC 600 and ARC 700 has only one value, but for ARC EM there
 are several possible values: <code class="docutils literal notranslate"><span class="pre">arcem</span></code>, <code class="docutils literal notranslate"><span class="pre">em</span></code>, <code class="docutils literal notranslate"><span class="pre">em4</span></code>, <code class="docutils literal notranslate"><span class="pre">em4_dmips</span></code>, <code class="docutils literal notranslate"><span class="pre">em4_fpus</span></code>
 and <code class="docutils literal notranslate"><span class="pre">em4_fpuda</span></code>. Possible values for ARC HS CPU are <code class="docutils literal notranslate"><span class="pre">archs</span></code>, <code class="docutils literal notranslate"><span class="pre">hs</span></code>, <code class="docutils literal notranslate"><span class="pre">hs34</span></code>,
-<code class="docutils literal notranslate"><span class="pre">hs38</span></code> and <code class="docutils literal notranslate"><span class="pre">hs38_linux</span></code>. For each of these values there are precompiled standard
+<code class="docutils literal notranslate"><span class="pre">hs38</span></code>, <code class="docutils literal notranslate"><span class="pre">hs38_linux</span></code>, <code class="docutils literal notranslate"><span class="pre">hs4x</span></code> and <code class="docutils literal notranslate"><span class="pre">hs4xd</span></code>. For each of these values there are precompiled standard
 libraries that use some other target options. For example, if you choose <code class="docutils literal notranslate"><span class="pre">hs34</span></code>
 as you CPU, standard library that uses atomic functions and multiply
 option “mpy” will be used. Values of these options are set in IDE when CPU is
@@ -381,6 +381,20 @@ it to any of SP FPU values or “None”, but you can change it to DP FPU with e
 <tr class="row-even"><td><p>hs38_linux</p></td>
 <td><p>plus_qmacw</p></td>
 <td><p>DP FPU with all extensions</p></td>
+<td><p>+</p></td>
+<td><p>+</p></td>
+<td><p>+</p></td>
+</tr>
+<tr class="row-odd"><td><p>hs4x</p></td>
+<td><p>plus_qmacw</p></td>
+<td><p>none</p></td>
+<td><p>+</p></td>
+<td><p>+</p></td>
+<td><p>+</p></td>
+</tr>
+<tr class="row-even"><td><p>hs4xd</p></td>
+<td><p>plus_qmacw</p></td>
+<td><p>none</p></td>
 <td><p>+</p></td>
 <td><p>+</p></td>
 <td><p>+</p></td>

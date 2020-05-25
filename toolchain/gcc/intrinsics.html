@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>ARC GNU builtins vs MWDT builtins &mdash; GNU Toolchain for ARC User Manual 2020.03 documentation</title>
+  <title>Intrinsics in ARC GNU vs MWDT &mdash; GNU Toolchain for ARC User Manual 2020.03 documentation</title>
   
 
   
@@ -96,7 +96,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="index.html#from-mwdt-to-gcc">From MWDT to GCC</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="option-matrix.html">MWDT vs. GCC option matrix</a></li>
 <li class="toctree-l3"><a class="reference internal" href="apex.html">Migrating ARChitect APEX generated header to GNU</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">ARC GNU builtins vs MWDT builtins</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Intrinsics in ARC GNU vs MWDT</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#improving-gcc-output">Improving GCC output</a></li>
@@ -117,7 +117,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="index.html#from-mwdt-to-gcc">From MWDT to GCC</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="option-matrix.html">MWDT vs. GCC option matrix</a></li>
 <li class="toctree-l3"><a class="reference internal" href="apex.html">Migrating ARChitect APEX generated header to GNU</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">ARC GNU builtins vs MWDT builtins</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Intrinsics in ARC GNU vs MWDT</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#improving-gcc-output">Improving GCC output</a></li>
@@ -173,13 +173,13 @@
         
           <li><a href="index.html">GCC documentation</a> &raquo;</li>
         
-      <li>ARC GNU builtins vs MWDT builtins</li>
+      <li>Intrinsics in ARC GNU vs MWDT</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/gcc/builtins.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/gcc/intrinsics.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -192,16 +192,21 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="arc-gnu-builtins-vs-mwdt-builtins">
-<h1>ARC GNU builtins vs MWDT builtins<a class="headerlink" href="#arc-gnu-builtins-vs-mwdt-builtins" title="Permalink to this headline">¶</a></h1>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 55%" />
-<col style="width: 45%" />
-</colgroup>
+  <div class="section" id="intrinsics-in-arc-gnu-vs-mwdt">
+<h1>Intrinsics in ARC GNU vs MWDT<a class="headerlink" href="#intrinsics-in-arc-gnu-vs-mwdt" title="Permalink to this headline">¶</a></h1>
+<p>If one is interested in ARC-specific GCC built-ins those
+might be found in upstream documentation here:
+<a class="reference external" href="https://gcc.gnu.org/onlinedocs/gcc/ARC-Built-in-Functions.html">https://gcc.gnu.org/onlinedocs/gcc/ARC-Built-in-Functions.html</a>.</p>
+<p>Note to use listed below intrinsics it’s required to include
+<code class="docutils literal notranslate"><span class="pre">arcle.h</span></code> in your source file that way:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &lt;arcle.h&gt;</span>
+</pre></div>
+</div>
+<table class="colwidths-auto docutils align-default" id="id1">
+<caption><span class="caption-text">List of ARC intrinsics supported by MetaWare &amp; GCC compilers</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
 <thead>
-<tr class="row-odd"><th class="head"><p>Synopsys Metaware Compiler</p></th>
-<th class="head"><p>GNU ARC GCC compiler</p></th>
+<tr class="row-odd"><th class="head"><p>MetaWare compiler</p></th>
+<th class="head"><p>GCC compiler</p></th>
 </tr>
 </thead>
 <tbody>
